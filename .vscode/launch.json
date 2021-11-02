@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ts-node",
+            "type": "node",
+            "request": "launch",
+            "args": [
+                "${relativeFile}"
+            ],
+            "runtimeArgs": [
+                "-r",
+                "ts-node/register"
+            ],
+            "cwd": "${workspaceRoot}",
+            "protocol": "inspector",
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "type": "pwa-node",
+            "name": "Run Current File",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/service/staple_demo.js"
+        }
+    ]
+}
