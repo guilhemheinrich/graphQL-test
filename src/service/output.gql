@@ -1,0 +1,345 @@
+
+            type Germplasm {
+                fromInstitute:  @relationship(type: "oeso:fromInstitute", direction: OUT)
+            }            
+            
+            type df_0_1 {
+                hasAdministrativeContact: Agent @relationship(type: "oeso:hasAdministrativeContact", direction: OUT)
+            }            
+            
+            type Variable {
+                hasCharacteristic: Characteristic @relationship(type: "oeso:hasCharacteristic", direction: OUT)
+                hasEntity: Entity @relationship(type: "oeso:hasEntity", direction: OUT)
+                hasMethod: Method @relationship(type: "oeso:hasMethod", direction: OUT)
+                hasUnit: Unit @relationship(type: "oeso:hasUnit", direction: OUT)
+            }            
+            
+            type df_0_4 {
+                hasCoordinator: Agent @relationship(type: "oeso:hasCoordinator", direction: OUT)
+            }            
+            
+            type Infrastructure {
+                hasFacility: Facility @relationship(type: "oeso:hasFacility", direction: OUT)
+            }            
+            
+            type ScientificObject {
+                
+            }            
+            
+            type Experiment {
+                hasInfrastructure: Infrastructure @relationship(type: "oeso:hasInfrastructure", direction: OUT)
+                hasProject: Project @relationship(type: "oeso:hasProject", direction: OUT)
+                hasScientificSupervisor: Agent @relationship(type: "oeso:hasScientificSupervisor", direction: OUT)
+                hasTechnicalSupervisor:  @relationship(type: "oeso:hasTechnicalSupervisor", direction: OUT)
+                studyEffectOf: Factor @relationship(type: "oeso:studyEffectOf", direction: OUT)
+            }            
+            
+            type df_0_7 {
+                hasScientificContact: Agent @relationship(type: "oeso:hasScientificContact", direction: OUT)
+            }            
+            
+            type SensingDevice {
+                measures: Variable @relationship(type: "oeso:measures", direction: OUT)
+            }            
+            
+            type Unit {
+                hasAlternativeSymbol: String
+                hasSymbol: String
+            }            
+            
+            type Project {
+                hasObjective: String
+            }            
+            
+            type Activity {
+                endedAtTime: String
+                startedAtTime: String
+            }            
+            
+            type Group {
+                
+            }            
+            
+            type GroupUserProfile {
+                
+            }            
+            
+            type Profile {
+                
+            }            
+            
+            type Actuator {
+                
+            }            
+            
+            type AdministrativeDocument {
+                
+            }            
+            
+            type Archive {
+                
+            }            
+            
+            type Area {
+                
+            }            
+            
+            type Characteristic {
+                
+            }            
+            
+            type ClayeyArea {
+                
+            }            
+            
+            type Compartment {
+                
+            }            
+            
+            type Computation {
+                endedAtTime: String
+                startedAtTime: String
+            }            
+            
+            type ControlLaw {
+                
+            }            
+            
+            type CultivatedLand {
+                
+            }            
+            
+            type Datafile {
+                
+            }            
+            
+            type Dataset {
+                
+            }            
+            
+            type Device {
+                
+            }            
+            
+            type Document {
+                
+            }            
+            
+            type ElaboratedVariable {
+                hasCharacteristic: Characteristic @relationship(type: "oeso:hasCharacteristic", direction: OUT)
+                hasEntity: Entity @relationship(type: "oeso:hasEntity", direction: OUT)
+                hasMethod: Method @relationship(type: "oeso:hasMethod", direction: OUT)
+                hasUnit: Unit @relationship(type: "oeso:hasUnit", direction: OUT)
+            }            
+            
+            type Entity {
+                
+            }            
+            
+            type Equipement {
+                
+            }            
+            
+            type ExperimentalCondition {
+                
+            }            
+            
+            type ExperimentalProtocol {
+                
+            }            
+            
+            type Facility {
+                
+            }            
+            
+            type Factor {
+                
+            }            
+            
+            type FactorLevel {
+                
+            }            
+            
+            type Field {
+                
+            }            
+            
+            type FloodableArea {
+                
+            }            
+            
+            type ITKDocument {
+                
+            }            
+            
+            type Image {
+                
+            }            
+            
+            type ImageAcquisition {
+                endedAtTime: String
+                startedAtTime: String
+            }            
+            
+            type ImageAnalysis {
+                endedAtTime: String
+                startedAtTime: String
+            }            
+            
+            type InfrastructureFacility {
+                
+            }            
+            
+            type InfrastructureTeam {
+                
+            }            
+            
+            type InteractiveResource {
+                
+            }            
+            
+            type LimestoneArea {
+                
+            }            
+            
+            type MeasuresAcquisition {
+                endedAtTime: String
+                startedAtTime: String
+            }            
+            
+            type Method {
+                
+            }            
+            
+            type Multimedia {
+                
+            }            
+            
+            type Operator {
+                
+            }            
+            
+            type Population {
+                
+            }            
+            
+            type ProtectedStructure {
+                
+            }            
+            
+            type Provenance {
+                
+            }            
+            
+            type Publication {
+                
+            }            
+            
+            type RGBImage {
+                
+            }            
+            
+            type Report {
+                
+            }            
+            
+            type Sample {
+                
+            }            
+            
+            type ScientificDocument {
+                
+            }            
+            
+            type Shed {
+                
+            }            
+            
+            type ShinyAppPackage {
+                
+            }            
+            
+            type Software {
+                
+            }            
+            
+            type SoilArea {
+                
+            }            
+            
+            type Species {
+                fromInstitute:  @relationship(type: "oeso:fromInstitute", direction: OUT)
+            }            
+            
+            type Station {
+                
+            }            
+            
+            type StructuralArea {
+                
+            }            
+            
+            type TechnicalDocument {
+                
+            }            
+            
+            type TemporalArea {
+                
+            }            
+            
+            type Trait {
+                
+            }            
+            
+            type Treatment {
+                
+            }            
+            
+            type VariableBase {
+                
+            }            
+            
+            type VariablesGroup {
+                
+            }            
+            
+            type Vector {
+                
+            }            
+            
+            type WebSite {
+                
+            }            
+            
+            type WindyArea {
+                
+            }            
+            
+            type Bag {
+                
+            }            
+            
+            type DatatypeProperty {
+                
+            }            
+            
+            type Agent {
+                
+            }            
+            
+            type Entity {
+                
+            }            
+            
+            type Person {
+                
+            }            
+            
+            type SoftwareAgent {
+                
+            }            
+            
+            type Agent {
+                
+            }            
+            

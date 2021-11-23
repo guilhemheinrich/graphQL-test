@@ -1,0 +1,186 @@
+"""
+The mapping from types and properties of the GraphQL schema to the corresponding URIs of the structured data schema.
+"""
+type _CONTEXT {
+  """@id"""
+  _id: String
+
+  """@type"""
+  _type: String
+
+  """http://example.com#name"""
+  name: String
+
+  """http://example.com#employee"""
+  employee: String
+
+  """http://example.com#Organization"""
+  Organization: String
+
+  """http://example.com#Person"""
+  Person: String
+}
+
+"""Available data sources"""
+enum DataSource {
+  """SPARQL endpoint (graph: http://example.com/test)"""
+  source
+}
+
+"""An organization such as a school, NGO, corporation, club, etc."""
+input FilterOrganization {
+  """The unique identifier of the object"""
+  _id: [ID]
+
+  """Name"""
+  name: String
+
+  """An employee of an organization"""
+  employee: [ID]
+}
+
+"""A person"""
+input FilterPerson {
+  """The unique identifier of the object"""
+  _id: [ID]
+
+  """Name"""
+  name: String
+}
+
+"""An organization such as a school, NGO, corporation, club, etc."""
+input InputOrganization {
+  """The unique identifier of the object"""
+  _id: ID!
+
+  """Name"""
+  name: String
+
+  """An employee of an organization"""
+  employee: [ID]
+}
+
+"""A person"""
+input InputPerson {
+  """The unique identifier of the object"""
+  _id: ID!
+
+  """Name"""
+  name: String
+}
+
+"""CRUD operations over objects of specific types"""
+type Mutation {
+  """Delete an object"""
+  DELETE(
+    """An id of the object to be deleted"""
+    id: [ID!]
+
+    """Available data sources"""
+    source: [DataSource] = source
+  ): Boolean
+
+  """Perform mutation over an object of type: InputPerson"""
+  Person(
+    """The input object of the mutation"""
+    input: InputPerson!
+
+    """The type of the mutation to be applied"""
+    type: MutationType = PUT
+
+    """Selected data sources"""
+    source: [DataSource] = source
+  ): Boolean
+
+  """Perform mutation over an object of type: InputOrganization"""
+  Organization(
+    """The input object of the mutation"""
+    input: InputOrganization!
+
+    """The type of the mutation to be applied"""
+    type: MutationType = PUT
+
+    """Selected data sources"""
+    source: [DataSource] = source
+  ): Boolean
+}
+
+"""Put the item into the database. If already exists - overwrite it."""
+enum MutationType {
+  PUT
+}
+
+"""An organization such as a school, NGO, corporation, club, etc."""
+type Organization {
+  """The unique identifier of the object"""
+  _id: ID!
+
+  """Types of the object"""
+  _type(
+    """Include inferred types for this object"""
+    inferred: Boolean = false
+  ): [String]
+
+  """Name"""
+  name: String
+
+  """An employee of an organization"""
+  employee(source: [DataSource]): [Person]
+}
+
+"""A person"""
+type Person {
+  """The unique identifier of the object"""
+  _id: ID!
+
+  """Types of the object"""
+  _type(
+    """Include inferred types for this object"""
+    inferred: Boolean = false
+  ): [String]
+
+  """Name"""
+  name: String
+}
+
+"""Get objects of specific types"""
+type Query {
+  """Get elements of the _CONTEXT object"""
+  _CONTEXT: _CONTEXT
+
+  """Get objects of type: Person"""
+  Person(
+    """
+    The number of results page to be returned by the query. A page consists of
+    10 results. If no page argument is provided all matching results are returned.
+    """
+    page: Int
+
+    """Include indirect instances of this type"""
+    inferred: Boolean = false
+
+    """Filters the selected results based on specified field values"""
+    filter: FilterPerson
+
+    """Selected data sources"""
+    source: [DataSource] = source
+  ): [Person]
+
+  """Get objects of type: Organization"""
+  Organization(
+    """
+    The number of results page to be returned by the query. A page consists of
+    10 results. If no page argument is provided all matching results are returned.
+    """
+    page: Int
+
+    """Include indirect instances of this type"""
+    inferred: Boolean = false
+
+    """Filters the selected results based on specified field values"""
+    filter: FilterOrganization
+
+    """Selected data sources"""
+    source: [DataSource] = source
+  ): [Organization]
+}

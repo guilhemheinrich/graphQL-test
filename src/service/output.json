@@ -1,0 +1,2531 @@
+{
+  "http://www.opensilex.org/vocabulary/oeso": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso",
+    "name": "OpenSILEX ontology's \nOESO",
+    "class": "http://www.w3.org/2002/07/owl#Ontology",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://purl.org/dc/elements/1.1/source": {
+    "uri": "http://purl.org/dc/elements/1.1/source",
+    "name": "Source",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://purl.org/dc/terms/description": {
+    "uri": "http://purl.org/dc/terms/description",
+    "name": "http://purl.org/dc/terms/description",
+    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://purl.org/dc/terms/hasVersion": {
+    "uri": "http://purl.org/dc/terms/hasVersion",
+    "name": "http://purl.org/dc/terms/hasVersion",
+    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://purl.org/dc/terms/issued": {
+    "uri": "http://purl.org/dc/terms/issued",
+    "name": "http://purl.org/dc/terms/issued",
+    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://purl.org/dc/terms/modified": {
+    "uri": "http://purl.org/dc/terms/modified",
+    "name": "http://purl.org/dc/terms/modified",
+    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://purl.org/dc/terms/publisher": {
+    "uri": "http://purl.org/dc/terms/publisher",
+    "name": "http://purl.org/dc/terms/publisher",
+    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://purl.org/dc/terms/title": {
+    "uri": "http://purl.org/dc/terms/title",
+    "name": "http://purl.org/dc/terms/title",
+    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/opensilex-api#propertyMapping": {
+    "uri": "http://www.opensilex.org/vocabulary/opensilex-api#propertyMapping",
+    "name": "http://www.opensilex.org/vocabulary/opensilex-api#propertyMapping",
+    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.w3.org/2004/02/skos/core#note": {
+    "uri": "http://www.w3.org/2004/02/skos/core#note",
+    "name": "http://www.w3.org/2004/02/skos/core#note",
+    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#longString": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#longString",
+    "name": "http://www.opensilex.org/vocabulary/oeso#longString",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.w3.org/2001/XMLSchema#date": {
+    "uri": "http://www.w3.org/2001/XMLSchema#date",
+    "name": "http://www.w3.org/2001/XMLSchema#date",
+    "class": "http://www.w3.org/2000/01/rdf-schema#Datatype",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/security#hasGroup": {
+    "uri": "http://www.opensilex.org/security#hasGroup",
+    "name": "http://www.opensilex.org/security#hasGroup",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/security#hasProfile": {
+    "uri": "http://www.opensilex.org/security#hasProfile",
+    "name": "http://www.opensilex.org/security#hasProfile",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/security#hasUser": {
+    "uri": "http://www.opensilex.org/security#hasUser",
+    "name": "http://www.opensilex.org/security#hasUser",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/security#hasUserProfile": {
+    "uri": "http://www.opensilex.org/security#hasUserProfile",
+    "name": "http://www.opensilex.org/security#hasUserProfile",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#fromAccession": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#fromAccession",
+    "name": "http://www.opensilex.org/vocabulary/oeso#fromAccession",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#fromInstitute": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#fromInstitute",
+    "name": "http://www.opensilex.org/vocabulary/oeso#fromInstitute",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": [
+      "http://www.opensilex.org/vocabulary/oeso#Germplasm"
+    ]
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Germplasm": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Germplasm",
+    "name": "germplasm descriptor information",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": true,
+    "properties": [
+      "http://www.opensilex.org/vocabulary/oeso#fromInstitute"
+    ],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#fromSpecies": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#fromSpecies",
+    "name": "http://www.opensilex.org/vocabulary/oeso#fromSpecies",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://www.opensilex.org/vocabulary/oeso#Species",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#fromVariety": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#fromVariety",
+    "name": "http://www.opensilex.org/vocabulary/oeso#fromVariety",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasAdministrativeContact": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasAdministrativeContact",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasAdministrativeContact",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://xmlns.com/foaf/0.1/Agent",
+    "domains": [
+      "df_0_1"
+    ]
+  },
+  "df_0_1": {
+    "uri": "df_0_1",
+    "name": "df_0_1",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [
+      "http://www.opensilex.org/vocabulary/oeso#hasAdministrativeContact"
+    ],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasAuthor": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasAuthor",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasAuthor",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://www.opensilex.org/vocabulary/oeso#Document",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasCharacteristic": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasCharacteristic",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasCharacteristic",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://www.opensilex.org/vocabulary/oeso#Characteristic",
+    "domains": [
+      "http://www.opensilex.org/vocabulary/oeso#Variable"
+    ]
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Variable": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Variable",
+    "name": "http://www.opensilex.org/vocabulary/oeso#Variable",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [
+      "http://www.opensilex.org/vocabulary/oeso#hasCharacteristic",
+      "http://www.opensilex.org/vocabulary/oeso#hasEntity",
+      "http://www.opensilex.org/vocabulary/oeso#hasMethod",
+      "http://www.opensilex.org/vocabulary/oeso#hasUnit"
+    ],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#VariableBase",
+      "df_0_36",
+      "df_0_37",
+      "df_0_38",
+      "df_0_39"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasContact": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasContact",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasContact",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://xmlns.com/foaf/0.1/Agent",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasCoordinator": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasCoordinator",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasCoordinator",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://xmlns.com/foaf/0.1/Agent",
+    "domains": [
+      "df_0_4"
+    ]
+  },
+  "df_0_4": {
+    "uri": "df_0_4",
+    "name": "df_0_4",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [
+      "http://www.opensilex.org/vocabulary/oeso#hasCoordinator"
+    ],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasDevice": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasDevice",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasDevice",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://www.opensilex.org/vocabulary/oeso#Device",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasDocument": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasDocument",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasDocument",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://www.opensilex.org/vocabulary/oeso#Document",
+    "domains": [
+      "http://www.w3.org/2002/07/owl#Thing"
+    ]
+  },
+  "http://www.w3.org/2002/07/owl#Thing": {
+    "uri": "http://www.w3.org/2002/07/owl#Thing",
+    "name": "http://www.w3.org/2002/07/owl#Thing",
+    "class": "owl:Thing",
+    "isConcept": false,
+    "properties": [
+      "http://www.opensilex.org/vocabulary/oeso#hasDocument"
+    ],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasEntity": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasEntity",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasEntity",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://www.opensilex.org/vocabulary/oeso#Entity",
+    "domains": [
+      "http://www.opensilex.org/vocabulary/oeso#Variable"
+    ]
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasFacility": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasFacility",
+    "name": "Installation technique",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://www.opensilex.org/vocabulary/oeso#Facility",
+    "domains": [
+      "http://www.opensilex.org/vocabulary/oeso#Infrastructure"
+    ]
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Infrastructure": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Infrastructure",
+    "name": "infrastructure",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": true,
+    "properties": [
+      "http://www.opensilex.org/vocabulary/oeso#hasFacility"
+    ],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#ExperimentalCondition"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasFactorLevel": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasFactorLevel",
+    "name": "Factor level",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://www.opensilex.org/vocabulary/oeso#FactorLevel",
+    "domains": [
+      "http://www.opensilex.org/vocabulary/oeso#ScientificObject"
+    ]
+  },
+  "http://www.opensilex.org/vocabulary/oeso#ScientificObject": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#ScientificObject",
+    "name": "Objet scientifique",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": true,
+    "properties": [
+      "http://www.opensilex.org/vocabulary/oeso#hasFactorLevel",
+      "http://www.opensilex.org/vocabulary/oeso#hasGermplasm"
+    ],
+    "inherits": [
+      "df_0_26",
+      "df_0_27",
+      "df_0_28",
+      "df_0_29",
+      "df_0_30",
+      "df_0_31",
+      "df_0_32"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasGermplasm": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasGermplasm",
+    "name": "Germplasm",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://www.opensilex.org/vocabulary/oeso#Germplasm",
+    "domains": [
+      "http://www.opensilex.org/vocabulary/oeso#ScientificObject"
+    ]
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasInfrastructure": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasInfrastructure",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasInfrastructure",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://www.opensilex.org/vocabulary/oeso#Infrastructure",
+    "domains": [
+      "http://www.opensilex.org/vocabulary/oeso#Experiment"
+    ]
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Experiment": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Experiment",
+    "name": "experiment",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": true,
+    "properties": [
+      "http://www.opensilex.org/vocabulary/oeso#hasInfrastructure",
+      "http://www.opensilex.org/vocabulary/oeso#hasProject",
+      "http://www.opensilex.org/vocabulary/oeso#hasScientificSupervisor",
+      "http://www.opensilex.org/vocabulary/oeso#hasTechnicalSupervisor",
+      "http://www.opensilex.org/vocabulary/oeso#studyEffectOf"
+    ],
+    "inherits": [
+      "df_0_23",
+      "df_0_24",
+      "df_0_25"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasMethod": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasMethod",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasMethod",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://www.opensilex.org/vocabulary/oeso#Method",
+    "domains": [
+      "http://www.opensilex.org/vocabulary/oeso#Variable"
+    ]
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasPart": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasPart",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasPart",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasProductionYear": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasProductionYear",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasProductionYear",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasProject": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasProject",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasProject",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://www.opensilex.org/vocabulary/oeso#Project",
+    "domains": [
+      "http://www.opensilex.org/vocabulary/oeso#Experiment"
+    ]
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasRelatedProject": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasRelatedProject",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasRelatedProject",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasScientificContact": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasScientificContact",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasScientificContact",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://xmlns.com/foaf/0.1/Agent",
+    "domains": [
+      "df_0_7"
+    ]
+  },
+  "df_0_7": {
+    "uri": "df_0_7",
+    "name": "df_0_7",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [
+      "http://www.opensilex.org/vocabulary/oeso#hasScientificContact"
+    ],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasScientificSupervisor": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasScientificSupervisor",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasScientificSupervisor",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://xmlns.com/foaf/0.1/Agent",
+    "domains": [
+      "http://www.opensilex.org/vocabulary/oeso#Experiment"
+    ]
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasSpecies": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasSpecies",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasSpecies",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://www.opensilex.org/vocabulary/oeso#Species",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasTechnicalSupervisor": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasTechnicalSupervisor",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasTechnicalSupervisor",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": [
+      "http://www.opensilex.org/vocabulary/oeso#Experiment"
+    ]
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasUnit": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasUnit",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasUnit",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://www.opensilex.org/vocabulary/oeso#Unit",
+    "domains": [
+      "http://www.opensilex.org/vocabulary/oeso#Variable"
+    ]
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasVariety": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasVariety",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasVariety",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#isPartOf": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#isPartOf",
+    "name": "Parent",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#measures": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#measures",
+    "name": "mesure",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://www.opensilex.org/vocabulary/oeso#Variable",
+    "domains": [
+      "http://www.opensilex.org/vocabulary/oeso#SensingDevice"
+    ]
+  },
+  "http://www.opensilex.org/vocabulary/oeso#SensingDevice": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#SensingDevice",
+    "name": "SensingDevice",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [
+      "http://www.opensilex.org/vocabulary/oeso#measures"
+    ],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#Device",
+      "df_0_33"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#participatesIn": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#participatesIn",
+    "name": "http://www.opensilex.org/vocabulary/oeso#participatesIn",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#studyEffectOf": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#studyEffectOf",
+    "name": "http://www.opensilex.org/vocabulary/oeso#studyEffectOf",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://www.opensilex.org/vocabulary/oeso#Factor",
+    "domains": [
+      "http://www.opensilex.org/vocabulary/oeso#Experiment"
+    ]
+  },
+  "http://www.w3.org/2000/01/rdf-schema#member": {
+    "uri": "http://www.w3.org/2000/01/rdf-schema#member",
+    "name": "membre",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.w3.org/ns/prov#generated": {
+    "uri": "http://www.w3.org/ns/prov#generated",
+    "name": "génère",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.w3.org/ns/prov#used": {
+    "uri": "http://www.w3.org/ns/prov#used",
+    "name": "utilise",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.w3.org/ns/prov#wasGeneratedBy": {
+    "uri": "http://www.w3.org/ns/prov#wasGeneratedBy",
+    "name": "was generated by",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://purl.org/dc/elements/1.1/description": {
+    "uri": "http://purl.org/dc/elements/1.1/description",
+    "name": "Description",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://purl.org/dc/elements/1.1/title": {
+    "uri": "http://purl.org/dc/elements/1.1/title",
+    "name": "Title",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/security#hasCredential": {
+    "uri": "http://www.opensilex.org/security#hasCredential",
+    "name": "http://www.opensilex.org/security#hasCredential",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/security#hasLanguage": {
+    "uri": "http://www.opensilex.org/security#hasLanguage",
+    "name": "http://www.opensilex.org/security#hasLanguage",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/security#hasPasswordHash": {
+    "uri": "http://www.opensilex.org/security#hasPasswordHash",
+    "name": "http://www.opensilex.org/security#hasPasswordHash",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/security#isAdmin": {
+    "uri": "http://www.opensilex.org/security#isAdmin",
+    "name": "http://www.opensilex.org/security#isAdmin",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#endDate": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#endDate",
+    "name": "http://www.opensilex.org/vocabulary/oeso#endDate",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasAlternativeSymbol": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasAlternativeSymbol",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasAlternativeSymbol",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://www.w3.org/2001/XMLSchema#string",
+    "domains": [
+      "http://www.opensilex.org/vocabulary/oeso#Unit"
+    ]
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Unit": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Unit",
+    "name": "http://www.opensilex.org/vocabulary/oeso#Unit",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [
+      "http://www.opensilex.org/vocabulary/oeso#hasAlternativeSymbol",
+      "http://www.opensilex.org/vocabulary/oeso#hasSymbol"
+    ],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#VariableBase",
+      "df_0_34",
+      "df_0_35"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasCampaign": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasCampaign",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasCampaign",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasCreationDate": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasCreationDate",
+    "name": "Date de création",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://www.w3.org/2001/XMLSchema#date",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasDate": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasDate",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasDate",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasDestructionDate": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasDestructionDate",
+    "name": "Destruction date",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://www.w3.org/2001/XMLSchema#date",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasFinancialFunding": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasFinancialFunding",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasFinancialFunding",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasKeyword": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasKeyword",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasKeyword",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasObjective": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasObjective",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasObjective",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": [
+      "http://www.opensilex.org/vocabulary/oeso#Project"
+    ]
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Project": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Project",
+    "name": "project",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": true,
+    "properties": [
+      "http://www.opensilex.org/vocabulary/oeso#hasObjective"
+    ],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#ExperimentalCondition"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasShortname": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasShortname",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasShortname",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#hasSymbol": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#hasSymbol",
+    "name": "http://www.opensilex.org/vocabulary/oeso#hasSymbol",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://www.w3.org/2001/XMLSchema#string",
+    "domains": [
+      "http://www.opensilex.org/vocabulary/oeso#Unit"
+    ]
+  },
+  "http://www.opensilex.org/vocabulary/oeso#isPublic": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#isPublic",
+    "name": "http://www.opensilex.org/vocabulary/oeso#isPublic",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://www.w3.org/2001/XMLSchema#boolean",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#startDate": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#startDate",
+    "name": "date de début",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+    "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "name": "Type",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.w3.org/2000/01/rdf-schema#comment": {
+    "uri": "http://www.w3.org/2000/01/rdf-schema#comment",
+    "name": "Description",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.w3.org/2000/01/rdf-schema#label": {
+    "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+    "name": "Nom",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.w3.org/2004/02/skos/core#broader": {
+    "uri": "http://www.w3.org/2004/02/skos/core#broader",
+    "name": "http://www.w3.org/2004/02/skos/core#broader",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.w3.org/2004/02/skos/core#closeMatch": {
+    "uri": "http://www.w3.org/2004/02/skos/core#closeMatch",
+    "name": "http://www.w3.org/2004/02/skos/core#closeMatch",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.w3.org/2004/02/skos/core#exactMatch": {
+    "uri": "http://www.w3.org/2004/02/skos/core#exactMatch",
+    "name": "http://www.w3.org/2004/02/skos/core#exactMatch",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.w3.org/2004/02/skos/core#narrower": {
+    "uri": "http://www.w3.org/2004/02/skos/core#narrower",
+    "name": "http://www.w3.org/2004/02/skos/core#narrower",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.w3.org/ns/prov#endedAtTime": {
+    "uri": "http://www.w3.org/ns/prov#endedAtTime",
+    "name": "ended at time",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://www.w3.org/2001/XMLSchema#dateTime",
+    "domains": [
+      "http://www.w3.org/ns/prov#Activity"
+    ]
+  },
+  "http://www.w3.org/ns/prov#Activity": {
+    "uri": "http://www.w3.org/ns/prov#Activity",
+    "name": "Activité",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [
+      "http://www.w3.org/ns/prov#endedAtTime",
+      "http://www.w3.org/ns/prov#startedAtTime"
+    ],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.w3.org/ns/prov#startedAtTime": {
+    "uri": "http://www.w3.org/ns/prov#startedAtTime",
+    "name": "started at time",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "http://www.w3.org/2001/XMLSchema#dateTime",
+    "domains": [
+      "http://www.w3.org/ns/prov#Activity"
+    ]
+  },
+  "http://xmlns.com/foaf/0.1/firstName": {
+    "uri": "http://xmlns.com/foaf/0.1/firstName",
+    "name": "http://xmlns.com/foaf/0.1/firstName",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://xmlns.com/foaf/0.1/homepage": {
+    "uri": "http://xmlns.com/foaf/0.1/homepage",
+    "name": "http://xmlns.com/foaf/0.1/homepage",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://xmlns.com/foaf/0.1/lastName": {
+    "uri": "http://xmlns.com/foaf/0.1/lastName",
+    "name": "http://xmlns.com/foaf/0.1/lastName",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://xmlns.com/foaf/0.1/mbox": {
+    "uri": "http://xmlns.com/foaf/0.1/mbox",
+    "name": "http://xmlns.com/foaf/0.1/mbox",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/security#Group": {
+    "uri": "http://www.opensilex.org/security#Group",
+    "name": "http://www.opensilex.org/security#Group",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "df_0_10",
+      "df_0_11",
+      "df_0_12"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "df_0_10": {
+    "uri": "df_0_10",
+    "name": "df_0_10",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_11": {
+    "uri": "df_0_11",
+    "name": "df_0_11",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_12": {
+    "uri": "df_0_12",
+    "name": "df_0_12",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/security#GroupUserProfile": {
+    "uri": "http://www.opensilex.org/security#GroupUserProfile",
+    "name": "http://www.opensilex.org/security#GroupUserProfile",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "df_0_13",
+      "df_0_14"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "df_0_13": {
+    "uri": "df_0_13",
+    "name": "df_0_13",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_14": {
+    "uri": "df_0_14",
+    "name": "df_0_14",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/security#Profile": {
+    "uri": "http://www.opensilex.org/security#Profile",
+    "name": "http://www.opensilex.org/security#Profile",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "df_0_15",
+      "df_0_16",
+      "df_0_17"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "df_0_15": {
+    "uri": "df_0_15",
+    "name": "df_0_15",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_16": {
+    "uri": "df_0_16",
+    "name": "df_0_16",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_17": {
+    "uri": "df_0_17",
+    "name": "df_0_17",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Actuator": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Actuator",
+    "name": "Actuator",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#Device"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#AdministrativeDocument": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#AdministrativeDocument",
+    "name": "Document Administratif",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#Document"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Archive": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Archive",
+    "name": "http://www.opensilex.org/vocabulary/oeso#Archive",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#Datafile"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Area": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Area",
+    "name": "Zone",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#Equipement"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Characteristic": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Characteristic",
+    "name": "http://www.opensilex.org/vocabulary/oeso#Characteristic",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#VariableBase"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#ClayeyArea": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#ClayeyArea",
+    "name": "Zone argileuse",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#SoilArea"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Compartment": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Compartment",
+    "name": "Compartment",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#ProtectedStructure"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Computation": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Computation",
+    "name": "Computation",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.w3.org/ns/prov#Activity"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#ControlLaw": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#ControlLaw",
+    "name": "Loi de commande",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#Device",
+      "df_0_18",
+      "df_0_19",
+      "df_0_20"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "df_0_18": {
+    "uri": "df_0_18",
+    "name": "df_0_18",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_19": {
+    "uri": "df_0_19",
+    "name": "df_0_19",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_20": {
+    "uri": "df_0_20",
+    "name": "df_0_20",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#CultivatedLand": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#CultivatedLand",
+    "name": "Terres cultivées",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#StructuralArea"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Datafile": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Datafile",
+    "name": "Fichier de données",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Dataset": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Dataset",
+    "name": "Jeu de données",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#Document"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Device": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Device",
+    "name": "Device",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#Equipement",
+      "df_0_21",
+      "df_0_22"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "df_0_21": {
+    "uri": "df_0_21",
+    "name": "df_0_21",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_22": {
+    "uri": "df_0_22",
+    "name": "df_0_22",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Document": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Document",
+    "name": "Document",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#ElaboratedVariable": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#ElaboratedVariable",
+    "name": "elaborated variable",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#Variable"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Entity": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Entity",
+    "name": "http://www.opensilex.org/vocabulary/oeso#Entity",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#VariableBase"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Equipement": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Equipement",
+    "name": "equipment",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#ExperimentalCondition"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "df_0_23": {
+    "uri": "df_0_23",
+    "name": "df_0_23",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_24": {
+    "uri": "df_0_24",
+    "name": "df_0_24",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_25": {
+    "uri": "df_0_25",
+    "name": "df_0_25",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#ExperimentalCondition": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#ExperimentalCondition",
+    "name": "contexte expérimental",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#ExperimentalProtocol": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#ExperimentalProtocol",
+    "name": "Protocole expérimental",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#TechnicalDocument"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Facility": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Facility",
+    "name": "http://www.opensilex.org/vocabulary/oeso#Facility",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Factor": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Factor",
+    "name": "Facteur",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#ExperimentalCondition"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#FactorLevel": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#FactorLevel",
+    "name": "Factor level",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#ExperimentalCondition"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Field": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Field",
+    "name": "Field",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#CultivatedLand"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#FloodableArea": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#FloodableArea",
+    "name": "Zone inondable",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#StructuralArea"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#ITKDocument": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#ITKDocument",
+    "name": "Technical itinerary",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#TechnicalDocument"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Image": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Image",
+    "name": "image",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#Datafile"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#ImageAcquisition": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#ImageAcquisition",
+    "name": "Image Acquisition",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.w3.org/ns/prov#Activity"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#ImageAnalysis": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#ImageAnalysis",
+    "name": "Image Analysis",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.w3.org/ns/prov#Activity"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#InfrastructureFacility": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#InfrastructureFacility",
+    "name": "Facility",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#InfrastructureTeam": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#InfrastructureTeam",
+    "name": "Team",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/security#Group"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#InteractiveResource": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#InteractiveResource",
+    "name": "Ressource interactive",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#Document"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#LimestoneArea": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#LimestoneArea",
+    "name": "Zone calcaire",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#SoilArea"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#MeasuresAcquisition": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#MeasuresAcquisition",
+    "name": "Measures Acquisition",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.w3.org/ns/prov#Activity"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Method": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Method",
+    "name": "http://www.opensilex.org/vocabulary/oeso#Method",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#VariableBase"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Multimedia": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Multimedia",
+    "name": "Multimédia",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#Document"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Operator": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Operator",
+    "name": "Operator",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://xmlns.com/foaf/0.1/Agent"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Population": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Population",
+    "name": "Population",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#ScientificObject"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#ProtectedStructure": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#ProtectedStructure",
+    "name": "Structure protégée",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#Equipement"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Provenance": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Provenance",
+    "name": "provenance",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Publication": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Publication",
+    "name": "Publication",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#ScientificDocument"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#RGBImage": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#RGBImage",
+    "name": "image RGB",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#Image"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Report": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Report",
+    "name": "Report",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#ScientificDocument"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Sample": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Sample",
+    "name": "Sample",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#ScientificObject"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#ScientificDocument": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#ScientificDocument",
+    "name": "Scientific Document",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#Document"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "df_0_26": {
+    "uri": "df_0_26",
+    "name": "df_0_26",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_27": {
+    "uri": "df_0_27",
+    "name": "df_0_27",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_28": {
+    "uri": "df_0_28",
+    "name": "df_0_28",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_29": {
+    "uri": "df_0_29",
+    "name": "df_0_29",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_30": {
+    "uri": "df_0_30",
+    "name": "df_0_30",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_31": {
+    "uri": "df_0_31",
+    "name": "df_0_31",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_32": {
+    "uri": "df_0_32",
+    "name": "df_0_32",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_33": {
+    "uri": "df_0_33",
+    "name": "df_0_33",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Shed": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Shed",
+    "name": "Shed",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#ProtectedStructure"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#ShinyAppPackage": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#ShinyAppPackage",
+    "name": "Shiny Application",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#InteractiveResource"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Software": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Software",
+    "name": "Software",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#Device"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#SoilArea": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#SoilArea",
+    "name": "Zone de sol",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#StructuralArea"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Species": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Species",
+    "name": "Species",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#Germplasm"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Station": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Station",
+    "name": "Station",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#Device"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#StructuralArea": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#StructuralArea",
+    "name": "Zone structurelle",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#Area"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#TechnicalDocument": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#TechnicalDocument",
+    "name": "Technical Document",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#Document"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#TemporalArea": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#TemporalArea",
+    "name": "Zone temporel",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#Area"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Trait": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Trait",
+    "name": "http://www.opensilex.org/vocabulary/oeso#Trait",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Treatment": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Treatment",
+    "name": "Treatment",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#ExperimentalCondition"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "df_0_34": {
+    "uri": "df_0_34",
+    "name": "df_0_34",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_35": {
+    "uri": "df_0_35",
+    "name": "df_0_35",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_36": {
+    "uri": "df_0_36",
+    "name": "df_0_36",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_37": {
+    "uri": "df_0_37",
+    "name": "df_0_37",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_38": {
+    "uri": "df_0_38",
+    "name": "df_0_38",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_39": {
+    "uri": "df_0_39",
+    "name": "df_0_39",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#VariableBase": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#VariableBase",
+    "name": "http://www.opensilex.org/vocabulary/oeso#VariableBase",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "df_0_40",
+      "df_0_41",
+      "df_0_42",
+      "df_0_43",
+      "df_0_44",
+      "df_0_45"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "df_0_40": {
+    "uri": "df_0_40",
+    "name": "df_0_40",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_41": {
+    "uri": "df_0_41",
+    "name": "df_0_41",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_42": {
+    "uri": "df_0_42",
+    "name": "df_0_42",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_43": {
+    "uri": "df_0_43",
+    "name": "df_0_43",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_44": {
+    "uri": "df_0_44",
+    "name": "df_0_44",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_45": {
+    "uri": "df_0_45",
+    "name": "df_0_45",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#VariablesGroup": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#VariablesGroup",
+    "name": "Groupe de variables",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Vector": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Vector",
+    "name": "Vector",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#Device"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#WebSite": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#WebSite",
+    "name": "Web Site",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#InteractiveResource"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#WindyArea": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#WindyArea",
+    "name": "Zone venteuse",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#StructuralArea"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag": {
+    "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag",
+    "name": "Bag",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.w3.org/2002/07/owl#DatatypeProperty": {
+    "uri": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "name": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.w3.org/ns/prov#Agent": {
+    "uri": "http://www.w3.org/ns/prov#Agent",
+    "name": "Agent",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.w3.org/ns/prov#Entity": {
+    "uri": "http://www.w3.org/ns/prov#Entity",
+    "name": "Entité",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.w3.org/ns/prov#Person": {
+    "uri": "http://www.w3.org/ns/prov#Person",
+    "name": "Personne",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.w3.org/ns/prov#Agent"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://www.w3.org/ns/prov#SoftwareAgent": {
+    "uri": "http://www.w3.org/ns/prov#SoftwareAgent",
+    "name": "Software",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "http://www.w3.org/ns/prov#Agent"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "http://xmlns.com/foaf/0.1/Agent": {
+    "uri": "http://xmlns.com/foaf/0.1/Agent",
+    "name": "Agent",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "properties": [],
+    "inherits": [
+      "df_0_46",
+      "df_0_47",
+      "df_0_48",
+      "df_0_49",
+      "df_0_50",
+      "df_0_51"
+    ],
+    "type": "",
+    "domains": []
+  },
+  "df_0_46": {
+    "uri": "df_0_46",
+    "name": "df_0_46",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_47": {
+    "uri": "df_0_47",
+    "name": "df_0_47",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_48": {
+    "uri": "df_0_48",
+    "name": "df_0_48",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_49": {
+    "uri": "df_0_49",
+    "name": "df_0_49",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_50": {
+    "uri": "df_0_50",
+    "name": "df_0_50",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "df_0_51": {
+    "uri": "df_0_51",
+    "name": "df_0_51",
+    "class": "http://www.w3.org/2002/07/owl#Restriction",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://purl.org/dc/elements/1.1/contributor": {
+    "uri": "http://purl.org/dc/elements/1.1/contributor",
+    "name": "Contributor",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://purl.org/dc/elements/1.1/coverage": {
+    "uri": "http://purl.org/dc/elements/1.1/coverage",
+    "name": "Coverage",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://purl.org/dc/elements/1.1/creator": {
+    "uri": "http://purl.org/dc/elements/1.1/creator",
+    "name": "Creator",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://purl.org/dc/elements/1.1/date": {
+    "uri": "http://purl.org/dc/elements/1.1/date",
+    "name": "Date",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://purl.org/dc/elements/1.1/format": {
+    "uri": "http://purl.org/dc/elements/1.1/format",
+    "name": "Format",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://purl.org/dc/elements/1.1/identifier": {
+    "uri": "http://purl.org/dc/elements/1.1/identifier",
+    "name": "Identifier",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://purl.org/dc/elements/1.1/language": {
+    "uri": "http://purl.org/dc/elements/1.1/language",
+    "name": "Language",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://purl.org/dc/elements/1.1/publisher": {
+    "uri": "http://purl.org/dc/elements/1.1/publisher",
+    "name": "Publisher",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://purl.org/dc/elements/1.1/relation": {
+    "uri": "http://purl.org/dc/elements/1.1/relation",
+    "name": "Relation",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://purl.org/dc/elements/1.1/rights": {
+    "uri": "http://purl.org/dc/elements/1.1/rights",
+    "name": "Rights",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://purl.org/dc/elements/1.1/subject": {
+    "uri": "http://purl.org/dc/elements/1.1/subject",
+    "name": "Subject",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://purl.org/dc/elements/1.1/type": {
+    "uri": "http://purl.org/dc/elements/1.1/type",
+    "name": "Type",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Accession": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Accession",
+    "name": "http://www.opensilex.org/vocabulary/oeso#Accession",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#RootstockLot": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#RootstockLot",
+    "name": "http://www.opensilex.org/vocabulary/oeso#RootstockLot",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#ScionLot": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#ScionLot",
+    "name": "http://www.opensilex.org/vocabulary/oeso#ScionLot",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#SeedLot": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#SeedLot",
+    "name": "http://www.opensilex.org/vocabulary/oeso#SeedLot",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Variety": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Variety",
+    "name": "http://www.opensilex.org/vocabulary/oeso#Variety",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#Vitroplant": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#Vitroplant",
+    "name": "http://www.opensilex.org/vocabulary/oeso#Vitroplant",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.opensilex.org/vocabulary/oeso#FloodArea": {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#FloodArea",
+    "name": "Zone inondable",
+    "class": "owl:Thing",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  },
+  "http://www.w3.org/ns/prov#Organization": {
+    "uri": "http://www.w3.org/ns/prov#Organization",
+    "name": "Organization",
+    "class": "owl:Thing",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
+  }
+}

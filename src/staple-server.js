@@ -1,6 +1,7 @@
 var express = require('express');
 var graphqlHTTP = require('express-graphql');
 const staple = require("staple-api");
+const fs = require("fs-extra")
 
 const ontology = {
     file: "/home/heinrich/code/graphQL-test/src/service/ontology.ttl"
@@ -17,17 +18,13 @@ const config = {
             }
         }
     }
+
+const output_file = 'staple_sdl.txt'
 async function StapleDemo() {
     let stapleApi = await staple(ontology, config);
-
-    var app = express();
-    app.use('/graphql', graphqlHTTP({
-        schema: stapleApi.schema,
-        graphiql: true
-    }));
-
-    app.listen(4000);
-    console.log('Running a GraphQL API server at localhost:4000/graphql');
+    fs.createFileSync(output_file)
+    fs.writeFileSync(output_file, stapleApi.schemaSDL)
+    stapleApi.schemaSDL
 }
 
 StapleDemo()
