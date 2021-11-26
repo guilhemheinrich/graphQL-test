@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@graphql-tools/stitch": "^8.4.1",
-    "@neo4j/graphql": "^2.3.0",
+    "@neo4j/graphql": "^2.4.0",
     "@types/fs-extra": "^9.0.13",
     "apollo-server": "^3.4.0",
     "apollo-server-express": "^3.4.0",

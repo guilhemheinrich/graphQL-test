@@ -6,6 +6,33 @@ import { Neo4jGraphQL } from "@neo4j/graphql";
 dotenv.config()
 
 const typeDefs = gql`
+
+type Animal {
+  name: String!
+}
+
+
+type Dog {
+  name: String!
+  is_fed: Boolean
+}
+
+
+type Mutation {
+    createDog(name: String!): Dog
+        @cypher(
+            statement: """
+            CREATE (a:Dog:Animal {name: $name})
+            RETURN a
+            """
+        )
+}
+
+  type Superstar_Person {
+    name: String!
+    movies: [Movie] @relationship(type: "ACTED_IN", direction: OUT)
+  }
+
   type Movie {
     title: String!
     year: Int

@@ -2527,5 +2527,15 @@
     "inherits": [],
     "type": "",
     "domains": []
+  },
+  "toJSON": {
+    "uri": "toJSON",
+    "name": "toJSON",
+    "class": "owl:Thing",
+    "isConcept": false,
+    "properties": [],
+    "inherits": [],
+    "type": "",
+    "domains": []
   }
 }

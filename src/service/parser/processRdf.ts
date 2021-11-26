@@ -28,6 +28,31 @@ interface DatatypeProperty_Template {
 }
 
 type PorpertyTemplate = ObjectProperty_Template | DatatypeProperty_Template
+
+class Gql_Resource_Dictionary {
+    [uri: string] : Gql_Resource
+    constructor() {
+        const handler = {
+            get: function(target: Gql_Resource_Dictionary, prop: string) {
+                if (!Object.keys(target).includes(prop)) {
+                    target[prop] = {
+                        uri: prop,              // Initialize with the uri
+                        name: prop,             // Initialize with the uri
+                        class: "owl:Thing",
+                        isConcept: false,
+                        properties: [],
+                        inherits: [],
+                        type: '',
+                        domains: []
+                    }
+                } 
+                return Reflect.get(target, prop)
+
+            }
+        }
+        return new Proxy(this, handler)
+    }
+}
 export class Gql_Generator {
     /**
      * @description Readonly array storing relevant information for the post processing
@@ -36,9 +61,7 @@ export class Gql_Generator {
      * @memberof Gql_Generator
      */
     readonly prefixes_array: {prefix: string, uri: string}[] = []
-    readonly gql_resources_preprocesing: {
-        [resource_identifier: string]: Gql_Resource
-    } = {}
+    readonly gql_resources_preprocesing: Gql_Resource_Dictionary = new Gql_Resource_Dictionary()
 
     /**
      * Creates an instance of Gql_Generator.
@@ -98,25 +121,11 @@ export class Gql_Generator {
         let subject = quad.subject.value
         let predicate = quad.predicate.value
         let object = quad.object.value
-        const checkExistence = (uri: string) => { // Pour les classes
-            if (!Object.keys(this.gql_resources_preprocesing).includes(uri)) {
-                this.gql_resources_preprocesing[uri] = {
-                    uri: uri,
-                    name: uri,
-                    class: "owl:Thing",
-                    isConcept: false,
-                    properties: [],
-                    inherits: [],
-                    type: '',
-                    domains: []
-                }
-            }
-        }
 
         switch (this.prefixer(predicate)) {
             case "ns:type":
             case "a":
-                checkExistence(subject)
+                // checkExistence(subject)
                 switch (this.prefixer(object)) {
                     case "owl:Class":
                     case "rdfs:Class":
@@ -134,39 +143,37 @@ export class Gql_Generator {
             case "rdfs:subPropertyOf":
                 // Handle property inheritance
                 // TODO
-                // checkExistence(subject)
                 // this.gql_resources_preprocesing[subject].inherits.push(object)
                 break;
             case "rdfs:subClassOf":
                 // Handle class inheritance
-                checkExistence(subject)
                 this.gql_resources_preprocesing[subject].inherits.push(object)
                 break;
             case "rdfs:label":
                 // Handle __type of the class, or something else...
-                checkExistence(subject)
                 this.gql_resources_preprocesing[subject].name = object
                 break;
             case "rdfs:comment":
                 break;
             case "rdfs:range":
-                checkExistence(subject)
                 this.gql_resources_preprocesing[subject].type = object
                 break;
             case "rdfs:domain":
-                checkExistence(object)
                 this.gql_resources_preprocesing[object].properties.push(subject)
-                checkExistence(subject)
                 this.gql_resources_preprocesing[subject].domains.push(object)
             case "owl:onProperty":
                 break;
             case "owl:someValuesFrom":
+                console.log(`${subject} ${predicate} ${object}`)
                 break;
             case "owl:qualifiedCardinality":
+                console.log(`${subject} ${predicate} ${object}`)
                 break;
             case "owl:onDataRange":
+                console.log(`${subject} ${predicate} ${object}`)
                 break;
             case "owl:onClass":
+                console.log(`${subject} ${predicate} ${object}`)
                 break;
             default:
    
