@@ -1,32 +1,51 @@
 
-            type Germplasm {
+            interface Germplasm_I implements  {
+                fromInstitute:  @relationship(type: "oeso:fromInstitute", direction: OUT)
+            } 
+
+            type Germplasm implements Germplasm_I {
                 fromInstitute:  @relationship(type: "oeso:fromInstitute", direction: OUT)
             }            
             
-            type df_0_1 {
-                hasAdministrativeContact: Agent @relationship(type: "oeso:hasAdministrativeContact", direction: OUT)
-            }            
-            
-            type Variable {
+            interface Variable_I implements VariableBase_I {
+                hasCharacteristic: Characteristic @relationship(type: "oeso:hasCharacteristic", direction: OUT)
+                hasEntity: Entity @relationship(type: "oeso:hasEntity", direction: OUT)
+                hasMethod: Method @relationship(type: "oeso:hasMethod", direction: OUT)
+                hasUnit: Unit @relationship(type: "oeso:hasUnit", direction: OUT)
+            } 
+
+            type Variable implements Variable_I & VariableBase_I @node(additionalLabels: ["VariableBase"]){
                 hasCharacteristic: Characteristic @relationship(type: "oeso:hasCharacteristic", direction: OUT)
                 hasEntity: Entity @relationship(type: "oeso:hasEntity", direction: OUT)
                 hasMethod: Method @relationship(type: "oeso:hasMethod", direction: OUT)
                 hasUnit: Unit @relationship(type: "oeso:hasUnit", direction: OUT)
             }            
             
-            type df_0_4 {
-                hasCoordinator: Agent @relationship(type: "oeso:hasCoordinator", direction: OUT)
-            }            
-            
-            type Infrastructure {
+            interface Infrastructure_I implements ExperimentalCondition_I {
+                hasFacility: Facility @relationship(type: "oeso:hasFacility", direction: OUT)
+            } 
+
+            type Infrastructure implements Infrastructure_I & ExperimentalCondition_I @node(additionalLabels: ["ExperimentalCondition"]){
                 hasFacility: Facility @relationship(type: "oeso:hasFacility", direction: OUT)
             }            
             
-            type ScientificObject {
+            interface ScientificObject_I implements  {
+                
+            } 
+
+            type ScientificObject implements ScientificObject_I {
                 
             }            
             
-            type Experiment {
+            interface Experiment_I implements  {
+                hasInfrastructure: Infrastructure @relationship(type: "oeso:hasInfrastructure", direction: OUT)
+                hasProject: Project @relationship(type: "oeso:hasProject", direction: OUT)
+                hasScientificSupervisor: Agent @relationship(type: "oeso:hasScientificSupervisor", direction: OUT)
+                hasTechnicalSupervisor:  @relationship(type: "oeso:hasTechnicalSupervisor", direction: OUT)
+                studyEffectOf: Factor @relationship(type: "oeso:studyEffectOf", direction: OUT)
+            } 
+
+            type Experiment implements Experiment_I {
                 hasInfrastructure: Infrastructure @relationship(type: "oeso:hasInfrastructure", direction: OUT)
                 hasProject: Project @relationship(type: "oeso:hasProject", direction: OUT)
                 hasScientificSupervisor: Agent @relationship(type: "oeso:hasScientificSupervisor", direction: OUT)
@@ -34,312 +53,613 @@
                 studyEffectOf: Factor @relationship(type: "oeso:studyEffectOf", direction: OUT)
             }            
             
-            type df_0_7 {
-                hasScientificContact: Agent @relationship(type: "oeso:hasScientificContact", direction: OUT)
-            }            
-            
-            type SensingDevice {
+            interface SensingDevice_I implements Device_I & Equipement_I & ExperimentalCondition_I {
+                measures: Variable @relationship(type: "oeso:measures", direction: OUT)
+            } 
+
+            type SensingDevice implements SensingDevice_I & Device_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
                 measures: Variable @relationship(type: "oeso:measures", direction: OUT)
             }            
             
-            type Unit {
+            interface Unit_I implements VariableBase_I {
+                hasAlternativeSymbol: String
+                hasSymbol: String
+            } 
+
+            type Unit implements Unit_I & VariableBase_I @node(additionalLabels: ["VariableBase"]){
                 hasAlternativeSymbol: String
                 hasSymbol: String
             }            
             
-            type Project {
+            interface Project_I implements ExperimentalCondition_I {
+                hasObjective: String
+            } 
+
+            type Project implements Project_I & ExperimentalCondition_I @node(additionalLabels: ["ExperimentalCondition"]){
                 hasObjective: String
             }            
             
-            type Activity {
+            interface Activity_I implements  {
+                endedAtTime: String
+                startedAtTime: String
+            } 
+
+            type Activity implements Activity_I {
                 endedAtTime: String
                 startedAtTime: String
             }            
             
-            type Group {
+            interface Group_I implements  {
+                
+            } 
+
+            type Group implements Group_I {
                 
             }            
             
-            type GroupUserProfile {
+            interface GroupUserProfile_I implements  {
+                
+            } 
+
+            type GroupUserProfile implements GroupUserProfile_I {
                 
             }            
             
-            type Profile {
+            interface Profile_I implements  {
+                
+            } 
+
+            type Profile implements Profile_I {
                 
             }            
             
-            type Actuator {
+            interface Actuator_I implements Device_I & Equipement_I & ExperimentalCondition_I {
+                
+            } 
+
+            type Actuator implements Actuator_I & Device_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
                 
             }            
             
-            type AdministrativeDocument {
+            interface AdministrativeDocument_I implements Document_I {
+                
+            } 
+
+            type AdministrativeDocument implements AdministrativeDocument_I & Document_I @node(additionalLabels: ["Document"]){
                 
             }            
             
-            type Archive {
+            interface Archive_I implements Datafile_I {
+                
+            } 
+
+            type Archive implements Archive_I & Datafile_I @node(additionalLabels: ["Datafile"]){
                 
             }            
             
-            type Area {
+            interface Area_I implements Equipement_I & ExperimentalCondition_I {
+                
+            } 
+
+            type Area implements Area_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["Equipement","ExperimentalCondition"]){
                 
             }            
             
-            type Characteristic {
+            interface Characteristic_I implements VariableBase_I {
+                
+            } 
+
+            type Characteristic implements Characteristic_I & VariableBase_I @node(additionalLabels: ["VariableBase"]){
                 
             }            
             
-            type ClayeyArea {
+            interface ClayeyArea_I implements SoilArea_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
+                
+            } 
+
+            type ClayeyArea implements ClayeyArea_I & SoilArea_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["SoilArea","StructuralArea","Area","Equipement","ExperimentalCondition"]){
                 
             }            
             
-            type Compartment {
+            interface Compartment_I implements ProtectedStructure_I & Equipement_I & ExperimentalCondition_I {
+                
+            } 
+
+            type Compartment implements Compartment_I & ProtectedStructure_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["ProtectedStructure","Equipement","ExperimentalCondition"]){
                 
             }            
             
-            type Computation {
+            interface Computation_I implements Activity_I {
+                endedAtTime: String
+                startedAtTime: String
+            } 
+
+            type Computation implements Computation_I & Activity_I @node(additionalLabels: ["Activity"]){
                 endedAtTime: String
                 startedAtTime: String
             }            
             
-            type ControlLaw {
+            interface ControlLaw_I implements Device_I & Equipement_I & ExperimentalCondition_I {
+                
+            } 
+
+            type ControlLaw implements ControlLaw_I & Device_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
                 
             }            
             
-            type CultivatedLand {
+            interface CultivatedLand_I implements StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
+                
+            } 
+
+            type CultivatedLand implements CultivatedLand_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["StructuralArea","Area","Equipement","ExperimentalCondition"]){
                 
             }            
             
-            type Datafile {
+            interface Datafile_I implements  {
+                
+            } 
+
+            type Datafile implements Datafile_I {
                 
             }            
             
-            type Dataset {
+            interface Dataset_I implements Document_I {
+                
+            } 
+
+            type Dataset implements Dataset_I & Document_I @node(additionalLabels: ["Document"]){
                 
             }            
             
-            type Device {
+            interface Device_I implements Equipement_I & ExperimentalCondition_I {
+                
+            } 
+
+            type Device implements Device_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["Equipement","ExperimentalCondition"]){
                 
             }            
             
-            type Document {
+            interface Document_I implements  {
+                
+            } 
+
+            type Document implements Document_I {
                 
             }            
             
-            type ElaboratedVariable {
+            interface ElaboratedVariable_I implements Variable_I & VariableBase_I {
+                hasCharacteristic: Characteristic @relationship(type: "oeso:hasCharacteristic", direction: OUT)
+                hasEntity: Entity @relationship(type: "oeso:hasEntity", direction: OUT)
+                hasMethod: Method @relationship(type: "oeso:hasMethod", direction: OUT)
+                hasUnit: Unit @relationship(type: "oeso:hasUnit", direction: OUT)
+            } 
+
+            type ElaboratedVariable implements ElaboratedVariable_I & Variable_I & VariableBase_I @node(additionalLabels: ["Variable","VariableBase"]){
                 hasCharacteristic: Characteristic @relationship(type: "oeso:hasCharacteristic", direction: OUT)
                 hasEntity: Entity @relationship(type: "oeso:hasEntity", direction: OUT)
                 hasMethod: Method @relationship(type: "oeso:hasMethod", direction: OUT)
                 hasUnit: Unit @relationship(type: "oeso:hasUnit", direction: OUT)
             }            
             
-            type Entity {
+            interface Entity_I implements VariableBase_I {
+                
+            } 
+
+            type Entity implements Entity_I & VariableBase_I @node(additionalLabels: ["VariableBase"]){
                 
             }            
             
-            type Equipement {
+            interface Equipement_I implements ExperimentalCondition_I {
+                
+            } 
+
+            type Equipement implements Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["ExperimentalCondition"]){
                 
             }            
             
-            type ExperimentalCondition {
+            interface ExperimentalCondition_I implements  {
+                
+            } 
+
+            type ExperimentalCondition implements ExperimentalCondition_I {
                 
             }            
             
-            type ExperimentalProtocol {
+            interface ExperimentalProtocol_I implements TechnicalDocument_I & Document_I {
+                
+            } 
+
+            type ExperimentalProtocol implements ExperimentalProtocol_I & TechnicalDocument_I & Document_I @node(additionalLabels: ["TechnicalDocument","Document"]){
                 
             }            
             
-            type Facility {
+            interface Facility_I implements  {
+                
+            } 
+
+            type Facility implements Facility_I {
                 
             }            
             
-            type Factor {
+            interface Factor_I implements ExperimentalCondition_I {
+                
+            } 
+
+            type Factor implements Factor_I & ExperimentalCondition_I @node(additionalLabels: ["ExperimentalCondition"]){
                 
             }            
             
-            type FactorLevel {
+            interface FactorLevel_I implements ExperimentalCondition_I {
+                
+            } 
+
+            type FactorLevel implements FactorLevel_I & ExperimentalCondition_I @node(additionalLabels: ["ExperimentalCondition"]){
                 
             }            
             
-            type Field {
+            interface Field_I implements CultivatedLand_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
+                
+            } 
+
+            type Field implements Field_I & CultivatedLand_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["CultivatedLand","StructuralArea","Area","Equipement","ExperimentalCondition"]){
                 
             }            
             
-            type FloodableArea {
+            interface FloodableArea_I implements StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
+                
+            } 
+
+            type FloodableArea implements FloodableArea_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["StructuralArea","Area","Equipement","ExperimentalCondition"]){
                 
             }            
             
-            type ITKDocument {
+            interface ITKDocument_I implements TechnicalDocument_I & Document_I {
+                
+            } 
+
+            type ITKDocument implements ITKDocument_I & TechnicalDocument_I & Document_I @node(additionalLabels: ["TechnicalDocument","Document"]){
                 
             }            
             
-            type Image {
+            interface Image_I implements Datafile_I {
+                
+            } 
+
+            type Image implements Image_I & Datafile_I @node(additionalLabels: ["Datafile"]){
                 
             }            
             
-            type ImageAcquisition {
+            interface ImageAcquisition_I implements Activity_I {
+                endedAtTime: String
+                startedAtTime: String
+            } 
+
+            type ImageAcquisition implements ImageAcquisition_I & Activity_I @node(additionalLabels: ["Activity"]){
                 endedAtTime: String
                 startedAtTime: String
             }            
             
-            type ImageAnalysis {
+            interface ImageAnalysis_I implements Activity_I {
+                endedAtTime: String
+                startedAtTime: String
+            } 
+
+            type ImageAnalysis implements ImageAnalysis_I & Activity_I @node(additionalLabels: ["Activity"]){
                 endedAtTime: String
                 startedAtTime: String
             }            
             
-            type InfrastructureFacility {
+            interface InfrastructureFacility_I implements  {
+                
+            } 
+
+            type InfrastructureFacility implements InfrastructureFacility_I {
                 
             }            
             
-            type InfrastructureTeam {
+            interface InfrastructureTeam_I implements Group_I {
+                
+            } 
+
+            type InfrastructureTeam implements InfrastructureTeam_I & Group_I @node(additionalLabels: ["Group"]){
                 
             }            
             
-            type InteractiveResource {
+            interface InteractiveResource_I implements Document_I {
+                
+            } 
+
+            type InteractiveResource implements InteractiveResource_I & Document_I @node(additionalLabels: ["Document"]){
                 
             }            
             
-            type LimestoneArea {
+            interface LimestoneArea_I implements SoilArea_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
+                
+            } 
+
+            type LimestoneArea implements LimestoneArea_I & SoilArea_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["SoilArea","StructuralArea","Area","Equipement","ExperimentalCondition"]){
                 
             }            
             
-            type MeasuresAcquisition {
+            interface MeasuresAcquisition_I implements Activity_I {
+                endedAtTime: String
+                startedAtTime: String
+            } 
+
+            type MeasuresAcquisition implements MeasuresAcquisition_I & Activity_I @node(additionalLabels: ["Activity"]){
                 endedAtTime: String
                 startedAtTime: String
             }            
             
-            type Method {
+            interface Method_I implements VariableBase_I {
+                
+            } 
+
+            type Method implements Method_I & VariableBase_I @node(additionalLabels: ["VariableBase"]){
                 
             }            
             
-            type Multimedia {
+            interface Multimedia_I implements Document_I {
+                
+            } 
+
+            type Multimedia implements Multimedia_I & Document_I @node(additionalLabels: ["Document"]){
                 
             }            
             
-            type Operator {
+            interface Operator_I implements Agent_I {
+                
+            } 
+
+            type Operator implements Operator_I & Agent_I @node(additionalLabels: ["Agent"]){
                 
             }            
             
-            type Population {
+            interface Population_I implements ScientificObject_I {
+                
+            } 
+
+            type Population implements Population_I & ScientificObject_I @node(additionalLabels: ["ScientificObject"]){
                 
             }            
             
-            type ProtectedStructure {
+            interface ProtectedStructure_I implements Equipement_I & ExperimentalCondition_I {
+                
+            } 
+
+            type ProtectedStructure implements ProtectedStructure_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["Equipement","ExperimentalCondition"]){
                 
             }            
             
-            type Provenance {
+            interface Provenance_I implements  {
+                
+            } 
+
+            type Provenance implements Provenance_I {
                 
             }            
             
-            type Publication {
+            interface Publication_I implements ScientificDocument_I & Document_I {
+                
+            } 
+
+            type Publication implements Publication_I & ScientificDocument_I & Document_I @node(additionalLabels: ["ScientificDocument","Document"]){
                 
             }            
             
-            type RGBImage {
+            interface RGBImage_I implements Image_I & Datafile_I {
+                
+            } 
+
+            type RGBImage implements RGBImage_I & Image_I & Datafile_I @node(additionalLabels: ["Image","Datafile"]){
                 
             }            
             
-            type Report {
+            interface Report_I implements ScientificDocument_I & Document_I {
+                
+            } 
+
+            type Report implements Report_I & ScientificDocument_I & Document_I @node(additionalLabels: ["ScientificDocument","Document"]){
                 
             }            
             
-            type Sample {
+            interface Sample_I implements ScientificObject_I {
+                
+            } 
+
+            type Sample implements Sample_I & ScientificObject_I @node(additionalLabels: ["ScientificObject"]){
                 
             }            
             
-            type ScientificDocument {
+            interface ScientificDocument_I implements Document_I {
+                
+            } 
+
+            type ScientificDocument implements ScientificDocument_I & Document_I @node(additionalLabels: ["Document"]){
                 
             }            
             
-            type Shed {
+            interface Shed_I implements ProtectedStructure_I & Equipement_I & ExperimentalCondition_I {
+                
+            } 
+
+            type Shed implements Shed_I & ProtectedStructure_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["ProtectedStructure","Equipement","ExperimentalCondition"]){
                 
             }            
             
-            type ShinyAppPackage {
+            interface ShinyAppPackage_I implements InteractiveResource_I & Document_I {
+                
+            } 
+
+            type ShinyAppPackage implements ShinyAppPackage_I & InteractiveResource_I & Document_I @node(additionalLabels: ["InteractiveResource","Document"]){
                 
             }            
             
-            type Software {
+            interface Software_I implements Device_I & Equipement_I & ExperimentalCondition_I {
+                
+            } 
+
+            type Software implements Software_I & Device_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
                 
             }            
             
-            type SoilArea {
+            interface SoilArea_I implements StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
+                
+            } 
+
+            type SoilArea implements SoilArea_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["StructuralArea","Area","Equipement","ExperimentalCondition"]){
                 
             }            
             
-            type Species {
+            interface Species_I implements Germplasm_I {
+                fromInstitute:  @relationship(type: "oeso:fromInstitute", direction: OUT)
+            } 
+
+            type Species implements Species_I & Germplasm_I @node(additionalLabels: ["Germplasm"]){
                 fromInstitute:  @relationship(type: "oeso:fromInstitute", direction: OUT)
             }            
             
-            type Station {
+            interface Station_I implements Device_I & Equipement_I & ExperimentalCondition_I {
+                
+            } 
+
+            type Station implements Station_I & Device_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
                 
             }            
             
-            type StructuralArea {
+            interface StructuralArea_I implements Area_I & Equipement_I & ExperimentalCondition_I {
+                
+            } 
+
+            type StructuralArea implements StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["Area","Equipement","ExperimentalCondition"]){
                 
             }            
             
-            type TechnicalDocument {
+            interface TechnicalDocument_I implements Document_I {
+                
+            } 
+
+            type TechnicalDocument implements TechnicalDocument_I & Document_I @node(additionalLabels: ["Document"]){
                 
             }            
             
-            type TemporalArea {
+            interface TemporalArea_I implements Area_I & Equipement_I & ExperimentalCondition_I {
+                
+            } 
+
+            type TemporalArea implements TemporalArea_I & Area_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["Area","Equipement","ExperimentalCondition"]){
                 
             }            
             
-            type Trait {
+            interface Trait_I implements  {
+                
+            } 
+
+            type Trait implements Trait_I {
                 
             }            
             
-            type Treatment {
+            interface Treatment_I implements ExperimentalCondition_I {
+                
+            } 
+
+            type Treatment implements Treatment_I & ExperimentalCondition_I @node(additionalLabels: ["ExperimentalCondition"]){
                 
             }            
             
-            type VariableBase {
+            interface VariableBase_I implements  {
+                
+            } 
+
+            type VariableBase implements VariableBase_I {
                 
             }            
             
-            type VariablesGroup {
+            interface VariablesGroup_I implements Bag_I {
+                
+            } 
+
+            type VariablesGroup implements VariablesGroup_I & Bag_I @node(additionalLabels: ["Bag"]){
                 
             }            
             
-            type Vector {
+            interface Vector_I implements Device_I & Equipement_I & ExperimentalCondition_I {
+                
+            } 
+
+            type Vector implements Vector_I & Device_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
                 
             }            
             
-            type WebSite {
+            interface WebSite_I implements InteractiveResource_I & Document_I {
+                
+            } 
+
+            type WebSite implements WebSite_I & InteractiveResource_I & Document_I @node(additionalLabels: ["InteractiveResource","Document"]){
                 
             }            
             
-            type WindyArea {
+            interface WindyArea_I implements StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
+                
+            } 
+
+            type WindyArea implements WindyArea_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["StructuralArea","Area","Equipement","ExperimentalCondition"]){
                 
             }            
             
-            type Bag {
+            interface Bag_I implements  {
+                
+            } 
+
+            type Bag implements Bag_I {
                 
             }            
             
-            type DatatypeProperty {
+            interface DatatypeProperty_I implements  {
+                
+            } 
+
+            type DatatypeProperty implements DatatypeProperty_I {
                 
             }            
             
-            type Agent {
+            interface Agent_I implements  {
+                
+            } 
+
+            type Agent implements Agent_I {
                 
             }            
             
-            type Entity {
+            interface Entity_I implements  {
+                
+            } 
+
+            type Entity implements Entity_I {
                 
             }            
             
-            type Person {
+            interface Person_I implements Agent_I {
+                
+            } 
+
+            type Person implements Person_I & Agent_I @node(additionalLabels: ["Agent"]){
                 
             }            
             
-            type SoftwareAgent {
+            interface SoftwareAgent_I implements Agent_I {
+                
+            } 
+
+            type SoftwareAgent implements SoftwareAgent_I & Agent_I @node(additionalLabels: ["Agent"]){
                 
             }            
             
-            type Agent {
+            interface Agent_I implements  {
+                
+            } 
+
+            type Agent implements Agent_I {
                 
             }            
             

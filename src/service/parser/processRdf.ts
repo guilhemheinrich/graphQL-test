@@ -2,32 +2,46 @@ import { stringify } from "querystring"
 import { Quad } from "rdf-js"
 import PREFIXES from './prefix'
 import { gql } from "apollo-server-express";
-
+// import {PorpertyTemplate, Gql_Resource} from './Gql_Resource'
 export interface Gql_Resource {
-    uri: string,
+    // Graphql layer
+    uri: string,                
     name: string,
-
     isConcept: boolean
+    // RDF layer
+    isAbstract: boolean         // In case of a blank node
     class: string
-    // class specific
-    properties: string[]        // Liste des propriétés littérales
+    properties: string[]        // Liste des propriétés
     inherits: string[]          // gestion de la chaine d'héritage, non géré de base dans graphQL
-    // properties specific
+    
+    // Properties specific
     type: string,
     domains: string[]
+    // OWL restriction layer
+    isRequired: boolean
+    isList: boolean
+
 }
-interface ObjectProperty_Template {
-    type: "Object"
+export interface _Porperty_Template {
+    type: "Object" | "Litteral"
     name: string
     valuetype: string
+    // isRequired: boolean
+    // isList: boolean
 }
-interface DatatypeProperty_Template {
+
+export interface ObjectProperty_Template extends _Porperty_Template{
+    type: "Object"
+}
+
+export interface DatatypeProperty_Template extends _Porperty_Template{
     type: "Litteral"
     name: string
     valuetype: "String" | "Int" | "Float" | "Null" | "ID"
 }
 
-type PorpertyTemplate = ObjectProperty_Template | DatatypeProperty_Template
+export type PorpertyTemplate = ObjectProperty_Template | DatatypeProperty_Template
+
 
 class Gql_Resource_Dictionary {
     [uri: string] : Gql_Resource
@@ -40,10 +54,13 @@ class Gql_Resource_Dictionary {
                         name: prop,             // Initialize with the uri
                         class: "owl:Thing",
                         isConcept: false,
+                        isAbstract: false,
                         properties: [],
                         inherits: [],
+                        domains: [],
                         type: '',
-                        domains: []
+                        isRequired: false,
+                        isList: false
                     }
                 } 
                 return Reflect.get(target, prop)
@@ -103,6 +120,7 @@ export class Gql_Generator {
 
 
     getInheritedValues(uri:string, key: "properties"): Array<string[]>
+    getInheritedValues(uri:string, key: "inherits"): Array<string[]>
     getInheritedValues(uri: string, key: keyof Gql_Resource): Array< Gql_Resource[typeof key] > {
         let inherited_values: Array< Gql_Resource[typeof key] > = []
 
@@ -119,10 +137,19 @@ export class Gql_Generator {
     processRdf(quad: Quad) {
         // Some aliases
         let subject = quad.subject.value
+        let blank_node = (quad.subject.termType == "BlankNode")
         let predicate = quad.predicate.value
         let object = quad.object.value
-
+        this.gql_resources_preprocesing[subject].isAbstract = blank_node
         switch (this.prefixer(predicate)) {
+            //            _  __         __      _  __ 
+            //           | |/ _|       / /     | |/ _|
+            //    _ __ __| | |_ ___   / / __ __| | |_ 
+            //   | '__/ _` |  _/ __| / / '__/ _` |  _|
+            //   | | | (_| | | \__ \/ /| | | (_| | |  
+            //   |_|  \__,_|_| |___/_/ |_|  \__,_|_|  
+            //                                        
+            //     
             case "ns:type":
             case "a":
                 // checkExistence(subject)
@@ -130,51 +157,68 @@ export class Gql_Generator {
                     case "owl:Class":
                     case "rdfs:Class":
                         this.gql_resources_preprocesing[subject].isConcept = true
-                        break;
+                        break
                     case "owl:ObjectProperty":
                     case "owl:DatatypeProperty":
-                        break;
+                        break
                     case "owl:Restriction":
-                        break;
+                        break
+                    case "ns:Property":
+                        this.gql_resources_preprocesing[subject].isConcept = false
+                        break
                     default:
                 }
                 this.gql_resources_preprocesing[subject].class = object
-                break;
+                break
             case "rdfs:subPropertyOf":
                 // Handle property inheritance
                 // TODO
                 // this.gql_resources_preprocesing[subject].inherits.push(object)
-                break;
+                break
             case "rdfs:subClassOf":
                 // Handle class inheritance
-                this.gql_resources_preprocesing[subject].inherits.push(object)
-                break;
+                this.gql_resources_preprocesing[subject].inherits.push(object)               
+                break
             case "rdfs:label":
                 // Handle __type of the class, or something else...
                 this.gql_resources_preprocesing[subject].name = object
-                break;
+                break
             case "rdfs:comment":
-                break;
+                break
             case "rdfs:range":
                 this.gql_resources_preprocesing[subject].type = object
-                break;
+                break
             case "rdfs:domain":
                 this.gql_resources_preprocesing[object].properties.push(subject)
                 this.gql_resources_preprocesing[subject].domains.push(object)
+                break
+            //                  _ 
+            //                 | |
+            //     _____      _| |
+            //    / _ \ \ /\ / / |
+            //   | (_) \ V  V /| |
+            //    \___/ \_/\_/ |_|
+            //                    
+            // 
             case "owl:onProperty":
-                break;
+                break
             case "owl:someValuesFrom":
                 console.log(`${subject} ${predicate} ${object}`)
-                break;
+                break
             case "owl:qualifiedCardinality":
+                let cardinality = Number(object)
+                this.gql_resources_preprocesing[subject].isRequired = true 
+                if (cardinality > 1) {
+                    this.gql_resources_preprocesing[subject].isList = true
+                }
                 console.log(`${subject} ${predicate} ${object}`)
-                break;
+                break
             case "owl:onDataRange":
                 console.log(`${subject} ${predicate} ${object}`)
-                break;
+                break
             case "owl:onClass":
                 console.log(`${subject} ${predicate} ${object}`)
-                break;
+                break
             default:
    
         }
@@ -183,20 +227,25 @@ export class Gql_Generator {
     templater() {
         let out_template = ''
         // Iterate over all concept
-        let concepts = Object.values(this.gql_resources_preprocesing).filter(resource => resource.isConcept)
+        let concepts = Object.values(this.gql_resources_preprocesing).filter(resource => resource.isConcept && !resource.isAbstract)
+        // Separate the owl:restriction
+        let restrictions = Object.values(this.gql_resources_preprocesing).filter(resource => resource.isAbstract && this.prefixer(resource.class) == 'owl:Restriction')
+
+        // Helper function to parse the properties into correct gql
         const property_templater = (property: PorpertyTemplate) => {
             let out_string = this.shortener(property.name) + ': ' 
-            // Include other processing here, like array, required, etc...
             // Infered from an owl:Restriction for example
             if (property.type == "Litteral") {
                 out_string += property.valuetype
             } else {
-                // Only accept one domain right now
+                // Only accept one range right now
+                // Multiple domain/range should be handled via the use of Union (gql)
                 let range = property.valuetype
                 out_string += this.shortener(range) + ` @relationship(type: "${this.prefixer(property.name)}", direction: OUT)`
             }
             return out_string
         }
+
         for (let concept of concepts) {
             let shortname = this.shortener(concept.uri)
             let template_properties: PorpertyTemplate[] = []
@@ -210,19 +259,44 @@ export class Gql_Generator {
                                 name: property.uri,
                                 valuetype: "String"
                             })
-                            break;
+                            break
                         case "owl:ObjectProperty":
                             template_properties.push({
                                 type: "Object",
                                 name: property.uri,
                                 valuetype: property.type 
                             })
-                            break;
+                            break
                     }
                 }
             }
+            let set_inherits: Set<string> = new Set()
+            let set_restrictions_uri: string[]= restrictions.map((restriction) => restriction.uri)
+
+            for (let inheritance_mail of this.getInheritedValues(concept.uri, "inherits")) {
+                inheritance_mail.forEach((parent_uri) => {
+                    // Only write non - owl:Restriction inheritance
+                    if (!set_restrictions_uri.includes(parent_uri)) {
+                        set_inherits.add(this.shortener(parent_uri))
+                    }
+                })        
+            }
+            // Iterate over set_restrictions_uri to update properties
+            //    _            _       
+            //   | |          | |      
+            //   | |_ ___   __| | ___  
+            //   | __/ _ \ / _` |/ _ \ 
+            //   | || (_) | (_| | (_) |
+            //    \__\___/ \__,_|\___/ 
+            //                         
+            // 
+            let template_inherits = Array.from(set_inherits.values())
             let template = `
-            type ${shortname} {
+            interface ${shortname}_I implements ${template_inherits.map((short) => short + '_I').join(' & ')} {
+                ${template_properties.map((prop) => property_templater(prop)).join('\n                ')}
+            } 
+
+            type ${shortname} implements ${[shortname, ...template_inherits].map((short) => short + '_I').join(' & ')} ${ template_inherits.length > 0 ? '@node(additionalLabels: [' + template_inherits.map((short_uri) => '"' + short_uri + '"') + '])': ''}{
                 ${template_properties.map((prop) => property_templater(prop)).join('\n                ')}
             }            
             `

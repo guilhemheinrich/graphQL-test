@@ -7,31 +7,51 @@ dotenv.config()
 
 const typeDefs = gql`
 
-type Animal {
+# interface Person {
+# userId: ID!
+# name: String
+# }
+
+interface Animal_I {
   name: String!
 }
-
-
-type Dog {
+interface Dog_I implements Animal_I{
+  name: String!
+  is_fed: Boolean
+}
+interface Dobberman_I implements Dog_I & Animal_I{
+  name: String!
+  is_fed: Boolean
+  bite: Boolean
+}
+type Animal implements Animal_I {
+  name: String!
+}
+type Dog implements Dog_I & Animal_I @node(additionalLabels: ["Animal"]) {
   name: String!
   is_fed: Boolean
 }
 
+type Dobberman implements Dobberman_I & Dog_I & Animal_I @node(additionalLabels: ["Animal", "Dog"]){
+  name: String!
+  is_fed: Boolean
+  bite: Boolean
+} 
 
-type Mutation {
-    createDog(name: String!): Dog
-        @cypher(
-            statement: """
-            CREATE (a:Dog:Animal {name: $name})
-            RETURN a
-            """
-        )
-}
+# union Dog_Animals = Dog | Animal
+# type Mutation {
+#     updateOwlClassDog(ids: [ID]!): Dog
+#         @cypher(
+#             statement: """
+#               UPDATE (a {__id})
+#             """
+#         )
+# }
 
-  type Superstar_Person {
-    name: String!
-    movies: [Movie] @relationship(type: "ACTED_IN", direction: OUT)
-  }
+  # type Superstar_Person {
+  #   name: String!
+  #   movies: [Movie] @relationship(type: "ACTED_IN", direction: OUT)
+  # }
 
   type Movie {
     title: String!
