@@ -292,7 +292,7 @@ export class Gql_Generator {
             // 
             let template_inherits = Array.from(set_inherits.values())
             let template = `
-            interface ${shortname}_I implements ${template_inherits.map((short) => short + '_I').join(' & ')} {
+            interface ${shortname}_I${template_inherits.length > 0 ? "implements" : ""} ${template_inherits.map((short) => short + '_I').join(' & ')} {
                 ${template_properties.map((prop) => property_templater(prop)).join('\n                ')}
             } 
 

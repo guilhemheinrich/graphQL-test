@@ -1,5 +1,5 @@
 
-            interface Germplasm_I implements  {
+            interface Germplasm_I   {
                 fromInstitute:  @relationship(type: "oeso:fromInstitute", direction: OUT)
             } 
 
@@ -29,7 +29,7 @@
                 hasFacility: Facility @relationship(type: "oeso:hasFacility", direction: OUT)
             }            
             
-            interface ScientificObject_I implements  {
+            interface ScientificObject_I   {
                 
             } 
 
@@ -37,7 +37,7 @@
                 
             }            
             
-            interface Experiment_I implements  {
+            interface Experiment_I   {
                 hasInfrastructure: Infrastructure @relationship(type: "oeso:hasInfrastructure", direction: OUT)
                 hasProject: Project @relationship(type: "oeso:hasProject", direction: OUT)
                 hasScientificSupervisor: Agent @relationship(type: "oeso:hasScientificSupervisor", direction: OUT)
@@ -79,7 +79,7 @@
                 hasObjective: String
             }            
             
-            interface Activity_I implements  {
+            interface Activity_I   {
                 endedAtTime: String
                 startedAtTime: String
             } 
@@ -89,7 +89,7 @@
                 startedAtTime: String
             }            
             
-            interface Group_I implements  {
+            interface Group_I   {
                 
             } 
 
@@ -97,7 +97,7 @@
                 
             }            
             
-            interface GroupUserProfile_I implements  {
+            interface GroupUserProfile_I   {
                 
             } 
 
@@ -105,7 +105,7 @@
                 
             }            
             
-            interface Profile_I implements  {
+            interface Profile_I   {
                 
             } 
 
@@ -195,7 +195,7 @@
                 
             }            
             
-            interface Datafile_I implements  {
+            interface Datafile_I   {
                 
             } 
 
@@ -219,7 +219,7 @@
                 
             }            
             
-            interface Document_I implements  {
+            interface Document_I   {
                 
             } 
 
@@ -257,7 +257,7 @@
                 
             }            
             
-            interface ExperimentalCondition_I implements  {
+            interface ExperimentalCondition_I   {
                 
             } 
 
@@ -273,7 +273,7 @@
                 
             }            
             
-            interface Facility_I implements  {
+            interface Facility_I   {
                 
             } 
 
@@ -349,7 +349,7 @@
                 startedAtTime: String
             }            
             
-            interface InfrastructureFacility_I implements  {
+            interface InfrastructureFacility_I   {
                 
             } 
 
@@ -431,7 +431,7 @@
                 
             }            
             
-            interface Provenance_I implements  {
+            interface Provenance_I   {
                 
             } 
 
@@ -551,7 +551,7 @@
                 
             }            
             
-            interface Trait_I implements  {
+            interface Trait_I   {
                 
             } 
 
@@ -567,7 +567,7 @@
                 
             }            
             
-            interface VariableBase_I implements  {
+            interface VariableBase_I   {
                 
             } 
 
@@ -607,7 +607,7 @@
                 
             }            
             
-            interface Bag_I implements  {
+            interface Bag_I   {
                 
             } 
 
@@ -615,7 +615,7 @@
                 
             }            
             
-            interface DatatypeProperty_I implements  {
+            interface DatatypeProperty_I   {
                 
             } 
 
@@ -623,7 +623,7 @@
                 
             }            
             
-            interface Agent_I implements  {
+            interface Agent_I   {
                 
             } 
 
@@ -631,7 +631,7 @@
                 
             }            
             
-            interface Entity_I implements  {
+            interface Entity_I   {
                 
             } 
 
@@ -655,7 +655,7 @@
                 
             }            
             
-            interface Agent_I implements  {
+            interface Agent_I   {
                 
             } 
 
