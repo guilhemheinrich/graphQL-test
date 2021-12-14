@@ -1,13 +1,13 @@
 
-            interface Germplasm_I   {
-                fromInstitute:  @relationship(type: "oeso:fromInstitute", direction: OUT)
+            interface Germplasm_I  {
+                fromInstitute: Thing @relationship(type: "oeso:fromInstitute", direction: OUT)
             } 
 
             type Germplasm implements Germplasm_I {
-                fromInstitute:  @relationship(type: "oeso:fromInstitute", direction: OUT)
+                fromInstitute: Thing @relationship(type: "oeso:fromInstitute", direction: OUT)
             }            
             
-            interface Variable_I implements VariableBase_I {
+            interface Variable_Iimplements VariableBase_I {
                 hasCharacteristic: Characteristic @relationship(type: "oeso:hasCharacteristic", direction: OUT)
                 hasEntity: Entity @relationship(type: "oeso:hasEntity", direction: OUT)
                 hasMethod: Method @relationship(type: "oeso:hasMethod", direction: OUT)
@@ -21,7 +21,7 @@
                 hasUnit: Unit @relationship(type: "oeso:hasUnit", direction: OUT)
             }            
             
-            interface Infrastructure_I implements ExperimentalCondition_I {
+            interface Infrastructure_Iimplements ExperimentalCondition_I {
                 hasFacility: Facility @relationship(type: "oeso:hasFacility", direction: OUT)
             } 
 
@@ -29,7 +29,7 @@
                 hasFacility: Facility @relationship(type: "oeso:hasFacility", direction: OUT)
             }            
             
-            interface ScientificObject_I   {
+            interface ScientificObject_I  {
                 
             } 
 
@@ -37,11 +37,11 @@
                 
             }            
             
-            interface Experiment_I   {
+            interface Experiment_I  {
                 hasInfrastructure: Infrastructure @relationship(type: "oeso:hasInfrastructure", direction: OUT)
                 hasProject: Project @relationship(type: "oeso:hasProject", direction: OUT)
                 hasScientificSupervisor: Agent @relationship(type: "oeso:hasScientificSupervisor", direction: OUT)
-                hasTechnicalSupervisor:  @relationship(type: "oeso:hasTechnicalSupervisor", direction: OUT)
+                hasTechnicalSupervisor: Agent @relationship(type: "oeso:hasTechnicalSupervisor", direction: OUT)
                 studyEffectOf: Factor @relationship(type: "oeso:studyEffectOf", direction: OUT)
             } 
 
@@ -49,11 +49,11 @@
                 hasInfrastructure: Infrastructure @relationship(type: "oeso:hasInfrastructure", direction: OUT)
                 hasProject: Project @relationship(type: "oeso:hasProject", direction: OUT)
                 hasScientificSupervisor: Agent @relationship(type: "oeso:hasScientificSupervisor", direction: OUT)
-                hasTechnicalSupervisor:  @relationship(type: "oeso:hasTechnicalSupervisor", direction: OUT)
+                hasTechnicalSupervisor: Agent @relationship(type: "oeso:hasTechnicalSupervisor", direction: OUT)
                 studyEffectOf: Factor @relationship(type: "oeso:studyEffectOf", direction: OUT)
             }            
             
-            interface SensingDevice_I implements Device_I & Equipement_I & ExperimentalCondition_I {
+            interface SensingDevice_Iimplements Device_I & Equipement_I & ExperimentalCondition_I {
                 measures: Variable @relationship(type: "oeso:measures", direction: OUT)
             } 
 
@@ -61,7 +61,7 @@
                 measures: Variable @relationship(type: "oeso:measures", direction: OUT)
             }            
             
-            interface Unit_I implements VariableBase_I {
+            interface Unit_Iimplements VariableBase_I {
                 hasAlternativeSymbol: String
                 hasSymbol: String
             } 
@@ -71,7 +71,7 @@
                 hasSymbol: String
             }            
             
-            interface Project_I implements ExperimentalCondition_I {
+            interface Project_Iimplements ExperimentalCondition_I {
                 hasObjective: String
             } 
 
@@ -79,7 +79,7 @@
                 hasObjective: String
             }            
             
-            interface Activity_I   {
+            interface Activity_I  {
                 endedAtTime: String
                 startedAtTime: String
             } 
@@ -89,7 +89,7 @@
                 startedAtTime: String
             }            
             
-            interface Group_I   {
+            interface Group_I  {
                 
             } 
 
@@ -97,7 +97,7 @@
                 
             }            
             
-            interface GroupUserProfile_I   {
+            interface GroupUserProfile_I  {
                 
             } 
 
@@ -105,7 +105,7 @@
                 
             }            
             
-            interface Profile_I   {
+            interface Profile_I  {
                 
             } 
 
@@ -113,7 +113,7 @@
                 
             }            
             
-            interface Actuator_I implements Device_I & Equipement_I & ExperimentalCondition_I {
+            interface Actuator_Iimplements Device_I & Equipement_I & ExperimentalCondition_I {
                 
             } 
 
@@ -121,7 +121,7 @@
                 
             }            
             
-            interface AdministrativeDocument_I implements Document_I {
+            interface AdministrativeDocument_Iimplements Document_I {
                 
             } 
 
@@ -129,7 +129,7 @@
                 
             }            
             
-            interface Archive_I implements Datafile_I {
+            interface Archive_Iimplements Datafile_I {
                 
             } 
 
@@ -137,7 +137,7 @@
                 
             }            
             
-            interface Area_I implements Equipement_I & ExperimentalCondition_I {
+            interface Area_Iimplements Equipement_I & ExperimentalCondition_I {
                 
             } 
 
@@ -145,7 +145,7 @@
                 
             }            
             
-            interface Characteristic_I implements VariableBase_I {
+            interface Characteristic_Iimplements VariableBase_I {
                 
             } 
 
@@ -153,7 +153,7 @@
                 
             }            
             
-            interface ClayeyArea_I implements SoilArea_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
+            interface ClayeyArea_Iimplements SoilArea_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
                 
             } 
 
@@ -161,7 +161,7 @@
                 
             }            
             
-            interface Compartment_I implements ProtectedStructure_I & Equipement_I & ExperimentalCondition_I {
+            interface Compartment_Iimplements ProtectedStructure_I & Equipement_I & ExperimentalCondition_I {
                 
             } 
 
@@ -169,7 +169,7 @@
                 
             }            
             
-            interface Computation_I implements Activity_I {
+            interface Computation_Iimplements Activity_I {
                 endedAtTime: String
                 startedAtTime: String
             } 
@@ -179,7 +179,7 @@
                 startedAtTime: String
             }            
             
-            interface ControlLaw_I implements Device_I & Equipement_I & ExperimentalCondition_I {
+            interface ControlLaw_Iimplements Device_I & Equipement_I & ExperimentalCondition_I {
                 
             } 
 
@@ -187,7 +187,7 @@
                 
             }            
             
-            interface CultivatedLand_I implements StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
+            interface CultivatedLand_Iimplements StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
                 
             } 
 
@@ -195,7 +195,7 @@
                 
             }            
             
-            interface Datafile_I   {
+            interface Datafile_I  {
                 
             } 
 
@@ -203,7 +203,7 @@
                 
             }            
             
-            interface Dataset_I implements Document_I {
+            interface Dataset_Iimplements Document_I {
                 
             } 
 
@@ -211,7 +211,7 @@
                 
             }            
             
-            interface Device_I implements Equipement_I & ExperimentalCondition_I {
+            interface Device_Iimplements Equipement_I & ExperimentalCondition_I {
                 
             } 
 
@@ -219,7 +219,7 @@
                 
             }            
             
-            interface Document_I   {
+            interface Document_I  {
                 
             } 
 
@@ -227,7 +227,7 @@
                 
             }            
             
-            interface ElaboratedVariable_I implements Variable_I & VariableBase_I {
+            interface ElaboratedVariable_Iimplements Variable_I & VariableBase_I {
                 hasCharacteristic: Characteristic @relationship(type: "oeso:hasCharacteristic", direction: OUT)
                 hasEntity: Entity @relationship(type: "oeso:hasEntity", direction: OUT)
                 hasMethod: Method @relationship(type: "oeso:hasMethod", direction: OUT)
@@ -241,7 +241,7 @@
                 hasUnit: Unit @relationship(type: "oeso:hasUnit", direction: OUT)
             }            
             
-            interface Entity_I implements VariableBase_I {
+            interface Entity_Iimplements VariableBase_I {
                 
             } 
 
@@ -249,7 +249,7 @@
                 
             }            
             
-            interface Equipement_I implements ExperimentalCondition_I {
+            interface Equipement_Iimplements ExperimentalCondition_I {
                 
             } 
 
@@ -257,7 +257,7 @@
                 
             }            
             
-            interface ExperimentalCondition_I   {
+            interface ExperimentalCondition_I  {
                 
             } 
 
@@ -265,7 +265,7 @@
                 
             }            
             
-            interface ExperimentalProtocol_I implements TechnicalDocument_I & Document_I {
+            interface ExperimentalProtocol_Iimplements TechnicalDocument_I & Document_I {
                 
             } 
 
@@ -273,7 +273,7 @@
                 
             }            
             
-            interface Facility_I   {
+            interface Facility_I  {
                 
             } 
 
@@ -281,7 +281,7 @@
                 
             }            
             
-            interface Factor_I implements ExperimentalCondition_I {
+            interface Factor_Iimplements ExperimentalCondition_I {
                 
             } 
 
@@ -289,7 +289,7 @@
                 
             }            
             
-            interface FactorLevel_I implements ExperimentalCondition_I {
+            interface FactorLevel_Iimplements ExperimentalCondition_I {
                 
             } 
 
@@ -297,7 +297,7 @@
                 
             }            
             
-            interface Field_I implements CultivatedLand_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
+            interface Field_Iimplements CultivatedLand_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
                 
             } 
 
@@ -305,7 +305,7 @@
                 
             }            
             
-            interface FloodableArea_I implements StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
+            interface FloodableArea_Iimplements StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
                 
             } 
 
@@ -313,7 +313,7 @@
                 
             }            
             
-            interface ITKDocument_I implements TechnicalDocument_I & Document_I {
+            interface ITKDocument_Iimplements TechnicalDocument_I & Document_I {
                 
             } 
 
@@ -321,7 +321,7 @@
                 
             }            
             
-            interface Image_I implements Datafile_I {
+            interface Image_Iimplements Datafile_I {
                 
             } 
 
@@ -329,7 +329,7 @@
                 
             }            
             
-            interface ImageAcquisition_I implements Activity_I {
+            interface ImageAcquisition_Iimplements Activity_I {
                 endedAtTime: String
                 startedAtTime: String
             } 
@@ -339,7 +339,7 @@
                 startedAtTime: String
             }            
             
-            interface ImageAnalysis_I implements Activity_I {
+            interface ImageAnalysis_Iimplements Activity_I {
                 endedAtTime: String
                 startedAtTime: String
             } 
@@ -349,7 +349,7 @@
                 startedAtTime: String
             }            
             
-            interface InfrastructureFacility_I   {
+            interface InfrastructureFacility_I  {
                 
             } 
 
@@ -357,7 +357,7 @@
                 
             }            
             
-            interface InfrastructureTeam_I implements Group_I {
+            interface InfrastructureTeam_Iimplements Group_I {
                 
             } 
 
@@ -365,7 +365,7 @@
                 
             }            
             
-            interface InteractiveResource_I implements Document_I {
+            interface InteractiveResource_Iimplements Document_I {
                 
             } 
 
@@ -373,7 +373,7 @@
                 
             }            
             
-            interface LimestoneArea_I implements SoilArea_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
+            interface LimestoneArea_Iimplements SoilArea_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
                 
             } 
 
@@ -381,7 +381,7 @@
                 
             }            
             
-            interface MeasuresAcquisition_I implements Activity_I {
+            interface MeasuresAcquisition_Iimplements Activity_I {
                 endedAtTime: String
                 startedAtTime: String
             } 
@@ -391,7 +391,7 @@
                 startedAtTime: String
             }            
             
-            interface Method_I implements VariableBase_I {
+            interface Method_Iimplements VariableBase_I {
                 
             } 
 
@@ -399,7 +399,7 @@
                 
             }            
             
-            interface Multimedia_I implements Document_I {
+            interface Multimedia_Iimplements Document_I {
                 
             } 
 
@@ -407,7 +407,7 @@
                 
             }            
             
-            interface Operator_I implements Agent_I {
+            interface Operator_Iimplements Agent_I {
                 
             } 
 
@@ -415,7 +415,7 @@
                 
             }            
             
-            interface Population_I implements ScientificObject_I {
+            interface Population_Iimplements ScientificObject_I {
                 
             } 
 
@@ -423,7 +423,7 @@
                 
             }            
             
-            interface ProtectedStructure_I implements Equipement_I & ExperimentalCondition_I {
+            interface ProtectedStructure_Iimplements Equipement_I & ExperimentalCondition_I {
                 
             } 
 
@@ -431,7 +431,7 @@
                 
             }            
             
-            interface Provenance_I   {
+            interface Provenance_I  {
                 
             } 
 
@@ -439,7 +439,7 @@
                 
             }            
             
-            interface Publication_I implements ScientificDocument_I & Document_I {
+            interface Publication_Iimplements ScientificDocument_I & Document_I {
                 
             } 
 
@@ -447,7 +447,7 @@
                 
             }            
             
-            interface RGBImage_I implements Image_I & Datafile_I {
+            interface RGBImage_Iimplements Image_I & Datafile_I {
                 
             } 
 
@@ -455,7 +455,7 @@
                 
             }            
             
-            interface Report_I implements ScientificDocument_I & Document_I {
+            interface Report_Iimplements ScientificDocument_I & Document_I {
                 
             } 
 
@@ -463,7 +463,7 @@
                 
             }            
             
-            interface Sample_I implements ScientificObject_I {
+            interface Sample_Iimplements ScientificObject_I {
                 
             } 
 
@@ -471,7 +471,7 @@
                 
             }            
             
-            interface ScientificDocument_I implements Document_I {
+            interface ScientificDocument_Iimplements Document_I {
                 
             } 
 
@@ -479,7 +479,7 @@
                 
             }            
             
-            interface Shed_I implements ProtectedStructure_I & Equipement_I & ExperimentalCondition_I {
+            interface Shed_Iimplements ProtectedStructure_I & Equipement_I & ExperimentalCondition_I {
                 
             } 
 
@@ -487,7 +487,7 @@
                 
             }            
             
-            interface ShinyAppPackage_I implements InteractiveResource_I & Document_I {
+            interface ShinyAppPackage_Iimplements InteractiveResource_I & Document_I {
                 
             } 
 
@@ -495,7 +495,7 @@
                 
             }            
             
-            interface Software_I implements Device_I & Equipement_I & ExperimentalCondition_I {
+            interface Software_Iimplements Device_I & Equipement_I & ExperimentalCondition_I {
                 
             } 
 
@@ -503,7 +503,7 @@
                 
             }            
             
-            interface SoilArea_I implements StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
+            interface SoilArea_Iimplements StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
                 
             } 
 
@@ -511,15 +511,15 @@
                 
             }            
             
-            interface Species_I implements Germplasm_I {
-                fromInstitute:  @relationship(type: "oeso:fromInstitute", direction: OUT)
+            interface Species_Iimplements Germplasm_I {
+                fromInstitute: Thing @relationship(type: "oeso:fromInstitute", direction: OUT)
             } 
 
             type Species implements Species_I & Germplasm_I @node(additionalLabels: ["Germplasm"]){
-                fromInstitute:  @relationship(type: "oeso:fromInstitute", direction: OUT)
+                fromInstitute: Thing @relationship(type: "oeso:fromInstitute", direction: OUT)
             }            
             
-            interface Station_I implements Device_I & Equipement_I & ExperimentalCondition_I {
+            interface Station_Iimplements Device_I & Equipement_I & ExperimentalCondition_I {
                 
             } 
 
@@ -527,7 +527,7 @@
                 
             }            
             
-            interface StructuralArea_I implements Area_I & Equipement_I & ExperimentalCondition_I {
+            interface StructuralArea_Iimplements Area_I & Equipement_I & ExperimentalCondition_I {
                 
             } 
 
@@ -535,7 +535,7 @@
                 
             }            
             
-            interface TechnicalDocument_I implements Document_I {
+            interface TechnicalDocument_Iimplements Document_I {
                 
             } 
 
@@ -543,7 +543,7 @@
                 
             }            
             
-            interface TemporalArea_I implements Area_I & Equipement_I & ExperimentalCondition_I {
+            interface TemporalArea_Iimplements Area_I & Equipement_I & ExperimentalCondition_I {
                 
             } 
 
@@ -551,7 +551,7 @@
                 
             }            
             
-            interface Trait_I   {
+            interface Trait_I  {
                 
             } 
 
@@ -559,7 +559,7 @@
                 
             }            
             
-            interface Treatment_I implements ExperimentalCondition_I {
+            interface Treatment_Iimplements ExperimentalCondition_I {
                 
             } 
 
@@ -567,7 +567,7 @@
                 
             }            
             
-            interface VariableBase_I   {
+            interface VariableBase_I  {
                 
             } 
 
@@ -575,7 +575,7 @@
                 
             }            
             
-            interface VariablesGroup_I implements Bag_I {
+            interface VariablesGroup_Iimplements Bag_I {
                 
             } 
 
@@ -583,7 +583,7 @@
                 
             }            
             
-            interface Vector_I implements Device_I & Equipement_I & ExperimentalCondition_I {
+            interface Vector_Iimplements Device_I & Equipement_I & ExperimentalCondition_I {
                 
             } 
 
@@ -591,7 +591,7 @@
                 
             }            
             
-            interface WebSite_I implements InteractiveResource_I & Document_I {
+            interface WebSite_Iimplements InteractiveResource_I & Document_I {
                 
             } 
 
@@ -599,7 +599,7 @@
                 
             }            
             
-            interface WindyArea_I implements StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
+            interface WindyArea_Iimplements StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
                 
             } 
 
@@ -607,7 +607,7 @@
                 
             }            
             
-            interface Bag_I   {
+            interface Bag_I  {
                 
             } 
 
@@ -615,7 +615,7 @@
                 
             }            
             
-            interface DatatypeProperty_I   {
+            interface DatatypeProperty_I  {
                 
             } 
 
@@ -623,7 +623,7 @@
                 
             }            
             
-            interface Agent_I   {
+            interface Agent_I  {
                 
             } 
 
@@ -631,7 +631,7 @@
                 
             }            
             
-            interface Entity_I   {
+            interface Entity_I  {
                 
             } 
 
@@ -639,7 +639,7 @@
                 
             }            
             
-            interface Person_I implements Agent_I {
+            interface Person_Iimplements Agent_I {
                 
             } 
 
@@ -647,7 +647,7 @@
                 
             }            
             
-            interface SoftwareAgent_I implements Agent_I {
+            interface SoftwareAgent_Iimplements Agent_I {
                 
             } 
 
@@ -655,7 +655,7 @@
                 
             }            
             
-            interface Agent_I   {
+            interface Agent_I  {
                 
             } 
 

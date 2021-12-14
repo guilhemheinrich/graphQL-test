@@ -121,6 +121,7 @@ export class Gql_Generator {
 
     getInheritedValues(uri:string, key: "properties"): Array<string[]>
     getInheritedValues(uri:string, key: "inherits"): Array<string[]>
+    getInheritedValues(uri:string, key: "type"): Array<string>
     getInheritedValues(uri: string, key: keyof Gql_Resource): Array< Gql_Resource[typeof key] > {
         let inherited_values: Array< Gql_Resource[typeof key] > = []
 
@@ -173,7 +174,7 @@ export class Gql_Generator {
             case "rdfs:subPropertyOf":
                 // Handle property inheritance
                 // TODO
-                // this.gql_resources_preprocesing[subject].inherits.push(object)
+                this.gql_resources_preprocesing[subject].inherits.push(object)
                 break
             case "rdfs:subClassOf":
                 // Handle class inheritance
@@ -240,6 +241,7 @@ export class Gql_Generator {
             } else {
                 // Only accept one range right now
                 // Multiple domain/range should be handled via the use of Union (gql)
+                // Need checking property inheritance
                 let range = property.valuetype
                 out_string += this.shortener(range) + ` @relationship(type: "${this.prefixer(property.name)}", direction: OUT)`
             }
@@ -261,10 +263,14 @@ export class Gql_Generator {
                             })
                             break
                         case "owl:ObjectProperty":
+                            let valueType = this.getInheritedValues(property.uri, "type").filter((type_string) => !!type_string)
+                            if (valueType.length == 0) {
+                                valueType.push("Thing")
+                            }
                             template_properties.push({
                                 type: "Object",
                                 name: property.uri,
-                                valuetype: property.type 
+                                valuetype: valueType[0]
                             })
                             break
                     }

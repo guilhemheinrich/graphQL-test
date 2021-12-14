@@ -136,7 +136,9 @@
     "isConcept": false,
     "isAbstract": false,
     "properties": [],
-    "inherits": [],
+    "inherits": [
+      "http://www.w3.org/2002/07/owl#topDataProperty"
+    ],
     "domains": [],
     "type": "",
     "isRequired": false,
@@ -188,7 +190,9 @@
     "isConcept": false,
     "isAbstract": false,
     "properties": [],
-    "inherits": [],
+    "inherits": [
+      "http://www.w3.org/2002/07/owl#topObjectProperty"
+    ],
     "domains": [],
     "type": "",
     "isRequired": false,
@@ -214,7 +218,9 @@
     "isConcept": false,
     "isAbstract": false,
     "properties": [],
-    "inherits": [],
+    "inherits": [
+      "http://www.w3.org/2002/07/owl#topObjectProperty"
+    ],
     "domains": [],
     "type": "",
     "isRequired": false,
@@ -283,7 +289,9 @@
     "isConcept": false,
     "isAbstract": false,
     "properties": [],
-    "inherits": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#hasContact"
+    ],
     "domains": [
       "df_0_1"
     ],
@@ -339,7 +347,9 @@
     "isConcept": false,
     "isAbstract": false,
     "properties": [],
-    "inherits": [],
+    "inherits": [
+      "http://www.w3.org/2002/07/owl#topObjectProperty"
+    ],
     "domains": [],
     "type": "http://www.opensilex.org/vocabulary/oeso#Document",
     "isRequired": false,
@@ -391,7 +401,9 @@
     "isConcept": false,
     "isAbstract": false,
     "properties": [],
-    "inherits": [],
+    "inherits": [
+      "http://www.w3.org/2002/07/owl#topObjectProperty"
+    ],
     "domains": [],
     "type": "http://xmlns.com/foaf/0.1/Agent",
     "isRequired": false,
@@ -404,7 +416,9 @@
     "isConcept": false,
     "isAbstract": false,
     "properties": [],
-    "inherits": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#hasContact"
+    ],
     "domains": [
       "df_0_4"
     ],
@@ -518,7 +532,9 @@
     "isConcept": false,
     "isAbstract": false,
     "properties": [],
-    "inherits": [],
+    "inherits": [
+      "http://www.w3.org/2002/07/owl#topObjectProperty"
+    ],
     "domains": [
       "http://www.opensilex.org/vocabulary/oeso#Infrastructure"
     ],
@@ -550,7 +566,9 @@
     "isConcept": false,
     "isAbstract": false,
     "properties": [],
-    "inherits": [],
+    "inherits": [
+      "http://www.w3.org/2002/07/owl#topObjectProperty"
+    ],
     "domains": [
       "http://www.opensilex.org/vocabulary/oeso#ScientificObject"
     ],
@@ -589,7 +607,9 @@
     "isConcept": false,
     "isAbstract": false,
     "properties": [],
-    "inherits": [],
+    "inherits": [
+      "http://www.w3.org/2002/07/owl#topObjectProperty"
+    ],
     "domains": [
       "http://www.opensilex.org/vocabulary/oeso#ScientificObject"
     ],
@@ -711,7 +731,9 @@
     "isConcept": false,
     "isAbstract": false,
     "properties": [],
-    "inherits": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#hasContact"
+    ],
     "domains": [
       "df_0_7"
     ],
@@ -767,7 +789,9 @@
     "isConcept": false,
     "isAbstract": false,
     "properties": [],
-    "inherits": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#hasContact"
+    ],
     "domains": [
       "http://www.opensilex.org/vocabulary/oeso#Experiment"
     ],
@@ -795,7 +819,9 @@
     "isConcept": false,
     "isAbstract": false,
     "properties": [],
-    "inherits": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#hasContact"
+    ],
     "domains": [
       "http://www.opensilex.org/vocabulary/oeso#Experiment"
     ],
@@ -884,7 +910,9 @@
     "isConcept": false,
     "isAbstract": false,
     "properties": [],
-    "inherits": [],
+    "inherits": [
+      "http://www.w3.org/2002/07/owl#topObjectProperty"
+    ],
     "domains": [],
     "type": "",
     "isRequired": false,
@@ -925,7 +953,9 @@
     "isConcept": false,
     "isAbstract": false,
     "properties": [],
-    "inherits": [],
+    "inherits": [
+      "http://www.w3.org/2002/07/owl#topObjectProperty"
+    ],
     "domains": [],
     "type": "",
     "isRequired": false,
@@ -951,7 +981,9 @@
     "isConcept": false,
     "isAbstract": false,
     "properties": [],
-    "inherits": [],
+    "inherits": [
+      "http://www.w3.org/2002/07/owl#topObjectProperty"
+    ],
     "domains": [],
     "type": "",
     "isRequired": false,
@@ -1003,7 +1035,9 @@
     "isConcept": false,
     "isAbstract": false,
     "properties": [],
-    "inherits": [],
+    "inherits": [
+      "http://www.w3.org/2002/07/owl#topDataProperty"
+    ],
     "domains": [],
     "type": "",
     "isRequired": false,
@@ -1042,7 +1076,9 @@
     "isConcept": false,
     "isAbstract": false,
     "properties": [],
-    "inherits": [],
+    "inherits": [
+      "http://www.w3.org/2002/07/owl#topDataProperty"
+    ],
     "domains": [],
     "type": "",
     "isRequired": false,
@@ -1241,7 +1277,9 @@
     "isConcept": false,
     "isAbstract": false,
     "properties": [],
-    "inherits": [],
+    "inherits": [
+      "http://www.opensilex.org/vocabulary/oeso#hasDate"
+    ],
     "domains": [],
     "type": "",
     "isRequired": false,
@@ -1345,7 +1383,9 @@
     "isConcept": false,
     "isAbstract": false,
     "properties": [],
-    "inherits": [],
+    "inherits": [
+      "http://www.w3.org/2002/07/owl#topDataProperty"
+    ],
     "domains": [
       "http://www.w3.org/ns/prov#Activity"
     ],
@@ -1376,7 +1416,9 @@
     "isConcept": false,
     "isAbstract": false,
     "properties": [],
-    "inherits": [],
+    "inherits": [
+      "http://www.w3.org/2002/07/owl#topDataProperty"
+    ],
     "domains": [
       "http://www.w3.org/ns/prov#Activity"
     ],
