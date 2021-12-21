@@ -5,7 +5,7 @@ import { gql } from "apollo-server-express";
 // import {PorpertyTemplate, Gql_Resource} from './Gql_Resource'
 export interface Gql_Resource {
     // Graphql layer
-    uri: string,                
+    class_uri: string,                
     name: string,
     isConcept: boolean
     // RDF layer
@@ -50,8 +50,8 @@ class Gql_Resource_Dictionary {
             get: function(target: Gql_Resource_Dictionary, prop: string) {
                 if (!Object.keys(target).includes(prop)) {
                     target[prop] = {
-                        uri: prop,              // Initialize with the uri
-                        name: prop,             // Initialize with the uri
+                        class_uri: prop,                // Initialize with the uri
+                        name: prop,                     // Initialize with the uri
                         class: "owl:Thing",
                         isConcept: false,
                         isAbstract: false,
@@ -249,27 +249,27 @@ export class Gql_Generator {
         }
 
         for (let concept of concepts) {
-            let shortname = this.shortener(concept.uri)
+            let shortname = this.shortener(concept.class_uri)
             let template_properties: PorpertyTemplate[] = []
-            for (let properties of this.getInheritedValues(concept.uri, "properties"))  {
+            for (let properties of this.getInheritedValues(concept.class_uri, "properties"))  {
                 for (let property_uri of properties) {
                     let property = this.gql_resources_preprocesing[property_uri]
                     switch (this.prefixer(property.class)) {
                         case "owl:DatatypeProperty":
                             template_properties.push({
                                 type: "Litteral",
-                                name: property.uri,
+                                name: property.class_uri,
                                 valuetype: "String"
                             })
                             break
                         case "owl:ObjectProperty":
-                            let valueType = this.getInheritedValues(property.uri, "type").filter((type_string) => !!type_string)
+                            let valueType = this.getInheritedValues(property.class_uri, "type").filter((type_string) => !!type_string)
                             if (valueType.length == 0) {
                                 valueType.push("Thing")
                             }
                             template_properties.push({
                                 type: "Object",
-                                name: property.uri,
+                                name: property.class_uri,
                                 valuetype: valueType[0]
                             })
                             break
@@ -277,9 +277,9 @@ export class Gql_Generator {
                 }
             }
             let set_inherits: Set<string> = new Set()
-            let set_restrictions_uri: string[]= restrictions.map((restriction) => restriction.uri)
+            let set_restrictions_uri: string[]= restrictions.map((restriction) => restriction.class_uri)
 
-            for (let inheritance_mail of this.getInheritedValues(concept.uri, "inherits")) {
+            for (let inheritance_mail of this.getInheritedValues(concept.class_uri, "inherits")) {
                 inheritance_mail.forEach((parent_uri) => {
                     // Only write non - owl:Restriction inheritance
                     if (!set_restrictions_uri.includes(parent_uri)) {
@@ -297,15 +297,25 @@ export class Gql_Generator {
             //                         
             // 
             let template_inherits = Array.from(set_inherits.values())
-            let template = `
-            interface ${shortname}_I${template_inherits.length > 0 ? "implements" : ""} ${template_inherits.map((short) => short + '_I').join(' & ')} {
-                ${template_properties.map((prop) => property_templater(prop)).join('\n                ')}
-            } 
+            // let template = `
+            // interface ${shortname}_I${template_inherits.length > 0 ? " implements" : ""} ${template_inherits.map((short) => short + '_I').join(' & ')} {
+            //     URI: ID!
+            //     ${template_properties.map((prop) => property_templater(prop)).join('\n                ')}
+            // } 
 
-            type ${shortname} implements ${[shortname, ...template_inherits].map((short) => short + '_I').join(' & ')} ${ template_inherits.length > 0 ? '@node(additionalLabels: [' + template_inherits.map((short_uri) => '"' + short_uri + '"') + '])': ''}{
+            // type ${shortname} implements ${[shortname, ...template_inherits].map((short) => short + '_I').join(' & ')} ${ template_inherits.length > 0 ? '@node(additionalLabels: [' + template_inherits.map((short_uri) => '"' + short_uri + '"') + '])': ''}{
+            //     URI: ID!
+            //     ${template_properties.map((prop) => property_templater(prop)).join('\n                ')}
+            // }            
+            // `
+
+            let template = `
+            type ${shortname} ${ template_inherits.length > 0 ? '@node(additionalLabels: [' + template_inherits.map((short_uri) => '"' + short_uri + '"') + '])': ''}{
+                URI: ID!
                 ${template_properties.map((prop) => property_templater(prop)).join('\n                ')}
             }            
             `
+
             out_template += template
         }
         return out_template
@@ -316,94 +326,3 @@ export const RDF_parser = new Gql_Generator(PREFIXES)
 export default RDF_parser
 
 
-
-// rdfs:subClassOf rdfs:Resource .
-
-// rdfs:subClassOf a rdf:Property ;
-// 	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
-// 	rdfs:label "subClassOf" ;
-// 	rdfs:comment "The subject is a subclass of a class." ;
-// 	rdfs:range rdfs:Class ;
-// 	rdfs:domain rdfs:Class .
-
-// rdfs:subPropertyOf a rdf:Property ;
-// 	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
-// 	rdfs:label "subPropertyOf" ;
-// 	rdfs:comment "The subject is a subproperty of a property." ;
-// 	rdfs:range rdf:Property ;
-// 	rdfs:domain rdf:Property .
-
-// rdfs:comment a rdf:Property ;
-// 	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
-// 	rdfs:label "comment" ;
-// 	rdfs:comment "A description of the subject resource." ;
-// 	rdfs:domain rdfs:Resource ;
-// 	rdfs:range rdfs:Literal .
-
-// rdfs:label a rdf:Property ;
-// 	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
-// 	rdfs:label "label" ;
-// 	rdfs:comment "A human-readable name for the subject." ;
-// 	rdfs:domain rdfs:Resource ;
-// 	rdfs:range rdfs:Literal .
-
-// rdfs:domain a rdf:Property ;
-// 	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
-// 	rdfs:label "domain" ;
-// 	rdfs:comment "A domain of the subject property." ;
-// 	rdfs:range rdfs:Class ;
-// 	rdfs:domain rdf:Property .
-
-// rdfs:range a rdf:Property ;
-// 	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
-// 	rdfs:label "range" ;
-// 	rdfs:comment "A range of the subject property." ;
-// 	rdfs:range rdfs:Class ;
-// 	rdfs:domain rdf:Property .
-
-// rdfs:seeAlso a rdf:Property ;
-// 	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
-// 	rdfs:label "seeAlso" ;
-// 	rdfs:comment "Further information about the subject resource." ;
-// 	rdfs:range rdfs:Resource ;
-// 	rdfs:domain rdfs:Resource .
-
-// rdfs:isDefinedBy a rdf:Property ;
-// 	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
-// 	rdfs:subPropertyOf rdfs:seeAlso ;
-// 	rdfs:label "isDefinedBy" ;
-// 	rdfs:comment "The defininition of the subject resource." ;
-// 	rdfs:range rdfs:Resource ;
-// 	rdfs:domain rdfs:Resource .
-
-// rdfs:Literal a rdfs:Class ;
-// 	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
-// 	rdfs:label "Literal" ;
-// 	rdfs:comment "The class of literal values, eg. textual strings and integers." ;
-// 	rdfs:subClassOf rdfs:Resource .
-
-// rdfs:Container a rdfs:Class ;
-// 	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
-// 	rdfs:label "Container" ;
-// 	rdfs:subClassOf rdfs:Resource ;
-// 	rdfs:comment "The class of RDF containers." .
-
-// rdfs:ContainerMembershipProperty a rdfs:Class ;
-// 	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
-// 	rdfs:label "ContainerMembershipProperty" ;
-// 	rdfs:comment """The class of container membership properties, rdf:_1, rdf:_2, ...,
-//                     all of which are sub-properties of 'member'.""" ;
-// 	rdfs:subClassOf rdf:Property .
-
-// rdfs:member a rdf:Property ;
-// 	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
-// 	rdfs:label "member" ;
-// 	rdfs:comment "A member of the subject resource." ;
-// 	rdfs:domain rdfs:Resource ;
-// 	rdfs:range rdfs:Resource .
-
-// rdfs:Datatype a rdfs:Class ;
-// 	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
-// 	rdfs:label "Datatype" ;
-// 	rdfs:comment "The class of RDF datatypes." ;
-// 	rdfs:subClassOf rdfs:Class .

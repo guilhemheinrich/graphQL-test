@@ -1,665 +1,832 @@
 
-            interface Germplasm_I  {
-                fromInstitute: Thing @relationship(type: "oeso:fromInstitute", direction: OUT)
-            } 
-
-            type Germplasm implements Germplasm_I {
+            type Thing {
+                URI: ID!
+            }
+            
+            type TimeState @node(additionalLabels: ["State"]){
+                URI: ID!
+                sourceDate: String
+                sourceDateEnd: String
+                sourceDateStart: String
+            }            
+            
+            type Annotation {
+                URI: ID!
+                motivatedBy: Motivation @relationship(type: "http://www.w3.org/ns/oa#motivatedBy", direction: OUT)
+                styledBy: Style @relationship(type: "http://www.w3.org/ns/oa#styledBy", direction: OUT)
+                bodyValue: String
+            }            
+            
+            type SpecificResource @node(additionalLabels: ["ResourceSelection"]){
+                URI: ID!
+                styleClass: String
+                hasSelector: Selector @relationship(type: "http://www.w3.org/ns/oa#hasSelector", direction: OUT)
+                hasState: State @relationship(type: "http://www.w3.org/ns/oa#hasState", direction: OUT)
+            }            
+            
+            type ResourceSelection {
+                URI: ID!
+                hasSelector: Selector @relationship(type: "http://www.w3.org/ns/oa#hasSelector", direction: OUT)
+                hasState: State @relationship(type: "http://www.w3.org/ns/oa#hasState", direction: OUT)
+            }            
+            
+            type RangeSelector @node(additionalLabels: ["Selector"]){
+                URI: ID!
+                hasEndSelector: Selector @relationship(type: "http://www.w3.org/ns/oa#hasEndSelector", direction: OUT)
+                hasStartSelector: Selector @relationship(type: "http://www.w3.org/ns/oa#hasStartSelector", direction: OUT)
+            }            
+            
+            type Resource {
+                URI: ID!
+                
+            }            
+            
+            type Concept {
+                URI: ID!
+                
+            }            
+            
+            type OrderedCollection {
+                URI: ID!
+                
+            }            
+            
+            type Choice @node(additionalLabels: ["OrderedCollection"]){
+                URI: ID!
+                
+            }            
+            
+            type CssSelector @node(additionalLabels: ["Selector"]){
+                URI: ID!
+                
+            }            
+            
+            type CssStyle @node(additionalLabels: ["Style"]){
+                URI: ID!
+                
+            }            
+            
+            type DataPositionSelector @node(additionalLabels: ["Selector"]){
+                URI: ID!
+                
+            }            
+            
+            type Direction {
+                URI: ID!
+                
+            }            
+            
+            type FragmentSelector @node(additionalLabels: ["Selector"]){
+                URI: ID!
+                
+            }            
+            
+            type HttpRequestState @node(additionalLabels: ["State"]){
+                URI: ID!
+                
+            }            
+            
+            type Motivation @node(additionalLabels: ["Concept"]){
+                URI: ID!
+                
+            }            
+            
+            type Selector {
+                URI: ID!
+                
+            }            
+            
+            type State {
+                URI: ID!
+                
+            }            
+            
+            type Style {
+                URI: ID!
+                
+            }            
+            
+            type SvgSelector @node(additionalLabels: ["Selector"]){
+                URI: ID!
+                
+            }            
+            
+            type TextPositionSelector @node(additionalLabels: ["Selector"]){
+                URI: ID!
+                
+            }            
+            
+            type TextQuoteSelector @node(additionalLabels: ["Selector"]){
+                URI: ID!
+                
+            }            
+            
+            type TextualBody {
+                URI: ID!
+                
+            }            
+            
+            type XPathSelector @node(additionalLabels: ["Selector"]){
+                URI: ID!
+                
+            }            
+            
+            type Person {
+                URI: ID!
+                
+            }            
+            
+            type Association @node(additionalLabels: ["FacilityManagement","Event"]){
+                URI: ID!
+                associatedWith: Thing @relationship(type: "http://www.opensilex.org/vocabulary/oeev#associatedWith", direction: OUT)
+                concerns: String
+                isInstant: String
+            }            
+            
+            type AssociationWithScientificObject @node(additionalLabels: ["Association","FacilityManagement","Event"]){
+                URI: ID!
+                associatedWithScientificObject: ScientificObject @relationship(type: "http://www.opensilex.org/vocabulary/oeev#associatedWithScientificObject", direction: OUT)
+                associatedWith: Thing @relationship(type: "http://www.opensilex.org/vocabulary/oeev#associatedWith", direction: OUT)
+                concerns: String
+                isInstant: String
+            }            
+            
+            type AssociationWithSensingDevice @node(additionalLabels: ["Association","FacilityManagement","Event"]){
+                URI: ID!
+                associatedWithSensingDevice: SensingDevice @relationship(type: "http://www.opensilex.org/vocabulary/oeev#associatedWithSensingDevice", direction: OUT)
+                associatedWith: Thing @relationship(type: "http://www.opensilex.org/vocabulary/oeev#associatedWith", direction: OUT)
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Event {
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type PestAttack @node(additionalLabels: ["Incident","Trouble","Event"]){
+                URI: ID!
+                hasPest: Pest @relationship(type: "http://www.opensilex.org/vocabulary/oeev#hasPest", direction: OUT)
+                concerns: String
+                isInstant: String
+            }            
+            
+            type AddingProduct @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type AutomaticCalibration @node(additionalLabels: ["Calibration","FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Breakdown @node(additionalLabels: ["Trouble","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Calibration @node(additionalLabels: ["FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Checking @node(additionalLabels: ["Servicing","Operability","FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Cleaning @node(additionalLabels: ["Servicing","Operability","FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Clipping @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type CorrectiveMaintenance @node(additionalLabels: ["Operability","FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type CurativeTreatment @node(additionalLabels: ["Treatment","ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Detasseling @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Dysfunction @node(additionalLabels: ["Trouble","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type EvolutiveMaintenance @node(additionalLabels: ["Operability","FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type FacilityManagement @node(additionalLabels: ["Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Fertilization @node(additionalLabels: ["AddingProduct","ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Harvesting @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Incident @node(additionalLabels: ["Trouble","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Installation @node(additionalLabels: ["FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Irrigation @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Loading @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Lodging @node(additionalLabels: ["Incident","Trouble","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type ManualCalibration @node(additionalLabels: ["Calibration","FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Move @node(additionalLabels: ["Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Operability @node(additionalLabels: ["FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Pest {
+                URI: ID!
+                
+            }            
+            
+            type Flooding @node(additionalLabels: ["Incident","Trouble","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type PhenologyScoring @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type PotFall @node(additionalLabels: ["Incident","Trouble","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Potting @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type PreventativeTreatment @node(additionalLabels: ["Treatment","ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Reparation @node(additionalLabels: ["CorrectiveMaintenance","Operability","FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Restart @node(additionalLabels: ["FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Sampling @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type ScientificObjectManagement @node(additionalLabels: ["Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Servicing @node(additionalLabels: ["Operability","FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Sowing @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Staking @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Start @node(additionalLabels: ["FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Stop @node(additionalLabels: ["FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type StuckPlant @node(additionalLabels: ["Incident","Trouble","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Thinning @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Treatment @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Trouble @node(additionalLabels: ["Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Germplasm {
+                URI: ID!
                 fromInstitute: Thing @relationship(type: "oeso:fromInstitute", direction: OUT)
             }            
             
-            interface Variable_Iimplements VariableBase_I {
+            type Variable @node(additionalLabels: ["VariableBase"]){
+                URI: ID!
                 hasCharacteristic: Characteristic @relationship(type: "oeso:hasCharacteristic", direction: OUT)
                 hasEntity: Entity @relationship(type: "oeso:hasEntity", direction: OUT)
-                hasMethod: Method @relationship(type: "oeso:hasMethod", direction: OUT)
-                hasUnit: Unit @relationship(type: "oeso:hasUnit", direction: OUT)
-            } 
-
-            type Variable implements Variable_I & VariableBase_I @node(additionalLabels: ["VariableBase"]){
-                hasCharacteristic: Characteristic @relationship(type: "oeso:hasCharacteristic", direction: OUT)
-                hasEntity: Entity @relationship(type: "oeso:hasEntity", direction: OUT)
+                hasEntityOfInterest: EntityOfInterest @relationship(type: "oeso:hasEntityOfInterest", direction: OUT)
                 hasMethod: Method @relationship(type: "oeso:hasMethod", direction: OUT)
                 hasUnit: Unit @relationship(type: "oeso:hasUnit", direction: OUT)
             }            
             
-            interface Infrastructure_Iimplements ExperimentalCondition_I {
-                hasFacility: Facility @relationship(type: "oeso:hasFacility", direction: OUT)
-            } 
-
-            type Infrastructure implements Infrastructure_I & ExperimentalCondition_I @node(additionalLabels: ["ExperimentalCondition"]){
-                hasFacility: Facility @relationship(type: "oeso:hasFacility", direction: OUT)
+            type ScientificObject {
+                URI: ID!
+                hasCreationDate: String
+                hasDestructionDate: String
             }            
             
-            interface ScientificObject_I  {
-                
-            } 
-
-            type ScientificObject implements ScientificObject_I {
-                
-            }            
-            
-            interface Experiment_I  {
-                hasInfrastructure: Infrastructure @relationship(type: "oeso:hasInfrastructure", direction: OUT)
+            type Experiment {
+                URI: ID!
                 hasProject: Project @relationship(type: "oeso:hasProject", direction: OUT)
                 hasScientificSupervisor: Agent @relationship(type: "oeso:hasScientificSupervisor", direction: OUT)
                 hasTechnicalSupervisor: Agent @relationship(type: "oeso:hasTechnicalSupervisor", direction: OUT)
                 studyEffectOf: Factor @relationship(type: "oeso:studyEffectOf", direction: OUT)
-            } 
-
-            type Experiment implements Experiment_I {
-                hasInfrastructure: Infrastructure @relationship(type: "oeso:hasInfrastructure", direction: OUT)
-                hasProject: Project @relationship(type: "oeso:hasProject", direction: OUT)
-                hasScientificSupervisor: Agent @relationship(type: "oeso:hasScientificSupervisor", direction: OUT)
-                hasTechnicalSupervisor: Agent @relationship(type: "oeso:hasTechnicalSupervisor", direction: OUT)
-                studyEffectOf: Factor @relationship(type: "oeso:studyEffectOf", direction: OUT)
+                usesFacility: Facility @relationship(type: "oeso:usesFacility", direction: OUT)
+                usesOrganization: Organization @relationship(type: "oeso:usesOrganization", direction: OUT)
             }            
             
-            interface SensingDevice_Iimplements Device_I & Equipement_I & ExperimentalCondition_I {
-                measures: Variable @relationship(type: "oeso:measures", direction: OUT)
-            } 
-
-            type SensingDevice implements SensingDevice_I & Device_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
+            type Organization @node(additionalLabels: ["ExperimentalCondition"]){
+                URI: ID!
+                isHosted: Facility @relationship(type: "oeso:isHosted", direction: OUT)
+            }            
+            
+            type SensingDevice @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
+                URI: ID!
                 measures: Variable @relationship(type: "oeso:measures", direction: OUT)
             }            
             
-            interface Unit_Iimplements VariableBase_I {
-                hasAlternativeSymbol: String
-                hasSymbol: String
-            } 
-
-            type Unit implements Unit_I & VariableBase_I @node(additionalLabels: ["VariableBase"]){
+            type Unit @node(additionalLabels: ["VariableBase"]){
+                URI: ID!
                 hasAlternativeSymbol: String
                 hasSymbol: String
             }            
             
-            interface Project_Iimplements ExperimentalCondition_I {
-                hasObjective: String
-            } 
-
-            type Project implements Project_I & ExperimentalCondition_I @node(additionalLabels: ["ExperimentalCondition"]){
+            type Project @node(additionalLabels: ["ExperimentalCondition"]){
+                URI: ID!
                 hasObjective: String
             }            
             
-            interface Activity_I  {
-                endedAtTime: String
-                startedAtTime: String
-            } 
-
-            type Activity implements Activity_I {
+            type Activity {
+                URI: ID!
                 endedAtTime: String
                 startedAtTime: String
             }            
             
-            interface Group_I  {
-                
-            } 
-
-            type Group implements Group_I {
+            type Group {
+                URI: ID!
                 
             }            
             
-            interface GroupUserProfile_I  {
-                
-            } 
-
-            type GroupUserProfile implements GroupUserProfile_I {
+            type GroupUserProfile {
+                URI: ID!
                 
             }            
             
-            interface Profile_I  {
-                
-            } 
-
-            type Profile implements Profile_I {
+            type Profile {
+                URI: ID!
                 
             }            
             
-            interface Actuator_Iimplements Device_I & Equipement_I & ExperimentalCondition_I {
-                
-            } 
-
-            type Actuator implements Actuator_I & Device_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
+            type Actuator @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
+                URI: ID!
                 
             }            
             
-            interface AdministrativeDocument_Iimplements Document_I {
-                
-            } 
-
-            type AdministrativeDocument implements AdministrativeDocument_I & Document_I @node(additionalLabels: ["Document"]){
+            type AdministrativeDocument @node(additionalLabels: ["Document"]){
+                URI: ID!
                 
             }            
             
-            interface Archive_Iimplements Datafile_I {
-                
-            } 
-
-            type Archive implements Archive_I & Datafile_I @node(additionalLabels: ["Datafile"]){
+            type Archive @node(additionalLabels: ["Datafile"]){
+                URI: ID!
                 
             }            
             
-            interface Area_Iimplements Equipement_I & ExperimentalCondition_I {
-                
-            } 
-
-            type Area implements Area_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["Equipement","ExperimentalCondition"]){
+            type Area @node(additionalLabels: ["Equipement","ExperimentalCondition"]){
+                URI: ID!
                 
             }            
             
-            interface Characteristic_Iimplements VariableBase_I {
-                
-            } 
-
-            type Characteristic implements Characteristic_I & VariableBase_I @node(additionalLabels: ["VariableBase"]){
+            type Characteristic @node(additionalLabels: ["VariableBase"]){
+                URI: ID!
                 
             }            
             
-            interface ClayeyArea_Iimplements SoilArea_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
-                
-            } 
-
-            type ClayeyArea implements ClayeyArea_I & SoilArea_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["SoilArea","StructuralArea","Area","Equipement","ExperimentalCondition"]){
+            type ClayeyArea @node(additionalLabels: ["SoilArea","StructuralArea","Area","Equipement","ExperimentalCondition"]){
+                URI: ID!
                 
             }            
             
-            interface Compartment_Iimplements ProtectedStructure_I & Equipement_I & ExperimentalCondition_I {
-                
-            } 
-
-            type Compartment implements Compartment_I & ProtectedStructure_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["ProtectedStructure","Equipement","ExperimentalCondition"]){
+            type Compartment @node(additionalLabels: ["Facility"]){
+                URI: ID!
                 
             }            
             
-            interface Computation_Iimplements Activity_I {
-                endedAtTime: String
-                startedAtTime: String
-            } 
-
-            type Computation implements Computation_I & Activity_I @node(additionalLabels: ["Activity"]){
+            type Computation @node(additionalLabels: ["Activity"]){
+                URI: ID!
                 endedAtTime: String
                 startedAtTime: String
             }            
             
-            interface ControlLaw_Iimplements Device_I & Equipement_I & ExperimentalCondition_I {
-                
-            } 
-
-            type ControlLaw implements ControlLaw_I & Device_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
+            type ControlLaw @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
+                URI: ID!
                 
             }            
             
-            interface CultivatedLand_Iimplements StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
-                
-            } 
-
-            type CultivatedLand implements CultivatedLand_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["StructuralArea","Area","Equipement","ExperimentalCondition"]){
+            type Datafile {
+                URI: ID!
                 
             }            
             
-            interface Datafile_I  {
-                
-            } 
-
-            type Datafile implements Datafile_I {
+            type Dataset @node(additionalLabels: ["Document"]){
+                URI: ID!
                 
             }            
             
-            interface Dataset_Iimplements Document_I {
-                
-            } 
-
-            type Dataset implements Dataset_I & Document_I @node(additionalLabels: ["Document"]){
+            type Device @node(additionalLabels: ["Equipement","ExperimentalCondition"]){
+                URI: ID!
                 
             }            
             
-            interface Device_Iimplements Equipement_I & ExperimentalCondition_I {
-                
-            } 
-
-            type Device implements Device_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["Equipement","ExperimentalCondition"]){
+            type Document {
+                URI: ID!
                 
             }            
             
-            interface Document_I  {
-                
-            } 
-
-            type Document implements Document_I {
-                
-            }            
-            
-            interface ElaboratedVariable_Iimplements Variable_I & VariableBase_I {
+            type ElaboratedVariable @node(additionalLabels: ["Variable","VariableBase"]){
+                URI: ID!
                 hasCharacteristic: Characteristic @relationship(type: "oeso:hasCharacteristic", direction: OUT)
                 hasEntity: Entity @relationship(type: "oeso:hasEntity", direction: OUT)
-                hasMethod: Method @relationship(type: "oeso:hasMethod", direction: OUT)
-                hasUnit: Unit @relationship(type: "oeso:hasUnit", direction: OUT)
-            } 
-
-            type ElaboratedVariable implements ElaboratedVariable_I & Variable_I & VariableBase_I @node(additionalLabels: ["Variable","VariableBase"]){
-                hasCharacteristic: Characteristic @relationship(type: "oeso:hasCharacteristic", direction: OUT)
-                hasEntity: Entity @relationship(type: "oeso:hasEntity", direction: OUT)
+                hasEntityOfInterest: EntityOfInterest @relationship(type: "oeso:hasEntityOfInterest", direction: OUT)
                 hasMethod: Method @relationship(type: "oeso:hasMethod", direction: OUT)
                 hasUnit: Unit @relationship(type: "oeso:hasUnit", direction: OUT)
             }            
             
-            interface Entity_Iimplements VariableBase_I {
-                
-            } 
-
-            type Entity implements Entity_I & VariableBase_I @node(additionalLabels: ["VariableBase"]){
+            type Entity @node(additionalLabels: ["VariableBase"]){
+                URI: ID!
                 
             }            
             
-            interface Equipement_Iimplements ExperimentalCondition_I {
-                
-            } 
-
-            type Equipement implements Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["ExperimentalCondition"]){
+            type EntityOfInterest @node(additionalLabels: ["VariableBase"]){
+                URI: ID!
                 
             }            
             
-            interface ExperimentalCondition_I  {
-                
-            } 
-
-            type ExperimentalCondition implements ExperimentalCondition_I {
+            type Equipement @node(additionalLabels: ["ExperimentalCondition"]){
+                URI: ID!
                 
             }            
             
-            interface ExperimentalProtocol_Iimplements TechnicalDocument_I & Document_I {
-                
-            } 
-
-            type ExperimentalProtocol implements ExperimentalProtocol_I & TechnicalDocument_I & Document_I @node(additionalLabels: ["TechnicalDocument","Document"]){
+            type ExperimentalCondition {
+                URI: ID!
                 
             }            
             
-            interface Facility_I  {
-                
-            } 
-
-            type Facility implements Facility_I {
+            type ExperimentalProtocol @node(additionalLabels: ["TechnicalDocument","Document"]){
+                URI: ID!
                 
             }            
             
-            interface Factor_Iimplements ExperimentalCondition_I {
-                
-            } 
-
-            type Factor implements Factor_I & ExperimentalCondition_I @node(additionalLabels: ["ExperimentalCondition"]){
+            type ExperimentalUnit @node(additionalLabels: ["Organization","ExperimentalCondition"]){
+                URI: ID!
+                isHosted: Facility @relationship(type: "oeso:isHosted", direction: OUT)
+            }            
+            
+            type Facility {
+                URI: ID!
                 
             }            
             
-            interface FactorLevel_Iimplements ExperimentalCondition_I {
-                
-            } 
-
-            type FactorLevel implements FactorLevel_I & ExperimentalCondition_I @node(additionalLabels: ["ExperimentalCondition"]){
+            type Factor @node(additionalLabels: ["ExperimentalCondition"]){
+                URI: ID!
                 
             }            
             
-            interface Field_Iimplements CultivatedLand_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
-                
-            } 
-
-            type Field implements Field_I & CultivatedLand_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["CultivatedLand","StructuralArea","Area","Equipement","ExperimentalCondition"]){
+            type FactorLevel @node(additionalLabels: ["ExperimentalCondition"]){
+                URI: ID!
                 
             }            
             
-            interface FloodableArea_Iimplements StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
-                
-            } 
-
-            type FloodableArea implements FloodableArea_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["StructuralArea","Area","Equipement","ExperimentalCondition"]){
+            type FloodableArea @node(additionalLabels: ["StructuralArea","Area","Equipement","ExperimentalCondition"]){
+                URI: ID!
                 
             }            
             
-            interface ITKDocument_Iimplements TechnicalDocument_I & Document_I {
-                
-            } 
-
-            type ITKDocument implements ITKDocument_I & TechnicalDocument_I & Document_I @node(additionalLabels: ["TechnicalDocument","Document"]){
+            type ITKDocument @node(additionalLabels: ["TechnicalDocument","Document"]){
+                URI: ID!
                 
             }            
             
-            interface Image_Iimplements Datafile_I {
-                
-            } 
-
-            type Image implements Image_I & Datafile_I @node(additionalLabels: ["Datafile"]){
+            type Image @node(additionalLabels: ["Datafile"]){
+                URI: ID!
                 
             }            
             
-            interface ImageAcquisition_Iimplements Activity_I {
-                endedAtTime: String
-                startedAtTime: String
-            } 
-
-            type ImageAcquisition implements ImageAcquisition_I & Activity_I @node(additionalLabels: ["Activity"]){
+            type ImageAcquisition @node(additionalLabels: ["Activity"]){
+                URI: ID!
                 endedAtTime: String
                 startedAtTime: String
             }            
             
-            interface ImageAnalysis_Iimplements Activity_I {
-                endedAtTime: String
-                startedAtTime: String
-            } 
-
-            type ImageAnalysis implements ImageAnalysis_I & Activity_I @node(additionalLabels: ["Activity"]){
+            type ImageAnalysis @node(additionalLabels: ["Activity"]){
+                URI: ID!
                 endedAtTime: String
                 startedAtTime: String
             }            
             
-            interface InfrastructureFacility_I  {
-                
-            } 
-
-            type InfrastructureFacility implements InfrastructureFacility_I {
+            type Installation @node(additionalLabels: ["Organization","ExperimentalCondition"]){
+                URI: ID!
+                isHosted: Facility @relationship(type: "oeso:isHosted", direction: OUT)
+            }            
+            
+            type InteractiveResource @node(additionalLabels: ["Document"]){
+                URI: ID!
                 
             }            
             
-            interface InfrastructureTeam_Iimplements Group_I {
-                
-            } 
-
-            type InfrastructureTeam implements InfrastructureTeam_I & Group_I @node(additionalLabels: ["Group"]){
+            type LimestoneArea @node(additionalLabels: ["SoilArea","StructuralArea","Area","Equipement","ExperimentalCondition"]){
+                URI: ID!
                 
             }            
             
-            interface InteractiveResource_Iimplements Document_I {
-                
-            } 
-
-            type InteractiveResource implements InteractiveResource_I & Document_I @node(additionalLabels: ["Document"]){
-                
-            }            
-            
-            interface LimestoneArea_Iimplements SoilArea_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
-                
-            } 
-
-            type LimestoneArea implements LimestoneArea_I & SoilArea_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["SoilArea","StructuralArea","Area","Equipement","ExperimentalCondition"]){
-                
-            }            
-            
-            interface MeasuresAcquisition_Iimplements Activity_I {
-                endedAtTime: String
-                startedAtTime: String
-            } 
-
-            type MeasuresAcquisition implements MeasuresAcquisition_I & Activity_I @node(additionalLabels: ["Activity"]){
+            type MeasuresAcquisition @node(additionalLabels: ["Activity"]){
+                URI: ID!
                 endedAtTime: String
                 startedAtTime: String
             }            
             
-            interface Method_Iimplements VariableBase_I {
-                
-            } 
-
-            type Method implements Method_I & VariableBase_I @node(additionalLabels: ["VariableBase"]){
+            type Method @node(additionalLabels: ["VariableBase"]){
+                URI: ID!
                 
             }            
             
-            interface Multimedia_Iimplements Document_I {
-                
-            } 
-
-            type Multimedia implements Multimedia_I & Document_I @node(additionalLabels: ["Document"]){
+            type Multimedia @node(additionalLabels: ["Document"]){
+                URI: ID!
                 
             }            
             
-            interface Operator_Iimplements Agent_I {
-                
-            } 
-
-            type Operator implements Operator_I & Agent_I @node(additionalLabels: ["Agent"]){
+            type Operator @node(additionalLabels: ["Agent"]){
+                URI: ID!
                 
             }            
             
-            interface Population_Iimplements ScientificObject_I {
-                
-            } 
-
-            type Population implements Population_I & ScientificObject_I @node(additionalLabels: ["ScientificObject"]){
+            type Population @node(additionalLabels: ["ScientificObject"]){
+                URI: ID!
+                hasCreationDate: String
+                hasDestructionDate: String
+            }            
+            
+            type Provenance {
+                URI: ID!
                 
             }            
             
-            interface ProtectedStructure_Iimplements Equipement_I & ExperimentalCondition_I {
-                
-            } 
-
-            type ProtectedStructure implements ProtectedStructure_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["Equipement","ExperimentalCondition"]){
+            type Publication @node(additionalLabels: ["ScientificDocument","Document"]){
+                URI: ID!
                 
             }            
             
-            interface Provenance_I  {
-                
-            } 
-
-            type Provenance implements Provenance_I {
+            type RGBImage @node(additionalLabels: ["Image","Datafile"]){
+                URI: ID!
                 
             }            
             
-            interface Publication_Iimplements ScientificDocument_I & Document_I {
-                
-            } 
-
-            type Publication implements Publication_I & ScientificDocument_I & Document_I @node(additionalLabels: ["ScientificDocument","Document"]){
+            type Report @node(additionalLabels: ["ScientificDocument","Document"]){
+                URI: ID!
                 
             }            
             
-            interface RGBImage_Iimplements Image_I & Datafile_I {
-                
-            } 
-
-            type RGBImage implements RGBImage_I & Image_I & Datafile_I @node(additionalLabels: ["Image","Datafile"]){
+            type ResearchUnit @node(additionalLabels: ["Organization","ExperimentalCondition"]){
+                URI: ID!
+                isHosted: Facility @relationship(type: "oeso:isHosted", direction: OUT)
+            }            
+            
+            type Sample @node(additionalLabels: ["ScientificObject"]){
+                URI: ID!
+                hasCreationDate: String
+                hasDestructionDate: String
+            }            
+            
+            type ScientificDocument @node(additionalLabels: ["Document"]){
+                URI: ID!
                 
             }            
             
-            interface Report_Iimplements ScientificDocument_I & Document_I {
-                
-            } 
-
-            type Report implements Report_I & ScientificDocument_I & Document_I @node(additionalLabels: ["ScientificDocument","Document"]){
+            type Shed @node(additionalLabels: ["Equipement","ExperimentalCondition"]){
+                URI: ID!
                 
             }            
             
-            interface Sample_Iimplements ScientificObject_I {
-                
-            } 
-
-            type Sample implements Sample_I & ScientificObject_I @node(additionalLabels: ["ScientificObject"]){
+            type ShinyAppPackage @node(additionalLabels: ["InteractiveResource","Document"]){
+                URI: ID!
                 
             }            
             
-            interface ScientificDocument_Iimplements Document_I {
-                
-            } 
-
-            type ScientificDocument implements ScientificDocument_I & Document_I @node(additionalLabels: ["Document"]){
+            type Software @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
+                URI: ID!
                 
             }            
             
-            interface Shed_Iimplements ProtectedStructure_I & Equipement_I & ExperimentalCondition_I {
-                
-            } 
-
-            type Shed implements Shed_I & ProtectedStructure_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["ProtectedStructure","Equipement","ExperimentalCondition"]){
+            type SoilArea @node(additionalLabels: ["StructuralArea","Area","Equipement","ExperimentalCondition"]){
+                URI: ID!
                 
             }            
             
-            interface ShinyAppPackage_Iimplements InteractiveResource_I & Document_I {
-                
-            } 
-
-            type ShinyAppPackage implements ShinyAppPackage_I & InteractiveResource_I & Document_I @node(additionalLabels: ["InteractiveResource","Document"]){
-                
-            }            
-            
-            interface Software_Iimplements Device_I & Equipement_I & ExperimentalCondition_I {
-                
-            } 
-
-            type Software implements Software_I & Device_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
-                
-            }            
-            
-            interface SoilArea_Iimplements StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
-                
-            } 
-
-            type SoilArea implements SoilArea_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["StructuralArea","Area","Equipement","ExperimentalCondition"]){
-                
-            }            
-            
-            interface Species_Iimplements Germplasm_I {
-                fromInstitute: Thing @relationship(type: "oeso:fromInstitute", direction: OUT)
-            } 
-
-            type Species implements Species_I & Germplasm_I @node(additionalLabels: ["Germplasm"]){
+            type Species @node(additionalLabels: ["Germplasm"]){
+                URI: ID!
                 fromInstitute: Thing @relationship(type: "oeso:fromInstitute", direction: OUT)
             }            
             
-            interface Station_Iimplements Device_I & Equipement_I & ExperimentalCondition_I {
-                
-            } 
-
-            type Station implements Station_I & Device_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
+            type Station @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
+                URI: ID!
                 
             }            
             
-            interface StructuralArea_Iimplements Area_I & Equipement_I & ExperimentalCondition_I {
-                
-            } 
-
-            type StructuralArea implements StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["Area","Equipement","ExperimentalCondition"]){
+            type StructuralArea @node(additionalLabels: ["Area","Equipement","ExperimentalCondition"]){
+                URI: ID!
                 
             }            
             
-            interface TechnicalDocument_Iimplements Document_I {
-                
-            } 
-
-            type TechnicalDocument implements TechnicalDocument_I & Document_I @node(additionalLabels: ["Document"]){
+            type TechnicalDocument @node(additionalLabels: ["Document"]){
+                URI: ID!
                 
             }            
             
-            interface TemporalArea_Iimplements Area_I & Equipement_I & ExperimentalCondition_I {
-                
-            } 
-
-            type TemporalArea implements TemporalArea_I & Area_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["Area","Equipement","ExperimentalCondition"]){
+            type TemporalArea @node(additionalLabels: ["Area","Equipement","ExperimentalCondition"]){
+                URI: ID!
                 
             }            
             
-            interface Trait_I  {
-                
-            } 
-
-            type Trait implements Trait_I {
+            type Trait {
+                URI: ID!
                 
             }            
             
-            interface Treatment_Iimplements ExperimentalCondition_I {
-                
-            } 
-
-            type Treatment implements Treatment_I & ExperimentalCondition_I @node(additionalLabels: ["ExperimentalCondition"]){
+            type Treatment @node(additionalLabels: ["ExperimentalCondition"]){
+                URI: ID!
                 
             }            
             
-            interface VariableBase_I  {
-                
-            } 
-
-            type VariableBase implements VariableBase_I {
+            type VariableBase {
+                URI: ID!
                 
             }            
             
-            interface VariablesGroup_Iimplements Bag_I {
-                
-            } 
-
-            type VariablesGroup implements VariablesGroup_I & Bag_I @node(additionalLabels: ["Bag"]){
+            type VariablesGroup @node(additionalLabels: ["Bag"]){
+                URI: ID!
                 
             }            
             
-            interface Vector_Iimplements Device_I & Equipement_I & ExperimentalCondition_I {
-                
-            } 
-
-            type Vector implements Vector_I & Device_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
+            type Vector @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
+                URI: ID!
                 
             }            
             
-            interface WebSite_Iimplements InteractiveResource_I & Document_I {
-                
-            } 
-
-            type WebSite implements WebSite_I & InteractiveResource_I & Document_I @node(additionalLabels: ["InteractiveResource","Document"]){
+            type WebSite @node(additionalLabels: ["InteractiveResource","Document"]){
+                URI: ID!
                 
             }            
             
-            interface WindyArea_Iimplements StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I {
-                
-            } 
-
-            type WindyArea implements WindyArea_I & StructuralArea_I & Area_I & Equipement_I & ExperimentalCondition_I @node(additionalLabels: ["StructuralArea","Area","Equipement","ExperimentalCondition"]){
+            type WindyArea @node(additionalLabels: ["StructuralArea","Area","Equipement","ExperimentalCondition"]){
+                URI: ID!
                 
             }            
             
-            interface Bag_I  {
-                
-            } 
-
-            type Bag implements Bag_I {
+            type Bag {
+                URI: ID!
                 
             }            
             
-            interface DatatypeProperty_I  {
-                
-            } 
-
-            type DatatypeProperty implements DatatypeProperty_I {
+            type DatatypeProperty {
+                URI: ID!
                 
             }            
             
-            interface Agent_I  {
-                
-            } 
-
-            type Agent implements Agent_I {
+            type Agent {
+                URI: ID!
                 
             }            
             
-            interface Entity_I  {
-                
-            } 
-
-            type Entity implements Entity_I {
+            type Entity {
+                URI: ID!
                 
             }            
             
-            interface Person_Iimplements Agent_I {
-                
-            } 
-
-            type Person implements Person_I & Agent_I @node(additionalLabels: ["Agent"]){
+            type Person @node(additionalLabels: ["Agent"]){
+                URI: ID!
                 
             }            
             
-            interface SoftwareAgent_Iimplements Agent_I {
-                
-            } 
-
-            type SoftwareAgent implements SoftwareAgent_I & Agent_I @node(additionalLabels: ["Agent"]){
-                
-            }            
-            
-            interface Agent_I  {
-                
-            } 
-
-            type Agent implements Agent_I {
+            type SoftwareAgent @node(additionalLabels: ["Agent"]){
+                URI: ID!
                 
             }            
             
