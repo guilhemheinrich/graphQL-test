@@ -23,6 +23,10 @@ export const PREFIXES = [
         uri: "http://www.opensilex.org/vocabulary/oeso#",
         prefix: "oeso"
     },
+    {
+        uri: "http://www.opensilex.org/vocabulary/oeev#",
+        prefix: "oeev"
+    }
 ]
 
 export default PREFIXES

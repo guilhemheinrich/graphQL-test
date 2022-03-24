@@ -1,4 +1,19 @@
 {
+  "http://www.w3.org/2002/07/owl#Thing": {
+    "class_uri": "http://www.w3.org/2002/07/owl#Thing",
+    "name": "Thing",
+    "class": "owl:Thing",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [
+      "http://www.opensilex.org/vocabulary/oeso#hasDocument"
+    ],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
   "http://www.w3.org/ns/oa#": {
     "class_uri": "http://www.w3.org/ns/oa#",
     "name": "http://www.w3.org/ns/oa#",
@@ -2784,21 +2799,6 @@
       "http://www.w3.org/2002/07/owl#Thing"
     ],
     "type": "http://www.opensilex.org/vocabulary/oeso#Document",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/2002/07/owl#Thing": {
-    "class_uri": "http://www.w3.org/2002/07/owl#Thing",
-    "name": "http://www.w3.org/2002/07/owl#Thing",
-    "class": "owl:Thing",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [
-      "http://www.opensilex.org/vocabulary/oeso#hasDocument"
-    ],
-    "inherits": [],
-    "domains": [],
-    "type": "",
     "isRequired": false,
     "isList": false
   },

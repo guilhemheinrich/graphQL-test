@@ -5,7 +5,7 @@ import { gql } from "apollo-server-express";
 // import {PorpertyTemplate, Gql_Resource} from './Gql_Resource'
 export interface Gql_Resource {
     // Graphql layer
-    class_uri: string,                
+    class_uri: string,
     name: string,
     isConcept: boolean
     // RDF layer
@@ -13,7 +13,7 @@ export interface Gql_Resource {
     class: string
     properties: string[]        // Liste des propriétés
     inherits: string[]          // gestion de la chaine d'héritage, non géré de base dans graphQL
-    
+
     // Properties specific
     type: string,
     domains: string[]
@@ -30,11 +30,11 @@ export interface _Porperty_Template {
     // isList: boolean
 }
 
-export interface ObjectProperty_Template extends _Porperty_Template{
+export interface ObjectProperty_Template extends _Porperty_Template {
     type: "Object"
 }
 
-export interface DatatypeProperty_Template extends _Porperty_Template{
+export interface DatatypeProperty_Template extends _Porperty_Template {
     type: "Litteral"
     name: string
     valuetype: "String" | "Int" | "Float" | "Null" | "ID"
@@ -44,10 +44,10 @@ export type PorpertyTemplate = ObjectProperty_Template | DatatypeProperty_Templa
 
 
 class Gql_Resource_Dictionary {
-    [uri: string] : Gql_Resource
+    [uri: string]: Gql_Resource
     constructor() {
         const handler = {
-            get: function(target: Gql_Resource_Dictionary, prop: string) {
+            get: function (target: Gql_Resource_Dictionary, prop: string) {
                 if (!Object.keys(target).includes(prop)) {
                     target[prop] = {
                         class_uri: prop,                // Initialize with the uri
@@ -62,9 +62,8 @@ class Gql_Resource_Dictionary {
                         isRequired: false,
                         isList: false
                     }
-                } 
+                }
                 return Reflect.get(target, prop)
-
             }
         }
         return new Proxy(this, handler)
@@ -77,7 +76,7 @@ export class Gql_Generator {
      * @type {{prefix: string, uri: string}[]}
      * @memberof Gql_Generator
      */
-    readonly prefixes_array: {prefix: string, uri: string}[] = []
+    readonly prefixes_array: { prefix: string, uri: string }[] = []
     readonly gql_resources_preprocesing: Gql_Resource_Dictionary = new Gql_Resource_Dictionary()
 
     /**
@@ -86,14 +85,30 @@ export class Gql_Generator {
      * @param {{prefix: string, uri: string}[]} prefixes_array
      * @memberof Gql_Generator
      */
-    constructor(prefixes_array: {prefix: string, uri: string}[]) {
+    constructor(prefixes_array: { prefix: string, uri: string }[]) {
         this.prefixes_array = JSON.parse(JSON.stringify(prefixes_array))
+        // Add owl:Thing in gqlResource
+        this.gql_resources_preprocesing[this.expender('owl:Thing')] = {
+            class_uri: this.expender('owl:Thing'),                  // Initialize with the uri
+            name: "Thing",                                          // Initialize with the uri
+            class: "owl:Thing",
+            isConcept: true,
+            isAbstract: false,
+            properties: [],
+            inherits: [],
+            domains: [],
+            type: '',
+            isRequired: false,
+            isList: false
+        }
     }
 
 
     /**
      * @description 
+     * Transform a regular uri with a prefixed rdf format, accroding to the prefixes_array
      * @date 23/11/2021
+     * @example http://my/ontologie#item => ontology_prefix:item
      * @param {string} uri
      * @return {*}  {string} Return the uri with prefixed format
      * @memberof Gql_Generator
@@ -102,28 +117,63 @@ export class Gql_Generator {
         for (let prefix_uri of this.prefixes_array) {
             if (uri.startsWith(prefix_uri.uri)) {
                 return uri.replace(prefix_uri.uri, prefix_uri.prefix + ':')
-            }         
+            }
         }
         return uri
     }
 
-    private last_particule = new RegExp(/[\/#]([\d\w]*)$/gm)
-    shortener(uri: string):string {
-        let matches = uri.matchAll(this.last_particule)
-        const _array = Array.from(matches)
-        if (_array && _array.length > 0) {
-            return _array[0][1]
+    /**
+     * @description
+     * Transform a short prefixed uri into long format uri
+     * @date 07/03/2022
+     * @example ontology_prefix:item => http://my/ontologie#item
+     * @param {string} short_uri
+     * @return {*}  {string}
+     * @memberof Gql_Generator
+     */
+    expender(short_uri: string): string {
+        let [prefix, suffix] = short_uri.split(':')
+        let found_prefix = this.prefixes_array.find((value) => value.prefix == prefix)
+        if (found_prefix != undefined) {
+            return found_prefix.uri + suffix
         } else {
-            return uri
+            console.warn(`${prefix} is not in the prefix list`)
         }
+        return short_uri
     }
 
+    /**
+     * @description
+     * Internal function to shorten the rdf class uri to a gql type
+     * @date 16/03/2022
+     * @param {string} class_uri
+     * @param {boolean} n10s_compliant
+     * @return {*}  {string}
+     * @memberof Gql_Generator
+     */
+    private shortener(class_uri: string, n10s_compliant: boolean = true): string {
+        const uri_separator = new RegExp(/(^.*[\/#])([\d\w]*)$/gm)
+        let matches = class_uri.matchAll(uri_separator)
+        const _array = Array.from(matches)
+        if (_array && _array.length > 0) {
+            if (n10s_compliant) {
+                console.log('here')
+                let found_prefix = this.prefixes_array.find((value) => value.uri == _array[0][1])
+                return found_prefix?.prefix + '__' + _array[0][2]
+            } else {
+                return _array[0][2]
+            }
+        } else {
+            return class_uri
+        }
 
-    getInheritedValues(uri:string, key: "properties"): Array<string[]>
-    getInheritedValues(uri:string, key: "inherits"): Array<string[]>
-    getInheritedValues(uri:string, key: "type"): Array<string>
-    getInheritedValues(uri: string, key: keyof Gql_Resource): Array< Gql_Resource[typeof key] > {
-        let inherited_values: Array< Gql_Resource[typeof key] > = []
+    }
+
+    getInheritedValues(uri: string, key: "properties"): Array<string[]>
+    getInheritedValues(uri: string, key: "inherits"): Array<string[]>
+    getInheritedValues(uri: string, key: "type"): Array<string>
+    getInheritedValues(uri: string, key: keyof Gql_Resource): Array<Gql_Resource[typeof key]> {
+        let inherited_values: Array<Gql_Resource[typeof key]> = []
 
         const looper = (uri: string) => {
             let inheritance = this.gql_resources_preprocesing[uri].inherits
@@ -133,7 +183,7 @@ export class Gql_Generator {
 
         looper(uri)
         return inherited_values
-    } 
+    }
 
     processRdf(quad: Quad) {
         // Some aliases
@@ -178,7 +228,7 @@ export class Gql_Generator {
                 break
             case "rdfs:subClassOf":
                 // Handle class inheritance
-                this.gql_resources_preprocesing[subject].inherits.push(object)               
+                this.gql_resources_preprocesing[subject].inherits.push(object)
                 break
             case "rdfs:label":
                 // Handle __type of the class, or something else...
@@ -208,7 +258,7 @@ export class Gql_Generator {
                 break
             case "owl:qualifiedCardinality":
                 let cardinality = Number(object)
-                this.gql_resources_preprocesing[subject].isRequired = true 
+                this.gql_resources_preprocesing[subject].isRequired = true
                 if (cardinality > 1) {
                     this.gql_resources_preprocesing[subject].isList = true
                 }
@@ -221,7 +271,7 @@ export class Gql_Generator {
                 console.log(`${subject} ${predicate} ${object}`)
                 break
             default:
-   
+
         }
     }
 
@@ -234,7 +284,7 @@ export class Gql_Generator {
 
         // Helper function to parse the properties into correct gql
         const property_templater = (property: PorpertyTemplate) => {
-            let out_string = this.shortener(property.name) + ': ' 
+            let out_string = this.shortener(property.name) + ': '
             // Infered from an owl:Restriction for example
             if (property.type == "Litteral") {
                 out_string += property.valuetype
@@ -243,7 +293,7 @@ export class Gql_Generator {
                 // Multiple domain/range should be handled via the use of Union (gql)
                 // Need checking property inheritance
                 let range = property.valuetype
-                out_string += this.shortener(range) + ` @relationship(type: "${this.prefixer(property.name)}", direction: OUT)`
+                out_string += this.shortener(range) + ` @relationship(type: "${this.shortener(property.name)}", direction: OUT)`
             }
             return out_string
         }
@@ -251,7 +301,7 @@ export class Gql_Generator {
         for (let concept of concepts) {
             let shortname = this.shortener(concept.class_uri)
             let template_properties: PorpertyTemplate[] = []
-            for (let properties of this.getInheritedValues(concept.class_uri, "properties"))  {
+            for (let properties of this.getInheritedValues(concept.class_uri, "properties")) {
                 for (let property_uri of properties) {
                     let property = this.gql_resources_preprocesing[property_uri]
                     switch (this.prefixer(property.class)) {
@@ -277,7 +327,7 @@ export class Gql_Generator {
                 }
             }
             let set_inherits: Set<string> = new Set()
-            let set_restrictions_uri: string[]= restrictions.map((restriction) => restriction.class_uri)
+            let set_restrictions_uri: string[] = restrictions.map((restriction) => restriction.class_uri)
 
             for (let inheritance_mail of this.getInheritedValues(concept.class_uri, "inherits")) {
                 inheritance_mail.forEach((parent_uri) => {
@@ -285,7 +335,7 @@ export class Gql_Generator {
                     if (!set_restrictions_uri.includes(parent_uri)) {
                         set_inherits.add(this.shortener(parent_uri))
                     }
-                })        
+                })
             }
             // Iterate over set_restrictions_uri to update properties
             //    _            _       
@@ -299,20 +349,19 @@ export class Gql_Generator {
             let template_inherits = Array.from(set_inherits.values())
             // let template = `
             // interface ${shortname}_I${template_inherits.length > 0 ? " implements" : ""} ${template_inherits.map((short) => short + '_I').join(' & ')} {
-            //     URI: ID!
+            //     uri: ID!
             //     ${template_properties.map((prop) => property_templater(prop)).join('\n                ')}
             // } 
 
             // type ${shortname} implements ${[shortname, ...template_inherits].map((short) => short + '_I').join(' & ')} ${ template_inherits.length > 0 ? '@node(additionalLabels: [' + template_inherits.map((short_uri) => '"' + short_uri + '"') + '])': ''}{
-            //     URI: ID!
+            //     uri: ID!
             //     ${template_properties.map((prop) => property_templater(prop)).join('\n                ')}
             // }            
             // `
 
             let template = `
-            type ${shortname} ${ template_inherits.length > 0 ? '@node(additionalLabels: [' + template_inherits.map((short_uri) => '"' + short_uri + '"') + '])': ''}{
-                URI: ID!
-                ${template_properties.map((prop) => property_templater(prop)).join('\n                ')}
+            type ${shortname} ${template_inherits.length > 0 ? '@node(additionalLabels: [' + template_inherits.map((short_uri) => '"' + short_uri + '"') + '])' : ''}{
+                uri: ID! ${template_properties.length > 0 ? '\n                ' + template_properties.map((prop) => property_templater(prop)).join('\n                ') : ''}
             }            
             `
 
@@ -322,7 +371,7 @@ export class Gql_Generator {
     }
 }
 
-export const RDF_parser = new Gql_Generator(PREFIXES) 
+export const RDF_parser = new Gql_Generator(PREFIXES)
 export default RDF_parser
 
 

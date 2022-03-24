@@ -1,0 +1,832 @@
+
+            type Thing {
+                URI: ID!
+            }
+            
+            type TimeState @node(additionalLabels: ["State"]){
+                URI: ID!
+                sourceDate: String
+                sourceDateEnd: String
+                sourceDateStart: String
+            }            
+            
+            type Annotation {
+                URI: ID!
+                motivatedBy: Motivation @relationship(type: "http://www.w3.org/ns/oa#motivatedBy", direction: OUT)
+                styledBy: Style @relationship(type: "http://www.w3.org/ns/oa#styledBy", direction: OUT)
+                bodyValue: String
+            }            
+            
+            type SpecificResource @node(additionalLabels: ["ResourceSelection"]){
+                URI: ID!
+                styleClass: String
+                hasSelector: Selector @relationship(type: "http://www.w3.org/ns/oa#hasSelector", direction: OUT)
+                hasState: State @relationship(type: "http://www.w3.org/ns/oa#hasState", direction: OUT)
+            }            
+            
+            type ResourceSelection {
+                URI: ID!
+                hasSelector: Selector @relationship(type: "http://www.w3.org/ns/oa#hasSelector", direction: OUT)
+                hasState: State @relationship(type: "http://www.w3.org/ns/oa#hasState", direction: OUT)
+            }            
+            
+            type RangeSelector @node(additionalLabels: ["Selector"]){
+                URI: ID!
+                hasEndSelector: Selector @relationship(type: "http://www.w3.org/ns/oa#hasEndSelector", direction: OUT)
+                hasStartSelector: Selector @relationship(type: "http://www.w3.org/ns/oa#hasStartSelector", direction: OUT)
+            }            
+            
+            type Resource {
+                URI: ID!
+                
+            }            
+            
+            type Concept {
+                URI: ID!
+                
+            }            
+            
+            type OrderedCollection {
+                URI: ID!
+                
+            }            
+            
+            type Choice @node(additionalLabels: ["OrderedCollection"]){
+                URI: ID!
+                
+            }            
+            
+            type CssSelector @node(additionalLabels: ["Selector"]){
+                URI: ID!
+                
+            }            
+            
+            type CssStyle @node(additionalLabels: ["Style"]){
+                URI: ID!
+                
+            }            
+            
+            type DataPositionSelector @node(additionalLabels: ["Selector"]){
+                URI: ID!
+                
+            }            
+            
+            type Direction {
+                URI: ID!
+                
+            }            
+            
+            type FragmentSelector @node(additionalLabels: ["Selector"]){
+                URI: ID!
+                
+            }            
+            
+            type HttpRequestState @node(additionalLabels: ["State"]){
+                URI: ID!
+                
+            }            
+            
+            type Motivation @node(additionalLabels: ["Concept"]){
+                URI: ID!
+                
+            }            
+            
+            type Selector {
+                URI: ID!
+                
+            }            
+            
+            type State {
+                URI: ID!
+                
+            }            
+            
+            type Style {
+                URI: ID!
+                
+            }            
+            
+            type SvgSelector @node(additionalLabels: ["Selector"]){
+                URI: ID!
+                
+            }            
+            
+            type TextPositionSelector @node(additionalLabels: ["Selector"]){
+                URI: ID!
+                
+            }            
+            
+            type TextQuoteSelector @node(additionalLabels: ["Selector"]){
+                URI: ID!
+                
+            }            
+            
+            type TextualBody {
+                URI: ID!
+                
+            }            
+            
+            type XPathSelector @node(additionalLabels: ["Selector"]){
+                URI: ID!
+                
+            }            
+            
+            type Person {
+                URI: ID!
+                
+            }            
+            
+            type Association @node(additionalLabels: ["FacilityManagement","Event"]){
+                URI: ID!
+                associatedWith: Thing @relationship(type: "http://www.opensilex.org/vocabulary/oeev#associatedWith", direction: OUT)
+                concerns: String
+                isInstant: String
+            }            
+            
+            type AssociationWithScientificObject @node(additionalLabels: ["Association","FacilityManagement","Event"]){
+                URI: ID!
+                associatedWithScientificObject: ScientificObject @relationship(type: "http://www.opensilex.org/vocabulary/oeev#associatedWithScientificObject", direction: OUT)
+                associatedWith: Thing @relationship(type: "http://www.opensilex.org/vocabulary/oeev#associatedWith", direction: OUT)
+                concerns: String
+                isInstant: String
+            }            
+            
+            type AssociationWithSensingDevice @node(additionalLabels: ["Association","FacilityManagement","Event"]){
+                URI: ID!
+                associatedWithSensingDevice: SensingDevice @relationship(type: "http://www.opensilex.org/vocabulary/oeev#associatedWithSensingDevice", direction: OUT)
+                associatedWith: Thing @relationship(type: "http://www.opensilex.org/vocabulary/oeev#associatedWith", direction: OUT)
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Event {
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type PestAttack @node(additionalLabels: ["Incident","Trouble","Event"]){
+                URI: ID!
+                hasPest: Pest @relationship(type: "http://www.opensilex.org/vocabulary/oeev#hasPest", direction: OUT)
+                concerns: String
+                isInstant: String
+            }            
+            
+            type AddingProduct @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type AutomaticCalibration @node(additionalLabels: ["Calibration","FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Breakdown @node(additionalLabels: ["Trouble","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Calibration @node(additionalLabels: ["FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Checking @node(additionalLabels: ["Servicing","Operability","FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Cleaning @node(additionalLabels: ["Servicing","Operability","FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Clipping @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type CorrectiveMaintenance @node(additionalLabels: ["Operability","FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type CurativeTreatment @node(additionalLabels: ["Treatment","ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Detasseling @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Dysfunction @node(additionalLabels: ["Trouble","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type EvolutiveMaintenance @node(additionalLabels: ["Operability","FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type FacilityManagement @node(additionalLabels: ["Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Fertilization @node(additionalLabels: ["AddingProduct","ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Harvesting @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Incident @node(additionalLabels: ["Trouble","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Installation @node(additionalLabels: ["FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Irrigation @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Loading @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Lodging @node(additionalLabels: ["Incident","Trouble","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type ManualCalibration @node(additionalLabels: ["Calibration","FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Move @node(additionalLabels: ["Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Operability @node(additionalLabels: ["FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Pest {
+                URI: ID!
+                
+            }            
+            
+            type Flooding @node(additionalLabels: ["Incident","Trouble","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type PhenologyScoring @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type PotFall @node(additionalLabels: ["Incident","Trouble","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Potting @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type PreventativeTreatment @node(additionalLabels: ["Treatment","ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Reparation @node(additionalLabels: ["CorrectiveMaintenance","Operability","FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Restart @node(additionalLabels: ["FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Sampling @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type ScientificObjectManagement @node(additionalLabels: ["Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Servicing @node(additionalLabels: ["Operability","FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Sowing @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Staking @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Start @node(additionalLabels: ["FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Stop @node(additionalLabels: ["FacilityManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type StuckPlant @node(additionalLabels: ["Incident","Trouble","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Thinning @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Treatment @node(additionalLabels: ["ScientificObjectManagement","Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Trouble @node(additionalLabels: ["Event"]){
+                URI: ID!
+                concerns: String
+                isInstant: String
+            }            
+            
+            type Germplasm {
+                URI: ID!
+                fromInstitute: Thing @relationship(type: "oeso:fromInstitute", direction: OUT)
+            }            
+            
+            type Variable @node(additionalLabels: ["VariableBase"]){
+                URI: ID!
+                hasCharacteristic: Characteristic @relationship(type: "oeso:hasCharacteristic", direction: OUT)
+                hasEntity: Entity @relationship(type: "oeso:hasEntity", direction: OUT)
+                hasEntityOfInterest: EntityOfInterest @relationship(type: "oeso:hasEntityOfInterest", direction: OUT)
+                hasMethod: Method @relationship(type: "oeso:hasMethod", direction: OUT)
+                hasUnit: Unit @relationship(type: "oeso:hasUnit", direction: OUT)
+            }            
+            
+            type ScientificObject {
+                URI: ID!
+                hasCreationDate: String
+                hasDestructionDate: String
+            }            
+            
+            type Experiment {
+                URI: ID!
+                hasProject: Project @relationship(type: "oeso:hasProject", direction: OUT)
+                hasScientificSupervisor: Agent @relationship(type: "oeso:hasScientificSupervisor", direction: OUT)
+                hasTechnicalSupervisor: Agent @relationship(type: "oeso:hasTechnicalSupervisor", direction: OUT)
+                studyEffectOf: Factor @relationship(type: "oeso:studyEffectOf", direction: OUT)
+                usesFacility: Facility @relationship(type: "oeso:usesFacility", direction: OUT)
+                usesOrganization: Organization @relationship(type: "oeso:usesOrganization", direction: OUT)
+            }            
+            
+            type Organization @node(additionalLabels: ["ExperimentalCondition"]){
+                URI: ID!
+                isHosted: Facility @relationship(type: "oeso:isHosted", direction: OUT)
+            }            
+            
+            type SensingDevice @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
+                URI: ID!
+                measures: Variable @relationship(type: "oeso:measures", direction: OUT)
+            }            
+            
+            type Unit @node(additionalLabels: ["VariableBase"]){
+                URI: ID!
+                hasAlternativeSymbol: String
+                hasSymbol: String
+            }            
+            
+            type Project @node(additionalLabels: ["ExperimentalCondition"]){
+                URI: ID!
+                hasObjective: String
+            }            
+            
+            type Activity {
+                URI: ID!
+                endedAtTime: String
+                startedAtTime: String
+            }            
+            
+            type Group {
+                URI: ID!
+                
+            }            
+            
+            type GroupUserProfile {
+                URI: ID!
+                
+            }            
+            
+            type Profile {
+                URI: ID!
+                
+            }            
+            
+            type Actuator @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
+                URI: ID!
+                
+            }            
+            
+            type AdministrativeDocument @node(additionalLabels: ["Document"]){
+                URI: ID!
+                
+            }            
+            
+            type Archive @node(additionalLabels: ["Datafile"]){
+                URI: ID!
+                
+            }            
+            
+            type Area @node(additionalLabels: ["Equipement","ExperimentalCondition"]){
+                URI: ID!
+                
+            }            
+            
+            type Characteristic @node(additionalLabels: ["VariableBase"]){
+                URI: ID!
+                
+            }            
+            
+            type ClayeyArea @node(additionalLabels: ["SoilArea","StructuralArea","Area","Equipement","ExperimentalCondition"]){
+                URI: ID!
+                
+            }            
+            
+            type Compartment @node(additionalLabels: ["Facility"]){
+                URI: ID!
+                
+            }            
+            
+            type Computation @node(additionalLabels: ["Activity"]){
+                URI: ID!
+                endedAtTime: String
+                startedAtTime: String
+            }            
+            
+            type ControlLaw @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
+                URI: ID!
+                
+            }            
+            
+            type Datafile {
+                URI: ID!
+                
+            }            
+            
+            type Dataset @node(additionalLabels: ["Document"]){
+                URI: ID!
+                
+            }            
+            
+            type Device @node(additionalLabels: ["Equipement","ExperimentalCondition"]){
+                URI: ID!
+                
+            }            
+            
+            type Document {
+                URI: ID!
+                
+            }            
+            
+            type ElaboratedVariable @node(additionalLabels: ["Variable","VariableBase"]){
+                URI: ID!
+                hasCharacteristic: Characteristic @relationship(type: "oeso:hasCharacteristic", direction: OUT)
+                hasEntity: Entity @relationship(type: "oeso:hasEntity", direction: OUT)
+                hasEntityOfInterest: EntityOfInterest @relationship(type: "oeso:hasEntityOfInterest", direction: OUT)
+                hasMethod: Method @relationship(type: "oeso:hasMethod", direction: OUT)
+                hasUnit: Unit @relationship(type: "oeso:hasUnit", direction: OUT)
+            }            
+            
+            type Entity @node(additionalLabels: ["VariableBase"]){
+                URI: ID!
+                
+            }            
+            
+            type EntityOfInterest @node(additionalLabels: ["VariableBase"]){
+                URI: ID!
+                
+            }            
+            
+            type Equipement @node(additionalLabels: ["ExperimentalCondition"]){
+                URI: ID!
+                
+            }            
+            
+            type ExperimentalCondition {
+                URI: ID!
+                
+            }            
+            
+            type ExperimentalProtocol @node(additionalLabels: ["TechnicalDocument","Document"]){
+                URI: ID!
+                
+            }            
+            
+            type ExperimentalUnit @node(additionalLabels: ["Organization","ExperimentalCondition"]){
+                URI: ID!
+                isHosted: Facility @relationship(type: "oeso:isHosted", direction: OUT)
+            }            
+            
+            type Facility {
+                URI: ID!
+                
+            }            
+            
+            type Factor @node(additionalLabels: ["ExperimentalCondition"]){
+                URI: ID!
+                
+            }            
+            
+            type FactorLevel @node(additionalLabels: ["ExperimentalCondition"]){
+                URI: ID!
+                
+            }            
+            
+            type FloodableArea @node(additionalLabels: ["StructuralArea","Area","Equipement","ExperimentalCondition"]){
+                URI: ID!
+                
+            }            
+            
+            type ITKDocument @node(additionalLabels: ["TechnicalDocument","Document"]){
+                URI: ID!
+                
+            }            
+            
+            type Image @node(additionalLabels: ["Datafile"]){
+                URI: ID!
+                
+            }            
+            
+            type ImageAcquisition @node(additionalLabels: ["Activity"]){
+                URI: ID!
+                endedAtTime: String
+                startedAtTime: String
+            }            
+            
+            type ImageAnalysis @node(additionalLabels: ["Activity"]){
+                URI: ID!
+                endedAtTime: String
+                startedAtTime: String
+            }            
+            
+            type Installation @node(additionalLabels: ["Organization","ExperimentalCondition"]){
+                URI: ID!
+                isHosted: Facility @relationship(type: "oeso:isHosted", direction: OUT)
+            }            
+            
+            type InteractiveResource @node(additionalLabels: ["Document"]){
+                URI: ID!
+                
+            }            
+            
+            type LimestoneArea @node(additionalLabels: ["SoilArea","StructuralArea","Area","Equipement","ExperimentalCondition"]){
+                URI: ID!
+                
+            }            
+            
+            type MeasuresAcquisition @node(additionalLabels: ["Activity"]){
+                URI: ID!
+                endedAtTime: String
+                startedAtTime: String
+            }            
+            
+            type Method @node(additionalLabels: ["VariableBase"]){
+                URI: ID!
+                
+            }            
+            
+            type Multimedia @node(additionalLabels: ["Document"]){
+                URI: ID!
+                
+            }            
+            
+            type Operator @node(additionalLabels: ["Agent"]){
+                URI: ID!
+                
+            }            
+            
+            type Population @node(additionalLabels: ["ScientificObject"]){
+                URI: ID!
+                hasCreationDate: String
+                hasDestructionDate: String
+            }            
+            
+            type Provenance {
+                URI: ID!
+                
+            }            
+            
+            type Publication @node(additionalLabels: ["ScientificDocument","Document"]){
+                URI: ID!
+                
+            }            
+            
+            type RGBImage @node(additionalLabels: ["Image","Datafile"]){
+                URI: ID!
+                
+            }            
+            
+            type Report @node(additionalLabels: ["ScientificDocument","Document"]){
+                URI: ID!
+                
+            }            
+            
+            type ResearchUnit @node(additionalLabels: ["Organization","ExperimentalCondition"]){
+                URI: ID!
+                isHosted: Facility @relationship(type: "oeso:isHosted", direction: OUT)
+            }            
+            
+            type Sample @node(additionalLabels: ["ScientificObject"]){
+                URI: ID!
+                hasCreationDate: String
+                hasDestructionDate: String
+            }            
+            
+            type ScientificDocument @node(additionalLabels: ["Document"]){
+                URI: ID!
+                
+            }            
+            
+            type Shed @node(additionalLabels: ["Equipement","ExperimentalCondition"]){
+                URI: ID!
+                
+            }            
+            
+            type ShinyAppPackage @node(additionalLabels: ["InteractiveResource","Document"]){
+                URI: ID!
+                
+            }            
+            
+            type Software @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
+                URI: ID!
+                
+            }            
+            
+            type SoilArea @node(additionalLabels: ["StructuralArea","Area","Equipement","ExperimentalCondition"]){
+                URI: ID!
+                
+            }            
+            
+            type Species @node(additionalLabels: ["Germplasm"]){
+                URI: ID!
+                fromInstitute: Thing @relationship(type: "oeso:fromInstitute", direction: OUT)
+            }            
+            
+            type Station @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
+                URI: ID!
+                
+            }            
+            
+            type StructuralArea @node(additionalLabels: ["Area","Equipement","ExperimentalCondition"]){
+                URI: ID!
+                
+            }            
+            
+            type TechnicalDocument @node(additionalLabels: ["Document"]){
+                URI: ID!
+                
+            }            
+            
+            type TemporalArea @node(additionalLabels: ["Area","Equipement","ExperimentalCondition"]){
+                URI: ID!
+                
+            }            
+            
+            type Trait {
+                URI: ID!
+                
+            }            
+            
+            type Treatment @node(additionalLabels: ["ExperimentalCondition"]){
+                URI: ID!
+                
+            }            
+            
+            type VariableBase {
+                URI: ID!
+                
+            }            
+            
+            type VariablesGroup @node(additionalLabels: ["Bag"]){
+                URI: ID!
+                
+            }            
+            
+            type Vector @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
+                URI: ID!
+                
+            }            
+            
+            type WebSite @node(additionalLabels: ["InteractiveResource","Document"]){
+                URI: ID!
+                
+            }            
+            
+            type WindyArea @node(additionalLabels: ["StructuralArea","Area","Equipement","ExperimentalCondition"]){
+                URI: ID!
+                
+            }            
+            
+            type Bag {
+                URI: ID!
+                
+            }            
+            
+            type DatatypeProperty {
+                URI: ID!
+                
+            }            
+            
+            type Agent {
+                URI: ID!
+                
+            }            
+            
+            type Entity {
+                URI: ID!
+                
+            }            
+            
+            type Person @node(additionalLabels: ["Agent"]){
+                URI: ID!
+                
+            }            
+            
+            type SoftwareAgent @node(additionalLabels: ["Agent"]){
+                URI: ID!
+                
+            }            
+            

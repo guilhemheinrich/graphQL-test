@@ -1,832 +1,755 @@
 
-            type Thing {
-                URI: ID!
-            }
+            type owl__Thing {
+                uri: ID! 
+                oeso__hasDocument: oeso__Document @relationship(type: "oeso__hasDocument", direction: OUT)
+            }            
             
-            type TimeState @node(additionalLabels: ["State"]){
-                URI: ID!
-                sourceDate: String
-                sourceDateEnd: String
-                sourceDateStart: String
+            type undefined__TimeState @node(additionalLabels: ["undefined__State"]){
+                uri: ID! 
+                undefined__sourceDate: String
+                undefined__sourceDateEnd: String
+                undefined__sourceDateStart: String
             }            
             
-            type Annotation {
-                URI: ID!
-                motivatedBy: Motivation @relationship(type: "http://www.w3.org/ns/oa#motivatedBy", direction: OUT)
-                styledBy: Style @relationship(type: "http://www.w3.org/ns/oa#styledBy", direction: OUT)
-                bodyValue: String
+            type undefined__Annotation {
+                uri: ID! 
+                undefined__motivatedBy: undefined__Motivation @relationship(type: "undefined__motivatedBy", direction: OUT)
+                undefined__styledBy: undefined__Style @relationship(type: "undefined__styledBy", direction: OUT)
+                undefined__bodyValue: String
             }            
             
-            type SpecificResource @node(additionalLabels: ["ResourceSelection"]){
-                URI: ID!
-                styleClass: String
-                hasSelector: Selector @relationship(type: "http://www.w3.org/ns/oa#hasSelector", direction: OUT)
-                hasState: State @relationship(type: "http://www.w3.org/ns/oa#hasState", direction: OUT)
+            type undefined__SpecificResource @node(additionalLabels: ["undefined__ResourceSelection"]){
+                uri: ID! 
+                undefined__styleClass: String
+                undefined__hasSelector: undefined__Selector @relationship(type: "undefined__hasSelector", direction: OUT)
+                undefined__hasState: undefined__State @relationship(type: "undefined__hasState", direction: OUT)
             }            
             
-            type ResourceSelection {
-                URI: ID!
-                hasSelector: Selector @relationship(type: "http://www.w3.org/ns/oa#hasSelector", direction: OUT)
-                hasState: State @relationship(type: "http://www.w3.org/ns/oa#hasState", direction: OUT)
+            type undefined__ResourceSelection {
+                uri: ID! 
+                undefined__hasSelector: undefined__Selector @relationship(type: "undefined__hasSelector", direction: OUT)
+                undefined__hasState: undefined__State @relationship(type: "undefined__hasState", direction: OUT)
             }            
             
-            type RangeSelector @node(additionalLabels: ["Selector"]){
-                URI: ID!
-                hasEndSelector: Selector @relationship(type: "http://www.w3.org/ns/oa#hasEndSelector", direction: OUT)
-                hasStartSelector: Selector @relationship(type: "http://www.w3.org/ns/oa#hasStartSelector", direction: OUT)
+            type undefined__RangeSelector @node(additionalLabels: ["undefined__Selector"]){
+                uri: ID! 
+                undefined__hasEndSelector: undefined__Selector @relationship(type: "undefined__hasEndSelector", direction: OUT)
+                undefined__hasStartSelector: undefined__Selector @relationship(type: "undefined__hasStartSelector", direction: OUT)
             }            
             
-            type Resource {
-                URI: ID!
-                
+            type rdfs__Resource {
+                uri: ID! 
             }            
             
-            type Concept {
-                URI: ID!
-                
+            type skos__Concept {
+                uri: ID! 
             }            
             
-            type OrderedCollection {
-                URI: ID!
-                
+            type undefined__OrderedCollection {
+                uri: ID! 
             }            
             
-            type Choice @node(additionalLabels: ["OrderedCollection"]){
-                URI: ID!
-                
+            type undefined__Choice @node(additionalLabels: ["undefined__OrderedCollection"]){
+                uri: ID! 
             }            
             
-            type CssSelector @node(additionalLabels: ["Selector"]){
-                URI: ID!
-                
+            type undefined__CssSelector @node(additionalLabels: ["undefined__Selector"]){
+                uri: ID! 
             }            
             
-            type CssStyle @node(additionalLabels: ["Style"]){
-                URI: ID!
-                
+            type undefined__CssStyle @node(additionalLabels: ["undefined__Style"]){
+                uri: ID! 
             }            
             
-            type DataPositionSelector @node(additionalLabels: ["Selector"]){
-                URI: ID!
-                
+            type undefined__DataPositionSelector @node(additionalLabels: ["undefined__Selector"]){
+                uri: ID! 
             }            
             
-            type Direction {
-                URI: ID!
-                
+            type undefined__Direction {
+                uri: ID! 
             }            
             
-            type FragmentSelector @node(additionalLabels: ["Selector"]){
-                URI: ID!
-                
+            type undefined__FragmentSelector @node(additionalLabels: ["undefined__Selector"]){
+                uri: ID! 
             }            
             
-            type HttpRequestState @node(additionalLabels: ["State"]){
-                URI: ID!
-                
+            type undefined__HttpRequestState @node(additionalLabels: ["undefined__State"]){
+                uri: ID! 
             }            
             
-            type Motivation @node(additionalLabels: ["Concept"]){
-                URI: ID!
-                
+            type undefined__Motivation @node(additionalLabels: ["skos__Concept"]){
+                uri: ID! 
             }            
             
-            type Selector {
-                URI: ID!
-                
+            type undefined__Selector {
+                uri: ID! 
             }            
             
-            type State {
-                URI: ID!
-                
+            type undefined__State {
+                uri: ID! 
             }            
             
-            type Style {
-                URI: ID!
-                
+            type undefined__Style {
+                uri: ID! 
             }            
             
-            type SvgSelector @node(additionalLabels: ["Selector"]){
-                URI: ID!
-                
+            type undefined__SvgSelector @node(additionalLabels: ["undefined__Selector"]){
+                uri: ID! 
             }            
             
-            type TextPositionSelector @node(additionalLabels: ["Selector"]){
-                URI: ID!
-                
+            type undefined__TextPositionSelector @node(additionalLabels: ["undefined__Selector"]){
+                uri: ID! 
             }            
             
-            type TextQuoteSelector @node(additionalLabels: ["Selector"]){
-                URI: ID!
-                
+            type undefined__TextQuoteSelector @node(additionalLabels: ["undefined__Selector"]){
+                uri: ID! 
             }            
             
-            type TextualBody {
-                URI: ID!
-                
+            type undefined__TextualBody {
+                uri: ID! 
             }            
             
-            type XPathSelector @node(additionalLabels: ["Selector"]){
-                URI: ID!
-                
+            type undefined__XPathSelector @node(additionalLabels: ["undefined__Selector"]){
+                uri: ID! 
             }            
             
-            type Person {
-                URI: ID!
-                
+            type undefined__Person {
+                uri: ID! 
             }            
             
-            type Association @node(additionalLabels: ["FacilityManagement","Event"]){
-                URI: ID!
-                associatedWith: Thing @relationship(type: "http://www.opensilex.org/vocabulary/oeev#associatedWith", direction: OUT)
-                concerns: String
-                isInstant: String
+            type oeev__Association @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__associatedWith: Thing @relationship(type: "oeev__associatedWith", direction: OUT)
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type AssociationWithScientificObject @node(additionalLabels: ["Association","FacilityManagement","Event"]){
-                URI: ID!
-                associatedWithScientificObject: ScientificObject @relationship(type: "http://www.opensilex.org/vocabulary/oeev#associatedWithScientificObject", direction: OUT)
-                associatedWith: Thing @relationship(type: "http://www.opensilex.org/vocabulary/oeev#associatedWith", direction: OUT)
-                concerns: String
-                isInstant: String
+            type oeev__AssociationWithScientificObject @node(additionalLabels: ["oeev__Association","oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__associatedWithScientificObject: oeso__ScientificObject @relationship(type: "oeev__associatedWithScientificObject", direction: OUT)
+                oeev__associatedWith: Thing @relationship(type: "oeev__associatedWith", direction: OUT)
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type AssociationWithSensingDevice @node(additionalLabels: ["Association","FacilityManagement","Event"]){
-                URI: ID!
-                associatedWithSensingDevice: SensingDevice @relationship(type: "http://www.opensilex.org/vocabulary/oeev#associatedWithSensingDevice", direction: OUT)
-                associatedWith: Thing @relationship(type: "http://www.opensilex.org/vocabulary/oeev#associatedWith", direction: OUT)
-                concerns: String
-                isInstant: String
+            type oeev__AssociationWithSensingDevice @node(additionalLabels: ["oeev__Association","oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__associatedWithSensingDevice: oeso__SensingDevice @relationship(type: "oeev__associatedWithSensingDevice", direction: OUT)
+                oeev__associatedWith: Thing @relationship(type: "oeev__associatedWith", direction: OUT)
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Event {
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Event {
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type PestAttack @node(additionalLabels: ["Incident","Trouble","Event"]){
-                URI: ID!
-                hasPest: Pest @relationship(type: "http://www.opensilex.org/vocabulary/oeev#hasPest", direction: OUT)
-                concerns: String
-                isInstant: String
+            type oeev__PestAttack @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event"]){
+                uri: ID! 
+                oeev__hasPest: oeev__Pest @relationship(type: "oeev__hasPest", direction: OUT)
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type AddingProduct @node(additionalLabels: ["ScientificObjectManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__AddingProduct @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type AutomaticCalibration @node(additionalLabels: ["Calibration","FacilityManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__AutomaticCalibration @node(additionalLabels: ["oeev__Calibration","oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Breakdown @node(additionalLabels: ["Trouble","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Breakdown @node(additionalLabels: ["oeev__Trouble","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Calibration @node(additionalLabels: ["FacilityManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Calibration @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Checking @node(additionalLabels: ["Servicing","Operability","FacilityManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Checking @node(additionalLabels: ["oeev__Servicing","oeev__Operability","oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Cleaning @node(additionalLabels: ["Servicing","Operability","FacilityManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Cleaning @node(additionalLabels: ["oeev__Servicing","oeev__Operability","oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Clipping @node(additionalLabels: ["ScientificObjectManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Clipping @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type CorrectiveMaintenance @node(additionalLabels: ["Operability","FacilityManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__CorrectiveMaintenance @node(additionalLabels: ["oeev__Operability","oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type CurativeTreatment @node(additionalLabels: ["Treatment","ScientificObjectManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__CurativeTreatment @node(additionalLabels: ["oeev__Treatment","oeev__ScientificObjectManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Detasseling @node(additionalLabels: ["ScientificObjectManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Detasseling @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Dysfunction @node(additionalLabels: ["Trouble","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Dysfunction @node(additionalLabels: ["oeev__Trouble","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type EvolutiveMaintenance @node(additionalLabels: ["Operability","FacilityManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__EvolutiveMaintenance @node(additionalLabels: ["oeev__Operability","oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type FacilityManagement @node(additionalLabels: ["Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__FacilityManagement @node(additionalLabels: ["oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Fertilization @node(additionalLabels: ["AddingProduct","ScientificObjectManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Fertilization @node(additionalLabels: ["oeev__AddingProduct","oeev__ScientificObjectManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Harvesting @node(additionalLabels: ["ScientificObjectManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Harvesting @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Incident @node(additionalLabels: ["Trouble","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Incident @node(additionalLabels: ["oeev__Trouble","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Installation @node(additionalLabels: ["FacilityManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Installation @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Irrigation @node(additionalLabels: ["ScientificObjectManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Irrigation @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Loading @node(additionalLabels: ["ScientificObjectManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Loading @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Lodging @node(additionalLabels: ["Incident","Trouble","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Lodging @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type ManualCalibration @node(additionalLabels: ["Calibration","FacilityManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__ManualCalibration @node(additionalLabels: ["oeev__Calibration","oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Move @node(additionalLabels: ["Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Move @node(additionalLabels: ["oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Operability @node(additionalLabels: ["FacilityManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Operability @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Pest {
-                URI: ID!
-                
+            type oeev__Pest {
+                uri: ID! 
             }            
             
-            type Flooding @node(additionalLabels: ["Incident","Trouble","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Flooding @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type PhenologyScoring @node(additionalLabels: ["ScientificObjectManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__PhenologyScoring @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type PotFall @node(additionalLabels: ["Incident","Trouble","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__PotFall @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Potting @node(additionalLabels: ["ScientificObjectManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Potting @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type PreventativeTreatment @node(additionalLabels: ["Treatment","ScientificObjectManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__PreventativeTreatment @node(additionalLabels: ["oeev__Treatment","oeev__ScientificObjectManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Reparation @node(additionalLabels: ["CorrectiveMaintenance","Operability","FacilityManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Reparation @node(additionalLabels: ["oeev__CorrectiveMaintenance","oeev__Operability","oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Restart @node(additionalLabels: ["FacilityManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Restart @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Sampling @node(additionalLabels: ["ScientificObjectManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Sampling @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type ScientificObjectManagement @node(additionalLabels: ["Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__ScientificObjectManagement @node(additionalLabels: ["oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Servicing @node(additionalLabels: ["Operability","FacilityManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Servicing @node(additionalLabels: ["oeev__Operability","oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Sowing @node(additionalLabels: ["ScientificObjectManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Sowing @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Staking @node(additionalLabels: ["ScientificObjectManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Staking @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Start @node(additionalLabels: ["FacilityManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Start @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Stop @node(additionalLabels: ["FacilityManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Stop @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type StuckPlant @node(additionalLabels: ["Incident","Trouble","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__StuckPlant @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Thinning @node(additionalLabels: ["ScientificObjectManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Thinning @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Treatment @node(additionalLabels: ["ScientificObjectManagement","Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Treatment @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Trouble @node(additionalLabels: ["Event"]){
-                URI: ID!
-                concerns: String
-                isInstant: String
+            type oeev__Trouble @node(additionalLabels: ["oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: String
             }            
             
-            type Germplasm {
-                URI: ID!
-                fromInstitute: Thing @relationship(type: "oeso:fromInstitute", direction: OUT)
+            type oeso__Germplasm {
+                uri: ID! 
+                oeso__fromInstitute: Thing @relationship(type: "oeso__fromInstitute", direction: OUT)
             }            
             
-            type Variable @node(additionalLabels: ["VariableBase"]){
-                URI: ID!
-                hasCharacteristic: Characteristic @relationship(type: "oeso:hasCharacteristic", direction: OUT)
-                hasEntity: Entity @relationship(type: "oeso:hasEntity", direction: OUT)
-                hasEntityOfInterest: EntityOfInterest @relationship(type: "oeso:hasEntityOfInterest", direction: OUT)
-                hasMethod: Method @relationship(type: "oeso:hasMethod", direction: OUT)
-                hasUnit: Unit @relationship(type: "oeso:hasUnit", direction: OUT)
+            type oeso__Variable @node(additionalLabels: ["oeso__VariableBase"]){
+                uri: ID! 
+                oeso__hasCharacteristic: oeso__Characteristic @relationship(type: "oeso__hasCharacteristic", direction: OUT)
+                oeso__hasEntity: oeso__Entity @relationship(type: "oeso__hasEntity", direction: OUT)
+                oeso__hasEntityOfInterest: oeso__EntityOfInterest @relationship(type: "oeso__hasEntityOfInterest", direction: OUT)
+                oeso__hasMethod: oeso__Method @relationship(type: "oeso__hasMethod", direction: OUT)
+                oeso__hasUnit: oeso__Unit @relationship(type: "oeso__hasUnit", direction: OUT)
             }            
             
-            type ScientificObject {
-                URI: ID!
-                hasCreationDate: String
-                hasDestructionDate: String
+            type oeso__ScientificObject {
+                uri: ID! 
+                oeso__hasCreationDate: String
+                oeso__hasDestructionDate: String
             }            
             
-            type Experiment {
-                URI: ID!
-                hasProject: Project @relationship(type: "oeso:hasProject", direction: OUT)
-                hasScientificSupervisor: Agent @relationship(type: "oeso:hasScientificSupervisor", direction: OUT)
-                hasTechnicalSupervisor: Agent @relationship(type: "oeso:hasTechnicalSupervisor", direction: OUT)
-                studyEffectOf: Factor @relationship(type: "oeso:studyEffectOf", direction: OUT)
-                usesFacility: Facility @relationship(type: "oeso:usesFacility", direction: OUT)
-                usesOrganization: Organization @relationship(type: "oeso:usesOrganization", direction: OUT)
+            type oeso__Experiment {
+                uri: ID! 
+                oeso__hasProject: oeso__Project @relationship(type: "oeso__hasProject", direction: OUT)
+                oeso__hasScientificSupervisor: undefined__Agent @relationship(type: "oeso__hasScientificSupervisor", direction: OUT)
+                oeso__hasTechnicalSupervisor: undefined__Agent @relationship(type: "oeso__hasTechnicalSupervisor", direction: OUT)
+                oeso__studyEffectOf: oeso__Factor @relationship(type: "oeso__studyEffectOf", direction: OUT)
+                oeso__usesFacility: oeso__Facility @relationship(type: "oeso__usesFacility", direction: OUT)
+                oeso__usesOrganization: undefined__Organization @relationship(type: "oeso__usesOrganization", direction: OUT)
             }            
             
-            type Organization @node(additionalLabels: ["ExperimentalCondition"]){
-                URI: ID!
-                isHosted: Facility @relationship(type: "oeso:isHosted", direction: OUT)
+            type undefined__Organization @node(additionalLabels: ["oeso__ExperimentalCondition"]){
+                uri: ID! 
+                oeso__isHosted: oeso__Facility @relationship(type: "oeso__isHosted", direction: OUT)
             }            
             
-            type SensingDevice @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
-                URI: ID!
-                measures: Variable @relationship(type: "oeso:measures", direction: OUT)
+            type oeso__SensingDevice @node(additionalLabels: ["oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
+                oeso__measures: oeso__Variable @relationship(type: "oeso__measures", direction: OUT)
             }            
             
-            type Unit @node(additionalLabels: ["VariableBase"]){
-                URI: ID!
-                hasAlternativeSymbol: String
-                hasSymbol: String
+            type oeso__Unit @node(additionalLabels: ["oeso__VariableBase"]){
+                uri: ID! 
+                oeso__hasAlternativeSymbol: String
+                oeso__hasSymbol: String
             }            
             
-            type Project @node(additionalLabels: ["ExperimentalCondition"]){
-                URI: ID!
-                hasObjective: String
+            type oeso__Project @node(additionalLabels: ["oeso__ExperimentalCondition"]){
+                uri: ID! 
+                oeso__hasObjective: String
             }            
             
-            type Activity {
-                URI: ID!
-                endedAtTime: String
-                startedAtTime: String
+            type undefined__Activity {
+                uri: ID! 
+                undefined__endedAtTime: String
+                undefined__startedAtTime: String
             }            
             
-            type Group {
-                URI: ID!
-                
+            type undefined__Group {
+                uri: ID! 
             }            
             
-            type GroupUserProfile {
-                URI: ID!
-                
+            type undefined__GroupUserProfile {
+                uri: ID! 
             }            
             
-            type Profile {
-                URI: ID!
-                
+            type undefined__Profile {
+                uri: ID! 
             }            
             
-            type Actuator @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
-                URI: ID!
-                
+            type oeso__Actuator @node(additionalLabels: ["oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
             }            
             
-            type AdministrativeDocument @node(additionalLabels: ["Document"]){
-                URI: ID!
-                
+            type oeso__AdministrativeDocument @node(additionalLabels: ["oeso__Document"]){
+                uri: ID! 
             }            
             
-            type Archive @node(additionalLabels: ["Datafile"]){
-                URI: ID!
-                
+            type oeso__Archive @node(additionalLabels: ["oeso__Datafile"]){
+                uri: ID! 
             }            
             
-            type Area @node(additionalLabels: ["Equipement","ExperimentalCondition"]){
-                URI: ID!
-                
+            type oeso__Area @node(additionalLabels: ["oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
             }            
             
-            type Characteristic @node(additionalLabels: ["VariableBase"]){
-                URI: ID!
-                
+            type oeso__Characteristic @node(additionalLabels: ["oeso__VariableBase"]){
+                uri: ID! 
             }            
             
-            type ClayeyArea @node(additionalLabels: ["SoilArea","StructuralArea","Area","Equipement","ExperimentalCondition"]){
-                URI: ID!
-                
+            type oeso__ClayeyArea @node(additionalLabels: ["oeso__SoilArea","oeso__StructuralArea","oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
             }            
             
-            type Compartment @node(additionalLabels: ["Facility"]){
-                URI: ID!
-                
+            type oeso__Compartment @node(additionalLabels: ["oeso__Facility"]){
+                uri: ID! 
             }            
             
-            type Computation @node(additionalLabels: ["Activity"]){
-                URI: ID!
-                endedAtTime: String
-                startedAtTime: String
+            type oeso__Computation @node(additionalLabels: ["undefined__Activity"]){
+                uri: ID! 
+                undefined__endedAtTime: String
+                undefined__startedAtTime: String
             }            
             
-            type ControlLaw @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
-                URI: ID!
-                
+            type oeso__ControlLaw @node(additionalLabels: ["oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
             }            
             
-            type Datafile {
-                URI: ID!
-                
+            type oeso__Datafile {
+                uri: ID! 
             }            
             
-            type Dataset @node(additionalLabels: ["Document"]){
-                URI: ID!
-                
+            type oeso__Dataset @node(additionalLabels: ["oeso__Document"]){
+                uri: ID! 
             }            
             
-            type Device @node(additionalLabels: ["Equipement","ExperimentalCondition"]){
-                URI: ID!
-                
+            type oeso__Device @node(additionalLabels: ["oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
             }            
             
-            type Document {
-                URI: ID!
-                
+            type oeso__Document {
+                uri: ID! 
             }            
             
-            type ElaboratedVariable @node(additionalLabels: ["Variable","VariableBase"]){
-                URI: ID!
-                hasCharacteristic: Characteristic @relationship(type: "oeso:hasCharacteristic", direction: OUT)
-                hasEntity: Entity @relationship(type: "oeso:hasEntity", direction: OUT)
-                hasEntityOfInterest: EntityOfInterest @relationship(type: "oeso:hasEntityOfInterest", direction: OUT)
-                hasMethod: Method @relationship(type: "oeso:hasMethod", direction: OUT)
-                hasUnit: Unit @relationship(type: "oeso:hasUnit", direction: OUT)
+            type oeso__ElaboratedVariable @node(additionalLabels: ["oeso__Variable","oeso__VariableBase"]){
+                uri: ID! 
+                oeso__hasCharacteristic: oeso__Characteristic @relationship(type: "oeso__hasCharacteristic", direction: OUT)
+                oeso__hasEntity: oeso__Entity @relationship(type: "oeso__hasEntity", direction: OUT)
+                oeso__hasEntityOfInterest: oeso__EntityOfInterest @relationship(type: "oeso__hasEntityOfInterest", direction: OUT)
+                oeso__hasMethod: oeso__Method @relationship(type: "oeso__hasMethod", direction: OUT)
+                oeso__hasUnit: oeso__Unit @relationship(type: "oeso__hasUnit", direction: OUT)
             }            
             
-            type Entity @node(additionalLabels: ["VariableBase"]){
-                URI: ID!
-                
+            type oeso__Entity @node(additionalLabels: ["oeso__VariableBase"]){
+                uri: ID! 
             }            
             
-            type EntityOfInterest @node(additionalLabels: ["VariableBase"]){
-                URI: ID!
-                
+            type oeso__EntityOfInterest @node(additionalLabels: ["oeso__VariableBase"]){
+                uri: ID! 
             }            
             
-            type Equipement @node(additionalLabels: ["ExperimentalCondition"]){
-                URI: ID!
-                
+            type oeso__Equipement @node(additionalLabels: ["oeso__ExperimentalCondition"]){
+                uri: ID! 
             }            
             
-            type ExperimentalCondition {
-                URI: ID!
-                
+            type oeso__ExperimentalCondition {
+                uri: ID! 
             }            
             
-            type ExperimentalProtocol @node(additionalLabels: ["TechnicalDocument","Document"]){
-                URI: ID!
-                
+            type oeso__ExperimentalProtocol @node(additionalLabels: ["oeso__TechnicalDocument","oeso__Document"]){
+                uri: ID! 
             }            
             
-            type ExperimentalUnit @node(additionalLabels: ["Organization","ExperimentalCondition"]){
-                URI: ID!
-                isHosted: Facility @relationship(type: "oeso:isHosted", direction: OUT)
+            type oeso__ExperimentalUnit @node(additionalLabels: ["undefined__Organization","oeso__ExperimentalCondition"]){
+                uri: ID! 
+                oeso__isHosted: oeso__Facility @relationship(type: "oeso__isHosted", direction: OUT)
             }            
             
-            type Facility {
-                URI: ID!
-                
+            type oeso__Facility {
+                uri: ID! 
             }            
             
-            type Factor @node(additionalLabels: ["ExperimentalCondition"]){
-                URI: ID!
-                
+            type oeso__Factor @node(additionalLabels: ["oeso__ExperimentalCondition"]){
+                uri: ID! 
             }            
             
-            type FactorLevel @node(additionalLabels: ["ExperimentalCondition"]){
-                URI: ID!
-                
+            type oeso__FactorLevel @node(additionalLabels: ["oeso__ExperimentalCondition"]){
+                uri: ID! 
             }            
             
-            type FloodableArea @node(additionalLabels: ["StructuralArea","Area","Equipement","ExperimentalCondition"]){
-                URI: ID!
-                
+            type oeso__FloodableArea @node(additionalLabels: ["oeso__StructuralArea","oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
             }            
             
-            type ITKDocument @node(additionalLabels: ["TechnicalDocument","Document"]){
-                URI: ID!
-                
+            type oeso__ITKDocument @node(additionalLabels: ["oeso__TechnicalDocument","oeso__Document"]){
+                uri: ID! 
             }            
             
-            type Image @node(additionalLabels: ["Datafile"]){
-                URI: ID!
-                
+            type oeso__Image @node(additionalLabels: ["oeso__Datafile"]){
+                uri: ID! 
             }            
             
-            type ImageAcquisition @node(additionalLabels: ["Activity"]){
-                URI: ID!
-                endedAtTime: String
-                startedAtTime: String
+            type oeso__ImageAcquisition @node(additionalLabels: ["undefined__Activity"]){
+                uri: ID! 
+                undefined__endedAtTime: String
+                undefined__startedAtTime: String
             }            
             
-            type ImageAnalysis @node(additionalLabels: ["Activity"]){
-                URI: ID!
-                endedAtTime: String
-                startedAtTime: String
+            type oeso__ImageAnalysis @node(additionalLabels: ["undefined__Activity"]){
+                uri: ID! 
+                undefined__endedAtTime: String
+                undefined__startedAtTime: String
             }            
             
-            type Installation @node(additionalLabels: ["Organization","ExperimentalCondition"]){
-                URI: ID!
-                isHosted: Facility @relationship(type: "oeso:isHosted", direction: OUT)
+            type oeso__Installation @node(additionalLabels: ["undefined__Organization","oeso__ExperimentalCondition"]){
+                uri: ID! 
+                oeso__isHosted: oeso__Facility @relationship(type: "oeso__isHosted", direction: OUT)
             }            
             
-            type InteractiveResource @node(additionalLabels: ["Document"]){
-                URI: ID!
-                
+            type oeso__InteractiveResource @node(additionalLabels: ["oeso__Document"]){
+                uri: ID! 
             }            
             
-            type LimestoneArea @node(additionalLabels: ["SoilArea","StructuralArea","Area","Equipement","ExperimentalCondition"]){
-                URI: ID!
-                
+            type oeso__LimestoneArea @node(additionalLabels: ["oeso__SoilArea","oeso__StructuralArea","oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
             }            
             
-            type MeasuresAcquisition @node(additionalLabels: ["Activity"]){
-                URI: ID!
-                endedAtTime: String
-                startedAtTime: String
+            type oeso__MeasuresAcquisition @node(additionalLabels: ["undefined__Activity"]){
+                uri: ID! 
+                undefined__endedAtTime: String
+                undefined__startedAtTime: String
             }            
             
-            type Method @node(additionalLabels: ["VariableBase"]){
-                URI: ID!
-                
+            type oeso__Method @node(additionalLabels: ["oeso__VariableBase"]){
+                uri: ID! 
             }            
             
-            type Multimedia @node(additionalLabels: ["Document"]){
-                URI: ID!
-                
+            type oeso__Multimedia @node(additionalLabels: ["oeso__Document"]){
+                uri: ID! 
             }            
             
-            type Operator @node(additionalLabels: ["Agent"]){
-                URI: ID!
-                
+            type oeso__Operator @node(additionalLabels: ["undefined__Agent"]){
+                uri: ID! 
             }            
             
-            type Population @node(additionalLabels: ["ScientificObject"]){
-                URI: ID!
-                hasCreationDate: String
-                hasDestructionDate: String
+            type oeso__Population @node(additionalLabels: ["oeso__ScientificObject"]){
+                uri: ID! 
+                oeso__hasCreationDate: String
+                oeso__hasDestructionDate: String
             }            
             
-            type Provenance {
-                URI: ID!
-                
+            type oeso__Provenance {
+                uri: ID! 
             }            
             
-            type Publication @node(additionalLabels: ["ScientificDocument","Document"]){
-                URI: ID!
-                
+            type oeso__Publication @node(additionalLabels: ["oeso__ScientificDocument","oeso__Document"]){
+                uri: ID! 
             }            
             
-            type RGBImage @node(additionalLabels: ["Image","Datafile"]){
-                URI: ID!
-                
+            type oeso__RGBImage @node(additionalLabels: ["oeso__Image","oeso__Datafile"]){
+                uri: ID! 
             }            
             
-            type Report @node(additionalLabels: ["ScientificDocument","Document"]){
-                URI: ID!
-                
+            type oeso__Report @node(additionalLabels: ["oeso__ScientificDocument","oeso__Document"]){
+                uri: ID! 
             }            
             
-            type ResearchUnit @node(additionalLabels: ["Organization","ExperimentalCondition"]){
-                URI: ID!
-                isHosted: Facility @relationship(type: "oeso:isHosted", direction: OUT)
+            type oeso__ResearchUnit @node(additionalLabels: ["undefined__Organization","oeso__ExperimentalCondition"]){
+                uri: ID! 
+                oeso__isHosted: oeso__Facility @relationship(type: "oeso__isHosted", direction: OUT)
             }            
             
-            type Sample @node(additionalLabels: ["ScientificObject"]){
-                URI: ID!
-                hasCreationDate: String
-                hasDestructionDate: String
+            type oeso__Sample @node(additionalLabels: ["oeso__ScientificObject"]){
+                uri: ID! 
+                oeso__hasCreationDate: String
+                oeso__hasDestructionDate: String
             }            
             
-            type ScientificDocument @node(additionalLabels: ["Document"]){
-                URI: ID!
-                
+            type oeso__ScientificDocument @node(additionalLabels: ["oeso__Document"]){
+                uri: ID! 
             }            
             
-            type Shed @node(additionalLabels: ["Equipement","ExperimentalCondition"]){
-                URI: ID!
-                
+            type oeso__Shed @node(additionalLabels: ["oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
             }            
             
-            type ShinyAppPackage @node(additionalLabels: ["InteractiveResource","Document"]){
-                URI: ID!
-                
+            type oeso__ShinyAppPackage @node(additionalLabels: ["oeso__InteractiveResource","oeso__Document"]){
+                uri: ID! 
             }            
             
-            type Software @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
-                URI: ID!
-                
+            type oeso__Software @node(additionalLabels: ["oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
             }            
             
-            type SoilArea @node(additionalLabels: ["StructuralArea","Area","Equipement","ExperimentalCondition"]){
-                URI: ID!
-                
+            type oeso__SoilArea @node(additionalLabels: ["oeso__StructuralArea","oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
             }            
             
-            type Species @node(additionalLabels: ["Germplasm"]){
-                URI: ID!
-                fromInstitute: Thing @relationship(type: "oeso:fromInstitute", direction: OUT)
+            type oeso__Species @node(additionalLabels: ["oeso__Germplasm"]){
+                uri: ID! 
+                oeso__fromInstitute: Thing @relationship(type: "oeso__fromInstitute", direction: OUT)
             }            
             
-            type Station @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
-                URI: ID!
-                
+            type oeso__Station @node(additionalLabels: ["oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
             }            
             
-            type StructuralArea @node(additionalLabels: ["Area","Equipement","ExperimentalCondition"]){
-                URI: ID!
-                
+            type oeso__StructuralArea @node(additionalLabels: ["oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
             }            
             
-            type TechnicalDocument @node(additionalLabels: ["Document"]){
-                URI: ID!
-                
+            type oeso__TechnicalDocument @node(additionalLabels: ["oeso__Document"]){
+                uri: ID! 
             }            
             
-            type TemporalArea @node(additionalLabels: ["Area","Equipement","ExperimentalCondition"]){
-                URI: ID!
-                
+            type oeso__TemporalArea @node(additionalLabels: ["oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
             }            
             
-            type Trait {
-                URI: ID!
-                
+            type oeso__Trait {
+                uri: ID! 
             }            
             
-            type Treatment @node(additionalLabels: ["ExperimentalCondition"]){
-                URI: ID!
-                
+            type oeso__Treatment @node(additionalLabels: ["oeso__ExperimentalCondition"]){
+                uri: ID! 
             }            
             
-            type VariableBase {
-                URI: ID!
-                
+            type oeso__VariableBase {
+                uri: ID! 
             }            
             
-            type VariablesGroup @node(additionalLabels: ["Bag"]){
-                URI: ID!
-                
+            type oeso__VariablesGroup @node(additionalLabels: ["ns__Bag"]){
+                uri: ID! 
             }            
             
-            type Vector @node(additionalLabels: ["Device","Equipement","ExperimentalCondition"]){
-                URI: ID!
-                
+            type oeso__Vector @node(additionalLabels: ["oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
             }            
             
-            type WebSite @node(additionalLabels: ["InteractiveResource","Document"]){
-                URI: ID!
-                
+            type oeso__WebSite @node(additionalLabels: ["oeso__InteractiveResource","oeso__Document"]){
+                uri: ID! 
             }            
             
-            type WindyArea @node(additionalLabels: ["StructuralArea","Area","Equipement","ExperimentalCondition"]){
-                URI: ID!
-                
+            type oeso__WindyArea @node(additionalLabels: ["oeso__StructuralArea","oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
             }            
             
-            type Bag {
-                URI: ID!
-                
+            type ns__Bag {
+                uri: ID! 
             }            
             
-            type DatatypeProperty {
-                URI: ID!
-                
+            type owl__DatatypeProperty {
+                uri: ID! 
             }            
             
-            type Agent {
-                URI: ID!
-                
+            type undefined__Agent {
+                uri: ID! 
             }            
             
-            type Entity {
-                URI: ID!
-                
+            type undefined__Entity {
+                uri: ID! 
             }            
             
-            type Person @node(additionalLabels: ["Agent"]){
-                URI: ID!
-                
+            type undefined__Person @node(additionalLabels: ["undefined__Agent"]){
+                uri: ID! 
             }            
             
-            type SoftwareAgent @node(additionalLabels: ["Agent"]){
-                URI: ID!
-                
+            type undefined__SoftwareAgent @node(additionalLabels: ["undefined__Agent"]){
+                uri: ID! 
             }            
             
