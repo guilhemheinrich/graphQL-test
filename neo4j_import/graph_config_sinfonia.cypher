@@ -40,3 +40,34 @@ YIELD prefix, namespace
 with count(*) AS dump
 
 RETURN dump
+
+
+# Couldn't succed to load a file to work (locally, seems fine using ftp endpoint)
+call n10s.rdf.import.fetch("file:///import/sinfonia_statements.ttl",
+   "Turtle")
+
+
+# We need to "bounce" over a virtuoso sparql endpoint... yes yes
+call n10s.rdf.import.fetch("http://192.168.56.1:8890/sparql",
+   "Turtle", { 
+       languageFilter: "en",
+        headerParams: { Accept: "application/turtle"},
+        payload: 
+        "query=" + apoc.text.urlencode("CONSTRUCT {?s ?p ?o } where { 
+    SERVICE <http://192.168.0.168:7200/repositories/sinfonia-dev> {
+        ?s ?p ?o
+    }
+} limit 100 "
+)})   
+
+call n10s.rdf.import.fetch("http://192.168.56.1:8890/sparql",
+   "Turtle", { 
+       languageFilter: "en",
+        headerParams: { Accept: "application/turtle"},
+        payload: 
+        "query=" + apoc.text.urlencode("CONSTRUCT {?s ?p ?o } where { 
+    SERVICE <http://192.168.0.168:7200/repositories/sinfonia-dev> {
+        ?s ?p ?o
+    }
+}"
+)})   
