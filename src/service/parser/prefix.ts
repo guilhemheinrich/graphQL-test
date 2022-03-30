@@ -26,7 +26,15 @@ export const PREFIXES = [
     {
         uri: "http://www.opensilex.org/vocabulary/oeev#",
         prefix: "oeev"
-    }
+    },
+    {
+        uri: "http://xmlns.com/foaf/0.1/",
+        prefix: "foaf"
+    },
+    {
+        uri: "http://sinfonia.vignevin.com/oeso#",
+        prefix: "sinfonia"
+    },
 ]
 
 export default PREFIXES
