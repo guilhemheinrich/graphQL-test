@@ -2,6 +2,12 @@
             type owl__Thing {
                 uri: ID! 
                 oeso__hasDocument: oeso__Document @relationship(type: "oeso__hasDocument", direction: OUT)
+                foaf__name: String
+                foaf__maker: foaf__Agent @relationship(type: "foaf__maker", direction: OUT)
+                foaf__depiction: foaf__Image @relationship(type: "foaf__depiction", direction: OUT)
+                foaf__fundedBy: owl__Thing @relationship(type: "foaf__fundedBy", direction: OUT)
+                foaf__page: foaf__Document @relationship(type: "foaf__page", direction: OUT)
+                foaf__theme: owl__Thing @relationship(type: "foaf__theme", direction: OUT)
             }            
             
             type undefined__TimeState @node(additionalLabels: ["undefined__State"]){
@@ -43,6 +49,7 @@
             
             type skos__Concept {
                 uri: ID! 
+                foaf__focus: owl__Thing @relationship(type: "foaf__focus", direction: OUT)
             }            
             
             type undefined__OrderedCollection {
@@ -79,6 +86,7 @@
             
             type undefined__Motivation @node(additionalLabels: ["skos__Concept"]){
                 uri: ID! 
+                foaf__focus: owl__Thing @relationship(type: "foaf__focus", direction: OUT)
             }            
             
             type undefined__Selector {
@@ -113,13 +121,453 @@
                 uri: ID! 
             }            
             
-            type undefined__Person {
+            type foaf__Person @node(additionalLabels: ["foaf__Agent","undefined__SpatialThing"]){
+                uri: ID! 
+                foaf__geekcode: String
+                foaf__firstName: String
+                foaf__lastName: String
+                foaf__surname: String
+                foaf__family_name: String
+                foaf__familyName: String
+                foaf__plan: String
+                foaf__img: foaf__Image @relationship(type: "foaf__img", direction: OUT)
+                foaf__myersBriggs: String
+                foaf__workplaceHomepage: foaf__Document @relationship(type: "foaf__workplaceHomepage", direction: OUT)
+                foaf__workInfoHomepage: foaf__Document @relationship(type: "foaf__workInfoHomepage", direction: OUT)
+                foaf__schoolHomepage: foaf__Document @relationship(type: "foaf__schoolHomepage", direction: OUT)
+                foaf__knows: foaf__Person @relationship(type: "foaf__knows", direction: OUT)
+                foaf__publications: foaf__Document @relationship(type: "foaf__publications", direction: OUT)
+                foaf__currentProject: owl__Thing @relationship(type: "foaf__currentProject", direction: OUT)
+                foaf__pastProject: owl__Thing @relationship(type: "foaf__pastProject", direction: OUT)
+                foaf__mbox: owl__Thing @relationship(type: "foaf__mbox", direction: OUT)
+                foaf__mbox_sha1sum: String
+                foaf__gender: String
+                foaf__skypeID: String
+                foaf__tipjar: foaf__Document @relationship(type: "foaf__tipjar", direction: OUT)
+                foaf__made: owl__Thing @relationship(type: "foaf__made", direction: OUT)
+                foaf__interest: foaf__Document @relationship(type: "foaf__interest", direction: OUT)
+                foaf__topic_interest: owl__Thing @relationship(type: "foaf__topic_interest", direction: OUT)
+                foaf__account: foaf__OnlineAccount @relationship(type: "foaf__account", direction: OUT)
+                foaf__holdsAccount: foaf__OnlineAccount @relationship(type: "foaf__holdsAccount", direction: OUT)
+                foaf__birthday: String
+                foaf__age: String
+                foaf__status: String
+                foaf__based_near: undefined__SpatialThing @relationship(type: "foaf__based_near", direction: OUT)
+            }            
+            
+            type oeso__Germplasm {
+                uri: ID! 
+                oeso__fromInstitute: owl__Thing @relationship(type: "oeso__fromInstitute", direction: OUT)
+            }            
+            
+            type oeso__Variable @node(additionalLabels: ["oeso__VariableBase"]){
+                uri: ID! 
+                oeso__hasCharacteristic: oeso__Characteristic @relationship(type: "oeso__hasCharacteristic", direction: OUT)
+                oeso__hasEntity: oeso__Entity @relationship(type: "oeso__hasEntity", direction: OUT)
+                oeso__hasEntityOfInterest: oeso__EntityOfInterest @relationship(type: "oeso__hasEntityOfInterest", direction: OUT)
+                oeso__hasMethod: oeso__Method @relationship(type: "oeso__hasMethod", direction: OUT)
+                oeso__hasUnit: oeso__Unit @relationship(type: "oeso__hasUnit", direction: OUT)
+            }            
+            
+            type oeso__ScientificObject {
+                uri: ID! 
+                oeso__hasCreationDate: String
+                oeso__hasDestructionDate: String
+                sinfonia__SampleEntity: oeso__Entity @relationship(type: "sinfonia__SampleEntity", direction: OUT)
+                sinfonia__derivesFrom: oeso__ScientificObject @relationship(type: "sinfonia__derivesFrom", direction: OUT)
+                sinfonia__hasRootstockGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasRootstockGermplasm", direction: OUT)
+                sinfonia__hasScionGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasScionGermplasm", direction: OUT)
+                sinfonia__hasSoil: sinfonia__Soil @relationship(type: "sinfonia__hasSoil", direction: OUT)
+                sinfonia__isSampleOf: oeso__ScientificObject @relationship(type: "sinfonia__isSampleOf", direction: OUT)
+                sinfonia__Repetition: String
+                sinfonia__hasPositionX: String
+                sinfonia__positionY: String
+            }            
+            
+            type oeso__Experiment {
+                uri: ID! 
+                oeso__hasProject: oeso__Project @relationship(type: "oeso__hasProject", direction: OUT)
+                oeso__hasScientificSupervisor: foaf__Agent @relationship(type: "oeso__hasScientificSupervisor", direction: OUT)
+                oeso__hasTechnicalSupervisor: foaf__Agent @relationship(type: "oeso__hasTechnicalSupervisor", direction: OUT)
+                oeso__studyEffectOf: oeso__Factor @relationship(type: "oeso__studyEffectOf", direction: OUT)
+                oeso__usesFacility: oeso__Facility @relationship(type: "oeso__usesFacility", direction: OUT)
+                oeso__usesOrganization: foaf__Organization @relationship(type: "oeso__usesOrganization", direction: OUT)
+            }            
+            
+            type foaf__Organization @node(additionalLabels: ["foaf__Agent","oeso__ExperimentalCondition"]){
+                uri: ID! 
+                oeso__isHosted: oeso__Facility @relationship(type: "oeso__isHosted", direction: OUT)
+                foaf__mbox: owl__Thing @relationship(type: "foaf__mbox", direction: OUT)
+                foaf__mbox_sha1sum: String
+                foaf__gender: String
+                foaf__skypeID: String
+                foaf__tipjar: foaf__Document @relationship(type: "foaf__tipjar", direction: OUT)
+                foaf__made: owl__Thing @relationship(type: "foaf__made", direction: OUT)
+                foaf__interest: foaf__Document @relationship(type: "foaf__interest", direction: OUT)
+                foaf__topic_interest: owl__Thing @relationship(type: "foaf__topic_interest", direction: OUT)
+                foaf__account: foaf__OnlineAccount @relationship(type: "foaf__account", direction: OUT)
+                foaf__holdsAccount: foaf__OnlineAccount @relationship(type: "foaf__holdsAccount", direction: OUT)
+                foaf__birthday: String
+                foaf__age: String
+                foaf__status: String
+            }            
+            
+            type oeso__SensingDevice @node(additionalLabels: ["oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
+                oeso__measures: oeso__Variable @relationship(type: "oeso__measures", direction: OUT)
+            }            
+            
+            type oeso__Unit @node(additionalLabels: ["oeso__VariableBase"]){
+                uri: ID! 
+                oeso__hasAlternativeSymbol: String
+                oeso__hasSymbol: String
+            }            
+            
+            type oeso__Project @node(additionalLabels: ["oeso__ExperimentalCondition"]){
+                uri: ID! 
+                oeso__hasObjective: String
+            }            
+            
+            type undefined__Activity {
+                uri: ID! 
+                undefined__endedAtTime: String
+                undefined__startedAtTime: String
+            }            
+            
+            type undefined__Group {
+                uri: ID! 
+            }            
+            
+            type undefined__GroupUserProfile {
+                uri: ID! 
+            }            
+            
+            type undefined__Profile {
+                uri: ID! 
+            }            
+            
+            type oeso__Actuator @node(additionalLabels: ["oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
+            }            
+            
+            type oeso__AdministrativeDocument @node(additionalLabels: ["oeso__Document"]){
+                uri: ID! 
+            }            
+            
+            type oeso__Archive @node(additionalLabels: ["oeso__Datafile"]){
+                uri: ID! 
+            }            
+            
+            type oeso__Area @node(additionalLabels: ["oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
+            }            
+            
+            type oeso__Characteristic @node(additionalLabels: ["oeso__VariableBase"]){
+                uri: ID! 
+            }            
+            
+            type oeso__ClayeyArea @node(additionalLabels: ["oeso__SoilArea","oeso__StructuralArea","oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
+            }            
+            
+            type oeso__Compartment @node(additionalLabels: ["oeso__Facility"]){
+                uri: ID! 
+            }            
+            
+            type oeso__Computation @node(additionalLabels: ["undefined__Activity"]){
+                uri: ID! 
+                undefined__endedAtTime: String
+                undefined__startedAtTime: String
+            }            
+            
+            type oeso__ControlLaw @node(additionalLabels: ["oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
+            }            
+            
+            type oeso__Datafile {
+                uri: ID! 
+            }            
+            
+            type oeso__Dataset @node(additionalLabels: ["oeso__Document"]){
+                uri: ID! 
+            }            
+            
+            type oeso__Device @node(additionalLabels: ["oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
+            }            
+            
+            type oeso__Document {
+                uri: ID! 
+            }            
+            
+            type oeso__ElaboratedVariable @node(additionalLabels: ["oeso__Variable","oeso__VariableBase"]){
+                uri: ID! 
+                oeso__hasCharacteristic: oeso__Characteristic @relationship(type: "oeso__hasCharacteristic", direction: OUT)
+                oeso__hasEntity: oeso__Entity @relationship(type: "oeso__hasEntity", direction: OUT)
+                oeso__hasEntityOfInterest: oeso__EntityOfInterest @relationship(type: "oeso__hasEntityOfInterest", direction: OUT)
+                oeso__hasMethod: oeso__Method @relationship(type: "oeso__hasMethod", direction: OUT)
+                oeso__hasUnit: oeso__Unit @relationship(type: "oeso__hasUnit", direction: OUT)
+            }            
+            
+            type oeso__Entity @node(additionalLabels: ["oeso__VariableBase"]){
+                uri: ID! 
+            }            
+            
+            type oeso__EntityOfInterest @node(additionalLabels: ["oeso__VariableBase"]){
+                uri: ID! 
+            }            
+            
+            type oeso__Equipement @node(additionalLabels: ["oeso__ExperimentalCondition"]){
+                uri: ID! 
+            }            
+            
+            type oeso__ExperimentalCondition {
+                uri: ID! 
+            }            
+            
+            type oeso__ExperimentalProtocol @node(additionalLabels: ["oeso__TechnicalDocument","oeso__Document"]){
+                uri: ID! 
+            }            
+            
+            type oeso__ExperimentalUnit @node(additionalLabels: ["foaf__Organization","foaf__Agent","oeso__ExperimentalCondition"]){
+                uri: ID! 
+                oeso__isHosted: oeso__Facility @relationship(type: "oeso__isHosted", direction: OUT)
+                foaf__mbox: owl__Thing @relationship(type: "foaf__mbox", direction: OUT)
+                foaf__mbox_sha1sum: String
+                foaf__gender: String
+                foaf__skypeID: String
+                foaf__tipjar: foaf__Document @relationship(type: "foaf__tipjar", direction: OUT)
+                foaf__made: owl__Thing @relationship(type: "foaf__made", direction: OUT)
+                foaf__interest: foaf__Document @relationship(type: "foaf__interest", direction: OUT)
+                foaf__topic_interest: owl__Thing @relationship(type: "foaf__topic_interest", direction: OUT)
+                foaf__account: foaf__OnlineAccount @relationship(type: "foaf__account", direction: OUT)
+                foaf__holdsAccount: foaf__OnlineAccount @relationship(type: "foaf__holdsAccount", direction: OUT)
+                foaf__birthday: String
+                foaf__age: String
+                foaf__status: String
+            }            
+            
+            type oeso__Facility {
+                uri: ID! 
+            }            
+            
+            type oeso__Factor @node(additionalLabels: ["oeso__ExperimentalCondition"]){
+                uri: ID! 
+            }            
+            
+            type oeso__FactorLevel @node(additionalLabels: ["oeso__ExperimentalCondition"]){
+                uri: ID! 
+            }            
+            
+            type oeso__FloodableArea @node(additionalLabels: ["oeso__StructuralArea","oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
+            }            
+            
+            type oeso__ITKDocument @node(additionalLabels: ["oeso__TechnicalDocument","oeso__Document"]){
+                uri: ID! 
+            }            
+            
+            type oeso__Image @node(additionalLabels: ["oeso__Datafile"]){
+                uri: ID! 
+            }            
+            
+            type oeso__ImageAcquisition @node(additionalLabels: ["undefined__Activity"]){
+                uri: ID! 
+                undefined__endedAtTime: String
+                undefined__startedAtTime: String
+            }            
+            
+            type oeso__ImageAnalysis @node(additionalLabels: ["undefined__Activity"]){
+                uri: ID! 
+                undefined__endedAtTime: String
+                undefined__startedAtTime: String
+            }            
+            
+            type oeso__Installation @node(additionalLabels: ["foaf__Organization","foaf__Agent","oeso__ExperimentalCondition"]){
+                uri: ID! 
+                oeso__isHosted: oeso__Facility @relationship(type: "oeso__isHosted", direction: OUT)
+                foaf__mbox: owl__Thing @relationship(type: "foaf__mbox", direction: OUT)
+                foaf__mbox_sha1sum: String
+                foaf__gender: String
+                foaf__skypeID: String
+                foaf__tipjar: foaf__Document @relationship(type: "foaf__tipjar", direction: OUT)
+                foaf__made: owl__Thing @relationship(type: "foaf__made", direction: OUT)
+                foaf__interest: foaf__Document @relationship(type: "foaf__interest", direction: OUT)
+                foaf__topic_interest: owl__Thing @relationship(type: "foaf__topic_interest", direction: OUT)
+                foaf__account: foaf__OnlineAccount @relationship(type: "foaf__account", direction: OUT)
+                foaf__holdsAccount: foaf__OnlineAccount @relationship(type: "foaf__holdsAccount", direction: OUT)
+                foaf__birthday: String
+                foaf__age: String
+                foaf__status: String
+            }            
+            
+            type oeso__InteractiveResource @node(additionalLabels: ["oeso__Document"]){
+                uri: ID! 
+            }            
+            
+            type oeso__LimestoneArea @node(additionalLabels: ["oeso__SoilArea","oeso__StructuralArea","oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
+            }            
+            
+            type oeso__MeasuresAcquisition @node(additionalLabels: ["undefined__Activity"]){
+                uri: ID! 
+                undefined__endedAtTime: String
+                undefined__startedAtTime: String
+            }            
+            
+            type oeso__Method @node(additionalLabels: ["oeso__VariableBase"]){
+                uri: ID! 
+            }            
+            
+            type oeso__Multimedia @node(additionalLabels: ["oeso__Document"]){
+                uri: ID! 
+            }            
+            
+            type oeso__Operator @node(additionalLabels: ["foaf__Agent"]){
+                uri: ID! 
+                foaf__mbox: owl__Thing @relationship(type: "foaf__mbox", direction: OUT)
+                foaf__mbox_sha1sum: String
+                foaf__gender: String
+                foaf__skypeID: String
+                foaf__tipjar: foaf__Document @relationship(type: "foaf__tipjar", direction: OUT)
+                foaf__made: owl__Thing @relationship(type: "foaf__made", direction: OUT)
+                foaf__interest: foaf__Document @relationship(type: "foaf__interest", direction: OUT)
+                foaf__topic_interest: owl__Thing @relationship(type: "foaf__topic_interest", direction: OUT)
+                foaf__account: foaf__OnlineAccount @relationship(type: "foaf__account", direction: OUT)
+                foaf__holdsAccount: foaf__OnlineAccount @relationship(type: "foaf__holdsAccount", direction: OUT)
+                foaf__birthday: String
+                foaf__age: String
+                foaf__status: String
+            }            
+            
+            type oeso__Population @node(additionalLabels: ["oeso__ScientificObject"]){
+                uri: ID! 
+                oeso__hasCreationDate: String
+                oeso__hasDestructionDate: String
+                sinfonia__SampleEntity: oeso__Entity @relationship(type: "sinfonia__SampleEntity", direction: OUT)
+                sinfonia__derivesFrom: oeso__ScientificObject @relationship(type: "sinfonia__derivesFrom", direction: OUT)
+                sinfonia__hasRootstockGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasRootstockGermplasm", direction: OUT)
+                sinfonia__hasScionGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasScionGermplasm", direction: OUT)
+                sinfonia__hasSoil: sinfonia__Soil @relationship(type: "sinfonia__hasSoil", direction: OUT)
+                sinfonia__isSampleOf: oeso__ScientificObject @relationship(type: "sinfonia__isSampleOf", direction: OUT)
+                sinfonia__Repetition: String
+                sinfonia__hasPositionX: String
+                sinfonia__positionY: String
+            }            
+            
+            type oeso__Provenance {
+                uri: ID! 
+            }            
+            
+            type oeso__Publication @node(additionalLabels: ["oeso__ScientificDocument","oeso__Document"]){
+                uri: ID! 
+            }            
+            
+            type oeso__RGBImage @node(additionalLabels: ["oeso__Image","oeso__Datafile"]){
+                uri: ID! 
+            }            
+            
+            type oeso__Report @node(additionalLabels: ["oeso__ScientificDocument","oeso__Document"]){
+                uri: ID! 
+            }            
+            
+            type oeso__ResearchUnit @node(additionalLabels: ["foaf__Organization","foaf__Agent","oeso__ExperimentalCondition"]){
+                uri: ID! 
+                oeso__isHosted: oeso__Facility @relationship(type: "oeso__isHosted", direction: OUT)
+                foaf__mbox: owl__Thing @relationship(type: "foaf__mbox", direction: OUT)
+                foaf__mbox_sha1sum: String
+                foaf__gender: String
+                foaf__skypeID: String
+                foaf__tipjar: foaf__Document @relationship(type: "foaf__tipjar", direction: OUT)
+                foaf__made: owl__Thing @relationship(type: "foaf__made", direction: OUT)
+                foaf__interest: foaf__Document @relationship(type: "foaf__interest", direction: OUT)
+                foaf__topic_interest: owl__Thing @relationship(type: "foaf__topic_interest", direction: OUT)
+                foaf__account: foaf__OnlineAccount @relationship(type: "foaf__account", direction: OUT)
+                foaf__holdsAccount: foaf__OnlineAccount @relationship(type: "foaf__holdsAccount", direction: OUT)
+                foaf__birthday: String
+                foaf__age: String
+                foaf__status: String
+            }            
+            
+            type oeso__Sample @node(additionalLabels: ["oeso__ScientificObject"]){
+                uri: ID! 
+                oeso__hasCreationDate: String
+                oeso__hasDestructionDate: String
+                sinfonia__SampleEntity: oeso__Entity @relationship(type: "sinfonia__SampleEntity", direction: OUT)
+                sinfonia__derivesFrom: oeso__ScientificObject @relationship(type: "sinfonia__derivesFrom", direction: OUT)
+                sinfonia__hasRootstockGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasRootstockGermplasm", direction: OUT)
+                sinfonia__hasScionGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasScionGermplasm", direction: OUT)
+                sinfonia__hasSoil: sinfonia__Soil @relationship(type: "sinfonia__hasSoil", direction: OUT)
+                sinfonia__isSampleOf: oeso__ScientificObject @relationship(type: "sinfonia__isSampleOf", direction: OUT)
+                sinfonia__Repetition: String
+                sinfonia__hasPositionX: String
+                sinfonia__positionY: String
+            }            
+            
+            type oeso__ScientificDocument @node(additionalLabels: ["oeso__Document"]){
+                uri: ID! 
+            }            
+            
+            type oeso__Shed @node(additionalLabels: ["oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
+            }            
+            
+            type oeso__ShinyAppPackage @node(additionalLabels: ["oeso__InteractiveResource","oeso__Document"]){
+                uri: ID! 
+            }            
+            
+            type oeso__Software @node(additionalLabels: ["oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
+            }            
+            
+            type oeso__SoilArea @node(additionalLabels: ["oeso__StructuralArea","oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
+            }            
+            
+            type oeso__Species @node(additionalLabels: ["oeso__Germplasm"]){
+                uri: ID! 
+                oeso__fromInstitute: owl__Thing @relationship(type: "oeso__fromInstitute", direction: OUT)
+            }            
+            
+            type oeso__Station @node(additionalLabels: ["oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
+            }            
+            
+            type oeso__StructuralArea @node(additionalLabels: ["oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
+            }            
+            
+            type oeso__TechnicalDocument @node(additionalLabels: ["oeso__Document"]){
+                uri: ID! 
+            }            
+            
+            type oeso__TemporalArea @node(additionalLabels: ["oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
+            }            
+            
+            type oeso__Trait {
+                uri: ID! 
+            }            
+            
+            type oeso__Treatment @node(additionalLabels: ["oeso__ExperimentalCondition"]){
+                uri: ID! 
+            }            
+            
+            type oeso__VariableBase {
+                uri: ID! 
+            }            
+            
+            type oeso__VariablesGroup @node(additionalLabels: ["ns__Bag"]){
+                uri: ID! 
+            }            
+            
+            type oeso__Vector @node(additionalLabels: ["oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
                 uri: ID! 
             }            
             
             type oeev__Association @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
                 uri: ID! 
-                oeev__associatedWith: Thing @relationship(type: "oeev__associatedWith", direction: OUT)
+                oeev__associatedWith: owl__Thing @relationship(type: "oeev__associatedWith", direction: OUT)
                 oeev__concerns: String
                 oeev__isInstant: String
             }            
@@ -127,7 +575,7 @@
             type oeev__AssociationWithScientificObject @node(additionalLabels: ["oeev__Association","oeev__FacilityManagement","oeev__Event"]){
                 uri: ID! 
                 oeev__associatedWithScientificObject: oeso__ScientificObject @relationship(type: "oeev__associatedWithScientificObject", direction: OUT)
-                oeev__associatedWith: Thing @relationship(type: "oeev__associatedWith", direction: OUT)
+                oeev__associatedWith: owl__Thing @relationship(type: "oeev__associatedWith", direction: OUT)
                 oeev__concerns: String
                 oeev__isInstant: String
             }            
@@ -135,7 +583,7 @@
             type oeev__AssociationWithSensingDevice @node(additionalLabels: ["oeev__Association","oeev__FacilityManagement","oeev__Event"]){
                 uri: ID! 
                 oeev__associatedWithSensingDevice: oeso__SensingDevice @relationship(type: "oeev__associatedWithSensingDevice", direction: OUT)
-                oeev__associatedWith: Thing @relationship(type: "oeev__associatedWith", direction: OUT)
+                oeev__associatedWith: owl__Thing @relationship(type: "oeev__associatedWith", direction: OUT)
                 oeev__concerns: String
                 oeev__isInstant: String
             }            
@@ -403,322 +851,131 @@
                 oeev__isInstant: String
             }            
             
-            type oeso__Germplasm {
+            type rdfs__Class {
                 uri: ID! 
-                oeso__fromInstitute: Thing @relationship(type: "oeso__fromInstitute", direction: OUT)
             }            
             
-            type oeso__Variable @node(additionalLabels: ["oeso__VariableBase"]){
+            type foaf__LabelProperty {
                 uri: ID! 
-                oeso__hasCharacteristic: oeso__Characteristic @relationship(type: "oeso__hasCharacteristic", direction: OUT)
-                oeso__hasEntity: oeso__Entity @relationship(type: "oeso__hasEntity", direction: OUT)
-                oeso__hasEntityOfInterest: oeso__EntityOfInterest @relationship(type: "oeso__hasEntityOfInterest", direction: OUT)
-                oeso__hasMethod: oeso__Method @relationship(type: "oeso__hasMethod", direction: OUT)
-                oeso__hasUnit: oeso__Unit @relationship(type: "oeso__hasUnit", direction: OUT)
             }            
             
-            type oeso__ScientificObject {
+            type foaf__Agent {
                 uri: ID! 
-                oeso__hasCreationDate: String
-                oeso__hasDestructionDate: String
+                foaf__mbox: owl__Thing @relationship(type: "foaf__mbox", direction: OUT)
+                foaf__mbox_sha1sum: String
+                foaf__gender: String
+                foaf__skypeID: String
+                foaf__tipjar: foaf__Document @relationship(type: "foaf__tipjar", direction: OUT)
+                foaf__made: owl__Thing @relationship(type: "foaf__made", direction: OUT)
+                foaf__interest: foaf__Document @relationship(type: "foaf__interest", direction: OUT)
+                foaf__topic_interest: owl__Thing @relationship(type: "foaf__topic_interest", direction: OUT)
+                foaf__account: foaf__OnlineAccount @relationship(type: "foaf__account", direction: OUT)
+                foaf__holdsAccount: foaf__OnlineAccount @relationship(type: "foaf__holdsAccount", direction: OUT)
+                foaf__birthday: String
+                foaf__age: String
+                foaf__status: String
             }            
             
-            type oeso__Experiment {
+            type undefined__SpatialThing {
                 uri: ID! 
-                oeso__hasProject: oeso__Project @relationship(type: "oeso__hasProject", direction: OUT)
-                oeso__hasScientificSupervisor: undefined__Agent @relationship(type: "oeso__hasScientificSupervisor", direction: OUT)
-                oeso__hasTechnicalSupervisor: undefined__Agent @relationship(type: "oeso__hasTechnicalSupervisor", direction: OUT)
-                oeso__studyEffectOf: oeso__Factor @relationship(type: "oeso__studyEffectOf", direction: OUT)
-                oeso__usesFacility: oeso__Facility @relationship(type: "oeso__usesFacility", direction: OUT)
-                oeso__usesOrganization: undefined__Organization @relationship(type: "oeso__usesOrganization", direction: OUT)
+                foaf__based_near: undefined__SpatialThing @relationship(type: "foaf__based_near", direction: OUT)
             }            
             
-            type undefined__Organization @node(additionalLabels: ["oeso__ExperimentalCondition"]){
+            type foaf__Document {
                 uri: ID! 
-                oeso__isHosted: oeso__Facility @relationship(type: "oeso__isHosted", direction: OUT)
+                foaf__sha1: String
+                foaf__topic: owl__Thing @relationship(type: "foaf__topic", direction: OUT)
+                foaf__primaryTopic: owl__Thing @relationship(type: "foaf__primaryTopic", direction: OUT)
             }            
             
-            type oeso__SensingDevice @node(additionalLabels: ["oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
+            type foaf__Group @node(additionalLabels: ["foaf__Agent"]){
                 uri: ID! 
-                oeso__measures: oeso__Variable @relationship(type: "oeso__measures", direction: OUT)
+                foaf__member: foaf__Agent @relationship(type: "foaf__member", direction: OUT)
+                foaf__mbox: owl__Thing @relationship(type: "foaf__mbox", direction: OUT)
+                foaf__mbox_sha1sum: String
+                foaf__gender: String
+                foaf__skypeID: String
+                foaf__tipjar: foaf__Document @relationship(type: "foaf__tipjar", direction: OUT)
+                foaf__made: owl__Thing @relationship(type: "foaf__made", direction: OUT)
+                foaf__interest: foaf__Document @relationship(type: "foaf__interest", direction: OUT)
+                foaf__topic_interest: owl__Thing @relationship(type: "foaf__topic_interest", direction: OUT)
+                foaf__account: foaf__OnlineAccount @relationship(type: "foaf__account", direction: OUT)
+                foaf__holdsAccount: foaf__OnlineAccount @relationship(type: "foaf__holdsAccount", direction: OUT)
+                foaf__birthday: String
+                foaf__age: String
+                foaf__status: String
             }            
             
-            type oeso__Unit @node(additionalLabels: ["oeso__VariableBase"]){
+            type foaf__Project {
                 uri: ID! 
-                oeso__hasAlternativeSymbol: String
-                oeso__hasSymbol: String
             }            
             
-            type oeso__Project @node(additionalLabels: ["oeso__ExperimentalCondition"]){
+            type foaf__Image @node(additionalLabels: ["foaf__Document"]){
                 uri: ID! 
-                oeso__hasObjective: String
+                foaf__depicts: owl__Thing @relationship(type: "foaf__depicts", direction: OUT)
+                foaf__thumbnail: foaf__Image @relationship(type: "foaf__thumbnail", direction: OUT)
+                foaf__sha1: String
+                foaf__topic: owl__Thing @relationship(type: "foaf__topic", direction: OUT)
+                foaf__primaryTopic: owl__Thing @relationship(type: "foaf__primaryTopic", direction: OUT)
             }            
             
-            type undefined__Activity {
+            type foaf__PersonalProfileDocument @node(additionalLabels: ["foaf__Document"]){
                 uri: ID! 
-                undefined__endedAtTime: String
-                undefined__startedAtTime: String
+                foaf__sha1: String
+                foaf__topic: owl__Thing @relationship(type: "foaf__topic", direction: OUT)
+                foaf__primaryTopic: owl__Thing @relationship(type: "foaf__primaryTopic", direction: OUT)
             }            
             
-            type undefined__Group {
+            type foaf__OnlineAccount @node(additionalLabels: ["owl__Thing"]){
                 uri: ID! 
+                foaf__accountServiceHomepage: foaf__Document @relationship(type: "foaf__accountServiceHomepage", direction: OUT)
+                foaf__accountName: String
+                oeso__hasDocument: oeso__Document @relationship(type: "oeso__hasDocument", direction: OUT)
+                foaf__name: String
+                foaf__maker: foaf__Agent @relationship(type: "foaf__maker", direction: OUT)
+                foaf__depiction: foaf__Image @relationship(type: "foaf__depiction", direction: OUT)
+                foaf__fundedBy: owl__Thing @relationship(type: "foaf__fundedBy", direction: OUT)
+                foaf__page: foaf__Document @relationship(type: "foaf__page", direction: OUT)
+                foaf__theme: owl__Thing @relationship(type: "foaf__theme", direction: OUT)
             }            
             
-            type undefined__GroupUserProfile {
+            type foaf__OnlineGamingAccount @node(additionalLabels: ["foaf__OnlineAccount","owl__Thing"]){
                 uri: ID! 
+                foaf__accountServiceHomepage: foaf__Document @relationship(type: "foaf__accountServiceHomepage", direction: OUT)
+                foaf__accountName: String
+                oeso__hasDocument: oeso__Document @relationship(type: "oeso__hasDocument", direction: OUT)
+                foaf__name: String
+                foaf__maker: foaf__Agent @relationship(type: "foaf__maker", direction: OUT)
+                foaf__depiction: foaf__Image @relationship(type: "foaf__depiction", direction: OUT)
+                foaf__fundedBy: owl__Thing @relationship(type: "foaf__fundedBy", direction: OUT)
+                foaf__page: foaf__Document @relationship(type: "foaf__page", direction: OUT)
+                foaf__theme: owl__Thing @relationship(type: "foaf__theme", direction: OUT)
             }            
             
-            type undefined__Profile {
-                uri: ID! 
-            }            
-            
-            type oeso__Actuator @node(additionalLabels: ["oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
-                uri: ID! 
-            }            
-            
-            type oeso__AdministrativeDocument @node(additionalLabels: ["oeso__Document"]){
-                uri: ID! 
-            }            
-            
-            type oeso__Archive @node(additionalLabels: ["oeso__Datafile"]){
-                uri: ID! 
-            }            
-            
-            type oeso__Area @node(additionalLabels: ["oeso__Equipement","oeso__ExperimentalCondition"]){
-                uri: ID! 
-            }            
-            
-            type oeso__Characteristic @node(additionalLabels: ["oeso__VariableBase"]){
-                uri: ID! 
-            }            
-            
-            type oeso__ClayeyArea @node(additionalLabels: ["oeso__SoilArea","oeso__StructuralArea","oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
-                uri: ID! 
-            }            
-            
-            type oeso__Compartment @node(additionalLabels: ["oeso__Facility"]){
-                uri: ID! 
-            }            
-            
-            type oeso__Computation @node(additionalLabels: ["undefined__Activity"]){
-                uri: ID! 
-                undefined__endedAtTime: String
-                undefined__startedAtTime: String
-            }            
-            
-            type oeso__ControlLaw @node(additionalLabels: ["oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
-                uri: ID! 
-            }            
-            
-            type oeso__Datafile {
-                uri: ID! 
-            }            
-            
-            type oeso__Dataset @node(additionalLabels: ["oeso__Document"]){
-                uri: ID! 
-            }            
-            
-            type oeso__Device @node(additionalLabels: ["oeso__Equipement","oeso__ExperimentalCondition"]){
-                uri: ID! 
-            }            
-            
-            type oeso__Document {
-                uri: ID! 
-            }            
-            
-            type oeso__ElaboratedVariable @node(additionalLabels: ["oeso__Variable","oeso__VariableBase"]){
-                uri: ID! 
-                oeso__hasCharacteristic: oeso__Characteristic @relationship(type: "oeso__hasCharacteristic", direction: OUT)
-                oeso__hasEntity: oeso__Entity @relationship(type: "oeso__hasEntity", direction: OUT)
-                oeso__hasEntityOfInterest: oeso__EntityOfInterest @relationship(type: "oeso__hasEntityOfInterest", direction: OUT)
-                oeso__hasMethod: oeso__Method @relationship(type: "oeso__hasMethod", direction: OUT)
-                oeso__hasUnit: oeso__Unit @relationship(type: "oeso__hasUnit", direction: OUT)
-            }            
-            
-            type oeso__Entity @node(additionalLabels: ["oeso__VariableBase"]){
-                uri: ID! 
-            }            
-            
-            type oeso__EntityOfInterest @node(additionalLabels: ["oeso__VariableBase"]){
-                uri: ID! 
-            }            
-            
-            type oeso__Equipement @node(additionalLabels: ["oeso__ExperimentalCondition"]){
-                uri: ID! 
-            }            
-            
-            type oeso__ExperimentalCondition {
-                uri: ID! 
-            }            
-            
-            type oeso__ExperimentalProtocol @node(additionalLabels: ["oeso__TechnicalDocument","oeso__Document"]){
-                uri: ID! 
-            }            
-            
-            type oeso__ExperimentalUnit @node(additionalLabels: ["undefined__Organization","oeso__ExperimentalCondition"]){
-                uri: ID! 
-                oeso__isHosted: oeso__Facility @relationship(type: "oeso__isHosted", direction: OUT)
-            }            
-            
-            type oeso__Facility {
-                uri: ID! 
-            }            
-            
-            type oeso__Factor @node(additionalLabels: ["oeso__ExperimentalCondition"]){
-                uri: ID! 
-            }            
-            
-            type oeso__FactorLevel @node(additionalLabels: ["oeso__ExperimentalCondition"]){
-                uri: ID! 
-            }            
-            
-            type oeso__FloodableArea @node(additionalLabels: ["oeso__StructuralArea","oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
-                uri: ID! 
-            }            
-            
-            type oeso__ITKDocument @node(additionalLabels: ["oeso__TechnicalDocument","oeso__Document"]){
-                uri: ID! 
-            }            
-            
-            type oeso__Image @node(additionalLabels: ["oeso__Datafile"]){
-                uri: ID! 
-            }            
-            
-            type oeso__ImageAcquisition @node(additionalLabels: ["undefined__Activity"]){
-                uri: ID! 
-                undefined__endedAtTime: String
-                undefined__startedAtTime: String
-            }            
-            
-            type oeso__ImageAnalysis @node(additionalLabels: ["undefined__Activity"]){
-                uri: ID! 
-                undefined__endedAtTime: String
-                undefined__startedAtTime: String
-            }            
-            
-            type oeso__Installation @node(additionalLabels: ["undefined__Organization","oeso__ExperimentalCondition"]){
-                uri: ID! 
-                oeso__isHosted: oeso__Facility @relationship(type: "oeso__isHosted", direction: OUT)
-            }            
-            
-            type oeso__InteractiveResource @node(additionalLabels: ["oeso__Document"]){
-                uri: ID! 
-            }            
-            
-            type oeso__LimestoneArea @node(additionalLabels: ["oeso__SoilArea","oeso__StructuralArea","oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
-                uri: ID! 
-            }            
-            
-            type oeso__MeasuresAcquisition @node(additionalLabels: ["undefined__Activity"]){
-                uri: ID! 
-                undefined__endedAtTime: String
-                undefined__startedAtTime: String
-            }            
-            
-            type oeso__Method @node(additionalLabels: ["oeso__VariableBase"]){
-                uri: ID! 
-            }            
-            
-            type oeso__Multimedia @node(additionalLabels: ["oeso__Document"]){
-                uri: ID! 
-            }            
-            
-            type oeso__Operator @node(additionalLabels: ["undefined__Agent"]){
-                uri: ID! 
-            }            
-            
-            type oeso__Population @node(additionalLabels: ["oeso__ScientificObject"]){
-                uri: ID! 
-                oeso__hasCreationDate: String
-                oeso__hasDestructionDate: String
-            }            
-            
-            type oeso__Provenance {
-                uri: ID! 
-            }            
-            
-            type oeso__Publication @node(additionalLabels: ["oeso__ScientificDocument","oeso__Document"]){
-                uri: ID! 
-            }            
-            
-            type oeso__RGBImage @node(additionalLabels: ["oeso__Image","oeso__Datafile"]){
-                uri: ID! 
-            }            
-            
-            type oeso__Report @node(additionalLabels: ["oeso__ScientificDocument","oeso__Document"]){
-                uri: ID! 
-            }            
-            
-            type oeso__ResearchUnit @node(additionalLabels: ["undefined__Organization","oeso__ExperimentalCondition"]){
-                uri: ID! 
-                oeso__isHosted: oeso__Facility @relationship(type: "oeso__isHosted", direction: OUT)
-            }            
-            
-            type oeso__Sample @node(additionalLabels: ["oeso__ScientificObject"]){
-                uri: ID! 
-                oeso__hasCreationDate: String
-                oeso__hasDestructionDate: String
-            }            
-            
-            type oeso__ScientificDocument @node(additionalLabels: ["oeso__Document"]){
-                uri: ID! 
-            }            
-            
-            type oeso__Shed @node(additionalLabels: ["oeso__Equipement","oeso__ExperimentalCondition"]){
-                uri: ID! 
-            }            
-            
-            type oeso__ShinyAppPackage @node(additionalLabels: ["oeso__InteractiveResource","oeso__Document"]){
-                uri: ID! 
-            }            
-            
-            type oeso__Software @node(additionalLabels: ["oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
-                uri: ID! 
-            }            
-            
-            type oeso__SoilArea @node(additionalLabels: ["oeso__StructuralArea","oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
-                uri: ID! 
-            }            
-            
-            type oeso__Species @node(additionalLabels: ["oeso__Germplasm"]){
-                uri: ID! 
-                oeso__fromInstitute: Thing @relationship(type: "oeso__fromInstitute", direction: OUT)
-            }            
-            
-            type oeso__Station @node(additionalLabels: ["oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
-                uri: ID! 
-            }            
-            
-            type oeso__StructuralArea @node(additionalLabels: ["oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
-                uri: ID! 
-            }            
-            
-            type oeso__TechnicalDocument @node(additionalLabels: ["oeso__Document"]){
-                uri: ID! 
-            }            
-            
-            type oeso__TemporalArea @node(additionalLabels: ["oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
-                uri: ID! 
-            }            
-            
-            type oeso__Trait {
-                uri: ID! 
-            }            
-            
-            type oeso__Treatment @node(additionalLabels: ["oeso__ExperimentalCondition"]){
-                uri: ID! 
-            }            
-            
-            type oeso__VariableBase {
-                uri: ID! 
-            }            
-            
-            type oeso__VariablesGroup @node(additionalLabels: ["ns__Bag"]){
-                uri: ID! 
-            }            
-            
-            type oeso__Vector @node(additionalLabels: ["oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
-                uri: ID! 
+            type foaf__OnlineEcommerceAccount @node(additionalLabels: ["foaf__OnlineAccount","owl__Thing"]){
+                uri: ID! 
+                foaf__accountServiceHomepage: foaf__Document @relationship(type: "foaf__accountServiceHomepage", direction: OUT)
+                foaf__accountName: String
+                oeso__hasDocument: oeso__Document @relationship(type: "oeso__hasDocument", direction: OUT)
+                foaf__name: String
+                foaf__maker: foaf__Agent @relationship(type: "foaf__maker", direction: OUT)
+                foaf__depiction: foaf__Image @relationship(type: "foaf__depiction", direction: OUT)
+                foaf__fundedBy: owl__Thing @relationship(type: "foaf__fundedBy", direction: OUT)
+                foaf__page: foaf__Document @relationship(type: "foaf__page", direction: OUT)
+                foaf__theme: owl__Thing @relationship(type: "foaf__theme", direction: OUT)
+            }            
+            
+            type foaf__OnlineChatAccount @node(additionalLabels: ["foaf__OnlineAccount","owl__Thing"]){
+                uri: ID! 
+                foaf__accountServiceHomepage: foaf__Document @relationship(type: "foaf__accountServiceHomepage", direction: OUT)
+                foaf__accountName: String
+                oeso__hasDocument: oeso__Document @relationship(type: "oeso__hasDocument", direction: OUT)
+                foaf__name: String
+                foaf__maker: foaf__Agent @relationship(type: "foaf__maker", direction: OUT)
+                foaf__depiction: foaf__Image @relationship(type: "foaf__depiction", direction: OUT)
+                foaf__fundedBy: owl__Thing @relationship(type: "foaf__fundedBy", direction: OUT)
+                foaf__page: foaf__Document @relationship(type: "foaf__page", direction: OUT)
+                foaf__theme: owl__Thing @relationship(type: "foaf__theme", direction: OUT)
             }            
             
             type oeso__WebSite @node(additionalLabels: ["oeso__InteractiveResource","oeso__Document"]){
@@ -750,6 +1007,150 @@
             }            
             
             type undefined__SoftwareAgent @node(additionalLabels: ["undefined__Agent"]){
+                uri: ID! 
+            }            
+            
+            type sinfonia__Wine @node(additionalLabels: ["oeso__ScientificObject"]){
+                uri: ID! 
+                sinfonia__NumberOfBottles: String
+                oeso__hasCreationDate: String
+                oeso__hasDestructionDate: String
+                sinfonia__SampleEntity: oeso__Entity @relationship(type: "sinfonia__SampleEntity", direction: OUT)
+                sinfonia__derivesFrom: oeso__ScientificObject @relationship(type: "sinfonia__derivesFrom", direction: OUT)
+                sinfonia__hasRootstockGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasRootstockGermplasm", direction: OUT)
+                sinfonia__hasScionGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasScionGermplasm", direction: OUT)
+                sinfonia__hasSoil: sinfonia__Soil @relationship(type: "sinfonia__hasSoil", direction: OUT)
+                sinfonia__isSampleOf: oeso__ScientificObject @relationship(type: "sinfonia__isSampleOf", direction: OUT)
+                sinfonia__Repetition: String
+                sinfonia__hasPositionX: String
+                sinfonia__positionY: String
+            }            
+            
+            type sinfonia__ExperimentalField @node(additionalLabels: ["oeso__InfrastructureFacility"]){
+                uri: ID! 
+                sinfonia__PlantingDensity: String
+            }            
+            
+            type sinfonia__Subplot @node(additionalLabels: ["oeso__ScientificObject"]){
+                uri: ID! 
+                sinfonia__PlantingDensity: String
+                oeso__hasCreationDate: String
+                oeso__hasDestructionDate: String
+                sinfonia__SampleEntity: oeso__Entity @relationship(type: "sinfonia__SampleEntity", direction: OUT)
+                sinfonia__derivesFrom: oeso__ScientificObject @relationship(type: "sinfonia__derivesFrom", direction: OUT)
+                sinfonia__hasRootstockGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasRootstockGermplasm", direction: OUT)
+                sinfonia__hasScionGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasScionGermplasm", direction: OUT)
+                sinfonia__hasSoil: sinfonia__Soil @relationship(type: "sinfonia__hasSoil", direction: OUT)
+                sinfonia__isSampleOf: oeso__ScientificObject @relationship(type: "sinfonia__isSampleOf", direction: OUT)
+                sinfonia__Repetition: String
+                sinfonia__hasPositionX: String
+                sinfonia__positionY: String
+            }            
+            
+            type sinfonia__Cellar @node(additionalLabels: ["oeso__InfrastructureFacility"]){
+                uri: ID! 
+            }            
+            
+            type sinfonia__DMP @node(additionalLabels: ["oeso__Document"]){
+                uri: ID! 
+            }            
+            
+            type sinfonia__Laboratory @node(additionalLabels: ["oeso__InfrastructureFacility"]){
+                uri: ID! 
+            }            
+            
+            type sinfonia__LocalInfrastructure @node(additionalLabels: ["oeso__Infrastructure"]){
+                uri: ID! 
+            }            
+            
+            type sinfonia__NationalInfrastructure @node(additionalLabels: ["oeso__Infrastructure"]){
+                uri: ID! 
+            }            
+            
+            type sinfonia__POM @node(additionalLabels: ["oeso__SoftSensor"]){
+                uri: ID! 
+            }            
+            
+            type sinfonia__Plot @node(additionalLabels: ["oeso__ScientificObject"]){
+                uri: ID! 
+                oeso__hasCreationDate: String
+                oeso__hasDestructionDate: String
+                sinfonia__SampleEntity: oeso__Entity @relationship(type: "sinfonia__SampleEntity", direction: OUT)
+                sinfonia__derivesFrom: oeso__ScientificObject @relationship(type: "sinfonia__derivesFrom", direction: OUT)
+                sinfonia__hasRootstockGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasRootstockGermplasm", direction: OUT)
+                sinfonia__hasScionGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasScionGermplasm", direction: OUT)
+                sinfonia__hasSoil: sinfonia__Soil @relationship(type: "sinfonia__hasSoil", direction: OUT)
+                sinfonia__isSampleOf: oeso__ScientificObject @relationship(type: "sinfonia__isSampleOf", direction: OUT)
+                sinfonia__Repetition: String
+                sinfonia__hasPositionX: String
+                sinfonia__positionY: String
+            }            
+            
+            type sinfonia__Sample @node(additionalLabels: ["oeso__ScientificObject"]){
+                uri: ID! 
+                oeso__hasCreationDate: String
+                oeso__hasDestructionDate: String
+                sinfonia__SampleEntity: oeso__Entity @relationship(type: "sinfonia__SampleEntity", direction: OUT)
+                sinfonia__derivesFrom: oeso__ScientificObject @relationship(type: "sinfonia__derivesFrom", direction: OUT)
+                sinfonia__hasRootstockGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasRootstockGermplasm", direction: OUT)
+                sinfonia__hasScionGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasScionGermplasm", direction: OUT)
+                sinfonia__hasSoil: sinfonia__Soil @relationship(type: "sinfonia__hasSoil", direction: OUT)
+                sinfonia__isSampleOf: oeso__ScientificObject @relationship(type: "sinfonia__isSampleOf", direction: OUT)
+                sinfonia__Repetition: String
+                sinfonia__hasPositionX: String
+                sinfonia__positionY: String
+            }            
+            
+            type sinfonia__Soil @node(additionalLabels: ["oeso__ScientificObject"]){
+                uri: ID! 
+                oeso__hasCreationDate: String
+                oeso__hasDestructionDate: String
+                sinfonia__SampleEntity: oeso__Entity @relationship(type: "sinfonia__SampleEntity", direction: OUT)
+                sinfonia__derivesFrom: oeso__ScientificObject @relationship(type: "sinfonia__derivesFrom", direction: OUT)
+                sinfonia__hasRootstockGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasRootstockGermplasm", direction: OUT)
+                sinfonia__hasScionGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasScionGermplasm", direction: OUT)
+                sinfonia__hasSoil: sinfonia__Soil @relationship(type: "sinfonia__hasSoil", direction: OUT)
+                sinfonia__isSampleOf: oeso__ScientificObject @relationship(type: "sinfonia__isSampleOf", direction: OUT)
+                sinfonia__Repetition: String
+                sinfonia__hasPositionX: String
+                sinfonia__positionY: String
+            }            
+            
+            type sinfonia__TastingRoom @node(additionalLabels: ["oeso__InfrastructureFacility"]){
+                uri: ID! 
+            }            
+            
+            type sinfonia__Vinestock @node(additionalLabels: ["oeso__ScientificObject"]){
+                uri: ID! 
+                oeso__hasCreationDate: String
+                oeso__hasDestructionDate: String
+                sinfonia__SampleEntity: oeso__Entity @relationship(type: "sinfonia__SampleEntity", direction: OUT)
+                sinfonia__derivesFrom: oeso__ScientificObject @relationship(type: "sinfonia__derivesFrom", direction: OUT)
+                sinfonia__hasRootstockGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasRootstockGermplasm", direction: OUT)
+                sinfonia__hasScionGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasScionGermplasm", direction: OUT)
+                sinfonia__hasSoil: sinfonia__Soil @relationship(type: "sinfonia__hasSoil", direction: OUT)
+                sinfonia__isSampleOf: oeso__ScientificObject @relationship(type: "sinfonia__isSampleOf", direction: OUT)
+                sinfonia__Repetition: String
+                sinfonia__hasPositionX: String
+                sinfonia__positionY: String
+            }            
+            
+            type sinfonia__Vinification @node(additionalLabels: ["oeso__ScientificObject"]){
+                uri: ID! 
+                oeso__hasCreationDate: String
+                oeso__hasDestructionDate: String
+                sinfonia__SampleEntity: oeso__Entity @relationship(type: "sinfonia__SampleEntity", direction: OUT)
+                sinfonia__derivesFrom: oeso__ScientificObject @relationship(type: "sinfonia__derivesFrom", direction: OUT)
+                sinfonia__hasRootstockGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasRootstockGermplasm", direction: OUT)
+                sinfonia__hasScionGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasScionGermplasm", direction: OUT)
+                sinfonia__hasSoil: sinfonia__Soil @relationship(type: "sinfonia__hasSoil", direction: OUT)
+                sinfonia__isSampleOf: oeso__ScientificObject @relationship(type: "sinfonia__isSampleOf", direction: OUT)
+                sinfonia__Repetition: String
+                sinfonia__hasPositionX: String
+                sinfonia__positionY: String
+            }            
+            
+            type sinfonia__Winery @node(additionalLabels: ["oeso__InfrastructureFacility"]){
                 uri: ID! 
             }            
             

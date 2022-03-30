@@ -152,12 +152,12 @@ export class Gql_Generator {
      * @memberof Gql_Generator
      */
     private shortener(class_uri: string, n10s_compliant: boolean = true): string {
+        // Extremely permissive url SchemaMetaFieldDef, but lead to error: (^[^#]*[\/#])([^/#]*)$
         const uri_separator = new RegExp(/(^.*[\/#])([\d\w]*)$/gm)
         let matches = class_uri.matchAll(uri_separator)
         const _array = Array.from(matches)
         if (_array && _array.length > 0) {
             if (n10s_compliant) {
-                console.log('here')
                 let found_prefix = this.prefixes_array.find((value) => value.uri == _array[0][1])
                 return found_prefix?.prefix + '__' + _array[0][2]
             } else {
@@ -306,6 +306,14 @@ export class Gql_Generator {
                     let property = this.gql_resources_preprocesing[property_uri]
                     switch (this.prefixer(property.class)) {
                         case "owl:DatatypeProperty":
+                        //    _            _       
+                        //   | |          | |      
+                        //   | |_ ___   __| | ___  
+                        //   | __/ _ \ / _` |/ _ \ 
+                        //   | || (_) | (_| | (_) |
+                        //    \__\___/ \__,_|\___/ 
+                        //                         
+                        // 
                             template_properties.push({
                                 type: "Litteral",
                                 name: property.class_uri,
@@ -314,8 +322,10 @@ export class Gql_Generator {
                             break
                         case "owl:ObjectProperty":
                             let valueType = this.getInheritedValues(property.class_uri, "type").filter((type_string) => !!type_string)
+                            // If there is no Range, infer it to be owl:Thing
                             if (valueType.length == 0) {
-                                valueType.push("Thing")
+                                // console.log(concept)
+                                valueType.push(this.expender("owl:Thing"))
                             }
                             template_properties.push({
                                 type: "Object",

@@ -6,10 +6,10 @@ import gqlRDF from "./parser/processRdf";
 import { ReadStream, WriteStream } from "fs";
 import multiple_file_stream from './multiple_file_reader'   
 
-const INPUT_ONTOLOGY = '/home/heinrich/code/graphQL-test/src/service/oeso-core.owl'
-const OUTPUT_PARSED_ONTOLOGY = '/home/heinrich/code/graphQL-test/src/service/parsed_ontology.txt'
-const OUTPUT_MODEL = '/home/heinrich/code/graphQL-test/src/service/output.json'
-const OUTPUT_GQL = '/home/heinrich/code/graphQL-test/src/service/output.gql'
+const INPUT_ONTOLOGY = 'D:/code/graphQL-test/src/service/oeso-core.owl'
+const OUTPUT_PARSED_ONTOLOGY = 'D:/code/graphQL-test/src/service/parsed_ontology.txt'
+const OUTPUT_MODEL = 'D:/code/graphQL-test/src/service/output.json'
+const OUTPUT_GQL = 'D:/code/graphQL-test/src/service/output.gql'
 const writeStream = fs.createWriteStream(OUTPUT_PARSED_ONTOLOGY);
 // const readStream = fs.createReadStream(INPUT_ONTOLOGY);
 
@@ -45,11 +45,12 @@ function consumer(readStream: ReadStream, writeStream: WriteStream) {
     });
 }
 
+const ONTOLOGY_OWL = 'D:/code/graphQL-test/src/service/ontologies/owl.owl'
+const ONTOLOGY_FOAF = 'D:/code/graphQL-test/src/service/ontologies/foaf.rdf'
+const ONTOLOGY_OA = 'D:/code/graphQL-test/src/service/ontologies/oa.rdf'
+const ONTOLOGY_OEEV = 'D:/code/graphQL-test/src/service/ontologies/oeev.owl'
+const ONTOLOGY_OESO_CORE = 'D:/code/graphQL-test/src/service/ontologies/oeso-core.owl'
 
-const ONTOLOGY_OWL = '/home/heinrich/code/graphQL-test/src/service/ontologies/owl.owl'
-const ONTOLOGY_OA = '/home/heinrich/code/graphQL-test/src/service/ontologies/oa.rdf'
-const ONTOLOGY_OEEV = '/home/heinrich/code/graphQL-test/src/service/ontologies/oeev.owl'
-const ONTOLOGY_OESO_CORE = '/home/heinrich/code/graphQL-test/src/service/ontologies/oeso-core.owl'
+const ONTOLOGY_SINFONIA = 'D:/code/graphQL-test/src/service/ontologies/oeso-sinfonia_14.02.22.owl'
 
-
-multiple_file_stream(consumer, writeStream, ONTOLOGY_OA, ONTOLOGY_OEEV, ONTOLOGY_OESO_CORE)
+multiple_file_stream(consumer, writeStream, ONTOLOGY_OA, ONTOLOGY_OEEV, ONTOLOGY_OESO_CORE, ONTOLOGY_FOAF, ONTOLOGY_SINFONIA)

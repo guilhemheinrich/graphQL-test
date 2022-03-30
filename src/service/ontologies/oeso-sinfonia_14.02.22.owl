@@ -1,0 +1,522 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://sinfonia.vignevin.com/oeso"
+     xml:base="http://sinfonia.vignevin.com/oeso"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:opensilex-api="http://www.opensilex.org/vocabulary/opensilex-api#">
+    <owl:Ontology rdf:about="http://sinfonia.vignevin.com/oeso">
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#SampleEntity -->
+
+    <owl:ObjectProperty rdf:about="http://sinfonia.vignevin.com/oeso#SampleEntity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.opensilex.org/vocabulary/oeso#ScientificObject"/>
+        <rdfs:range rdf:resource="http://www.opensilex.org/vocabulary/oeso#Entity"/>
+        <rdfs:label xml:lang="fr">entité échantillonnée</rdfs:label>
+        <rdfs:label xml:lang="en">sample entity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#derivesFrom -->
+
+    <owl:ObjectProperty rdf:about="http://sinfonia.vignevin.com/oeso#derivesFrom">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.opensilex.org/vocabulary/oeso#ScientificObject"/>
+        <rdfs:range rdf:resource="http://www.opensilex.org/vocabulary/oeso#ScientificObject"/>
+        <dc:source xml:lang="en">closeMatch : http://purl.obolibrary.org/obo/RO_0001000</dc:source>
+        <rdfs:comment xml:lang="en">A relation between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when [a part  of] the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une relation entre deux entités matérielles distinctes, la nouvelle entité et l&apos;ancienne entité, dans laquelle la nouvelle entité commence à exister lorsque [tout ou partie de] l&apos;ancienne entité cesse d&apos;exister, et la nouvelle entité hérite de la partie importante de la matière de l&apos;ancienne entité</rdfs:comment>
+        <rdfs:label xml:lang="en">derives from</rdfs:label>
+        <rdfs:label xml:lang="fr">dérive de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#hasRootstockGermplasm -->
+
+    <owl:ObjectProperty rdf:about="http://sinfonia.vignevin.com/oeso#hasRootstockGermplasm">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.opensilex.org/vocabulary/oeso#ScientificObject"/>
+        <rdfs:range rdf:resource="http://www.opensilex.org/vocabulary/oeso#Germplasm"/>
+        <rdfs:comment xml:lang="en">germplasm of rootstock</rdfs:comment>
+        <rdfs:comment xml:lang="fr">matériel génétique du porte-greffe</rdfs:comment>
+        <rdfs:label xml:lang="fr">porte-greffe</rdfs:label>
+        <rdfs:label xml:lang="en">rootstock</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#hasScionGermplasm -->
+
+    <owl:ObjectProperty rdf:about="http://sinfonia.vignevin.com/oeso#hasScionGermplasm">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.opensilex.org/vocabulary/oeso#ScientificObject"/>
+        <rdfs:range rdf:resource="http://www.opensilex.org/vocabulary/oeso#Germplasm"/>
+        <rdfs:comment xml:lang="en">germplasm of scion</rdfs:comment>
+        <rdfs:comment xml:lang="fr">matériel génétique du greffon</rdfs:comment>
+        <rdfs:label xml:lang="en">scion</rdfs:label>
+        <rdfs:label xml:lang="fr">variété</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#hasSoil -->
+
+    <owl:ObjectProperty rdf:about="http://sinfonia.vignevin.com/oeso#hasSoil">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.opensilex.org/vocabulary/oeso#ScientificObject"/>
+        <rdfs:range rdf:resource="http://sinfonia.vignevin.com/oeso#Soil"/>
+        <rdfs:label xml:lang="en">has soil</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#isSampleOf -->
+
+    <owl:ObjectProperty rdf:about="http://sinfonia.vignevin.com/oeso#isSampleOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.opensilex.org/vocabulary/oeso#ScientificObject"/>
+        <rdfs:range rdf:resource="http://www.opensilex.org/vocabulary/oeso#ScientificObject"/>
+        <dc:source xml:lang="en">http://www.w3.org/ns/sosa/isSampleOf</dc:source>
+        <rdfs:label xml:lang="fr">est échantillon de</rdfs:label>
+        <rdfs:label xml:lang="en">is sample of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#NumberOfBottles -->
+
+    <owl:DatatypeProperty rdf:about="http://sinfonia.vignevin.com/oeso#NumberOfBottles">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://sinfonia.vignevin.com/oeso#Wine"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="fr">nombre de bouteilles actuellement existantes de ce vin</rdfs:comment>
+        <rdfs:comment xml:lang="en">number of currently existing bottles of this wine</rdfs:comment>
+        <rdfs:label xml:lang="fr">Nombre de bouteilles</rdfs:label>
+        <rdfs:label xml:lang="en">Number of bottles</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#PlantingDensity -->
+
+    <owl:DatatypeProperty rdf:about="http://sinfonia.vignevin.com/oeso#PlantingDensity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://sinfonia.vignevin.com/oeso#ExperimentalField"/>
+        <rdfs:domain rdf:resource="http://sinfonia.vignevin.com/oeso#Subplot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <dc:source>http://aims.fao.org/aos/agrovoc/c_7272</dc:source>
+        <rdfs:label xml:lang="fr">Densité de plantation</rdfs:label>
+        <rdfs:label xml:lang="en">Planting density</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#Repetition -->
+
+    <owl:DatatypeProperty rdf:about="http://sinfonia.vignevin.com/oeso#Repetition">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.opensilex.org/vocabulary/oeso#ScientificObject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#hasPositionX -->
+
+    <owl:DatatypeProperty rdf:about="http://sinfonia.vignevin.com/oeso#hasPositionX">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.opensilex.org/vocabulary/oeso#ScientificObject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">positionX</rdfs:label>
+        <rdfs:label xml:lang="fr">positionX</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#positionY -->
+
+    <owl:DatatypeProperty rdf:about="http://sinfonia.vignevin.com/oeso#positionY">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.opensilex.org/vocabulary/oeso#ScientificObject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">positionY</rdfs:label>
+        <rdfs:label xml:lang="fr">positionY</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#Cellar -->
+
+    <owl:Class rdf:about="http://sinfonia.vignevin.com/oeso#Cellar">
+        <rdfs:subClassOf rdf:resource="http://www.opensilex.org/vocabulary/oeso#InfrastructureFacility"/>
+        <rdfs:comment xml:lang="fr">Lieu de stockage des vins en bouteilles</rdfs:comment>
+        <rdfs:comment xml:lang="en">Storage room for bottled wines</rdfs:comment>
+        <rdfs:label xml:lang="en">cellar</rdfs:label>
+        <rdfs:label xml:lang="fr">oenothèque</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#DMP -->
+
+    <owl:Class rdf:about="http://sinfonia.vignevin.com/oeso#DMP">
+        <rdfs:subClassOf rdf:resource="http://www.opensilex.org/vocabulary/oeso#Document"/>
+        <rdfs:label xml:lang="en">Data Management Plan</rdfs:label>
+        <rdfs:label xml:lang="fr">Plan de Gestion des Données</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#ExperimentalField -->
+
+    <owl:Class rdf:about="http://sinfonia.vignevin.com/oeso#ExperimentalField">
+        <rdfs:subClassOf rdf:resource="http://www.opensilex.org/vocabulary/oeso#InfrastructureFacility"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://sinfonia.vignevin.com/oeso#hasRootstockGermplasm"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.opensilex.org/vocabulary/oeso#Germplasm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://sinfonia.vignevin.com/oeso#hasScionGermplasm"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.opensilex.org/vocabulary/oeso#Germplasm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://sinfonia.vignevin.com/oeso#PlantingDensity"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A permanent plot of land used for field experiments</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une parcelle expérimentale est définie comme une zone d’une parcelle cultivée, généralement la plus homogène possible, sur laquelle est implanté un ou plusieurs dispositifs expérimentaux, chacun répondant à un protocole spécifique. On parle dans ce cas parfois de plateforme.</rdfs:comment>
+        <rdfs:label xml:lang="en">experimental field</rdfs:label>
+        <rdfs:label xml:lang="fr">parcelle expérimentale</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#Laboratory -->
+
+    <owl:Class rdf:about="http://sinfonia.vignevin.com/oeso#Laboratory">
+        <rdfs:subClassOf rdf:resource="http://www.opensilex.org/vocabulary/oeso#InfrastructureFacility"/>
+        <rdfs:comment xml:lang="fr">Lieu disposant d&apos;équipements d&apos;analyses</rdfs:comment>
+        <rdfs:comment xml:lang="en">a room or building with scientific equipment for doing scientific tests</rdfs:comment>
+        <rdfs:label xml:lang="fr">laboratoire</rdfs:label>
+        <rdfs:label xml:lang="en">laboratory</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#LocalInfrastructure -->
+
+    <owl:Class rdf:about="http://sinfonia.vignevin.com/oeso#LocalInfrastructure">
+        <rdfs:subClassOf rdf:resource="http://www.opensilex.org/vocabulary/oeso#Infrastructure"/>
+        <rdfs:comment xml:lang="en">A LOCAL INFRASTRUCTURE is a group of installations located in one site depending on one institution (or more), which share governance committees, a common (or at least highly interoperable) information system, common principles for cost calculation and pricing and a common tool for user access.</rdfs:comment>
+        <rdfs:label xml:lang="fr">infrastructure locale</rdfs:label>
+        <rdfs:label xml:lang="en">local infrastructure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#NationalInfrastructure -->
+
+    <owl:Class rdf:about="http://sinfonia.vignevin.com/oeso#NationalInfrastructure">
+        <rdfs:subClassOf rdf:resource="http://www.opensilex.org/vocabulary/oeso#Infrastructure"/>
+        <rdfs:comment xml:lang="en">A NATIONAL INFRASTRUCTURE is an organized group of local infrastructures with governance recognised by national authorities (e.g. respective ministry or national structures).</rdfs:comment>
+        <rdfs:label xml:lang="fr">infrastructure nationale</rdfs:label>
+        <rdfs:label xml:lang="en">national infrastructure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#POM -->
+
+    <owl:Class rdf:about="http://sinfonia.vignevin.com/oeso#POM">
+        <rdfs:subClassOf rdf:resource="http://www.opensilex.org/vocabulary/oeso#SoftSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#Plot -->
+
+    <owl:Class rdf:about="http://sinfonia.vignevin.com/oeso#Plot">
+        <rdfs:subClassOf rdf:resource="http://www.opensilex.org/vocabulary/oeso#ScientificObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://sinfonia.vignevin.com/oeso#hasSoil"/>
+                <owl:someValuesFrom rdf:resource="http://sinfonia.vignevin.com/oeso#Soil"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://sinfonia.vignevin.com/oeso#hasRootstockGermplasm"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.opensilex.org/vocabulary/oeso#Germplasm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://sinfonia.vignevin.com/oeso#hasScionGermplasm"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.opensilex.org/vocabulary/oeso#Germplasm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://sinfonia.vignevin.com/oeso#PlantingDensity"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A community of plants located on a defined area</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Un ensemble de plantes localisée sur une zone géographique définie</rdfs:comment>
+        <rdfs:label xml:lang="fr">parcelle</rdfs:label>
+        <rdfs:label xml:lang="en">plot</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#Sample -->
+
+    <owl:Class rdf:about="http://sinfonia.vignevin.com/oeso#Sample">
+        <rdfs:subClassOf rdf:resource="http://www.opensilex.org/vocabulary/oeso#ScientificObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://sinfonia.vignevin.com/oeso#SampleEntity"/>
+                <owl:someValuesFrom rdf:resource="http://www.opensilex.org/vocabulary/oeso#Entity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://sinfonia.vignevin.com/oeso#isSampleOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.opensilex.org/vocabulary/oeso#ScientificObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source xml:lang="en">https://www.w3.org/TR/vocab-ssn/#SOSASample</dc:source>
+        <rdfs:comment xml:lang="en">Samples are typically subsets or extracts from the feature of interest of an observation. They are used in situations where observations cannot be made directly on the ultimate feature of interest, either because the entire feature cannot be observed, or because it is more convenient to use a proxy. Samples are thus artifacts of an observational strategy, and usually have no significant function outside of their role in the observation process.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Un échantillon est un objet scientifique lié à un ou plusieurs autres objets, et sur lequel sont réalisés des observations ou des mesures</rdfs:comment>
+        <rdfs:label xml:lang="en">sample</rdfs:label>
+        <rdfs:label xml:lang="fr">échantillon</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#Soil -->
+
+    <owl:Class rdf:about="http://sinfonia.vignevin.com/oeso#Soil">
+        <rdfs:subClassOf rdf:resource="http://www.opensilex.org/vocabulary/oeso#ScientificObject"/>
+        <dc:source xml:lang="en">http://purl.obolibrary.org/obo/ENVO_</dc:source>
+        <rdfs:comment xml:lang="fr">Le sol est le substrat sur lequel se développent les plantes</rdfs:comment>
+        <rdfs:comment xml:lang="en">Soil is an environmental material which is primarily composed of minerals, varying proportions of sand, silt, and clay, organic material such as humus, gases, liquids, and a broad range of resident micro- and macroorganisms.</rdfs:comment>
+        <rdfs:label xml:lang="en">soil</rdfs:label>
+        <rdfs:label xml:lang="fr">sol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#Subplot -->
+
+    <owl:Class rdf:about="http://sinfonia.vignevin.com/oeso#Subplot">
+        <rdfs:subClassOf rdf:resource="http://www.opensilex.org/vocabulary/oeso#ScientificObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://sinfonia.vignevin.com/oeso#hasSoil"/>
+                <owl:someValuesFrom rdf:resource="http://sinfonia.vignevin.com/oeso#Soil"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://sinfonia.vignevin.com/oeso#hasRootstockGermplasm"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.opensilex.org/vocabulary/oeso#Germplasm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://sinfonia.vignevin.com/oeso#hasScionGermplasm"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.opensilex.org/vocabulary/oeso#Germplasm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://sinfonia.vignevin.com/oeso#Repetition"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://sinfonia.vignevin.com/oeso#PlantingDensity"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A community of plants located on a defined area of a experimental plot, generally associated with only one experimental unit</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Un ensemble de plantes localisée sur une partie définie d&apos;une parcelle expérimentale, généralement associé à une et une seule unité expérimentale</rdfs:comment>
+        <rdfs:label xml:lang="fr">placette</rdfs:label>
+        <rdfs:label xml:lang="en">Subplot</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#TastingRoom -->
+
+    <owl:Class rdf:about="http://sinfonia.vignevin.com/oeso#TastingRoom">
+        <rdfs:subClassOf rdf:resource="http://www.opensilex.org/vocabulary/oeso#InfrastructureFacility"/>
+        <rdfs:comment xml:lang="fr">Lieu dédié à l&apos;analyse sensorielle</rdfs:comment>
+        <rdfs:comment xml:lang="en">a room for wine tasting</rdfs:comment>
+        <rdfs:label xml:lang="fr">salle de dégustation</rdfs:label>
+        <rdfs:label xml:lang="en">tasting room</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#Vinestock -->
+
+    <owl:Class rdf:about="http://sinfonia.vignevin.com/oeso#Vinestock">
+        <rdfs:subClassOf rdf:resource="http://www.opensilex.org/vocabulary/oeso#ScientificObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://sinfonia.vignevin.com/oeso#hasRootstockGermplasm"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.opensilex.org/vocabulary/oeso#Germplasm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://sinfonia.vignevin.com/oeso#hasScionGermplasm"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.opensilex.org/vocabulary/oeso#Germplasm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A plant of grapevine</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Un cep est un individu/plant de vigne</rdfs:comment>
+        <rdfs:label xml:lang="fr">cep</rdfs:label>
+        <rdfs:label xml:lang="en">vinestock</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#Vinification -->
+
+    <owl:Class rdf:about="http://sinfonia.vignevin.com/oeso#Vinification">
+        <rdfs:subClassOf rdf:resource="http://www.opensilex.org/vocabulary/oeso#ScientificObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://sinfonia.vignevin.com/oeso#derivesFrom"/>
+                <owl:someValuesFrom rdf:resource="http://www.opensilex.org/vocabulary/oeso#ScientificObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://sinfonia.vignevin.com/oeso#hasScionGermplasm"/>
+                <owl:someValuesFrom rdf:resource="http://www.opensilex.org/vocabulary/oeso#Germplasm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Homogeneous batch during vinification, from the must stage to the finished wine stage before bottling</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Lot homogène en cours de vinification, du stade moût au stade vin fini avant la mise en bouteille</rdfs:comment>
+        <rdfs:label xml:lang="en">vinification</rdfs:label>
+        <rdfs:label xml:lang="fr">vinification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#Wine -->
+
+    <owl:Class rdf:about="http://sinfonia.vignevin.com/oeso#Wine">
+        <rdfs:subClassOf rdf:resource="http://www.opensilex.org/vocabulary/oeso#ScientificObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://sinfonia.vignevin.com/oeso#derivesFrom"/>
+                <owl:someValuesFrom rdf:resource="http://www.opensilex.org/vocabulary/oeso#ScientificObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://sinfonia.vignevin.com/oeso#hasScionGermplasm"/>
+                <owl:someValuesFrom rdf:resource="http://www.opensilex.org/vocabulary/oeso#Germplasm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://sinfonia.vignevin.com/oeso#NumberOfBottles"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An alcoholic drink made from grapes</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Boisson obtenu exclusivement par la fermentation alcoolique, totale ou partielle, de raisins frais, foulés ou non, ou de moûts de raisins. Le vin est généralement conditionné en bouteille ou en BIB.</rdfs:comment>
+        <rdfs:label xml:lang="fr">vin</rdfs:label>
+        <rdfs:label xml:lang="en">wine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://sinfonia.vignevin.com/oeso#Winery -->
+
+    <owl:Class rdf:about="http://sinfonia.vignevin.com/oeso#Winery">
+        <rdfs:subClassOf rdf:resource="http://www.opensilex.org/vocabulary/oeso#InfrastructureFacility"/>
+        <rdfs:comment xml:lang="en">a place that makes wine</rdfs:comment>
+        <rdfs:comment xml:lang="fr">lieu où sont réalisées les vinifications</rdfs:comment>
+        <rdfs:label xml:lang="fr">chai</rdfs:label>
+        <rdfs:label xml:lang="en">winery</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opensilex.org/vocabulary/oeso#Germplasm -->
+
+    <owl:Class rdf:about="http://www.opensilex.org/vocabulary/oeso#Germplasm"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
