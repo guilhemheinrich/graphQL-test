@@ -37,7 +37,7 @@ export interface ObjectProperty_Template extends _Porperty_Template {
 export interface DatatypeProperty_Template extends _Porperty_Template {
     type: "Litteral"
     name: string
-    valuetype: "String" | "Int" | "Float" | "Null" | "ID"
+    valuetype: "String" | "Int" | "Float" | "Boolean" | "Null" | "ID"
 }
 
 export type PorpertyTemplate = ObjectProperty_Template | DatatypeProperty_Template
@@ -304,21 +304,87 @@ export class Gql_Generator {
             for (let properties of this.getInheritedValues(concept.class_uri, "properties")) {
                 for (let property_uri of properties) {
                     let property = this.gql_resources_preprocesing[property_uri]
+                    console.debug(property)
                     switch (this.prefixer(property.class)) {
                         case "owl:DatatypeProperty":
-                        //    _            _       
-                        //   | |          | |      
-                        //   | |_ ___   __| | ___  
-                        //   | __/ _ \ / _` |/ _ \ 
-                        //   | || (_) | (_| | (_) |
-                        //    \__\___/ \__,_|\___/ 
-                        //                         
-                        // 
+                            let gql_valuetype: 'String' | 'Int' | 'Float' | 'Boolean' | "Null" | "ID"
+                            switch (this.prefixer(property.type)) {
+                                // Acoording to https://www.w3.org/2011/rdf-wg/wiki/XSD_Datatypes
+                                // Only sparql Compliant xsd value for now
+                                case "xsd:boolean":
+                                    gql_valuetype = 'Boolean'
+                                    break;
+                                case "xsd:byte":
+                                    gql_valuetype = 'Int'
+                                    break;
+                                case "xsd:date":
+                                    gql_valuetype = 'String'
+                                    break;
+                                case "xsd:dateTime":
+                                    gql_valuetype = 'String'
+                                    break;
+                                case "xsd:decimal":
+                                    gql_valuetype = 'Float'
+                                    break;
+                                case "xsd:double":
+                                    gql_valuetype = 'Float'
+                                    break;
+                                case "xsd:float":
+                                    gql_valuetype = 'Float'
+                                    break;
+                                case "xsd:float":
+                                    gql_valuetype = 'Float'
+                                    break;
+                                case "xsd:int":
+                                    gql_valuetype = 'Int'
+                                    break;
+                                case "xsd:integer":
+                                    gql_valuetype = 'Int'
+                                    break;
+                                case "xsd:long":
+                                    gql_valuetype = 'Int'
+                                    break;
+                                case "xsd:negativeInteger":
+                                    gql_valuetype = 'Int'
+                                    break;
+                                case "xsd:nonNegativeInteger":
+                                    gql_valuetype = 'Int'
+                                    break;
+                                case "xsd:nonPositiveInteger":
+                                    gql_valuetype = 'Int'
+                                    break;
+                                case "xsd:positiveInteger":
+                                    gql_valuetype = 'Int'
+                                    break;
+                                case "xsd:short":
+                                    gql_valuetype = 'Int'
+                                    break;
+                                case "xsd:time":
+                                    gql_valuetype = 'String'
+                                    break;
+                                case "xsd:unsignedByte":
+                                    gql_valuetype = 'Int'
+                                    break;
+                                case "xsd:unsignedInt":
+                                    gql_valuetype = 'Int'
+                                    break;
+                                case "xsd:unsignedLong":
+                                    gql_valuetype = 'Int'
+                                    break;
+                                case "xsd:unsignedShort":
+                                    gql_valuetype = 'Int'
+                                    break;
+                                default:
+                                    gql_valuetype = 'String'
+                            }
+                            console.debug(property.class_uri + ' is ' + gql_valuetype + '(' + this.prefixer(property.type) + ')')
                             template_properties.push({
                                 type: "Litteral",
                                 name: property.class_uri,
-                                valuetype: "String"
+                                valuetype: gql_valuetype
                             })
+
+
                             break
                         case "owl:ObjectProperty":
                             let valueType = this.getInheritedValues(property.class_uri, "type").filter((type_string) => !!type_string)

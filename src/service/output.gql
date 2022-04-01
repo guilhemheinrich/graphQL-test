@@ -2,7 +2,6 @@
             type owl__Thing {
                 uri: ID! 
                 oeso__hasDocument: oeso__Document @relationship(type: "oeso__hasDocument", direction: OUT)
-                foaf__name: String
                 foaf__maker: foaf__Agent @relationship(type: "foaf__maker", direction: OUT)
                 foaf__depiction: foaf__Image @relationship(type: "foaf__depiction", direction: OUT)
                 foaf__fundedBy: owl__Thing @relationship(type: "foaf__fundedBy", direction: OUT)
@@ -10,149 +9,290 @@
                 foaf__theme: owl__Thing @relationship(type: "foaf__theme", direction: OUT)
             }            
             
-            type undefined__TimeState @node(additionalLabels: ["undefined__State"]){
+            type oeev__Association @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
                 uri: ID! 
-                undefined__sourceDate: String
-                undefined__sourceDateEnd: String
-                undefined__sourceDateStart: String
+                oeev__associatedWith: owl__Thing @relationship(type: "oeev__associatedWith", direction: OUT)
+                oeev__concerns: String
+                oeev__isInstant: Boolean
             }            
             
-            type undefined__Annotation {
+            type oeev__AssociationWithScientificObject @node(additionalLabels: ["oeev__Association","oeev__FacilityManagement","oeev__Event"]){
                 uri: ID! 
-                undefined__motivatedBy: undefined__Motivation @relationship(type: "undefined__motivatedBy", direction: OUT)
-                undefined__styledBy: undefined__Style @relationship(type: "undefined__styledBy", direction: OUT)
-                undefined__bodyValue: String
+                oeev__associatedWithScientificObject: oeso__ScientificObject @relationship(type: "oeev__associatedWithScientificObject", direction: OUT)
+                oeev__associatedWith: owl__Thing @relationship(type: "oeev__associatedWith", direction: OUT)
+                oeev__concerns: String
+                oeev__isInstant: Boolean
             }            
             
-            type undefined__SpecificResource @node(additionalLabels: ["undefined__ResourceSelection"]){
+            type oeev__AssociationWithSensingDevice @node(additionalLabels: ["oeev__Association","oeev__FacilityManagement","oeev__Event"]){
                 uri: ID! 
-                undefined__styleClass: String
-                undefined__hasSelector: undefined__Selector @relationship(type: "undefined__hasSelector", direction: OUT)
-                undefined__hasState: undefined__State @relationship(type: "undefined__hasState", direction: OUT)
+                oeev__associatedWithSensingDevice: oeso__SensingDevice @relationship(type: "oeev__associatedWithSensingDevice", direction: OUT)
+                oeev__associatedWith: owl__Thing @relationship(type: "oeev__associatedWith", direction: OUT)
+                oeev__concerns: String
+                oeev__isInstant: Boolean
             }            
             
-            type undefined__ResourceSelection {
+            type oeev__Event {
                 uri: ID! 
-                undefined__hasSelector: undefined__Selector @relationship(type: "undefined__hasSelector", direction: OUT)
-                undefined__hasState: undefined__State @relationship(type: "undefined__hasState", direction: OUT)
+                oeev__concerns: String
+                oeev__isInstant: Boolean
             }            
             
-            type undefined__RangeSelector @node(additionalLabels: ["undefined__Selector"]){
+            type oeev__PestAttack @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event"]){
                 uri: ID! 
-                undefined__hasEndSelector: undefined__Selector @relationship(type: "undefined__hasEndSelector", direction: OUT)
-                undefined__hasStartSelector: undefined__Selector @relationship(type: "undefined__hasStartSelector", direction: OUT)
+                oeev__hasPest: oeev__Pest @relationship(type: "oeev__hasPest", direction: OUT)
+                oeev__concerns: String
+                oeev__isInstant: Boolean
             }            
             
-            type rdfs__Resource {
+            type oeev__AddingProduct @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
+            }            
+            
+            type oeev__AutomaticCalibration @node(additionalLabels: ["oeev__Calibration","oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
+            }            
+            
+            type oeev__Breakdown @node(additionalLabels: ["oeev__Trouble","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
+            }            
+            
+            type oeev__Calibration @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
+            }            
+            
+            type oeev__Checking @node(additionalLabels: ["oeev__Servicing","oeev__Operability","oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
+            }            
+            
+            type oeev__Cleaning @node(additionalLabels: ["oeev__Servicing","oeev__Operability","oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
+            }            
+            
+            type oeev__Clipping @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
+            }            
+            
+            type oeev__CorrectiveMaintenance @node(additionalLabels: ["oeev__Operability","oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
+            }            
+            
+            type oeev__CurativeTreatment @node(additionalLabels: ["oeev__Treatment","oeev__ScientificObjectManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
+            }            
+            
+            type oeev__Detasseling @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
+            }            
+            
+            type oeev__Dysfunction @node(additionalLabels: ["oeev__Trouble","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
+            }            
+            
+            type oeev__EvolutiveMaintenance @node(additionalLabels: ["oeev__Operability","oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
+            }            
+            
+            type oeev__FacilityManagement @node(additionalLabels: ["oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
+            }            
+            
+            type oeev__Fertilization @node(additionalLabels: ["oeev__AddingProduct","oeev__ScientificObjectManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
+            }            
+            
+            type oeev__Harvesting @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
+            }            
+            
+            type oeev__Incident @node(additionalLabels: ["oeev__Trouble","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
+            }            
+            
+            type oeev__Installation @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
+            }            
+            
+            type oeev__Irrigation @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
+            }            
+            
+            type oeev__Loading @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
+            }            
+            
+            type oeev__Lodging @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
+            }            
+            
+            type oeev__ManualCalibration @node(additionalLabels: ["oeev__Calibration","oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
+            }            
+            
+            type oeev__Move @node(additionalLabels: ["oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
+            }            
+            
+            type oeev__Operability @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
+                uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
+            }            
+            
+            type oeev__Pest {
                 uri: ID! 
             }            
             
-            type skos__Concept {
+            type oeev__Flooding @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event"]){
                 uri: ID! 
-                foaf__focus: owl__Thing @relationship(type: "foaf__focus", direction: OUT)
+                oeev__concerns: String
+                oeev__isInstant: Boolean
             }            
             
-            type undefined__OrderedCollection {
+            type oeev__PhenologyScoring @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
                 uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
             }            
             
-            type undefined__Choice @node(additionalLabels: ["undefined__OrderedCollection"]){
+            type oeev__PotFall @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event"]){
                 uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
             }            
             
-            type undefined__CssSelector @node(additionalLabels: ["undefined__Selector"]){
+            type oeev__Potting @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
                 uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
             }            
             
-            type undefined__CssStyle @node(additionalLabels: ["undefined__Style"]){
+            type oeev__PreventativeTreatment @node(additionalLabels: ["oeev__Treatment","oeev__ScientificObjectManagement","oeev__Event"]){
                 uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
             }            
             
-            type undefined__DataPositionSelector @node(additionalLabels: ["undefined__Selector"]){
+            type oeev__Reparation @node(additionalLabels: ["oeev__CorrectiveMaintenance","oeev__Operability","oeev__FacilityManagement","oeev__Event"]){
                 uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
             }            
             
-            type undefined__Direction {
+            type oeev__Restart @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
                 uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
             }            
             
-            type undefined__FragmentSelector @node(additionalLabels: ["undefined__Selector"]){
+            type oeev__Sampling @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
                 uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
             }            
             
-            type undefined__HttpRequestState @node(additionalLabels: ["undefined__State"]){
+            type oeev__ScientificObjectManagement @node(additionalLabels: ["oeev__Event"]){
                 uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
             }            
             
-            type undefined__Motivation @node(additionalLabels: ["skos__Concept"]){
+            type oeev__Servicing @node(additionalLabels: ["oeev__Operability","oeev__FacilityManagement","oeev__Event"]){
                 uri: ID! 
-                foaf__focus: owl__Thing @relationship(type: "foaf__focus", direction: OUT)
+                oeev__concerns: String
+                oeev__isInstant: Boolean
             }            
             
-            type undefined__Selector {
+            type oeev__Sowing @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
                 uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
             }            
             
-            type undefined__State {
+            type oeev__Staking @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
                 uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
             }            
             
-            type undefined__Style {
+            type oeev__Start @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
                 uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
             }            
             
-            type undefined__SvgSelector @node(additionalLabels: ["undefined__Selector"]){
+            type oeev__Stop @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
                 uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
             }            
             
-            type undefined__TextPositionSelector @node(additionalLabels: ["undefined__Selector"]){
+            type oeev__StuckPlant @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event"]){
                 uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
             }            
             
-            type undefined__TextQuoteSelector @node(additionalLabels: ["undefined__Selector"]){
+            type oeev__Thinning @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
                 uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
             }            
             
-            type undefined__TextualBody {
+            type oeev__Treatment @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
                 uri: ID! 
+                oeev__concerns: String
+                oeev__isInstant: Boolean
             }            
             
-            type undefined__XPathSelector @node(additionalLabels: ["undefined__Selector"]){
+            type oeev__Trouble @node(additionalLabels: ["oeev__Event"]){
                 uri: ID! 
-            }            
-            
-            type foaf__Person @node(additionalLabels: ["foaf__Agent","undefined__SpatialThing"]){
-                uri: ID! 
-                foaf__geekcode: String
-                foaf__firstName: String
-                foaf__lastName: String
-                foaf__surname: String
-                foaf__family_name: String
-                foaf__familyName: String
-                foaf__plan: String
-                foaf__img: foaf__Image @relationship(type: "foaf__img", direction: OUT)
-                foaf__myersBriggs: String
-                foaf__workplaceHomepage: foaf__Document @relationship(type: "foaf__workplaceHomepage", direction: OUT)
-                foaf__workInfoHomepage: foaf__Document @relationship(type: "foaf__workInfoHomepage", direction: OUT)
-                foaf__schoolHomepage: foaf__Document @relationship(type: "foaf__schoolHomepage", direction: OUT)
-                foaf__knows: foaf__Person @relationship(type: "foaf__knows", direction: OUT)
-                foaf__publications: foaf__Document @relationship(type: "foaf__publications", direction: OUT)
-                foaf__currentProject: owl__Thing @relationship(type: "foaf__currentProject", direction: OUT)
-                foaf__pastProject: owl__Thing @relationship(type: "foaf__pastProject", direction: OUT)
-                foaf__mbox: owl__Thing @relationship(type: "foaf__mbox", direction: OUT)
-                foaf__mbox_sha1sum: String
-                foaf__gender: String
-                foaf__skypeID: String
-                foaf__tipjar: foaf__Document @relationship(type: "foaf__tipjar", direction: OUT)
-                foaf__made: owl__Thing @relationship(type: "foaf__made", direction: OUT)
-                foaf__interest: foaf__Document @relationship(type: "foaf__interest", direction: OUT)
-                foaf__topic_interest: owl__Thing @relationship(type: "foaf__topic_interest", direction: OUT)
-                foaf__account: foaf__OnlineAccount @relationship(type: "foaf__account", direction: OUT)
-                foaf__holdsAccount: foaf__OnlineAccount @relationship(type: "foaf__holdsAccount", direction: OUT)
-                foaf__birthday: String
-                foaf__age: String
-                foaf__status: String
-                foaf__based_near: undefined__SpatialThing @relationship(type: "foaf__based_near", direction: OUT)
+                oeev__concerns: String
+                oeev__isInstant: Boolean
             }            
             
             type oeso__Germplasm {
@@ -565,290 +705,16 @@
                 uri: ID! 
             }            
             
-            type oeev__Association @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__associatedWith: owl__Thing @relationship(type: "oeev__associatedWith", direction: OUT)
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__AssociationWithScientificObject @node(additionalLabels: ["oeev__Association","oeev__FacilityManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__associatedWithScientificObject: oeso__ScientificObject @relationship(type: "oeev__associatedWithScientificObject", direction: OUT)
-                oeev__associatedWith: owl__Thing @relationship(type: "oeev__associatedWith", direction: OUT)
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__AssociationWithSensingDevice @node(additionalLabels: ["oeev__Association","oeev__FacilityManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__associatedWithSensingDevice: oeso__SensingDevice @relationship(type: "oeev__associatedWithSensingDevice", direction: OUT)
-                oeev__associatedWith: owl__Thing @relationship(type: "oeev__associatedWith", direction: OUT)
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Event {
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__PestAttack @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event"]){
-                uri: ID! 
-                oeev__hasPest: oeev__Pest @relationship(type: "oeev__hasPest", direction: OUT)
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__AddingProduct @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__AutomaticCalibration @node(additionalLabels: ["oeev__Calibration","oeev__FacilityManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Breakdown @node(additionalLabels: ["oeev__Trouble","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Calibration @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Checking @node(additionalLabels: ["oeev__Servicing","oeev__Operability","oeev__FacilityManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Cleaning @node(additionalLabels: ["oeev__Servicing","oeev__Operability","oeev__FacilityManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Clipping @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__CorrectiveMaintenance @node(additionalLabels: ["oeev__Operability","oeev__FacilityManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__CurativeTreatment @node(additionalLabels: ["oeev__Treatment","oeev__ScientificObjectManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Detasseling @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Dysfunction @node(additionalLabels: ["oeev__Trouble","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__EvolutiveMaintenance @node(additionalLabels: ["oeev__Operability","oeev__FacilityManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__FacilityManagement @node(additionalLabels: ["oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Fertilization @node(additionalLabels: ["oeev__AddingProduct","oeev__ScientificObjectManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Harvesting @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Incident @node(additionalLabels: ["oeev__Trouble","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Installation @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Irrigation @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Loading @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Lodging @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__ManualCalibration @node(additionalLabels: ["oeev__Calibration","oeev__FacilityManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Move @node(additionalLabels: ["oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Operability @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Pest {
+            type oeso__WebSite @node(additionalLabels: ["oeso__InteractiveResource","oeso__Document"]){
                 uri: ID! 
             }            
             
-            type oeev__Flooding @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event"]){
+            type oeso__WindyArea @node(additionalLabels: ["oeso__StructuralArea","oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
                 uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
             }            
             
-            type oeev__PhenologyScoring @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+            type ns__Bag {
                 uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__PotFall @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Potting @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__PreventativeTreatment @node(additionalLabels: ["oeev__Treatment","oeev__ScientificObjectManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Reparation @node(additionalLabels: ["oeev__CorrectiveMaintenance","oeev__Operability","oeev__FacilityManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Restart @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Sampling @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__ScientificObjectManagement @node(additionalLabels: ["oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Servicing @node(additionalLabels: ["oeev__Operability","oeev__FacilityManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Sowing @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Staking @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Start @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Stop @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__StuckPlant @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Thinning @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Treatment @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
-            }            
-            
-            type oeev__Trouble @node(additionalLabels: ["oeev__Event"]){
-                uri: ID! 
-                oeev__concerns: String
-                oeev__isInstant: String
             }            
             
             type rdfs__Class {
@@ -857,6 +723,40 @@
             
             type foaf__LabelProperty {
                 uri: ID! 
+            }            
+            
+            type foaf__Person @node(additionalLabels: ["foaf__Agent","undefined__SpatialThing"]){
+                uri: ID! 
+                foaf__geekcode: String
+                foaf__firstName: String
+                foaf__lastName: String
+                foaf__surname: String
+                foaf__family_name: String
+                foaf__familyName: String
+                foaf__plan: String
+                foaf__img: foaf__Image @relationship(type: "foaf__img", direction: OUT)
+                foaf__myersBriggs: String
+                foaf__workplaceHomepage: foaf__Document @relationship(type: "foaf__workplaceHomepage", direction: OUT)
+                foaf__workInfoHomepage: foaf__Document @relationship(type: "foaf__workInfoHomepage", direction: OUT)
+                foaf__schoolHomepage: foaf__Document @relationship(type: "foaf__schoolHomepage", direction: OUT)
+                foaf__knows: foaf__Person @relationship(type: "foaf__knows", direction: OUT)
+                foaf__publications: foaf__Document @relationship(type: "foaf__publications", direction: OUT)
+                foaf__currentProject: owl__Thing @relationship(type: "foaf__currentProject", direction: OUT)
+                foaf__pastProject: owl__Thing @relationship(type: "foaf__pastProject", direction: OUT)
+                foaf__mbox: owl__Thing @relationship(type: "foaf__mbox", direction: OUT)
+                foaf__mbox_sha1sum: String
+                foaf__gender: String
+                foaf__skypeID: String
+                foaf__tipjar: foaf__Document @relationship(type: "foaf__tipjar", direction: OUT)
+                foaf__made: owl__Thing @relationship(type: "foaf__made", direction: OUT)
+                foaf__interest: foaf__Document @relationship(type: "foaf__interest", direction: OUT)
+                foaf__topic_interest: owl__Thing @relationship(type: "foaf__topic_interest", direction: OUT)
+                foaf__account: foaf__OnlineAccount @relationship(type: "foaf__account", direction: OUT)
+                foaf__holdsAccount: foaf__OnlineAccount @relationship(type: "foaf__holdsAccount", direction: OUT)
+                foaf__birthday: String
+                foaf__age: String
+                foaf__status: String
+                foaf__based_near: undefined__SpatialThing @relationship(type: "foaf__based_near", direction: OUT)
             }            
             
             type foaf__Agent {
@@ -931,7 +831,6 @@
                 foaf__accountServiceHomepage: foaf__Document @relationship(type: "foaf__accountServiceHomepage", direction: OUT)
                 foaf__accountName: String
                 oeso__hasDocument: oeso__Document @relationship(type: "oeso__hasDocument", direction: OUT)
-                foaf__name: String
                 foaf__maker: foaf__Agent @relationship(type: "foaf__maker", direction: OUT)
                 foaf__depiction: foaf__Image @relationship(type: "foaf__depiction", direction: OUT)
                 foaf__fundedBy: owl__Thing @relationship(type: "foaf__fundedBy", direction: OUT)
@@ -944,7 +843,6 @@
                 foaf__accountServiceHomepage: foaf__Document @relationship(type: "foaf__accountServiceHomepage", direction: OUT)
                 foaf__accountName: String
                 oeso__hasDocument: oeso__Document @relationship(type: "oeso__hasDocument", direction: OUT)
-                foaf__name: String
                 foaf__maker: foaf__Agent @relationship(type: "foaf__maker", direction: OUT)
                 foaf__depiction: foaf__Image @relationship(type: "foaf__depiction", direction: OUT)
                 foaf__fundedBy: owl__Thing @relationship(type: "foaf__fundedBy", direction: OUT)
@@ -957,7 +855,6 @@
                 foaf__accountServiceHomepage: foaf__Document @relationship(type: "foaf__accountServiceHomepage", direction: OUT)
                 foaf__accountName: String
                 oeso__hasDocument: oeso__Document @relationship(type: "oeso__hasDocument", direction: OUT)
-                foaf__name: String
                 foaf__maker: foaf__Agent @relationship(type: "foaf__maker", direction: OUT)
                 foaf__depiction: foaf__Image @relationship(type: "foaf__depiction", direction: OUT)
                 foaf__fundedBy: owl__Thing @relationship(type: "foaf__fundedBy", direction: OUT)
@@ -970,7 +867,6 @@
                 foaf__accountServiceHomepage: foaf__Document @relationship(type: "foaf__accountServiceHomepage", direction: OUT)
                 foaf__accountName: String
                 oeso__hasDocument: oeso__Document @relationship(type: "oeso__hasDocument", direction: OUT)
-                foaf__name: String
                 foaf__maker: foaf__Agent @relationship(type: "foaf__maker", direction: OUT)
                 foaf__depiction: foaf__Image @relationship(type: "foaf__depiction", direction: OUT)
                 foaf__fundedBy: owl__Thing @relationship(type: "foaf__fundedBy", direction: OUT)
@@ -978,41 +874,120 @@
                 foaf__theme: owl__Thing @relationship(type: "foaf__theme", direction: OUT)
             }            
             
-            type oeso__WebSite @node(additionalLabels: ["oeso__InteractiveResource","oeso__Document"]){
+            type skos__Concept {
+                uri: ID! 
+                foaf__focus: owl__Thing @relationship(type: "foaf__focus", direction: OUT)
+            }            
+            
+            type undefined__TimeState @node(additionalLabels: ["undefined__State"]){
+                uri: ID! 
+                undefined__sourceDate: String
+                undefined__sourceDateEnd: String
+                undefined__sourceDateStart: String
+            }            
+            
+            type undefined__Annotation {
+                uri: ID! 
+                undefined__motivatedBy: undefined__Motivation @relationship(type: "undefined__motivatedBy", direction: OUT)
+                undefined__styledBy: undefined__Style @relationship(type: "undefined__styledBy", direction: OUT)
+                undefined__bodyValue: String
+            }            
+            
+            type undefined__SpecificResource @node(additionalLabels: ["undefined__ResourceSelection"]){
+                uri: ID! 
+                undefined__styleClass: String
+                undefined__hasSelector: undefined__Selector @relationship(type: "undefined__hasSelector", direction: OUT)
+                undefined__hasState: undefined__State @relationship(type: "undefined__hasState", direction: OUT)
+            }            
+            
+            type undefined__ResourceSelection {
+                uri: ID! 
+                undefined__hasSelector: undefined__Selector @relationship(type: "undefined__hasSelector", direction: OUT)
+                undefined__hasState: undefined__State @relationship(type: "undefined__hasState", direction: OUT)
+            }            
+            
+            type undefined__RangeSelector @node(additionalLabels: ["undefined__Selector"]){
+                uri: ID! 
+                undefined__hasEndSelector: undefined__Selector @relationship(type: "undefined__hasEndSelector", direction: OUT)
+                undefined__hasStartSelector: undefined__Selector @relationship(type: "undefined__hasStartSelector", direction: OUT)
+            }            
+            
+            type rdfs__Resource {
                 uri: ID! 
             }            
             
-            type oeso__WindyArea @node(additionalLabels: ["oeso__StructuralArea","oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
+            type undefined__OrderedCollection {
                 uri: ID! 
             }            
             
-            type ns__Bag {
+            type undefined__Choice @node(additionalLabels: ["undefined__OrderedCollection"]){
                 uri: ID! 
             }            
             
-            type owl__DatatypeProperty {
+            type undefined__CssSelector @node(additionalLabels: ["undefined__Selector"]){
                 uri: ID! 
             }            
             
-            type undefined__Agent {
+            type undefined__CssStyle @node(additionalLabels: ["undefined__Style"]){
                 uri: ID! 
             }            
             
-            type undefined__Entity {
+            type undefined__DataPositionSelector @node(additionalLabels: ["undefined__Selector"]){
                 uri: ID! 
             }            
             
-            type undefined__Person @node(additionalLabels: ["undefined__Agent"]){
+            type undefined__Direction {
                 uri: ID! 
             }            
             
-            type undefined__SoftwareAgent @node(additionalLabels: ["undefined__Agent"]){
+            type undefined__FragmentSelector @node(additionalLabels: ["undefined__Selector"]){
+                uri: ID! 
+            }            
+            
+            type undefined__HttpRequestState @node(additionalLabels: ["undefined__State"]){
+                uri: ID! 
+            }            
+            
+            type undefined__Motivation @node(additionalLabels: ["skos__Concept"]){
+                uri: ID! 
+                foaf__focus: owl__Thing @relationship(type: "foaf__focus", direction: OUT)
+            }            
+            
+            type undefined__Selector {
+                uri: ID! 
+            }            
+            
+            type undefined__State {
+                uri: ID! 
+            }            
+            
+            type undefined__Style {
+                uri: ID! 
+            }            
+            
+            type undefined__SvgSelector @node(additionalLabels: ["undefined__Selector"]){
+                uri: ID! 
+            }            
+            
+            type undefined__TextPositionSelector @node(additionalLabels: ["undefined__Selector"]){
+                uri: ID! 
+            }            
+            
+            type undefined__TextQuoteSelector @node(additionalLabels: ["undefined__Selector"]){
+                uri: ID! 
+            }            
+            
+            type undefined__TextualBody {
+                uri: ID! 
+            }            
+            
+            type undefined__XPathSelector @node(additionalLabels: ["undefined__Selector"]){
                 uri: ID! 
             }            
             
             type sinfonia__Wine @node(additionalLabels: ["oeso__ScientificObject"]){
                 uri: ID! 
-                sinfonia__NumberOfBottles: String
+                sinfonia__NumberOfBottles: Int
                 oeso__hasCreationDate: String
                 oeso__hasDestructionDate: String
                 sinfonia__SampleEntity: oeso__Entity @relationship(type: "sinfonia__SampleEntity", direction: OUT)
@@ -1028,12 +1003,12 @@
             
             type sinfonia__ExperimentalField @node(additionalLabels: ["oeso__InfrastructureFacility"]){
                 uri: ID! 
-                sinfonia__PlantingDensity: String
+                sinfonia__PlantingDensity: Float
             }            
             
             type sinfonia__Subplot @node(additionalLabels: ["oeso__ScientificObject"]){
                 uri: ID! 
-                sinfonia__PlantingDensity: String
+                sinfonia__PlantingDensity: Float
                 oeso__hasCreationDate: String
                 oeso__hasDestructionDate: String
                 sinfonia__SampleEntity: oeso__Entity @relationship(type: "sinfonia__SampleEntity", direction: OUT)
@@ -1151,6 +1126,26 @@
             }            
             
             type sinfonia__Winery @node(additionalLabels: ["oeso__InfrastructureFacility"]){
+                uri: ID! 
+            }            
+            
+            type owl__DatatypeProperty {
+                uri: ID! 
+            }            
+            
+            type undefined__Agent {
+                uri: ID! 
+            }            
+            
+            type undefined__Entity {
+                uri: ID! 
+            }            
+            
+            type undefined__Person @node(additionalLabels: ["undefined__Agent"]){
+                uri: ID! 
+            }            
+            
+            type undefined__SoftwareAgent @node(additionalLabels: ["undefined__Agent"]){
                 uri: ID! 
             }            
             
