@@ -12,17 +12,16 @@ const PREFIX = '/home/heinrich/code/'
 const INPUT_ONTOLOGY = PREFIX + 'graphQL-test/src/service/oeso-core.owl'
 const OUTPUT_PARSED_ONTOLOGY = PREFIX + 'graphQL-test/src/service/parsed_ontology.txt'
 const OUTPUT_MODEL = PREFIX + 'graphQL-test/src/service/output.json'
+const OUTPUT_PREFIXES = PREFIX + 'graphQL-test/src/service/computed_prefixes.json'
 const OUTPUT_GQL = PREFIX + 'graphQL-test/src/service/output.gql'
 const writeStream = fs.createWriteStream(OUTPUT_PARSED_ONTOLOGY);
 // const readStream = fs.createReadStream(INPUT_ONTOLOGY);
 
 let data: Quad[] = []
 writeStream.on("finish", () => {
-    // console.log(data)
-    // Order data
-    // Class declaration first
     fs.writeFileSync(OUTPUT_MODEL, JSON.stringify(gqlRDF.gql_resources_preprocesing, undefined, 2))
     fs.writeFileSync(OUTPUT_GQL, gqlRDF.templater())
+    fs.writeFileSync(OUTPUT_PREFIXES, JSON.stringify(gqlRDF.prefix_handler.prefix_array, undefined, 2))
     // console.log(gqlRDF.gql_properties_preprocessing)
 })
 

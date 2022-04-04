@@ -3,6 +3,8 @@ import { Quad } from "rdf-js"
 import PREFIXES from './prefix'
 import { gql } from "apollo-server-express";
 // import {PorpertyTemplate, Gql_Resource} from './Gql_Resource'
+import Prefixer from "../prefixes/Prefix";
+
 export interface Gql_Resource {
     // Graphql layer
     class_uri: string,
@@ -70,13 +72,9 @@ class Gql_Resource_Dictionary {
     }
 }
 export class Gql_Generator {
-    /**
-     * @description Readonly array storing relevant information for the post processing
-     * @date 23/11/2021
-     * @type {{prefix: string, uri: string}[]}
-     * @memberof Gql_Generator
-     */
-    readonly prefixes_array: { prefix: string, uri: string }[] = []
+    prefix_handler = new Prefixer([
+        '/home/heinrich/code/graphQL-test/src/service/prefixes/standard_prefixes.json'
+    ])
     readonly gql_resources_preprocesing: Gql_Resource_Dictionary = new Gql_Resource_Dictionary()
 
     /**
@@ -86,7 +84,6 @@ export class Gql_Generator {
      * @memberof Gql_Generator
      */
     constructor(prefixes_array: { prefix: string, uri: string }[]) {
-        this.prefixes_array = JSON.parse(JSON.stringify(prefixes_array))
         // Add owl:Thing in gqlResource
         this.gql_resources_preprocesing[this.expender('owl:Thing')] = {
             class_uri: this.expender('owl:Thing'),                  // Initialize with the uri
@@ -101,25 +98,22 @@ export class Gql_Generator {
             isRequired: false,
             isList: false
         }
+        console.log(this.prefix_handler.prefix_array)
     }
 
 
     /**
      * @description 
-     * Transform a regular uri with a prefixed rdf format, accroding to the prefixes_array
-     * @date 23/11/2021
+     * Transform a regular uri with a prefixed rdf format, according to the prefixes_array, or to the Prefixer class routine
+     * @date 04/04/2022
      * @example http://my/ontologie#item => ontology_prefix:item
      * @param {string} uri
      * @return {*}  {string} Return the uri with prefixed format
      * @memberof Gql_Generator
      */
     prefixer(uri: string): string {
-        for (let prefix_uri of this.prefixes_array) {
-            if (uri.startsWith(prefix_uri.uri)) {
-                return uri.replace(prefix_uri.uri, prefix_uri.prefix + ':')
-            }
-        }
-        return uri
+        let prefix_uri = this.prefix_handler.getPrefixAndUriFromUri(uri)
+        return uri.replace(prefix_uri.uri, prefix_uri.prefix + ':')
     }
 
     /**
@@ -133,7 +127,7 @@ export class Gql_Generator {
      */
     expender(short_uri: string): string {
         let [prefix, suffix] = short_uri.split(':')
-        let found_prefix = this.prefixes_array.find((value) => value.prefix == prefix)
+        let found_prefix = this.prefix_handler.getPrefixAndUriFromPrefix(prefix)
         if (found_prefix != undefined) {
             return found_prefix.uri + suffix
         } else {
@@ -157,10 +151,12 @@ export class Gql_Generator {
         let matches = class_uri.matchAll(uri_separator)
         const _array = Array.from(matches)
         if (_array && _array.length > 0) {
+            let prefix = _array[0][1]
             if (n10s_compliant) {
-                let found_prefix = this.prefixes_array.find((value) => value.uri == _array[0][1])
+                let found_prefix = this.prefix_handler.getPrefixAndUriFromUri(prefix)
                 return found_prefix?.prefix + '__' + _array[0][2]
             } else {
+                console.log(`${class_uri} is not found`)
                 return _array[0][2]
             }
         } else {
@@ -304,8 +300,7 @@ export class Gql_Generator {
             for (let properties of this.getInheritedValues(concept.class_uri, "properties")) {
                 for (let property_uri of properties) {
                     let property = this.gql_resources_preprocesing[property_uri]
-                    console.debug(property)
-                    switch (this.prefixer(property.class)) {
+                    switch (this.prefixer(property.class_uri)) {
                         case "owl:DatatypeProperty":
                             let gql_valuetype: 'String' | 'Int' | 'Float' | 'Boolean' | "Null" | "ID"
                             switch (this.prefixer(property.type)) {
@@ -377,7 +372,7 @@ export class Gql_Generator {
                                 default:
                                     gql_valuetype = 'String'
                             }
-                            console.debug(property.class_uri + ' is ' + gql_valuetype + '(' + this.prefixer(property.type) + ')')
+                            // console.debug(property.class_uri + ' is ' + gql_valuetype + '(' + this.prefixer(property.type) + ')')
                             template_properties.push({
                                 type: "Litteral",
                                 name: property.class_uri,

@@ -23,6 +23,1195 @@
     "isRequired": false,
     "isList": false
   },
+  "http://www.w3.org/ns/oa#": {
+    "class_uri": "http://www.w3.org/ns/oa#",
+    "name": "http://www.w3.org/ns/oa#",
+    "class": "http://www.w3.org/2002/07/owl#Ontology",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "df_0_1": {
+    "class_uri": "df_0_1",
+    "name": "df_0_1",
+    "class": "http://xmlns.com/foaf/0.1/Person",
+    "isConcept": false,
+    "isAbstract": true,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "df_0_2": {
+    "class_uri": "df_0_2",
+    "name": "df_0_2",
+    "class": "http://xmlns.com/foaf/0.1/Person",
+    "isConcept": false,
+    "isAbstract": true,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "df_0_3": {
+    "class_uri": "df_0_3",
+    "name": "df_0_3",
+    "class": "http://xmlns.com/foaf/0.1/Person",
+    "isConcept": false,
+    "isAbstract": true,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://purl.org/dc/elements/1.1/title": {
+    "class_uri": "http://purl.org/dc/elements/1.1/title",
+    "name": "Title",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://purl.org/dc/terms/creator": {
+    "class_uri": "http://purl.org/dc/terms/creator",
+    "name": "http://purl.org/dc/terms/creator",
+    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://purl.org/dc/terms/modified": {
+    "class_uri": "http://purl.org/dc/terms/modified",
+    "name": "http://purl.org/dc/terms/modified",
+    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#cachedSource": {
+    "class_uri": "http://www.w3.org/ns/oa#cachedSource",
+    "name": "cachedSource",
+    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/ns/oa#TimeState"
+    ],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#TimeState": {
+    "class_uri": "http://www.w3.org/ns/oa#TimeState",
+    "name": "TimeState",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [
+      "http://www.w3.org/ns/oa#cachedSource",
+      "http://www.w3.org/ns/oa#sourceDate",
+      "http://www.w3.org/ns/oa#sourceDateEnd",
+      "http://www.w3.org/ns/oa#sourceDateStart"
+    ],
+    "inherits": [
+      "http://www.w3.org/ns/oa#State"
+    ],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#hasBody": {
+    "class_uri": "http://www.w3.org/ns/oa#hasBody",
+    "name": "hasBody",
+    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/ns/oa#Annotation"
+    ],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#Annotation": {
+    "class_uri": "http://www.w3.org/ns/oa#Annotation",
+    "name": "Annotation",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [
+      "http://www.w3.org/ns/oa#hasBody",
+      "http://www.w3.org/ns/oa#hasTarget",
+      "http://www.w3.org/ns/oa#motivatedBy",
+      "http://www.w3.org/ns/oa#styledBy",
+      "http://www.w3.org/ns/oa#bodyValue"
+    ],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#hasScope": {
+    "class_uri": "http://www.w3.org/ns/oa#hasScope",
+    "name": "hasScope",
+    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/ns/oa#SpecificResource"
+    ],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#SpecificResource": {
+    "class_uri": "http://www.w3.org/ns/oa#SpecificResource",
+    "name": "SpecificResource",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [
+      "http://www.w3.org/ns/oa#hasScope",
+      "http://www.w3.org/ns/oa#renderedVia",
+      "http://www.w3.org/ns/oa#styleClass"
+    ],
+    "inherits": [
+      "http://www.w3.org/ns/oa#ResourceSelection"
+    ],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#hasSource": {
+    "class_uri": "http://www.w3.org/ns/oa#hasSource",
+    "name": "hasSource",
+    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/ns/oa#ResourceSelection"
+    ],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#ResourceSelection": {
+    "class_uri": "http://www.w3.org/ns/oa#ResourceSelection",
+    "name": "ResourceSelection",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [
+      "http://www.w3.org/ns/oa#hasSource",
+      "http://www.w3.org/ns/oa#hasSelector",
+      "http://www.w3.org/ns/oa#hasState"
+    ],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#hasTarget": {
+    "class_uri": "http://www.w3.org/ns/oa#hasTarget",
+    "name": "hasTarget",
+    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/ns/oa#Annotation"
+    ],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#renderedVia": {
+    "class_uri": "http://www.w3.org/ns/oa#renderedVia",
+    "name": "renderedVia",
+    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/ns/oa#SpecificResource"
+    ],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/prov#wasRevisionOf": {
+    "class_uri": "http://www.w3.org/ns/prov#wasRevisionOf",
+    "name": "http://www.w3.org/ns/prov#wasRevisionOf",
+    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/name": {
+    "class_uri": "http://xmlns.com/foaf/0.1/name",
+    "name": "name",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://www.w3.org/2000/01/rdf-schema#label"
+    ],
+    "domains": [
+      "http://www.w3.org/2002/07/owl#Thing"
+    ],
+    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#hasEndSelector": {
+    "class_uri": "http://www.w3.org/ns/oa#hasEndSelector",
+    "name": "hasEndSelector",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/ns/oa#RangeSelector"
+    ],
+    "type": "http://www.w3.org/ns/oa#Selector",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#RangeSelector": {
+    "class_uri": "http://www.w3.org/ns/oa#RangeSelector",
+    "name": "RangeSelector",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [
+      "http://www.w3.org/ns/oa#hasEndSelector",
+      "http://www.w3.org/ns/oa#hasStartSelector"
+    ],
+    "inherits": [
+      "http://www.w3.org/ns/oa#Selector"
+    ],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#hasPurpose": {
+    "class_uri": "http://www.w3.org/ns/oa#hasPurpose",
+    "name": "hasPurpose",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "http://www.w3.org/ns/oa#Motivation",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#hasSelector": {
+    "class_uri": "http://www.w3.org/ns/oa#hasSelector",
+    "name": "hasSelector",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/ns/oa#ResourceSelection"
+    ],
+    "type": "http://www.w3.org/ns/oa#Selector",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#hasStartSelector": {
+    "class_uri": "http://www.w3.org/ns/oa#hasStartSelector",
+    "name": "hasStartSelector",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/ns/oa#RangeSelector"
+    ],
+    "type": "http://www.w3.org/ns/oa#Selector",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#hasState": {
+    "class_uri": "http://www.w3.org/ns/oa#hasState",
+    "name": "hasState",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/ns/oa#ResourceSelection"
+    ],
+    "type": "http://www.w3.org/ns/oa#State",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#motivatedBy": {
+    "class_uri": "http://www.w3.org/ns/oa#motivatedBy",
+    "name": "motivatedBy",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/ns/oa#Annotation"
+    ],
+    "type": "http://www.w3.org/ns/oa#Motivation",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#styledBy": {
+    "class_uri": "http://www.w3.org/ns/oa#styledBy",
+    "name": "styledBy",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/ns/oa#Annotation"
+    ],
+    "type": "http://www.w3.org/ns/oa#Style",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#textDirection": {
+    "class_uri": "http://www.w3.org/ns/oa#textDirection",
+    "name": "textDirection",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "http://www.w3.org/ns/oa#Direction",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#bodyValue": {
+    "class_uri": "http://www.w3.org/ns/oa#bodyValue",
+    "name": "bodyValue",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/ns/oa#Annotation"
+    ],
+    "type": "http://www.w3.org/2001/XMLSchema#string",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#end": {
+    "class_uri": "http://www.w3.org/ns/oa#end",
+    "name": "end",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#exact": {
+    "class_uri": "http://www.w3.org/ns/oa#exact",
+    "name": "exact",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "http://www.w3.org/2001/XMLSchema#string",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#prefix": {
+    "class_uri": "http://www.w3.org/ns/oa#prefix",
+    "name": "prefix",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "http://www.w3.org/2001/XMLSchema#string",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#processingLanguage": {
+    "class_uri": "http://www.w3.org/ns/oa#processingLanguage",
+    "name": "processingLanguage",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "http://www.w3.org/2001/XMLSchema#string",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#sourceDate": {
+    "class_uri": "http://www.w3.org/ns/oa#sourceDate",
+    "name": "sourceDate",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/ns/oa#TimeState"
+    ],
+    "type": "http://www.w3.org/2001/XMLSchema#dateTime",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#sourceDateEnd": {
+    "class_uri": "http://www.w3.org/ns/oa#sourceDateEnd",
+    "name": "sourceDateEnd",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/ns/oa#TimeState"
+    ],
+    "type": "http://www.w3.org/2001/XMLSchema#dateTime",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#sourceDateStart": {
+    "class_uri": "http://www.w3.org/ns/oa#sourceDateStart",
+    "name": "sourceDateStart",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/ns/oa#TimeState"
+    ],
+    "type": "http://www.w3.org/2001/XMLSchema#dateTime",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#start": {
+    "class_uri": "http://www.w3.org/ns/oa#start",
+    "name": "start",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#styleClass": {
+    "class_uri": "http://www.w3.org/ns/oa#styleClass",
+    "name": "styleClass",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/ns/oa#SpecificResource"
+    ],
+    "type": "http://www.w3.org/2001/XMLSchema#string",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#suffix": {
+    "class_uri": "http://www.w3.org/ns/oa#suffix",
+    "name": "suffix",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "http://www.w3.org/2001/XMLSchema#string",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/2000/01/rdf-schema#Resource": {
+    "class_uri": "http://www.w3.org/2000/01/rdf-schema#Resource",
+    "name": "http://www.w3.org/2000/01/rdf-schema#Resource",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/2004/02/skos/core#Concept": {
+    "class_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+    "name": "Concept",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [
+      "http://xmlns.com/foaf/0.1/focus"
+    ],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/activitystreams#OrderedCollection": {
+    "class_uri": "http://www.w3.org/ns/activitystreams#OrderedCollection",
+    "name": "http://www.w3.org/ns/activitystreams#OrderedCollection",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#Choice": {
+    "class_uri": "http://www.w3.org/ns/oa#Choice",
+    "name": "Choice",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://www.w3.org/ns/activitystreams#OrderedCollection"
+    ],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#CssSelector": {
+    "class_uri": "http://www.w3.org/ns/oa#CssSelector",
+    "name": "CssSelector",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://www.w3.org/ns/oa#Selector"
+    ],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#CssStyle": {
+    "class_uri": "http://www.w3.org/ns/oa#CssStyle",
+    "name": "CssStyle",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://www.w3.org/ns/oa#Style"
+    ],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#DataPositionSelector": {
+    "class_uri": "http://www.w3.org/ns/oa#DataPositionSelector",
+    "name": "DataPositionSelector",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://www.w3.org/ns/oa#Selector"
+    ],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#Direction": {
+    "class_uri": "http://www.w3.org/ns/oa#Direction",
+    "name": "Direction",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#FragmentSelector": {
+    "class_uri": "http://www.w3.org/ns/oa#FragmentSelector",
+    "name": "FragmentSelector",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://www.w3.org/ns/oa#Selector"
+    ],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#HttpRequestState": {
+    "class_uri": "http://www.w3.org/ns/oa#HttpRequestState",
+    "name": "HttpRequestState",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://www.w3.org/ns/oa#State"
+    ],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#Motivation": {
+    "class_uri": "http://www.w3.org/ns/oa#Motivation",
+    "name": "Motivation",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#Selector": {
+    "class_uri": "http://www.w3.org/ns/oa#Selector",
+    "name": "Selector",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#State": {
+    "class_uri": "http://www.w3.org/ns/oa#State",
+    "name": "State",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#Style": {
+    "class_uri": "http://www.w3.org/ns/oa#Style",
+    "name": "Style",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#SvgSelector": {
+    "class_uri": "http://www.w3.org/ns/oa#SvgSelector",
+    "name": "SvgSelector",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://www.w3.org/ns/oa#Selector"
+    ],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#TextPositionSelector": {
+    "class_uri": "http://www.w3.org/ns/oa#TextPositionSelector",
+    "name": "TextPositionSelector",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://www.w3.org/ns/oa#Selector"
+    ],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#TextQuoteSelector": {
+    "class_uri": "http://www.w3.org/ns/oa#TextQuoteSelector",
+    "name": "TextQuoteSelector",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://www.w3.org/ns/oa#Selector"
+    ],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#TextualBody": {
+    "class_uri": "http://www.w3.org/ns/oa#TextualBody",
+    "name": "TextualBody",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#XPathSelector": {
+    "class_uri": "http://www.w3.org/ns/oa#XPathSelector",
+    "name": "XPathSelector",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://www.w3.org/ns/oa#Selector"
+    ],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/Person": {
+    "class_uri": "http://xmlns.com/foaf/0.1/Person",
+    "name": "Person",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [
+      "http://xmlns.com/foaf/0.1/geekcode",
+      "http://xmlns.com/foaf/0.1/firstName",
+      "http://xmlns.com/foaf/0.1/lastName",
+      "http://xmlns.com/foaf/0.1/surname",
+      "http://xmlns.com/foaf/0.1/family_name",
+      "http://xmlns.com/foaf/0.1/familyName",
+      "http://xmlns.com/foaf/0.1/plan",
+      "http://xmlns.com/foaf/0.1/img",
+      "http://xmlns.com/foaf/0.1/myersBriggs",
+      "http://xmlns.com/foaf/0.1/workplaceHomepage",
+      "http://xmlns.com/foaf/0.1/workInfoHomepage",
+      "http://xmlns.com/foaf/0.1/schoolHomepage",
+      "http://xmlns.com/foaf/0.1/knows",
+      "http://xmlns.com/foaf/0.1/publications",
+      "http://xmlns.com/foaf/0.1/currentProject",
+      "http://xmlns.com/foaf/0.1/pastProject"
+    ],
+    "inherits": [
+      "http://xmlns.com/foaf/0.1/Agent",
+      "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
+    ],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#PreferContainedDescriptions": {
+    "class_uri": "http://www.w3.org/ns/oa#PreferContainedDescriptions",
+    "name": "PreferContainedDescriptions",
+    "class": "http://www.w3.org/2000/01/rdf-schema#Resource",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#PreferContainedIRIs": {
+    "class_uri": "http://www.w3.org/ns/oa#PreferContainedIRIs",
+    "name": "PreferContainedIRIs",
+    "class": "http://www.w3.org/2000/01/rdf-schema#Resource",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#assessing": {
+    "class_uri": "http://www.w3.org/ns/oa#assessing",
+    "name": "évaluer",
+    "class": "http://www.w3.org/ns/oa#Motivation",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#bookmarking": {
+    "class_uri": "http://www.w3.org/ns/oa#bookmarking",
+    "name": "mettre en favori",
+    "class": "http://www.w3.org/ns/oa#Motivation",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#classifying": {
+    "class_uri": "http://www.w3.org/ns/oa#classifying",
+    "name": "classifying",
+    "class": "http://www.w3.org/ns/oa#Motivation",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#commenting": {
+    "class_uri": "http://www.w3.org/ns/oa#commenting",
+    "name": "commenting",
+    "class": "http://www.w3.org/ns/oa#Motivation",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#describing": {
+    "class_uri": "http://www.w3.org/ns/oa#describing",
+    "name": "décrire",
+    "class": "http://www.w3.org/ns/oa#Motivation",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#editing": {
+    "class_uri": "http://www.w3.org/ns/oa#editing",
+    "name": "éditer",
+    "class": "http://www.w3.org/ns/oa#Motivation",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#highlighting": {
+    "class_uri": "http://www.w3.org/ns/oa#highlighting",
+    "name": "mettre en évidence",
+    "class": "http://www.w3.org/ns/oa#Motivation",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#identifying": {
+    "class_uri": "http://www.w3.org/ns/oa#identifying",
+    "name": "identifying",
+    "class": "http://www.w3.org/ns/oa#Motivation",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#linking": {
+    "class_uri": "http://www.w3.org/ns/oa#linking",
+    "name": "linking",
+    "class": "http://www.w3.org/ns/oa#Motivation",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#ltrDirection": {
+    "class_uri": "http://www.w3.org/ns/oa#ltrDirection",
+    "name": "ltrDirection",
+    "class": "http://www.w3.org/ns/oa#Direction",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#moderating": {
+    "class_uri": "http://www.w3.org/ns/oa#moderating",
+    "name": "modérer",
+    "class": "http://www.w3.org/ns/oa#Motivation",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#questioning": {
+    "class_uri": "http://www.w3.org/ns/oa#questioning",
+    "name": "questionner",
+    "class": "http://www.w3.org/ns/oa#Motivation",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#replying": {
+    "class_uri": "http://www.w3.org/ns/oa#replying",
+    "name": "répondre",
+    "class": "http://www.w3.org/ns/oa#Motivation",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#rtlDirection": {
+    "class_uri": "http://www.w3.org/ns/oa#rtlDirection",
+    "name": "rtlDirection",
+    "class": "http://www.w3.org/ns/oa#Direction",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#tagging": {
+    "class_uri": "http://www.w3.org/ns/oa#tagging",
+    "name": "tagging",
+    "class": "http://www.w3.org/ns/oa#Motivation",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "df_0_4": {
+    "class_uri": "df_0_4",
+    "name": "df_0_4",
+    "class": "http://xmlns.com/foaf/0.1/Person",
+    "isConcept": false,
+    "isAbstract": true,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "df_0_5": {
+    "class_uri": "df_0_5",
+    "name": "df_0_5",
+    "class": "http://xmlns.com/foaf/0.1/Person",
+    "isConcept": false,
+    "isAbstract": true,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "df_0_6": {
+    "class_uri": "df_0_6",
+    "name": "df_0_6",
+    "class": "http://xmlns.com/foaf/0.1/Person",
+    "isConcept": false,
+    "isAbstract": true,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#annotationService": {
+    "class_uri": "http://www.w3.org/ns/oa#annotationService",
+    "name": "annotationService",
+    "class": "owl:Thing",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#canonical": {
+    "class_uri": "http://www.w3.org/ns/oa#canonical",
+    "name": "canonical",
+    "class": "owl:Thing",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#refinedBy": {
+    "class_uri": "http://www.w3.org/ns/oa#refinedBy",
+    "name": "refinedBy",
+    "class": "owl:Thing",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/ns/oa#via": {
+    "class_uri": "http://www.w3.org/ns/oa#via",
+    "name": "via",
+    "class": "owl:Thing",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
   "http://www.opensilex.org/vocabulary/oeev": {
     "class_uri": "http://www.opensilex.org/vocabulary/oeev",
     "name": "OpenSILEX - Ontology of Experimental Events (OEEv)",
@@ -1229,19 +2418,6 @@
     "isRequired": false,
     "isList": false
   },
-  "http://purl.org/dc/terms/modified": {
-    "class_uri": "http://purl.org/dc/terms/modified",
-    "name": "http://purl.org/dc/terms/modified",
-    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
   "http://purl.org/dc/terms/publisher": {
     "class_uri": "http://purl.org/dc/terms/publisher",
     "name": "http://purl.org/dc/terms/publisher",
@@ -2186,19 +3362,6 @@
   "http://purl.org/dc/elements/1.1/description": {
     "class_uri": "http://purl.org/dc/elements/1.1/description",
     "name": "Description",
-    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://purl.org/dc/elements/1.1/title": {
-    "class_uri": "http://purl.org/dc/elements/1.1/title",
-    "name": "Title",
     "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
     "isConcept": false,
     "isAbstract": false,
@@ -4060,2313 +5223,6 @@
     "isRequired": false,
     "isList": false
   },
-  "http://xmlns.com/foaf/0.1/": {
-    "class_uri": "http://xmlns.com/foaf/0.1/",
-    "name": "http://xmlns.com/foaf/0.1/",
-    "class": "http://www.w3.org/2002/07/owl#Ontology",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/wot/0.1/assurance": {
-    "class_uri": "http://xmlns.com/wot/0.1/assurance",
-    "name": "http://xmlns.com/wot/0.1/assurance",
-    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/wot/0.1/src_assurance": {
-    "class_uri": "http://xmlns.com/wot/0.1/src_assurance",
-    "name": "http://xmlns.com/wot/0.1/src_assurance",
-    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": {
-    "class_uri": "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status",
-    "name": "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status",
-    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://purl.org/dc/elements/1.1/date": {
-    "class_uri": "http://purl.org/dc/elements/1.1/date",
-    "name": "Date",
-    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/2000/01/rdf-schema#Class": {
-    "class_uri": "http://www.w3.org/2000/01/rdf-schema#Class",
-    "name": "http://www.w3.org/2000/01/rdf-schema#Class",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/LabelProperty": {
-    "class_uri": "http://xmlns.com/foaf/0.1/LabelProperty",
-    "name": "Label Property",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/Person": {
-    "class_uri": "http://xmlns.com/foaf/0.1/Person",
-    "name": "Person",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [
-      "http://xmlns.com/foaf/0.1/geekcode",
-      "http://xmlns.com/foaf/0.1/firstName",
-      "http://xmlns.com/foaf/0.1/lastName",
-      "http://xmlns.com/foaf/0.1/surname",
-      "http://xmlns.com/foaf/0.1/family_name",
-      "http://xmlns.com/foaf/0.1/familyName",
-      "http://xmlns.com/foaf/0.1/plan",
-      "http://xmlns.com/foaf/0.1/img",
-      "http://xmlns.com/foaf/0.1/myersBriggs",
-      "http://xmlns.com/foaf/0.1/workplaceHomepage",
-      "http://xmlns.com/foaf/0.1/workInfoHomepage",
-      "http://xmlns.com/foaf/0.1/schoolHomepage",
-      "http://xmlns.com/foaf/0.1/knows",
-      "http://xmlns.com/foaf/0.1/publications",
-      "http://xmlns.com/foaf/0.1/currentProject",
-      "http://xmlns.com/foaf/0.1/pastProject"
-    ],
-    "inherits": [
-      "http://xmlns.com/foaf/0.1/Agent",
-      "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
-    ],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/Agent": {
-    "class_uri": "http://xmlns.com/foaf/0.1/Agent",
-    "name": "Agent",
-    "class": "http://www.w3.org/2000/01/rdf-schema#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [
-      "http://xmlns.com/foaf/0.1/mbox",
-      "http://xmlns.com/foaf/0.1/mbox_sha1sum",
-      "http://xmlns.com/foaf/0.1/gender",
-      "http://xmlns.com/foaf/0.1/jabberID",
-      "http://xmlns.com/foaf/0.1/aimChatID",
-      "http://xmlns.com/foaf/0.1/skypeID",
-      "http://xmlns.com/foaf/0.1/icqChatID",
-      "http://xmlns.com/foaf/0.1/yahooChatID",
-      "http://xmlns.com/foaf/0.1/msnChatID",
-      "http://xmlns.com/foaf/0.1/weblog",
-      "http://xmlns.com/foaf/0.1/openid",
-      "http://xmlns.com/foaf/0.1/tipjar",
-      "http://xmlns.com/foaf/0.1/made",
-      "http://xmlns.com/foaf/0.1/interest",
-      "http://xmlns.com/foaf/0.1/topic_interest",
-      "http://xmlns.com/foaf/0.1/account",
-      "http://xmlns.com/foaf/0.1/holdsAccount",
-      "http://xmlns.com/foaf/0.1/birthday",
-      "http://xmlns.com/foaf/0.1/age",
-      "http://xmlns.com/foaf/0.1/status"
-    ],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing": {
-    "class_uri": "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing",
-    "name": "Spatial Thing",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [
-      "http://xmlns.com/foaf/0.1/based_near"
-    ],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/Document": {
-    "class_uri": "http://xmlns.com/foaf/0.1/Document",
-    "name": "Document",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [
-      "http://xmlns.com/foaf/0.1/sha1",
-      "http://xmlns.com/foaf/0.1/topic",
-      "http://xmlns.com/foaf/0.1/primaryTopic"
-    ],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/Group": {
-    "class_uri": "http://xmlns.com/foaf/0.1/Group",
-    "name": "Group",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [
-      "http://xmlns.com/foaf/0.1/member"
-    ],
-    "inherits": [
-      "http://xmlns.com/foaf/0.1/Agent"
-    ],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/Project": {
-    "class_uri": "http://xmlns.com/foaf/0.1/Project",
-    "name": "Project",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/Image": {
-    "class_uri": "http://xmlns.com/foaf/0.1/Image",
-    "name": "Image",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [
-      "http://xmlns.com/foaf/0.1/depicts",
-      "http://xmlns.com/foaf/0.1/thumbnail"
-    ],
-    "inherits": [
-      "http://xmlns.com/foaf/0.1/Document"
-    ],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/PersonalProfileDocument": {
-    "class_uri": "http://xmlns.com/foaf/0.1/PersonalProfileDocument",
-    "name": "PersonalProfileDocument",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://xmlns.com/foaf/0.1/Document"
-    ],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/OnlineAccount": {
-    "class_uri": "http://xmlns.com/foaf/0.1/OnlineAccount",
-    "name": "Online Account",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [
-      "http://xmlns.com/foaf/0.1/accountServiceHomepage",
-      "http://xmlns.com/foaf/0.1/accountName"
-    ],
-    "inherits": [
-      "http://www.w3.org/2002/07/owl#Thing"
-    ],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/OnlineGamingAccount": {
-    "class_uri": "http://xmlns.com/foaf/0.1/OnlineGamingAccount",
-    "name": "Online Gaming Account",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://xmlns.com/foaf/0.1/OnlineAccount"
-    ],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/OnlineEcommerceAccount": {
-    "class_uri": "http://xmlns.com/foaf/0.1/OnlineEcommerceAccount",
-    "name": "Online E-commerce Account",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://xmlns.com/foaf/0.1/OnlineAccount"
-    ],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/OnlineChatAccount": {
-    "class_uri": "http://xmlns.com/foaf/0.1/OnlineChatAccount",
-    "name": "Online Chat Account",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://xmlns.com/foaf/0.1/OnlineAccount"
-    ],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/mbox_sha1sum": {
-    "class_uri": "http://xmlns.com/foaf/0.1/mbox_sha1sum",
-    "name": "sha1sum of a personal mailbox URI name",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Agent"
-    ],
-    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/gender": {
-    "class_uri": "http://xmlns.com/foaf/0.1/gender",
-    "name": "gender",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Agent"
-    ],
-    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/geekcode": {
-    "class_uri": "http://xmlns.com/foaf/0.1/geekcode",
-    "name": "geekcode",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Person"
-    ],
-    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/dnaChecksum": {
-    "class_uri": "http://xmlns.com/foaf/0.1/dnaChecksum",
-    "name": "DNA checksum",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/sha1": {
-    "class_uri": "http://xmlns.com/foaf/0.1/sha1",
-    "name": "sha1sum (hex)",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Document"
-    ],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/based_near": {
-    "class_uri": "http://xmlns.com/foaf/0.1/based_near",
-    "name": "based near",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
-    ],
-    "type": "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/title": {
-    "class_uri": "http://xmlns.com/foaf/0.1/title",
-    "name": "title",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/nick": {
-    "class_uri": "http://xmlns.com/foaf/0.1/nick",
-    "name": "nickname",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/jabberID": {
-    "class_uri": "http://xmlns.com/foaf/0.1/jabberID",
-    "name": "jabber ID",
-    "class": "http://www.w3.org/2002/07/owl#InverseFunctionalProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Agent"
-    ],
-    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/aimChatID": {
-    "class_uri": "http://xmlns.com/foaf/0.1/aimChatID",
-    "name": "AIM chat ID",
-    "class": "http://www.w3.org/2002/07/owl#InverseFunctionalProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://xmlns.com/foaf/0.1/nick"
-    ],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Agent"
-    ],
-    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/skypeID": {
-    "class_uri": "http://xmlns.com/foaf/0.1/skypeID",
-    "name": "Skype ID",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://xmlns.com/foaf/0.1/nick"
-    ],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Agent"
-    ],
-    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/icqChatID": {
-    "class_uri": "http://xmlns.com/foaf/0.1/icqChatID",
-    "name": "ICQ chat ID",
-    "class": "http://www.w3.org/2002/07/owl#InverseFunctionalProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://xmlns.com/foaf/0.1/nick"
-    ],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Agent"
-    ],
-    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/yahooChatID": {
-    "class_uri": "http://xmlns.com/foaf/0.1/yahooChatID",
-    "name": "Yahoo chat ID",
-    "class": "http://www.w3.org/2002/07/owl#InverseFunctionalProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://xmlns.com/foaf/0.1/nick"
-    ],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Agent"
-    ],
-    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/msnChatID": {
-    "class_uri": "http://xmlns.com/foaf/0.1/msnChatID",
-    "name": "MSN chat ID",
-    "class": "http://www.w3.org/2002/07/owl#InverseFunctionalProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://xmlns.com/foaf/0.1/nick"
-    ],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Agent"
-    ],
-    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/name": {
-    "class_uri": "http://xmlns.com/foaf/0.1/name",
-    "name": "name",
-    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://www.w3.org/2000/01/rdf-schema#label"
-    ],
-    "domains": [
-      "http://www.w3.org/2002/07/owl#Thing"
-    ],
-    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/givenName": {
-    "class_uri": "http://xmlns.com/foaf/0.1/givenName",
-    "name": "Given name",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/givenname": {
-    "class_uri": "http://xmlns.com/foaf/0.1/givenname",
-    "name": "Given name",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/surname": {
-    "class_uri": "http://xmlns.com/foaf/0.1/surname",
-    "name": "Surname",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Person"
-    ],
-    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/family_name": {
-    "class_uri": "http://xmlns.com/foaf/0.1/family_name",
-    "name": "family_name",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Person"
-    ],
-    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/familyName": {
-    "class_uri": "http://xmlns.com/foaf/0.1/familyName",
-    "name": "familyName",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Person"
-    ],
-    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/phone": {
-    "class_uri": "http://xmlns.com/foaf/0.1/phone",
-    "name": "phone",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/weblog": {
-    "class_uri": "http://xmlns.com/foaf/0.1/weblog",
-    "name": "weblog",
-    "class": "http://www.w3.org/2002/07/owl#InverseFunctionalProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://xmlns.com/foaf/0.1/page"
-    ],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Agent"
-    ],
-    "type": "http://xmlns.com/foaf/0.1/Document",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/openid": {
-    "class_uri": "http://xmlns.com/foaf/0.1/openid",
-    "name": "openid",
-    "class": "http://www.w3.org/2002/07/owl#InverseFunctionalProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    ],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Agent"
-    ],
-    "type": "http://xmlns.com/foaf/0.1/Document",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/tipjar": {
-    "class_uri": "http://xmlns.com/foaf/0.1/tipjar",
-    "name": "tipjar",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://xmlns.com/foaf/0.1/page"
-    ],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Agent"
-    ],
-    "type": "http://xmlns.com/foaf/0.1/Document",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/plan": {
-    "class_uri": "http://xmlns.com/foaf/0.1/plan",
-    "name": "plan",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Person"
-    ],
-    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/made": {
-    "class_uri": "http://xmlns.com/foaf/0.1/made",
-    "name": "made",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Agent"
-    ],
-    "type": "http://www.w3.org/2002/07/owl#Thing",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/maker": {
-    "class_uri": "http://xmlns.com/foaf/0.1/maker",
-    "name": "maker",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/2002/07/owl#Thing"
-    ],
-    "type": "http://xmlns.com/foaf/0.1/Agent",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/img": {
-    "class_uri": "http://xmlns.com/foaf/0.1/img",
-    "name": "image",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://xmlns.com/foaf/0.1/depiction"
-    ],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Person"
-    ],
-    "type": "http://xmlns.com/foaf/0.1/Image",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/depiction": {
-    "class_uri": "http://xmlns.com/foaf/0.1/depiction",
-    "name": "depiction",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/2002/07/owl#Thing"
-    ],
-    "type": "http://xmlns.com/foaf/0.1/Image",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/depicts": {
-    "class_uri": "http://xmlns.com/foaf/0.1/depicts",
-    "name": "depicts",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Image"
-    ],
-    "type": "http://www.w3.org/2002/07/owl#Thing",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/thumbnail": {
-    "class_uri": "http://xmlns.com/foaf/0.1/thumbnail",
-    "name": "thumbnail",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Image"
-    ],
-    "type": "http://xmlns.com/foaf/0.1/Image",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/myersBriggs": {
-    "class_uri": "http://xmlns.com/foaf/0.1/myersBriggs",
-    "name": "myersBriggs",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Person"
-    ],
-    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/workplaceHomepage": {
-    "class_uri": "http://xmlns.com/foaf/0.1/workplaceHomepage",
-    "name": "workplace homepage",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Person"
-    ],
-    "type": "http://xmlns.com/foaf/0.1/Document",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/workInfoHomepage": {
-    "class_uri": "http://xmlns.com/foaf/0.1/workInfoHomepage",
-    "name": "work info homepage",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Person"
-    ],
-    "type": "http://xmlns.com/foaf/0.1/Document",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/schoolHomepage": {
-    "class_uri": "http://xmlns.com/foaf/0.1/schoolHomepage",
-    "name": "schoolHomepage",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Person"
-    ],
-    "type": "http://xmlns.com/foaf/0.1/Document",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/knows": {
-    "class_uri": "http://xmlns.com/foaf/0.1/knows",
-    "name": "knows",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Person"
-    ],
-    "type": "http://xmlns.com/foaf/0.1/Person",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/interest": {
-    "class_uri": "http://xmlns.com/foaf/0.1/interest",
-    "name": "interest",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Agent"
-    ],
-    "type": "http://xmlns.com/foaf/0.1/Document",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/topic_interest": {
-    "class_uri": "http://xmlns.com/foaf/0.1/topic_interest",
-    "name": "topic_interest",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Agent"
-    ],
-    "type": "http://www.w3.org/2002/07/owl#Thing",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/publications": {
-    "class_uri": "http://xmlns.com/foaf/0.1/publications",
-    "name": "publications",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Person"
-    ],
-    "type": "http://xmlns.com/foaf/0.1/Document",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/currentProject": {
-    "class_uri": "http://xmlns.com/foaf/0.1/currentProject",
-    "name": "current project",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Person"
-    ],
-    "type": "http://www.w3.org/2002/07/owl#Thing",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/pastProject": {
-    "class_uri": "http://xmlns.com/foaf/0.1/pastProject",
-    "name": "past project",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Person"
-    ],
-    "type": "http://www.w3.org/2002/07/owl#Thing",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/fundedBy": {
-    "class_uri": "http://xmlns.com/foaf/0.1/fundedBy",
-    "name": "funded by",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/2002/07/owl#Thing"
-    ],
-    "type": "http://www.w3.org/2002/07/owl#Thing",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/logo": {
-    "class_uri": "http://xmlns.com/foaf/0.1/logo",
-    "name": "logo",
-    "class": "http://www.w3.org/2002/07/owl#InverseFunctionalProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/2002/07/owl#Thing"
-    ],
-    "type": "http://www.w3.org/2002/07/owl#Thing",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/topic": {
-    "class_uri": "http://xmlns.com/foaf/0.1/topic",
-    "name": "topic",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Document"
-    ],
-    "type": "http://www.w3.org/2002/07/owl#Thing",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/primaryTopic": {
-    "class_uri": "http://xmlns.com/foaf/0.1/primaryTopic",
-    "name": "primary topic",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Document"
-    ],
-    "type": "http://www.w3.org/2002/07/owl#Thing",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/focus": {
-    "class_uri": "http://xmlns.com/foaf/0.1/focus",
-    "name": "focus",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "type": "http://www.w3.org/2002/07/owl#Thing",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/2004/02/skos/core#Concept": {
-    "class_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-    "name": "Concept",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [
-      "http://xmlns.com/foaf/0.1/focus"
-    ],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf": {
-    "class_uri": "http://xmlns.com/foaf/0.1/isPrimaryTopicOf",
-    "name": "is primary topic of",
-    "class": "http://www.w3.org/2002/07/owl#InverseFunctionalProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://xmlns.com/foaf/0.1/page"
-    ],
-    "domains": [
-      "http://www.w3.org/2002/07/owl#Thing"
-    ],
-    "type": "http://xmlns.com/foaf/0.1/Document",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/page": {
-    "class_uri": "http://xmlns.com/foaf/0.1/page",
-    "name": "page",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/2002/07/owl#Thing"
-    ],
-    "type": "http://xmlns.com/foaf/0.1/Document",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/theme": {
-    "class_uri": "http://xmlns.com/foaf/0.1/theme",
-    "name": "theme",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/2002/07/owl#Thing"
-    ],
-    "type": "http://www.w3.org/2002/07/owl#Thing",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/account": {
-    "class_uri": "http://xmlns.com/foaf/0.1/account",
-    "name": "account",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Agent"
-    ],
-    "type": "http://xmlns.com/foaf/0.1/OnlineAccount",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/holdsAccount": {
-    "class_uri": "http://xmlns.com/foaf/0.1/holdsAccount",
-    "name": "account",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Agent"
-    ],
-    "type": "http://xmlns.com/foaf/0.1/OnlineAccount",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/accountServiceHomepage": {
-    "class_uri": "http://xmlns.com/foaf/0.1/accountServiceHomepage",
-    "name": "account service homepage",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/OnlineAccount"
-    ],
-    "type": "http://xmlns.com/foaf/0.1/Document",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/accountName": {
-    "class_uri": "http://xmlns.com/foaf/0.1/accountName",
-    "name": "account name",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/OnlineAccount"
-    ],
-    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/member": {
-    "class_uri": "http://xmlns.com/foaf/0.1/member",
-    "name": "member",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Group"
-    ],
-    "type": "http://xmlns.com/foaf/0.1/Agent",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/membershipClass": {
-    "class_uri": "http://xmlns.com/foaf/0.1/membershipClass",
-    "name": "membershipClass",
-    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/birthday": {
-    "class_uri": "http://xmlns.com/foaf/0.1/birthday",
-    "name": "birthday",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Agent"
-    ],
-    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/age": {
-    "class_uri": "http://xmlns.com/foaf/0.1/age",
-    "name": "age",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Agent"
-    ],
-    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://xmlns.com/foaf/0.1/status": {
-    "class_uri": "http://xmlns.com/foaf/0.1/status",
-    "name": "status",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://xmlns.com/foaf/0.1/Agent"
-    ],
-    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#": {
-    "class_uri": "http://www.w3.org/ns/oa#",
-    "name": "http://www.w3.org/ns/oa#",
-    "class": "http://www.w3.org/2002/07/owl#Ontology",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "df_0_1": {
-    "class_uri": "df_0_1",
-    "name": "df_0_1",
-    "class": "http://xmlns.com/foaf/0.1/Person",
-    "isConcept": false,
-    "isAbstract": true,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "df_0_2": {
-    "class_uri": "df_0_2",
-    "name": "df_0_2",
-    "class": "http://xmlns.com/foaf/0.1/Person",
-    "isConcept": false,
-    "isAbstract": true,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "df_0_3": {
-    "class_uri": "df_0_3",
-    "name": "df_0_3",
-    "class": "http://xmlns.com/foaf/0.1/Person",
-    "isConcept": false,
-    "isAbstract": true,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://purl.org/dc/terms/creator": {
-    "class_uri": "http://purl.org/dc/terms/creator",
-    "name": "http://purl.org/dc/terms/creator",
-    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#cachedSource": {
-    "class_uri": "http://www.w3.org/ns/oa#cachedSource",
-    "name": "cachedSource",
-    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/ns/oa#TimeState"
-    ],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#TimeState": {
-    "class_uri": "http://www.w3.org/ns/oa#TimeState",
-    "name": "TimeState",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [
-      "http://www.w3.org/ns/oa#cachedSource",
-      "http://www.w3.org/ns/oa#sourceDate",
-      "http://www.w3.org/ns/oa#sourceDateEnd",
-      "http://www.w3.org/ns/oa#sourceDateStart"
-    ],
-    "inherits": [
-      "http://www.w3.org/ns/oa#State"
-    ],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#hasBody": {
-    "class_uri": "http://www.w3.org/ns/oa#hasBody",
-    "name": "hasBody",
-    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/ns/oa#Annotation"
-    ],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#Annotation": {
-    "class_uri": "http://www.w3.org/ns/oa#Annotation",
-    "name": "Annotation",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [
-      "http://www.w3.org/ns/oa#hasBody",
-      "http://www.w3.org/ns/oa#hasTarget",
-      "http://www.w3.org/ns/oa#motivatedBy",
-      "http://www.w3.org/ns/oa#styledBy",
-      "http://www.w3.org/ns/oa#bodyValue"
-    ],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#hasScope": {
-    "class_uri": "http://www.w3.org/ns/oa#hasScope",
-    "name": "hasScope",
-    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/ns/oa#SpecificResource"
-    ],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#SpecificResource": {
-    "class_uri": "http://www.w3.org/ns/oa#SpecificResource",
-    "name": "SpecificResource",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [
-      "http://www.w3.org/ns/oa#hasScope",
-      "http://www.w3.org/ns/oa#renderedVia",
-      "http://www.w3.org/ns/oa#styleClass"
-    ],
-    "inherits": [
-      "http://www.w3.org/ns/oa#ResourceSelection"
-    ],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#hasSource": {
-    "class_uri": "http://www.w3.org/ns/oa#hasSource",
-    "name": "hasSource",
-    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/ns/oa#ResourceSelection"
-    ],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#ResourceSelection": {
-    "class_uri": "http://www.w3.org/ns/oa#ResourceSelection",
-    "name": "ResourceSelection",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [
-      "http://www.w3.org/ns/oa#hasSource",
-      "http://www.w3.org/ns/oa#hasSelector",
-      "http://www.w3.org/ns/oa#hasState"
-    ],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#hasTarget": {
-    "class_uri": "http://www.w3.org/ns/oa#hasTarget",
-    "name": "hasTarget",
-    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/ns/oa#Annotation"
-    ],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#renderedVia": {
-    "class_uri": "http://www.w3.org/ns/oa#renderedVia",
-    "name": "renderedVia",
-    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/ns/oa#SpecificResource"
-    ],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/prov#wasRevisionOf": {
-    "class_uri": "http://www.w3.org/ns/prov#wasRevisionOf",
-    "name": "http://www.w3.org/ns/prov#wasRevisionOf",
-    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#hasEndSelector": {
-    "class_uri": "http://www.w3.org/ns/oa#hasEndSelector",
-    "name": "hasEndSelector",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/ns/oa#RangeSelector"
-    ],
-    "type": "http://www.w3.org/ns/oa#Selector",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#RangeSelector": {
-    "class_uri": "http://www.w3.org/ns/oa#RangeSelector",
-    "name": "RangeSelector",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [
-      "http://www.w3.org/ns/oa#hasEndSelector",
-      "http://www.w3.org/ns/oa#hasStartSelector"
-    ],
-    "inherits": [
-      "http://www.w3.org/ns/oa#Selector"
-    ],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#hasPurpose": {
-    "class_uri": "http://www.w3.org/ns/oa#hasPurpose",
-    "name": "hasPurpose",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "http://www.w3.org/ns/oa#Motivation",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#hasSelector": {
-    "class_uri": "http://www.w3.org/ns/oa#hasSelector",
-    "name": "hasSelector",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/ns/oa#ResourceSelection"
-    ],
-    "type": "http://www.w3.org/ns/oa#Selector",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#hasStartSelector": {
-    "class_uri": "http://www.w3.org/ns/oa#hasStartSelector",
-    "name": "hasStartSelector",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/ns/oa#RangeSelector"
-    ],
-    "type": "http://www.w3.org/ns/oa#Selector",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#hasState": {
-    "class_uri": "http://www.w3.org/ns/oa#hasState",
-    "name": "hasState",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/ns/oa#ResourceSelection"
-    ],
-    "type": "http://www.w3.org/ns/oa#State",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#motivatedBy": {
-    "class_uri": "http://www.w3.org/ns/oa#motivatedBy",
-    "name": "motivatedBy",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/ns/oa#Annotation"
-    ],
-    "type": "http://www.w3.org/ns/oa#Motivation",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#styledBy": {
-    "class_uri": "http://www.w3.org/ns/oa#styledBy",
-    "name": "styledBy",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/ns/oa#Annotation"
-    ],
-    "type": "http://www.w3.org/ns/oa#Style",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#textDirection": {
-    "class_uri": "http://www.w3.org/ns/oa#textDirection",
-    "name": "textDirection",
-    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "http://www.w3.org/ns/oa#Direction",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#bodyValue": {
-    "class_uri": "http://www.w3.org/ns/oa#bodyValue",
-    "name": "bodyValue",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/ns/oa#Annotation"
-    ],
-    "type": "http://www.w3.org/2001/XMLSchema#string",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#end": {
-    "class_uri": "http://www.w3.org/ns/oa#end",
-    "name": "end",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#exact": {
-    "class_uri": "http://www.w3.org/ns/oa#exact",
-    "name": "exact",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "http://www.w3.org/2001/XMLSchema#string",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#prefix": {
-    "class_uri": "http://www.w3.org/ns/oa#prefix",
-    "name": "prefix",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "http://www.w3.org/2001/XMLSchema#string",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#processingLanguage": {
-    "class_uri": "http://www.w3.org/ns/oa#processingLanguage",
-    "name": "processingLanguage",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "http://www.w3.org/2001/XMLSchema#string",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#sourceDate": {
-    "class_uri": "http://www.w3.org/ns/oa#sourceDate",
-    "name": "sourceDate",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/ns/oa#TimeState"
-    ],
-    "type": "http://www.w3.org/2001/XMLSchema#dateTime",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#sourceDateEnd": {
-    "class_uri": "http://www.w3.org/ns/oa#sourceDateEnd",
-    "name": "sourceDateEnd",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/ns/oa#TimeState"
-    ],
-    "type": "http://www.w3.org/2001/XMLSchema#dateTime",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#sourceDateStart": {
-    "class_uri": "http://www.w3.org/ns/oa#sourceDateStart",
-    "name": "sourceDateStart",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/ns/oa#TimeState"
-    ],
-    "type": "http://www.w3.org/2001/XMLSchema#dateTime",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#start": {
-    "class_uri": "http://www.w3.org/ns/oa#start",
-    "name": "start",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#styleClass": {
-    "class_uri": "http://www.w3.org/ns/oa#styleClass",
-    "name": "styleClass",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [
-      "http://www.w3.org/ns/oa#SpecificResource"
-    ],
-    "type": "http://www.w3.org/2001/XMLSchema#string",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#suffix": {
-    "class_uri": "http://www.w3.org/ns/oa#suffix",
-    "name": "suffix",
-    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "http://www.w3.org/2001/XMLSchema#string",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/2000/01/rdf-schema#Resource": {
-    "class_uri": "http://www.w3.org/2000/01/rdf-schema#Resource",
-    "name": "http://www.w3.org/2000/01/rdf-schema#Resource",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/activitystreams#OrderedCollection": {
-    "class_uri": "http://www.w3.org/ns/activitystreams#OrderedCollection",
-    "name": "http://www.w3.org/ns/activitystreams#OrderedCollection",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#Choice": {
-    "class_uri": "http://www.w3.org/ns/oa#Choice",
-    "name": "Choice",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://www.w3.org/ns/activitystreams#OrderedCollection"
-    ],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#CssSelector": {
-    "class_uri": "http://www.w3.org/ns/oa#CssSelector",
-    "name": "CssSelector",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://www.w3.org/ns/oa#Selector"
-    ],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#CssStyle": {
-    "class_uri": "http://www.w3.org/ns/oa#CssStyle",
-    "name": "CssStyle",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://www.w3.org/ns/oa#Style"
-    ],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#DataPositionSelector": {
-    "class_uri": "http://www.w3.org/ns/oa#DataPositionSelector",
-    "name": "DataPositionSelector",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://www.w3.org/ns/oa#Selector"
-    ],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#Direction": {
-    "class_uri": "http://www.w3.org/ns/oa#Direction",
-    "name": "Direction",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#FragmentSelector": {
-    "class_uri": "http://www.w3.org/ns/oa#FragmentSelector",
-    "name": "FragmentSelector",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://www.w3.org/ns/oa#Selector"
-    ],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#HttpRequestState": {
-    "class_uri": "http://www.w3.org/ns/oa#HttpRequestState",
-    "name": "HttpRequestState",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://www.w3.org/ns/oa#State"
-    ],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#Motivation": {
-    "class_uri": "http://www.w3.org/ns/oa#Motivation",
-    "name": "Motivation",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#Selector": {
-    "class_uri": "http://www.w3.org/ns/oa#Selector",
-    "name": "Selector",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#State": {
-    "class_uri": "http://www.w3.org/ns/oa#State",
-    "name": "State",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#Style": {
-    "class_uri": "http://www.w3.org/ns/oa#Style",
-    "name": "Style",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#SvgSelector": {
-    "class_uri": "http://www.w3.org/ns/oa#SvgSelector",
-    "name": "SvgSelector",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://www.w3.org/ns/oa#Selector"
-    ],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#TextPositionSelector": {
-    "class_uri": "http://www.w3.org/ns/oa#TextPositionSelector",
-    "name": "TextPositionSelector",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://www.w3.org/ns/oa#Selector"
-    ],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#TextQuoteSelector": {
-    "class_uri": "http://www.w3.org/ns/oa#TextQuoteSelector",
-    "name": "TextQuoteSelector",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://www.w3.org/ns/oa#Selector"
-    ],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#TextualBody": {
-    "class_uri": "http://www.w3.org/ns/oa#TextualBody",
-    "name": "TextualBody",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#XPathSelector": {
-    "class_uri": "http://www.w3.org/ns/oa#XPathSelector",
-    "name": "XPathSelector",
-    "class": "http://www.w3.org/2002/07/owl#Class",
-    "isConcept": true,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [
-      "http://www.w3.org/ns/oa#Selector"
-    ],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#PreferContainedDescriptions": {
-    "class_uri": "http://www.w3.org/ns/oa#PreferContainedDescriptions",
-    "name": "PreferContainedDescriptions",
-    "class": "http://www.w3.org/2000/01/rdf-schema#Resource",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#PreferContainedIRIs": {
-    "class_uri": "http://www.w3.org/ns/oa#PreferContainedIRIs",
-    "name": "PreferContainedIRIs",
-    "class": "http://www.w3.org/2000/01/rdf-schema#Resource",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#assessing": {
-    "class_uri": "http://www.w3.org/ns/oa#assessing",
-    "name": "évaluer",
-    "class": "http://www.w3.org/ns/oa#Motivation",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#bookmarking": {
-    "class_uri": "http://www.w3.org/ns/oa#bookmarking",
-    "name": "mettre en favori",
-    "class": "http://www.w3.org/ns/oa#Motivation",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#classifying": {
-    "class_uri": "http://www.w3.org/ns/oa#classifying",
-    "name": "classifying",
-    "class": "http://www.w3.org/ns/oa#Motivation",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#commenting": {
-    "class_uri": "http://www.w3.org/ns/oa#commenting",
-    "name": "commenting",
-    "class": "http://www.w3.org/ns/oa#Motivation",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#describing": {
-    "class_uri": "http://www.w3.org/ns/oa#describing",
-    "name": "décrire",
-    "class": "http://www.w3.org/ns/oa#Motivation",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#editing": {
-    "class_uri": "http://www.w3.org/ns/oa#editing",
-    "name": "éditer",
-    "class": "http://www.w3.org/ns/oa#Motivation",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#highlighting": {
-    "class_uri": "http://www.w3.org/ns/oa#highlighting",
-    "name": "mettre en évidence",
-    "class": "http://www.w3.org/ns/oa#Motivation",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#identifying": {
-    "class_uri": "http://www.w3.org/ns/oa#identifying",
-    "name": "identifying",
-    "class": "http://www.w3.org/ns/oa#Motivation",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#linking": {
-    "class_uri": "http://www.w3.org/ns/oa#linking",
-    "name": "linking",
-    "class": "http://www.w3.org/ns/oa#Motivation",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#ltrDirection": {
-    "class_uri": "http://www.w3.org/ns/oa#ltrDirection",
-    "name": "ltrDirection",
-    "class": "http://www.w3.org/ns/oa#Direction",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#moderating": {
-    "class_uri": "http://www.w3.org/ns/oa#moderating",
-    "name": "modérer",
-    "class": "http://www.w3.org/ns/oa#Motivation",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#questioning": {
-    "class_uri": "http://www.w3.org/ns/oa#questioning",
-    "name": "questionner",
-    "class": "http://www.w3.org/ns/oa#Motivation",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#replying": {
-    "class_uri": "http://www.w3.org/ns/oa#replying",
-    "name": "répondre",
-    "class": "http://www.w3.org/ns/oa#Motivation",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#rtlDirection": {
-    "class_uri": "http://www.w3.org/ns/oa#rtlDirection",
-    "name": "rtlDirection",
-    "class": "http://www.w3.org/ns/oa#Direction",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#tagging": {
-    "class_uri": "http://www.w3.org/ns/oa#tagging",
-    "name": "tagging",
-    "class": "http://www.w3.org/ns/oa#Motivation",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "df_0_4": {
-    "class_uri": "df_0_4",
-    "name": "df_0_4",
-    "class": "http://xmlns.com/foaf/0.1/Person",
-    "isConcept": false,
-    "isAbstract": true,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "df_0_5": {
-    "class_uri": "df_0_5",
-    "name": "df_0_5",
-    "class": "http://xmlns.com/foaf/0.1/Person",
-    "isConcept": false,
-    "isAbstract": true,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "df_0_6": {
-    "class_uri": "df_0_6",
-    "name": "df_0_6",
-    "class": "http://xmlns.com/foaf/0.1/Person",
-    "isConcept": false,
-    "isAbstract": true,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#annotationService": {
-    "class_uri": "http://www.w3.org/ns/oa#annotationService",
-    "name": "annotationService",
-    "class": "owl:Thing",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#canonical": {
-    "class_uri": "http://www.w3.org/ns/oa#canonical",
-    "name": "canonical",
-    "class": "owl:Thing",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#refinedBy": {
-    "class_uri": "http://www.w3.org/ns/oa#refinedBy",
-    "name": "refinedBy",
-    "class": "owl:Thing",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
-  "http://www.w3.org/ns/oa#via": {
-    "class_uri": "http://www.w3.org/ns/oa#via",
-    "name": "via",
-    "class": "owl:Thing",
-    "isConcept": false,
-    "isAbstract": false,
-    "properties": [],
-    "inherits": [],
-    "domains": [],
-    "type": "",
-    "isRequired": false,
-    "isList": false
-  },
   "http://sinfonia.vignevin.com/oeso": {
     "class_uri": "http://sinfonia.vignevin.com/oeso",
     "name": "http://sinfonia.vignevin.com/oeso",
@@ -7105,6 +5961,1150 @@
     ],
     "domains": [],
     "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/": {
+    "class_uri": "http://xmlns.com/foaf/0.1/",
+    "name": "http://xmlns.com/foaf/0.1/",
+    "class": "http://www.w3.org/2002/07/owl#Ontology",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/wot/0.1/assurance": {
+    "class_uri": "http://xmlns.com/wot/0.1/assurance",
+    "name": "http://xmlns.com/wot/0.1/assurance",
+    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/wot/0.1/src_assurance": {
+    "class_uri": "http://xmlns.com/wot/0.1/src_assurance",
+    "name": "http://xmlns.com/wot/0.1/src_assurance",
+    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": {
+    "class_uri": "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status",
+    "name": "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status",
+    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://purl.org/dc/elements/1.1/date": {
+    "class_uri": "http://purl.org/dc/elements/1.1/date",
+    "name": "Date",
+    "class": "http://www.w3.org/2002/07/owl#NamedIndividual",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/2000/01/rdf-schema#Class": {
+    "class_uri": "http://www.w3.org/2000/01/rdf-schema#Class",
+    "name": "http://www.w3.org/2000/01/rdf-schema#Class",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/LabelProperty": {
+    "class_uri": "http://xmlns.com/foaf/0.1/LabelProperty",
+    "name": "Label Property",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/Agent": {
+    "class_uri": "http://xmlns.com/foaf/0.1/Agent",
+    "name": "Agent",
+    "class": "http://www.w3.org/2000/01/rdf-schema#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [
+      "http://xmlns.com/foaf/0.1/mbox",
+      "http://xmlns.com/foaf/0.1/mbox_sha1sum",
+      "http://xmlns.com/foaf/0.1/gender",
+      "http://xmlns.com/foaf/0.1/jabberID",
+      "http://xmlns.com/foaf/0.1/aimChatID",
+      "http://xmlns.com/foaf/0.1/skypeID",
+      "http://xmlns.com/foaf/0.1/icqChatID",
+      "http://xmlns.com/foaf/0.1/yahooChatID",
+      "http://xmlns.com/foaf/0.1/msnChatID",
+      "http://xmlns.com/foaf/0.1/weblog",
+      "http://xmlns.com/foaf/0.1/openid",
+      "http://xmlns.com/foaf/0.1/tipjar",
+      "http://xmlns.com/foaf/0.1/made",
+      "http://xmlns.com/foaf/0.1/interest",
+      "http://xmlns.com/foaf/0.1/topic_interest",
+      "http://xmlns.com/foaf/0.1/account",
+      "http://xmlns.com/foaf/0.1/holdsAccount",
+      "http://xmlns.com/foaf/0.1/birthday",
+      "http://xmlns.com/foaf/0.1/age",
+      "http://xmlns.com/foaf/0.1/status"
+    ],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing": {
+    "class_uri": "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing",
+    "name": "Spatial Thing",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [
+      "http://xmlns.com/foaf/0.1/based_near"
+    ],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/Document": {
+    "class_uri": "http://xmlns.com/foaf/0.1/Document",
+    "name": "Document",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [
+      "http://xmlns.com/foaf/0.1/sha1",
+      "http://xmlns.com/foaf/0.1/topic",
+      "http://xmlns.com/foaf/0.1/primaryTopic"
+    ],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/Group": {
+    "class_uri": "http://xmlns.com/foaf/0.1/Group",
+    "name": "Group",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [
+      "http://xmlns.com/foaf/0.1/member"
+    ],
+    "inherits": [
+      "http://xmlns.com/foaf/0.1/Agent"
+    ],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/Project": {
+    "class_uri": "http://xmlns.com/foaf/0.1/Project",
+    "name": "Project",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/Image": {
+    "class_uri": "http://xmlns.com/foaf/0.1/Image",
+    "name": "Image",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [
+      "http://xmlns.com/foaf/0.1/depicts",
+      "http://xmlns.com/foaf/0.1/thumbnail"
+    ],
+    "inherits": [
+      "http://xmlns.com/foaf/0.1/Document"
+    ],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/PersonalProfileDocument": {
+    "class_uri": "http://xmlns.com/foaf/0.1/PersonalProfileDocument",
+    "name": "PersonalProfileDocument",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://xmlns.com/foaf/0.1/Document"
+    ],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/OnlineAccount": {
+    "class_uri": "http://xmlns.com/foaf/0.1/OnlineAccount",
+    "name": "Online Account",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [
+      "http://xmlns.com/foaf/0.1/accountServiceHomepage",
+      "http://xmlns.com/foaf/0.1/accountName"
+    ],
+    "inherits": [
+      "http://www.w3.org/2002/07/owl#Thing"
+    ],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/OnlineGamingAccount": {
+    "class_uri": "http://xmlns.com/foaf/0.1/OnlineGamingAccount",
+    "name": "Online Gaming Account",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://xmlns.com/foaf/0.1/OnlineAccount"
+    ],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/OnlineEcommerceAccount": {
+    "class_uri": "http://xmlns.com/foaf/0.1/OnlineEcommerceAccount",
+    "name": "Online E-commerce Account",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://xmlns.com/foaf/0.1/OnlineAccount"
+    ],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/OnlineChatAccount": {
+    "class_uri": "http://xmlns.com/foaf/0.1/OnlineChatAccount",
+    "name": "Online Chat Account",
+    "class": "http://www.w3.org/2002/07/owl#Class",
+    "isConcept": true,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://xmlns.com/foaf/0.1/OnlineAccount"
+    ],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/mbox_sha1sum": {
+    "class_uri": "http://xmlns.com/foaf/0.1/mbox_sha1sum",
+    "name": "sha1sum of a personal mailbox URI name",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Agent"
+    ],
+    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/gender": {
+    "class_uri": "http://xmlns.com/foaf/0.1/gender",
+    "name": "gender",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Agent"
+    ],
+    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/geekcode": {
+    "class_uri": "http://xmlns.com/foaf/0.1/geekcode",
+    "name": "geekcode",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Person"
+    ],
+    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/dnaChecksum": {
+    "class_uri": "http://xmlns.com/foaf/0.1/dnaChecksum",
+    "name": "DNA checksum",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/sha1": {
+    "class_uri": "http://xmlns.com/foaf/0.1/sha1",
+    "name": "sha1sum (hex)",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Document"
+    ],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/based_near": {
+    "class_uri": "http://xmlns.com/foaf/0.1/based_near",
+    "name": "based near",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
+    ],
+    "type": "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/title": {
+    "class_uri": "http://xmlns.com/foaf/0.1/title",
+    "name": "title",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/nick": {
+    "class_uri": "http://xmlns.com/foaf/0.1/nick",
+    "name": "nickname",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/jabberID": {
+    "class_uri": "http://xmlns.com/foaf/0.1/jabberID",
+    "name": "jabber ID",
+    "class": "http://www.w3.org/2002/07/owl#InverseFunctionalProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Agent"
+    ],
+    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/aimChatID": {
+    "class_uri": "http://xmlns.com/foaf/0.1/aimChatID",
+    "name": "AIM chat ID",
+    "class": "http://www.w3.org/2002/07/owl#InverseFunctionalProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://xmlns.com/foaf/0.1/nick"
+    ],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Agent"
+    ],
+    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/skypeID": {
+    "class_uri": "http://xmlns.com/foaf/0.1/skypeID",
+    "name": "Skype ID",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://xmlns.com/foaf/0.1/nick"
+    ],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Agent"
+    ],
+    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/icqChatID": {
+    "class_uri": "http://xmlns.com/foaf/0.1/icqChatID",
+    "name": "ICQ chat ID",
+    "class": "http://www.w3.org/2002/07/owl#InverseFunctionalProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://xmlns.com/foaf/0.1/nick"
+    ],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Agent"
+    ],
+    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/yahooChatID": {
+    "class_uri": "http://xmlns.com/foaf/0.1/yahooChatID",
+    "name": "Yahoo chat ID",
+    "class": "http://www.w3.org/2002/07/owl#InverseFunctionalProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://xmlns.com/foaf/0.1/nick"
+    ],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Agent"
+    ],
+    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/msnChatID": {
+    "class_uri": "http://xmlns.com/foaf/0.1/msnChatID",
+    "name": "MSN chat ID",
+    "class": "http://www.w3.org/2002/07/owl#InverseFunctionalProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://xmlns.com/foaf/0.1/nick"
+    ],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Agent"
+    ],
+    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/givenName": {
+    "class_uri": "http://xmlns.com/foaf/0.1/givenName",
+    "name": "Given name",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/givenname": {
+    "class_uri": "http://xmlns.com/foaf/0.1/givenname",
+    "name": "Given name",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/surname": {
+    "class_uri": "http://xmlns.com/foaf/0.1/surname",
+    "name": "Surname",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Person"
+    ],
+    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/family_name": {
+    "class_uri": "http://xmlns.com/foaf/0.1/family_name",
+    "name": "family_name",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Person"
+    ],
+    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/familyName": {
+    "class_uri": "http://xmlns.com/foaf/0.1/familyName",
+    "name": "familyName",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Person"
+    ],
+    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/phone": {
+    "class_uri": "http://xmlns.com/foaf/0.1/phone",
+    "name": "phone",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/weblog": {
+    "class_uri": "http://xmlns.com/foaf/0.1/weblog",
+    "name": "weblog",
+    "class": "http://www.w3.org/2002/07/owl#InverseFunctionalProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://xmlns.com/foaf/0.1/page"
+    ],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Agent"
+    ],
+    "type": "http://xmlns.com/foaf/0.1/Document",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/openid": {
+    "class_uri": "http://xmlns.com/foaf/0.1/openid",
+    "name": "openid",
+    "class": "http://www.w3.org/2002/07/owl#InverseFunctionalProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    ],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Agent"
+    ],
+    "type": "http://xmlns.com/foaf/0.1/Document",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/tipjar": {
+    "class_uri": "http://xmlns.com/foaf/0.1/tipjar",
+    "name": "tipjar",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://xmlns.com/foaf/0.1/page"
+    ],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Agent"
+    ],
+    "type": "http://xmlns.com/foaf/0.1/Document",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/plan": {
+    "class_uri": "http://xmlns.com/foaf/0.1/plan",
+    "name": "plan",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Person"
+    ],
+    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/made": {
+    "class_uri": "http://xmlns.com/foaf/0.1/made",
+    "name": "made",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Agent"
+    ],
+    "type": "http://www.w3.org/2002/07/owl#Thing",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/maker": {
+    "class_uri": "http://xmlns.com/foaf/0.1/maker",
+    "name": "maker",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/2002/07/owl#Thing"
+    ],
+    "type": "http://xmlns.com/foaf/0.1/Agent",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/img": {
+    "class_uri": "http://xmlns.com/foaf/0.1/img",
+    "name": "image",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://xmlns.com/foaf/0.1/depiction"
+    ],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Person"
+    ],
+    "type": "http://xmlns.com/foaf/0.1/Image",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/depiction": {
+    "class_uri": "http://xmlns.com/foaf/0.1/depiction",
+    "name": "depiction",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/2002/07/owl#Thing"
+    ],
+    "type": "http://xmlns.com/foaf/0.1/Image",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/depicts": {
+    "class_uri": "http://xmlns.com/foaf/0.1/depicts",
+    "name": "depicts",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Image"
+    ],
+    "type": "http://www.w3.org/2002/07/owl#Thing",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/thumbnail": {
+    "class_uri": "http://xmlns.com/foaf/0.1/thumbnail",
+    "name": "thumbnail",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Image"
+    ],
+    "type": "http://xmlns.com/foaf/0.1/Image",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/myersBriggs": {
+    "class_uri": "http://xmlns.com/foaf/0.1/myersBriggs",
+    "name": "myersBriggs",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Person"
+    ],
+    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/workplaceHomepage": {
+    "class_uri": "http://xmlns.com/foaf/0.1/workplaceHomepage",
+    "name": "workplace homepage",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Person"
+    ],
+    "type": "http://xmlns.com/foaf/0.1/Document",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/workInfoHomepage": {
+    "class_uri": "http://xmlns.com/foaf/0.1/workInfoHomepage",
+    "name": "work info homepage",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Person"
+    ],
+    "type": "http://xmlns.com/foaf/0.1/Document",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/schoolHomepage": {
+    "class_uri": "http://xmlns.com/foaf/0.1/schoolHomepage",
+    "name": "schoolHomepage",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Person"
+    ],
+    "type": "http://xmlns.com/foaf/0.1/Document",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/knows": {
+    "class_uri": "http://xmlns.com/foaf/0.1/knows",
+    "name": "knows",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Person"
+    ],
+    "type": "http://xmlns.com/foaf/0.1/Person",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/interest": {
+    "class_uri": "http://xmlns.com/foaf/0.1/interest",
+    "name": "interest",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Agent"
+    ],
+    "type": "http://xmlns.com/foaf/0.1/Document",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/topic_interest": {
+    "class_uri": "http://xmlns.com/foaf/0.1/topic_interest",
+    "name": "topic_interest",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Agent"
+    ],
+    "type": "http://www.w3.org/2002/07/owl#Thing",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/publications": {
+    "class_uri": "http://xmlns.com/foaf/0.1/publications",
+    "name": "publications",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Person"
+    ],
+    "type": "http://xmlns.com/foaf/0.1/Document",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/currentProject": {
+    "class_uri": "http://xmlns.com/foaf/0.1/currentProject",
+    "name": "current project",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Person"
+    ],
+    "type": "http://www.w3.org/2002/07/owl#Thing",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/pastProject": {
+    "class_uri": "http://xmlns.com/foaf/0.1/pastProject",
+    "name": "past project",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Person"
+    ],
+    "type": "http://www.w3.org/2002/07/owl#Thing",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/fundedBy": {
+    "class_uri": "http://xmlns.com/foaf/0.1/fundedBy",
+    "name": "funded by",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/2002/07/owl#Thing"
+    ],
+    "type": "http://www.w3.org/2002/07/owl#Thing",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/logo": {
+    "class_uri": "http://xmlns.com/foaf/0.1/logo",
+    "name": "logo",
+    "class": "http://www.w3.org/2002/07/owl#InverseFunctionalProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/2002/07/owl#Thing"
+    ],
+    "type": "http://www.w3.org/2002/07/owl#Thing",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/topic": {
+    "class_uri": "http://xmlns.com/foaf/0.1/topic",
+    "name": "topic",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Document"
+    ],
+    "type": "http://www.w3.org/2002/07/owl#Thing",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/primaryTopic": {
+    "class_uri": "http://xmlns.com/foaf/0.1/primaryTopic",
+    "name": "primary topic",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Document"
+    ],
+    "type": "http://www.w3.org/2002/07/owl#Thing",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/focus": {
+    "class_uri": "http://xmlns.com/foaf/0.1/focus",
+    "name": "focus",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "type": "http://www.w3.org/2002/07/owl#Thing",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf": {
+    "class_uri": "http://xmlns.com/foaf/0.1/isPrimaryTopicOf",
+    "name": "is primary topic of",
+    "class": "http://www.w3.org/2002/07/owl#InverseFunctionalProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [
+      "http://xmlns.com/foaf/0.1/page"
+    ],
+    "domains": [
+      "http://www.w3.org/2002/07/owl#Thing"
+    ],
+    "type": "http://xmlns.com/foaf/0.1/Document",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/page": {
+    "class_uri": "http://xmlns.com/foaf/0.1/page",
+    "name": "page",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/2002/07/owl#Thing"
+    ],
+    "type": "http://xmlns.com/foaf/0.1/Document",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/theme": {
+    "class_uri": "http://xmlns.com/foaf/0.1/theme",
+    "name": "theme",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://www.w3.org/2002/07/owl#Thing"
+    ],
+    "type": "http://www.w3.org/2002/07/owl#Thing",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/account": {
+    "class_uri": "http://xmlns.com/foaf/0.1/account",
+    "name": "account",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Agent"
+    ],
+    "type": "http://xmlns.com/foaf/0.1/OnlineAccount",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/holdsAccount": {
+    "class_uri": "http://xmlns.com/foaf/0.1/holdsAccount",
+    "name": "account",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Agent"
+    ],
+    "type": "http://xmlns.com/foaf/0.1/OnlineAccount",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/accountServiceHomepage": {
+    "class_uri": "http://xmlns.com/foaf/0.1/accountServiceHomepage",
+    "name": "account service homepage",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/OnlineAccount"
+    ],
+    "type": "http://xmlns.com/foaf/0.1/Document",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/accountName": {
+    "class_uri": "http://xmlns.com/foaf/0.1/accountName",
+    "name": "account name",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/OnlineAccount"
+    ],
+    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/member": {
+    "class_uri": "http://xmlns.com/foaf/0.1/member",
+    "name": "member",
+    "class": "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Group"
+    ],
+    "type": "http://xmlns.com/foaf/0.1/Agent",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/membershipClass": {
+    "class_uri": "http://xmlns.com/foaf/0.1/membershipClass",
+    "name": "membershipClass",
+    "class": "http://www.w3.org/2002/07/owl#AnnotationProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [],
+    "type": "",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/birthday": {
+    "class_uri": "http://xmlns.com/foaf/0.1/birthday",
+    "name": "birthday",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Agent"
+    ],
+    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/age": {
+    "class_uri": "http://xmlns.com/foaf/0.1/age",
+    "name": "age",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Agent"
+    ],
+    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "isRequired": false,
+    "isList": false
+  },
+  "http://xmlns.com/foaf/0.1/status": {
+    "class_uri": "http://xmlns.com/foaf/0.1/status",
+    "name": "status",
+    "class": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "isConcept": false,
+    "isAbstract": false,
+    "properties": [],
+    "inherits": [],
+    "domains": [
+      "http://xmlns.com/foaf/0.1/Agent"
+    ],
+    "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
     "isRequired": false,
     "isList": false
   },

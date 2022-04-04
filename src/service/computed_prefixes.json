@@ -1,0 +1,66 @@
+[
+  {
+    "uri": "http://www.w3.org/2002/07/owl#",
+    "prefix": "owl"
+  },
+  {
+    "uri": "http://www.w3.org/2000/01/rdf-schema#",
+    "prefix": "rdfs"
+  },
+  {
+    "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "prefix": "ns"
+  },
+  {
+    "uri": "http://www.w3.org/2004/02/skos/core#",
+    "prefix": "skos"
+  },
+  {
+    "uri": "http://xmlns.com/foaf/0.1/",
+    "prefix": "foaf"
+  },
+  {
+    "uri": "http://www.w3.org/2001/XMLSchema#",
+    "prefix": "xsd"
+  },
+  {
+    "uri": "http://www.opensilex.org/vocabulary/oeso#",
+    "prefix": "oeso"
+  },
+  {
+    "uri": "http://www.opensilex.org/vocabulary/oeev#",
+    "prefix": "oeev"
+  },
+  {
+    "uri": "http://sinfonia.vignevin.com/oeso#",
+    "prefix": "sinfonia"
+  },
+  {
+    "uri": "http://purl.org/dc/elements/1.1/",
+    "prefix": "purl_dc_elements_1_1"
+  },
+  {
+    "uri": "http://purl.org/dc/terms/",
+    "prefix": "purl_dc_terms"
+  },
+  {
+    "uri": "http://www.w3.org/ns/oa#",
+    "prefix": "w3_ns_oa"
+  },
+  {
+    "uri": "http://www.w3.org/2003/06/sw-vocab-status/ns#",
+    "prefix": "w3_2003_06_sw_vocab_status_ns"
+  },
+  {
+    "uri": "http://www.w3.org/ns/activitystreams#",
+    "prefix": "w3_ns_activitystreams"
+  },
+  {
+    "uri": "http://www.w3.org/ns/prov#",
+    "prefix": "w3_ns_prov"
+  },
+  {
+    "uri": "http://www.opensilex.org/security#",
+    "prefix": "opensilex_security"
+  }
+]
