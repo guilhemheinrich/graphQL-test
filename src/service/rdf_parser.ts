@@ -7,13 +7,12 @@ import { ReadStream, WriteStream } from "fs";
 import multiple_file_stream from './multiple_file_reader'   
 
 
-const PREFIX = '/home/heinrich/code/'
 
-const INPUT_ONTOLOGY = PREFIX + 'graphQL-test/src/service/oeso-core.owl'
-const OUTPUT_PARSED_ONTOLOGY = PREFIX + 'graphQL-test/src/service/parsed_ontology.txt'
-const OUTPUT_MODEL = PREFIX + 'graphQL-test/src/service/output.json'
-const OUTPUT_PREFIXES = PREFIX + 'graphQL-test/src/service/computed_prefixes.json'
-const OUTPUT_GQL = PREFIX + 'graphQL-test/src/service/output.gql'
+
+const OUTPUT_PARSED_ONTOLOGY = __dirname + '/parsed_ontology.txt'
+const OUTPUT_MODEL = __dirname + '/output.json'
+const OUTPUT_PREFIXES = __dirname + '/computed_prefixes.json'
+const OUTPUT_GQL = __dirname + '/output.gql'
 const writeStream = fs.createWriteStream(OUTPUT_PARSED_ONTOLOGY);
 // const readStream = fs.createReadStream(INPUT_ONTOLOGY);
 
@@ -31,11 +30,6 @@ function consumer(readStream: ReadStream, writeStream: WriteStream) {
     .on('data', (quad: Quad) => {
         // data.push(quad)
         gqlRDF.processRdf(quad)
-        // // if (quad.subject.termType == 'NamedNode')
-        // processRdf(quad)
-        // processOwl(quad)
-        // console.log(quad)
-        // console.log(`${quad.subject.value} ${quad.predicate.value} ${quad.object.value}`)
         writeStream.write(JSON.stringify(quad, undefined, 2))
         writeStream.write('\n')
         // writeStream.write(`${quad.subject.value} ${quad.predicate.value} ${quad.object.value}`)
@@ -47,13 +41,13 @@ function consumer(readStream: ReadStream, writeStream: WriteStream) {
     });
 }
 
-const ONTOLOGY_OWL = PREFIX + 'graphQL-test/src/service/ontologies/owl.owl'
-const ONTOLOGY_FOAF = PREFIX + 'graphQL-test/src/service/ontologies/foaf.rdf'
-const ONTOLOGY_OA = PREFIX + 'graphQL-test/src/service/ontologies/oa.rdf'
-const ONTOLOGY_OEEV = PREFIX + 'graphQL-test/src/service/ontologies/oeev.owl'
-const ONTOLOGY_OESO_CORE = PREFIX + 'graphQL-test/src/service/ontologies/oeso-core.owl'
+const ONTOLOGY_OWL = __dirname + '/ontologies/owl.owl'
+const ONTOLOGY_FOAF = __dirname + '/ontologies/foaf.rdf'
+const ONTOLOGY_OA = __dirname + '/ontologies/oa.rdf'
+const ONTOLOGY_OEEV = __dirname + '/ontologies/oeev.owl'
+const ONTOLOGY_OESO_CORE = __dirname + '/ontologies/oeso-core.owl'
 
-const ONTOLOGY_SINFONIA = PREFIX + 'graphQL-test/src/service/ontologies/oeso-sinfonia_14.02.22.owl'
+const ONTOLOGY_SINFONIA = __dirname + '/ontologies/oeso-sinfonia_14.02.22.owl'
 
 
 

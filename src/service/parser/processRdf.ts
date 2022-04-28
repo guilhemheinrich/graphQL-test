@@ -73,7 +73,7 @@ class Gql_Resource_Dictionary {
 }
 export class Gql_Generator {
     prefix_handler = new Prefixer([
-        '/home/heinrich/code/graphQL-test/src/service/prefixes/standard_prefixes.json'
+        __dirname + '/../prefixes/standard_prefixes.json'
     ])
     readonly gql_resources_preprocesing: Gql_Resource_Dictionary = new Gql_Resource_Dictionary()
 
@@ -85,6 +85,7 @@ export class Gql_Generator {
      */
     constructor(prefixes_array: { prefix: string, uri: string }[]) {
         // Add owl:Thing in gqlResource
+
         this.gql_resources_preprocesing[this.expender('owl:Thing')] = {
             class_uri: this.expender('owl:Thing'),                  // Initialize with the uri
             name: "Thing",                                          // Initialize with the uri
@@ -99,6 +100,7 @@ export class Gql_Generator {
             isList: false
         }
         console.log(this.prefix_handler.prefix_array)
+        console.log(this.gql_resources_preprocesing)
     }
 
 
@@ -126,6 +128,7 @@ export class Gql_Generator {
      * @memberof Gql_Generator
      */
     expender(short_uri: string): string {
+        console.log('expender')
         let [prefix, suffix] = short_uri.split(':')
         let found_prefix = this.prefix_handler.getPrefixAndUriFromPrefix(prefix)
         if (found_prefix != undefined) {
@@ -276,8 +279,9 @@ export class Gql_Generator {
         // Iterate over all concept
         let concepts = Object.values(this.gql_resources_preprocesing).filter(resource => resource.isConcept && !resource.isAbstract)
         // Separate the owl:restriction
-        let restrictions = Object.values(this.gql_resources_preprocesing).filter(resource => resource.isAbstract && this.prefixer(resource.class) == 'owl:Restriction')
-
+        let restrictions = Object.values(this.gql_resources_preprocesing).filter(resource => resource.isAbstract && this.prefixer(resource.class_uri) == 'owl:Restriction')
+        console.log(this.gql_resources_preprocesing)
+        console.log(this.prefix_handler.prefix_array)
         // Helper function to parse the properties into correct gql
         const property_templater = (property: PorpertyTemplate) => {
             let out_string = this.shortener(property.name) + ': '
@@ -303,6 +307,7 @@ export class Gql_Generator {
                     switch (this.prefixer(property.class_uri)) {
                         case "owl:DatatypeProperty":
                             let gql_valuetype: 'String' | 'Int' | 'Float' | 'Boolean' | "Null" | "ID"
+                            console.log('proerty type')
                             switch (this.prefixer(property.type)) {
                                 // Acoording to https://www.w3.org/2011/rdf-wg/wiki/XSD_Datatypes
                                 // Only sparql Compliant xsd value for now

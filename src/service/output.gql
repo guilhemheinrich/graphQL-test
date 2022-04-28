@@ -99,119 +99,119 @@
                 uri: ID! 
             }            
             
-            type foaf__Person @node(additionalLabels: ["foaf__Agent","http://www.w3.org/2003/01/geo/wgs84_pos#__SpatialThing"]){
+            type foaf__Person @node(additionalLabels: ["foaf__Agent","w3_2003_01_geo_wgs84_pos__SpatialThing"]){
                 uri: ID! 
             }            
             
-            type oeev__Association @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
+            type oeev__Association @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__AssociationWithScientificObject @node(additionalLabels: ["oeev__Association","oeev__FacilityManagement","oeev__Event"]){
+            type oeev__AssociationWithScientificObject @node(additionalLabels: ["oeev__Association","df_1_1","oeev__FacilityManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__AssociationWithSensingDevice @node(additionalLabels: ["oeev__Association","oeev__FacilityManagement","oeev__Event"]){
+            type oeev__AssociationWithSensingDevice @node(additionalLabels: ["oeev__Association","df_1_2","oeev__FacilityManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Event {
+            type oeev__Event @node(additionalLabels: ["df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__PestAttack @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event"]){
+            type oeev__PestAttack @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__AddingProduct @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+            type oeev__AddingProduct @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__AutomaticCalibration @node(additionalLabels: ["oeev__Calibration","oeev__FacilityManagement","oeev__Event"]){
+            type oeev__AutomaticCalibration @node(additionalLabels: ["oeev__Calibration","oeev__FacilityManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Breakdown @node(additionalLabels: ["oeev__Trouble","oeev__Event"]){
+            type oeev__Breakdown @node(additionalLabels: ["oeev__Trouble","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Calibration @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
+            type oeev__Calibration @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Checking @node(additionalLabels: ["oeev__Servicing","oeev__Operability","oeev__FacilityManagement","oeev__Event"]){
+            type oeev__Checking @node(additionalLabels: ["oeev__Servicing","oeev__Operability","oeev__FacilityManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Cleaning @node(additionalLabels: ["oeev__Servicing","oeev__Operability","oeev__FacilityManagement","oeev__Event"]){
+            type oeev__Cleaning @node(additionalLabels: ["oeev__Servicing","oeev__Operability","oeev__FacilityManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Clipping @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+            type oeev__Clipping @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__CorrectiveMaintenance @node(additionalLabels: ["oeev__Operability","oeev__FacilityManagement","oeev__Event"]){
+            type oeev__CorrectiveMaintenance @node(additionalLabels: ["oeev__Operability","oeev__FacilityManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__CurativeTreatment @node(additionalLabels: ["oeev__Treatment","oeev__ScientificObjectManagement","oeev__Event"]){
+            type oeev__CurativeTreatment @node(additionalLabels: ["oeev__Treatment","oeev__ScientificObjectManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Detasseling @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+            type oeev__Detasseling @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Dysfunction @node(additionalLabels: ["oeev__Trouble","oeev__Event"]){
+            type oeev__Dysfunction @node(additionalLabels: ["oeev__Trouble","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__EvolutiveMaintenance @node(additionalLabels: ["oeev__Operability","oeev__FacilityManagement","oeev__Event"]){
+            type oeev__EvolutiveMaintenance @node(additionalLabels: ["oeev__Operability","oeev__FacilityManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__FacilityManagement @node(additionalLabels: ["oeev__Event"]){
+            type oeev__FacilityManagement @node(additionalLabels: ["oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Fertilization @node(additionalLabels: ["oeev__AddingProduct","oeev__ScientificObjectManagement","oeev__Event"]){
+            type oeev__Fertilization @node(additionalLabels: ["oeev__AddingProduct","oeev__ScientificObjectManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Harvesting @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+            type oeev__Harvesting @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Incident @node(additionalLabels: ["oeev__Trouble","oeev__Event"]){
+            type oeev__Incident @node(additionalLabels: ["oeev__Trouble","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Installation @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
+            type oeev__Installation @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Irrigation @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+            type oeev__Irrigation @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Loading @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+            type oeev__Loading @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Lodging @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event"]){
+            type oeev__Lodging @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__ManualCalibration @node(additionalLabels: ["oeev__Calibration","oeev__FacilityManagement","oeev__Event"]){
+            type oeev__ManualCalibration @node(additionalLabels: ["oeev__Calibration","oeev__FacilityManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Move @node(additionalLabels: ["oeev__Event"]){
+            type oeev__Move @node(additionalLabels: ["oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Operability @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
+            type oeev__Operability @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
@@ -219,91 +219,95 @@
                 uri: ID! 
             }            
             
-            type oeev__Flooding @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event"]){
+            type oeev__Flooding @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__PhenologyScoring @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+            type oeev__PhenologyScoring @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__PotFall @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event"]){
+            type oeev__PotFall @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Potting @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+            type oeev__Potting @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__PreventativeTreatment @node(additionalLabels: ["oeev__Treatment","oeev__ScientificObjectManagement","oeev__Event"]){
+            type oeev__PreventativeTreatment @node(additionalLabels: ["oeev__Treatment","oeev__ScientificObjectManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Reparation @node(additionalLabels: ["oeev__CorrectiveMaintenance","oeev__Operability","oeev__FacilityManagement","oeev__Event"]){
+            type oeev__Reparation @node(additionalLabels: ["oeev__CorrectiveMaintenance","oeev__Operability","oeev__FacilityManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Restart @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
+            type oeev__Restart @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Sampling @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+            type oeev__Sampling @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__ScientificObjectManagement @node(additionalLabels: ["oeev__Event"]){
+            type oeev__ScientificObjectManagement @node(additionalLabels: ["oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Servicing @node(additionalLabels: ["oeev__Operability","oeev__FacilityManagement","oeev__Event"]){
+            type oeev__Servicing @node(additionalLabels: ["oeev__Operability","oeev__FacilityManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Sowing @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+            type oeev__Sowing @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Staking @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+            type oeev__Staking @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Start @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
+            type oeev__Start @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Stop @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event"]){
+            type oeev__Stop @node(additionalLabels: ["oeev__FacilityManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__StuckPlant @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event"]){
+            type oeev__StuckPlant @node(additionalLabels: ["oeev__Incident","oeev__Trouble","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Thinning @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+            type oeev__Thinning @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Treatment @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event"]){
+            type oeev__Treatment @node(additionalLabels: ["oeev__ScientificObjectManagement","oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeev__Trouble @node(additionalLabels: ["oeev__Event"]){
+            type oeev__Trouble @node(additionalLabels: ["oeev__Event","df_1_3","df_1_4","df_1_5","df_1_6","df_1_7"]){
                 uri: ID! 
             }            
             
-            type oeso__Germplasm {
+            type rdfs__Class {
                 uri: ID! 
             }            
             
-            type oeso__Variable @node(additionalLabels: ["oeso__VariableBase"]){
+            type foaf__LabelProperty {
                 uri: ID! 
             }            
             
-            type oeso__ScientificObject {
+            type foaf__Agent {
                 uri: ID! 
             }            
             
-            type oeso__Experiment {
+            type w3_2003_01_geo_wgs84_pos__SpatialThing {
+                uri: ID! 
+            }            
+            
+            type foaf__Document {
                 uri: ID! 
             }            
             
@@ -311,11 +315,59 @@
                 uri: ID! 
             }            
             
-            type oeso__SensingDevice @node(additionalLabels: ["oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
+            type foaf__Group @node(additionalLabels: ["foaf__Agent"]){
                 uri: ID! 
             }            
             
-            type oeso__Unit @node(additionalLabels: ["oeso__VariableBase"]){
+            type foaf__Project {
+                uri: ID! 
+            }            
+            
+            type foaf__Image @node(additionalLabels: ["foaf__Document"]){
+                uri: ID! 
+            }            
+            
+            type foaf__PersonalProfileDocument @node(additionalLabels: ["foaf__Document"]){
+                uri: ID! 
+            }            
+            
+            type foaf__OnlineAccount @node(additionalLabels: ["owl__Thing"]){
+                uri: ID! 
+            }            
+            
+            type foaf__OnlineGamingAccount @node(additionalLabels: ["foaf__OnlineAccount","owl__Thing"]){
+                uri: ID! 
+            }            
+            
+            type foaf__OnlineEcommerceAccount @node(additionalLabels: ["foaf__OnlineAccount","owl__Thing"]){
+                uri: ID! 
+            }            
+            
+            type foaf__OnlineChatAccount @node(additionalLabels: ["foaf__OnlineAccount","owl__Thing"]){
+                uri: ID! 
+            }            
+            
+            type oeso__Germplasm {
+                uri: ID! 
+            }            
+            
+            type oeso__Variable @node(additionalLabels: ["oeso__VariableBase","df_2_36","df_2_37","df_2_38","df_2_39","df_2_40","df_2_41","df_2_42","df_2_43","df_2_44","df_2_45"]){
+                uri: ID! 
+            }            
+            
+            type oeso__ScientificObject @node(additionalLabels: ["df_2_26","df_2_27","df_2_28","df_2_29","df_2_30","df_2_31","df_2_32"]){
+                uri: ID! 
+            }            
+            
+            type oeso__Experiment @node(additionalLabels: ["df_2_23","df_2_24","df_2_25"]){
+                uri: ID! 
+            }            
+            
+            type oeso__SensingDevice @node(additionalLabels: ["oeso__Device","df_2_33","oeso__Equipement","df_2_21","df_2_22","oeso__ExperimentalCondition"]){
+                uri: ID! 
+            }            
+            
+            type oeso__Unit @node(additionalLabels: ["oeso__VariableBase","df_2_34","df_2_35","df_2_40","df_2_41","df_2_42","df_2_43","df_2_44","df_2_45"]){
                 uri: ID! 
             }            
             
@@ -327,19 +379,19 @@
                 uri: ID! 
             }            
             
-            type http://www.opensilex.org/security#__Group {
+            type opensilex_security__Group @node(additionalLabels: ["df_2_10","df_2_11","df_2_12"]){
                 uri: ID! 
             }            
             
-            type opensilex_security__GroupUserProfile {
+            type opensilex_security__GroupUserProfile @node(additionalLabels: ["df_2_13","df_2_14"]){
                 uri: ID! 
             }            
             
-            type opensilex_security__Profile {
+            type opensilex_security__Profile @node(additionalLabels: ["df_2_15","df_2_16","df_2_17"]){
                 uri: ID! 
             }            
             
-            type oeso__Actuator @node(additionalLabels: ["oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
+            type oeso__Actuator @node(additionalLabels: ["oeso__Device","oeso__Equipement","df_2_21","df_2_22","oeso__ExperimentalCondition"]){
                 uri: ID! 
             }            
             
@@ -355,7 +407,7 @@
                 uri: ID! 
             }            
             
-            type oeso__Characteristic @node(additionalLabels: ["oeso__VariableBase"]){
+            type oeso__Characteristic @node(additionalLabels: ["oeso__VariableBase","df_2_40","df_2_41","df_2_42","df_2_43","df_2_44","df_2_45"]){
                 uri: ID! 
             }            
             
@@ -371,7 +423,7 @@
                 uri: ID! 
             }            
             
-            type oeso__ControlLaw @node(additionalLabels: ["oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
+            type oeso__ControlLaw @node(additionalLabels: ["oeso__Device","df_2_18","df_2_19","df_2_20","oeso__Equipement","df_2_21","df_2_22","oeso__ExperimentalCondition"]){
                 uri: ID! 
             }            
             
@@ -383,7 +435,7 @@
                 uri: ID! 
             }            
             
-            type oeso__Device @node(additionalLabels: ["oeso__Equipement","oeso__ExperimentalCondition"]){
+            type oeso__Device @node(additionalLabels: ["oeso__Equipement","df_2_21","df_2_22","oeso__ExperimentalCondition"]){
                 uri: ID! 
             }            
             
@@ -391,15 +443,15 @@
                 uri: ID! 
             }            
             
-            type oeso__ElaboratedVariable @node(additionalLabels: ["oeso__Variable","oeso__VariableBase"]){
+            type oeso__ElaboratedVariable @node(additionalLabels: ["oeso__Variable","oeso__VariableBase","df_2_36","df_2_37","df_2_38","df_2_39","df_2_40","df_2_41","df_2_42","df_2_43","df_2_44","df_2_45"]){
                 uri: ID! 
             }            
             
-            type oeso__Entity @node(additionalLabels: ["oeso__VariableBase"]){
+            type oeso__Entity @node(additionalLabels: ["oeso__VariableBase","df_2_40","df_2_41","df_2_42","df_2_43","df_2_44","df_2_45"]){
                 uri: ID! 
             }            
             
-            type oeso__EntityOfInterest @node(additionalLabels: ["oeso__VariableBase"]){
+            type oeso__EntityOfInterest @node(additionalLabels: ["oeso__VariableBase","df_2_40","df_2_41","df_2_42","df_2_43","df_2_44","df_2_45"]){
                 uri: ID! 
             }            
             
@@ -467,7 +519,7 @@
                 uri: ID! 
             }            
             
-            type oeso__Method @node(additionalLabels: ["oeso__VariableBase"]){
+            type oeso__Method @node(additionalLabels: ["oeso__VariableBase","df_2_40","df_2_41","df_2_42","df_2_43","df_2_44","df_2_45"]){
                 uri: ID! 
             }            
             
@@ -479,7 +531,7 @@
                 uri: ID! 
             }            
             
-            type oeso__Population @node(additionalLabels: ["oeso__ScientificObject"]){
+            type oeso__Population @node(additionalLabels: ["oeso__ScientificObject","df_2_26","df_2_27","df_2_28","df_2_29","df_2_30","df_2_31","df_2_32"]){
                 uri: ID! 
             }            
             
@@ -503,7 +555,7 @@
                 uri: ID! 
             }            
             
-            type oeso__Sample @node(additionalLabels: ["oeso__ScientificObject"]){
+            type oeso__Sample @node(additionalLabels: ["oeso__ScientificObject","df_2_26","df_2_27","df_2_28","df_2_29","df_2_30","df_2_31","df_2_32"]){
                 uri: ID! 
             }            
             
@@ -519,7 +571,7 @@
                 uri: ID! 
             }            
             
-            type oeso__Software @node(additionalLabels: ["oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
+            type oeso__Software @node(additionalLabels: ["oeso__Device","oeso__Equipement","df_2_21","df_2_22","oeso__ExperimentalCondition"]){
                 uri: ID! 
             }            
             
@@ -531,7 +583,7 @@
                 uri: ID! 
             }            
             
-            type oeso__Station @node(additionalLabels: ["oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
+            type oeso__Station @node(additionalLabels: ["oeso__Device","oeso__Equipement","df_2_21","df_2_22","oeso__ExperimentalCondition"]){
                 uri: ID! 
             }            
             
@@ -555,7 +607,7 @@
                 uri: ID! 
             }            
             
-            type oeso__VariableBase {
+            type oeso__VariableBase @node(additionalLabels: ["df_2_40","df_2_41","df_2_42","df_2_43","df_2_44","df_2_45"]){
                 uri: ID! 
             }            
             
@@ -563,31 +615,19 @@
                 uri: ID! 
             }            
             
-            type oeso__Vector @node(additionalLabels: ["oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
+            type oeso__Vector @node(additionalLabels: ["oeso__Device","oeso__Equipement","df_2_21","df_2_22","oeso__ExperimentalCondition"]){
                 uri: ID! 
             }            
             
-            type oeso__WebSite @node(additionalLabels: ["oeso__InteractiveResource","oeso__Document"]){
+            type sinfonia__Wine @node(additionalLabels: ["oeso__ScientificObject","df_4_19","df_4_20","df_4_21","df_2_26","df_2_27","df_2_28","df_2_29","df_2_30","df_2_31","df_2_32"]){
                 uri: ID! 
             }            
             
-            type oeso__WindyArea @node(additionalLabels: ["oeso__StructuralArea","oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
+            type sinfonia__ExperimentalField @node(additionalLabels: ["oeso__InfrastructureFacility","df_4_1","df_4_2","df_4_3"]){
                 uri: ID! 
             }            
             
-            type ns__Bag {
-                uri: ID! 
-            }            
-            
-            type sinfonia__Wine @node(additionalLabels: ["oeso__ScientificObject"]){
-                uri: ID! 
-            }            
-            
-            type sinfonia__ExperimentalField @node(additionalLabels: ["oeso__InfrastructureFacility"]){
-                uri: ID! 
-            }            
-            
-            type sinfonia__Subplot @node(additionalLabels: ["oeso__ScientificObject"]){
+            type sinfonia__Subplot @node(additionalLabels: ["oeso__ScientificObject","df_4_10","df_4_11","df_4_12","df_4_13","df_4_14","df_2_26","df_2_27","df_2_28","df_2_29","df_2_30","df_2_31","df_2_32"]){
                 uri: ID! 
             }            
             
@@ -615,15 +655,15 @@
                 uri: ID! 
             }            
             
-            type sinfonia__Plot @node(additionalLabels: ["oeso__ScientificObject"]){
+            type sinfonia__Plot @node(additionalLabels: ["oeso__ScientificObject","df_4_4","df_4_5","df_4_6","df_4_7","df_2_26","df_2_27","df_2_28","df_2_29","df_2_30","df_2_31","df_2_32"]){
                 uri: ID! 
             }            
             
-            type sinfonia__Sample @node(additionalLabels: ["oeso__ScientificObject"]){
+            type sinfonia__Sample @node(additionalLabels: ["oeso__ScientificObject","df_4_8","df_4_9","df_2_26","df_2_27","df_2_28","df_2_29","df_2_30","df_2_31","df_2_32"]){
                 uri: ID! 
             }            
             
-            type sinfonia__Soil @node(additionalLabels: ["oeso__ScientificObject"]){
+            type sinfonia__Soil @node(additionalLabels: ["oeso__ScientificObject","df_2_26","df_2_27","df_2_28","df_2_29","df_2_30","df_2_31","df_2_32"]){
                 uri: ID! 
             }            
             
@@ -631,11 +671,11 @@
                 uri: ID! 
             }            
             
-            type sinfonia__Vinestock @node(additionalLabels: ["oeso__ScientificObject"]){
+            type sinfonia__Vinestock @node(additionalLabels: ["oeso__ScientificObject","df_4_15","df_4_16","df_2_26","df_2_27","df_2_28","df_2_29","df_2_30","df_2_31","df_2_32"]){
                 uri: ID! 
             }            
             
-            type sinfonia__Vinification @node(additionalLabels: ["oeso__ScientificObject"]){
+            type sinfonia__Vinification @node(additionalLabels: ["oeso__ScientificObject","df_4_17","df_4_18","df_2_26","df_2_27","df_2_28","df_2_29","df_2_30","df_2_31","df_2_32"]){
                 uri: ID! 
             }            
             
@@ -643,55 +683,15 @@
                 uri: ID! 
             }            
             
-            type rdfs__Class {
+            type oeso__WebSite @node(additionalLabels: ["oeso__InteractiveResource","oeso__Document"]){
                 uri: ID! 
             }            
             
-            type foaf__LabelProperty {
+            type oeso__WindyArea @node(additionalLabels: ["oeso__StructuralArea","oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
                 uri: ID! 
             }            
             
-            type foaf__Agent {
-                uri: ID! 
-            }            
-            
-            type http://www.w3.org/2003/01/geo/wgs84_pos#__SpatialThing {
-                uri: ID! 
-            }            
-            
-            type foaf__Document {
-                uri: ID! 
-            }            
-            
-            type foaf__Group @node(additionalLabels: ["foaf__Agent"]){
-                uri: ID! 
-            }            
-            
-            type foaf__Project {
-                uri: ID! 
-            }            
-            
-            type foaf__Image @node(additionalLabels: ["foaf__Document"]){
-                uri: ID! 
-            }            
-            
-            type foaf__PersonalProfileDocument @node(additionalLabels: ["foaf__Document"]){
-                uri: ID! 
-            }            
-            
-            type foaf__OnlineAccount @node(additionalLabels: ["owl__Thing"]){
-                uri: ID! 
-            }            
-            
-            type foaf__OnlineGamingAccount @node(additionalLabels: ["foaf__OnlineAccount","owl__Thing"]){
-                uri: ID! 
-            }            
-            
-            type foaf__OnlineEcommerceAccount @node(additionalLabels: ["foaf__OnlineAccount","owl__Thing"]){
-                uri: ID! 
-            }            
-            
-            type foaf__OnlineChatAccount @node(additionalLabels: ["foaf__OnlineAccount","owl__Thing"]){
+            type ns__Bag {
                 uri: ID! 
             }            
             

@@ -44,6 +44,10 @@
     "prefix": "purl_dc_terms"
   },
   {
+    "uri": "http://www.w3.org/ns/prov#",
+    "prefix": "w3_ns_prov"
+  },
+  {
     "uri": "http://www.w3.org/ns/oa#",
     "prefix": "w3_ns_oa"
   },
@@ -56,8 +60,8 @@
     "prefix": "w3_ns_activitystreams"
   },
   {
-    "uri": "http://www.w3.org/ns/prov#",
-    "prefix": "w3_ns_prov"
+    "uri": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "prefix": "w3_2003_01_geo_wgs84_pos"
   },
   {
     "uri": "http://www.opensilex.org/security#",

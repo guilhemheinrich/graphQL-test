@@ -14,7 +14,7 @@ export class Prefixer {
         'org',
         'com'
     ]
-    constructor(prefix_files: string[]) {
+    constructor(prefix_files: string[] = []) {
         for (let _path of prefix_files) {
             let JSON_content: prefix_array = []
             try {
@@ -82,6 +82,7 @@ export class Prefixer {
         // Else create a new prefix and return it
         // let matches = uri.matchAll(uri_separator)
         // let plop = uri.match(uri_separator)
+        this.uri_separator.lastIndex = 0;
         let _match = this.uri_separator.exec(uri)
         // let _array = Array.from(matches)
         if (_match) {
@@ -96,6 +97,8 @@ export class Prefixer {
             return new_prefix_uri
         } else {
             console.debug(`${uri} is not a valid uri according to the pattern ${this.uri_separator}`)
+            console.log(uri)
+            console.log(_match)
         }
         // So the compilator does'nt ennoy us, and a potential weird result is "easily" spottable
         return {
