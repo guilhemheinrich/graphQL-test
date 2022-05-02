@@ -279,7 +279,7 @@ export class Gql_Generator {
         // Iterate over all concept
         let concepts = Object.values(this.gql_resources_preprocesing).filter(resource => resource.isConcept && !resource.isAbstract)
         // Separate the owl:restriction
-        let restrictions = Object.values(this.gql_resources_preprocesing).filter(resource => resource.isAbstract && this.prefixer(resource.class_uri) == 'owl:Restriction')
+        let restrictions = Object.values(this.gql_resources_preprocesing).filter(resource => resource.isAbstract)
         console.log(this.gql_resources_preprocesing)
         console.log(this.prefix_handler.prefix_array)
         // Helper function to parse the properties into correct gql
@@ -304,10 +304,9 @@ export class Gql_Generator {
             for (let properties of this.getInheritedValues(concept.class_uri, "properties")) {
                 for (let property_uri of properties) {
                     let property = this.gql_resources_preprocesing[property_uri]
-                    switch (this.prefixer(property.class_uri)) {
+                    switch (this.prefixer(property.class)) {
                         case "owl:DatatypeProperty":
                             let gql_valuetype: 'String' | 'Int' | 'Float' | 'Boolean' | "Null" | "ID"
-                            console.log('proerty type')
                             switch (this.prefixer(property.type)) {
                                 // Acoording to https://www.w3.org/2011/rdf-wg/wiki/XSD_Datatypes
                                 // Only sparql Compliant xsd value for now
