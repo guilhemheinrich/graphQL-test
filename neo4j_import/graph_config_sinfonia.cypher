@@ -43,8 +43,8 @@ RETURN dump
 
 
 // Couldn't succed to load a file to work (locally, seems fine using ftp endpoint)
-call n10s.rdf.import.fetch("file:///import/sinfonia_statements.ttl",
-   "Turtle")
+// call n10s.rdf.import.fetch("file:///import/sinfonia_statements.ttl",
+//    "Turtle")
 
 
 // We need to "bounce" over a virtuoso sparql endpoint... yes yes

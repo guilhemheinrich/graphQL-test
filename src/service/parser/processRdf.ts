@@ -45,6 +45,7 @@ export interface DatatypeProperty_Template extends _Porperty_Template {
 export type PorpertyTemplate = ObjectProperty_Template | DatatypeProperty_Template
 
 
+
 class Gql_Resource_Dictionary {
     [uri: string]: Gql_Resource
     constructor() {
@@ -72,6 +73,16 @@ class Gql_Resource_Dictionary {
     }
 }
 export class Gql_Generator {
+
+    static options = {
+        // Additional label to add to every node
+        additionalNodeLabels: [
+            "Resource"              // Resource label is the default when manipulating rdf with n10s
+                                    // It includes URI field constraint
+        ]
+    } 
+
+
     prefix_handler = new Prefixer([
         __dirname + '/../prefixes/standard_prefixes.json'
     ])
@@ -433,9 +444,9 @@ export class Gql_Generator {
             //     ${template_properties.map((prop) => property_templater(prop)).join('\n                ')}
             // }            
             // `
-
+            let additionalLabels = Gql_Generator.options.additionalNodeLabels.concat(template_inherits)
             let template = `
-            type ${shortname} ${template_inherits.length > 0 ? '@node(additionalLabels: [' + template_inherits.map((short_uri) => '"' + short_uri + '"') + '])' : ''}{
+            type ${shortname} ${additionalLabels.length > 0 ? '@node(additionalLabels: [' + additionalLabels.map((short_uri) => '"' + short_uri + '"').join(',') + '])' : ''}{
                 uri: ID! ${template_properties.length > 0 ? '\n                ' + template_properties.map((prop) => property_templater(prop)).join('\n                ') : ''}
             }            
             `

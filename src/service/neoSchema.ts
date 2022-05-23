@@ -79,7 +79,7 @@ const driver = neo4j.driver(
 // export const _neoSchema = neoSchema.schema
 
 
-const oesoTypedefs = gql(fs.readFileSync("D:/code/graphQL-test/src/service/output.gql", 'utf-8'))
+const oesoTypedefs = gql(fs.readFileSync(__dirname + "/output.gql", 'utf-8'))
 const oesoSchema = new Neo4jGraphQL({ typeDefs: oesoTypedefs, driver });
 
 
