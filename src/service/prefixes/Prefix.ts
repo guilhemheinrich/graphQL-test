@@ -124,6 +124,12 @@ export class Prefixer {
         this.undefined_cpt++
         return undefined_index
     }
+
+    // TODO
+    // extract the prefix as a Cypher n10s prefix list
+    to_n10s_prefixes_option() {
+
+    }
 }
 
 export default Prefixer
