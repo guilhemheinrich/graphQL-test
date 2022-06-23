@@ -1,20 +1,21 @@
 
             type owl__Thing @node(additionalLabels: ["Resource"]){
                 uri: ID! 
-                oeso__hasDocument: oeso__Document @relationship(type: "oeso__hasDocument", direction: OUT)
                 foaf__name: String
+                foaf__homepage: String
                 foaf__maker: foaf__Agent @relationship(type: "foaf__maker", direction: OUT)
                 foaf__depiction: foaf__Image @relationship(type: "foaf__depiction", direction: OUT)
                 foaf__fundedBy: owl__Thing @relationship(type: "foaf__fundedBy", direction: OUT)
                 foaf__page: foaf__Document @relationship(type: "foaf__page", direction: OUT)
                 foaf__theme: owl__Thing @relationship(type: "foaf__theme", direction: OUT)
+                oeso__hasDocument: oeso__Document @relationship(type: "oeso__hasDocument", direction: OUT)
             }            
             
             type w3_ns_oa__TimeState @node(additionalLabels: ["Resource","w3_ns_oa__State"]){
                 uri: ID! 
-                w3_ns_oa__sourceDate: String
-                w3_ns_oa__sourceDateEnd: String
-                w3_ns_oa__sourceDateStart: String
+                w3_ns_oa__sourceDate: DateTime
+                w3_ns_oa__sourceDateEnd: DateTime
+                w3_ns_oa__sourceDateStart: DateTime
             }            
             
             type w3_ns_oa__Annotation @node(additionalLabels: ["Resource"]){
@@ -139,7 +140,7 @@
                 foaf__publications: foaf__Document @relationship(type: "foaf__publications", direction: OUT)
                 foaf__currentProject: owl__Thing @relationship(type: "foaf__currentProject", direction: OUT)
                 foaf__pastProject: owl__Thing @relationship(type: "foaf__pastProject", direction: OUT)
-                foaf__mbox: owl__Thing @relationship(type: "foaf__mbox", direction: OUT)
+                foaf__mbox: String
                 foaf__mbox_sha1sum: String
                 foaf__gender: String
                 foaf__skypeID: String
@@ -441,6 +442,155 @@
                 oeev__isInstant: Boolean
             }            
             
+            type rdfs__Class @node(additionalLabels: ["Resource"]){
+                uri: ID! 
+            }            
+            
+            type foaf__LabelProperty @node(additionalLabels: ["Resource"]){
+                uri: ID! 
+            }            
+            
+            type foaf__Agent @node(additionalLabels: ["Resource"]){
+                uri: ID! 
+                foaf__mbox: String
+                foaf__mbox_sha1sum: String
+                foaf__gender: String
+                foaf__skypeID: String
+                foaf__tipjar: foaf__Document @relationship(type: "foaf__tipjar", direction: OUT)
+                foaf__made: owl__Thing @relationship(type: "foaf__made", direction: OUT)
+                foaf__interest: foaf__Document @relationship(type: "foaf__interest", direction: OUT)
+                foaf__topic_interest: owl__Thing @relationship(type: "foaf__topic_interest", direction: OUT)
+                foaf__account: foaf__OnlineAccount @relationship(type: "foaf__account", direction: OUT)
+                foaf__holdsAccount: foaf__OnlineAccount @relationship(type: "foaf__holdsAccount", direction: OUT)
+                foaf__birthday: String
+                foaf__age: String
+                foaf__status: String
+            }            
+            
+            type w3_2003_01_geo_wgs84_pos__SpatialThing @node(additionalLabels: ["Resource"]){
+                uri: ID! 
+                foaf__based_near: w3_2003_01_geo_wgs84_pos__SpatialThing @relationship(type: "foaf__based_near", direction: OUT)
+            }            
+            
+            type foaf__Document @node(additionalLabels: ["Resource"]){
+                uri: ID! 
+                foaf__sha1: String
+                foaf__topic: owl__Thing @relationship(type: "foaf__topic", direction: OUT)
+                foaf__primaryTopic: owl__Thing @relationship(type: "foaf__primaryTopic", direction: OUT)
+            }            
+            
+            type foaf__Organization @node(additionalLabels: ["Resource","foaf__Agent","oeso__ExperimentalCondition"]){
+                uri: ID! 
+                oeso__isHosted: oeso__Facility @relationship(type: "oeso__isHosted", direction: OUT)
+                foaf__mbox: String
+                foaf__mbox_sha1sum: String
+                foaf__gender: String
+                foaf__skypeID: String
+                foaf__tipjar: foaf__Document @relationship(type: "foaf__tipjar", direction: OUT)
+                foaf__made: owl__Thing @relationship(type: "foaf__made", direction: OUT)
+                foaf__interest: foaf__Document @relationship(type: "foaf__interest", direction: OUT)
+                foaf__topic_interest: owl__Thing @relationship(type: "foaf__topic_interest", direction: OUT)
+                foaf__account: foaf__OnlineAccount @relationship(type: "foaf__account", direction: OUT)
+                foaf__holdsAccount: foaf__OnlineAccount @relationship(type: "foaf__holdsAccount", direction: OUT)
+                foaf__birthday: String
+                foaf__age: String
+                foaf__status: String
+            }            
+            
+            type foaf__Group @node(additionalLabels: ["Resource","foaf__Agent"]){
+                uri: ID! 
+                foaf__member: foaf__Agent @relationship(type: "foaf__member", direction: OUT)
+                foaf__mbox: String
+                foaf__mbox_sha1sum: String
+                foaf__gender: String
+                foaf__skypeID: String
+                foaf__tipjar: foaf__Document @relationship(type: "foaf__tipjar", direction: OUT)
+                foaf__made: owl__Thing @relationship(type: "foaf__made", direction: OUT)
+                foaf__interest: foaf__Document @relationship(type: "foaf__interest", direction: OUT)
+                foaf__topic_interest: owl__Thing @relationship(type: "foaf__topic_interest", direction: OUT)
+                foaf__account: foaf__OnlineAccount @relationship(type: "foaf__account", direction: OUT)
+                foaf__holdsAccount: foaf__OnlineAccount @relationship(type: "foaf__holdsAccount", direction: OUT)
+                foaf__birthday: String
+                foaf__age: String
+                foaf__status: String
+            }            
+            
+            type foaf__Project @node(additionalLabels: ["Resource"]){
+                uri: ID! 
+            }            
+            
+            type foaf__Image @node(additionalLabels: ["Resource","foaf__Document"]){
+                uri: ID! 
+                foaf__depicts: owl__Thing @relationship(type: "foaf__depicts", direction: OUT)
+                foaf__thumbnail: foaf__Image @relationship(type: "foaf__thumbnail", direction: OUT)
+                foaf__sha1: String
+                foaf__topic: owl__Thing @relationship(type: "foaf__topic", direction: OUT)
+                foaf__primaryTopic: owl__Thing @relationship(type: "foaf__primaryTopic", direction: OUT)
+            }            
+            
+            type foaf__PersonalProfileDocument @node(additionalLabels: ["Resource","foaf__Document"]){
+                uri: ID! 
+                foaf__sha1: String
+                foaf__topic: owl__Thing @relationship(type: "foaf__topic", direction: OUT)
+                foaf__primaryTopic: owl__Thing @relationship(type: "foaf__primaryTopic", direction: OUT)
+            }            
+            
+            type foaf__OnlineAccount @node(additionalLabels: ["Resource","owl__Thing"]){
+                uri: ID! 
+                foaf__accountServiceHomepage: foaf__Document @relationship(type: "foaf__accountServiceHomepage", direction: OUT)
+                foaf__accountName: String
+                foaf__name: String
+                foaf__homepage: String
+                foaf__maker: foaf__Agent @relationship(type: "foaf__maker", direction: OUT)
+                foaf__depiction: foaf__Image @relationship(type: "foaf__depiction", direction: OUT)
+                foaf__fundedBy: owl__Thing @relationship(type: "foaf__fundedBy", direction: OUT)
+                foaf__page: foaf__Document @relationship(type: "foaf__page", direction: OUT)
+                foaf__theme: owl__Thing @relationship(type: "foaf__theme", direction: OUT)
+                oeso__hasDocument: oeso__Document @relationship(type: "oeso__hasDocument", direction: OUT)
+            }            
+            
+            type foaf__OnlineGamingAccount @node(additionalLabels: ["Resource","foaf__OnlineAccount","owl__Thing"]){
+                uri: ID! 
+                foaf__accountServiceHomepage: foaf__Document @relationship(type: "foaf__accountServiceHomepage", direction: OUT)
+                foaf__accountName: String
+                foaf__name: String
+                foaf__homepage: String
+                foaf__maker: foaf__Agent @relationship(type: "foaf__maker", direction: OUT)
+                foaf__depiction: foaf__Image @relationship(type: "foaf__depiction", direction: OUT)
+                foaf__fundedBy: owl__Thing @relationship(type: "foaf__fundedBy", direction: OUT)
+                foaf__page: foaf__Document @relationship(type: "foaf__page", direction: OUT)
+                foaf__theme: owl__Thing @relationship(type: "foaf__theme", direction: OUT)
+                oeso__hasDocument: oeso__Document @relationship(type: "oeso__hasDocument", direction: OUT)
+            }            
+            
+            type foaf__OnlineEcommerceAccount @node(additionalLabels: ["Resource","foaf__OnlineAccount","owl__Thing"]){
+                uri: ID! 
+                foaf__accountServiceHomepage: foaf__Document @relationship(type: "foaf__accountServiceHomepage", direction: OUT)
+                foaf__accountName: String
+                foaf__name: String
+                foaf__homepage: String
+                foaf__maker: foaf__Agent @relationship(type: "foaf__maker", direction: OUT)
+                foaf__depiction: foaf__Image @relationship(type: "foaf__depiction", direction: OUT)
+                foaf__fundedBy: owl__Thing @relationship(type: "foaf__fundedBy", direction: OUT)
+                foaf__page: foaf__Document @relationship(type: "foaf__page", direction: OUT)
+                foaf__theme: owl__Thing @relationship(type: "foaf__theme", direction: OUT)
+                oeso__hasDocument: oeso__Document @relationship(type: "oeso__hasDocument", direction: OUT)
+            }            
+            
+            type foaf__OnlineChatAccount @node(additionalLabels: ["Resource","foaf__OnlineAccount","owl__Thing"]){
+                uri: ID! 
+                foaf__accountServiceHomepage: foaf__Document @relationship(type: "foaf__accountServiceHomepage", direction: OUT)
+                foaf__accountName: String
+                foaf__name: String
+                foaf__homepage: String
+                foaf__maker: foaf__Agent @relationship(type: "foaf__maker", direction: OUT)
+                foaf__depiction: foaf__Image @relationship(type: "foaf__depiction", direction: OUT)
+                foaf__fundedBy: owl__Thing @relationship(type: "foaf__fundedBy", direction: OUT)
+                foaf__page: foaf__Document @relationship(type: "foaf__page", direction: OUT)
+                foaf__theme: owl__Thing @relationship(type: "foaf__theme", direction: OUT)
+                oeso__hasDocument: oeso__Document @relationship(type: "oeso__hasDocument", direction: OUT)
+            }            
+            
             type oeso__Germplasm @node(additionalLabels: ["Resource"]){
                 uri: ID! 
                 oeso__fromInstitute: owl__Thing @relationship(type: "oeso__fromInstitute", direction: OUT)
@@ -457,8 +607,8 @@
             
             type oeso__ScientificObject @node(additionalLabels: ["Resource"]){
                 uri: ID! 
-                oeso__hasCreationDate: String
-                oeso__hasDestructionDate: String
+                oeso__hasCreationDate: Date
+                oeso__hasDestructionDate: Date
                 sinfonia__SampleEntity: oeso__Entity @relationship(type: "sinfonia__SampleEntity", direction: OUT)
                 sinfonia__derivesFrom: oeso__ScientificObject @relationship(type: "sinfonia__derivesFrom", direction: OUT)
                 sinfonia__hasRootstockGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasRootstockGermplasm", direction: OUT)
@@ -480,24 +630,6 @@
                 oeso__usesOrganization: foaf__Organization @relationship(type: "oeso__usesOrganization", direction: OUT)
             }            
             
-            type foaf__Organization @node(additionalLabels: ["Resource","foaf__Agent","oeso__ExperimentalCondition"]){
-                uri: ID! 
-                oeso__isHosted: oeso__Facility @relationship(type: "oeso__isHosted", direction: OUT)
-                foaf__mbox: owl__Thing @relationship(type: "foaf__mbox", direction: OUT)
-                foaf__mbox_sha1sum: String
-                foaf__gender: String
-                foaf__skypeID: String
-                foaf__tipjar: foaf__Document @relationship(type: "foaf__tipjar", direction: OUT)
-                foaf__made: owl__Thing @relationship(type: "foaf__made", direction: OUT)
-                foaf__interest: foaf__Document @relationship(type: "foaf__interest", direction: OUT)
-                foaf__topic_interest: owl__Thing @relationship(type: "foaf__topic_interest", direction: OUT)
-                foaf__account: foaf__OnlineAccount @relationship(type: "foaf__account", direction: OUT)
-                foaf__holdsAccount: foaf__OnlineAccount @relationship(type: "foaf__holdsAccount", direction: OUT)
-                foaf__birthday: String
-                foaf__age: String
-                foaf__status: String
-            }            
-            
             type oeso__SensingDevice @node(additionalLabels: ["Resource","oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
                 uri: ID! 
                 oeso__measures: oeso__Variable @relationship(type: "oeso__measures", direction: OUT)
@@ -516,8 +648,8 @@
             
             type w3_ns_prov__Activity @node(additionalLabels: ["Resource"]){
                 uri: ID! 
-                w3_ns_prov__endedAtTime: String
-                w3_ns_prov__startedAtTime: String
+                w3_ns_prov__endedAtTime: DateTime
+                w3_ns_prov__startedAtTime: DateTime
             }            
             
             type opensilex_security__Group @node(additionalLabels: ["Resource"]){
@@ -562,8 +694,8 @@
             
             type oeso__Computation @node(additionalLabels: ["Resource","w3_ns_prov__Activity"]){
                 uri: ID! 
-                w3_ns_prov__endedAtTime: String
-                w3_ns_prov__startedAtTime: String
+                w3_ns_prov__endedAtTime: DateTime
+                w3_ns_prov__startedAtTime: DateTime
             }            
             
             type oeso__ControlLaw @node(additionalLabels: ["Resource","oeso__Device","oeso__Equipement","oeso__ExperimentalCondition"]){
@@ -618,7 +750,7 @@
             type oeso__ExperimentalUnit @node(additionalLabels: ["Resource","foaf__Organization","foaf__Agent","oeso__ExperimentalCondition"]){
                 uri: ID! 
                 oeso__isHosted: oeso__Facility @relationship(type: "oeso__isHosted", direction: OUT)
-                foaf__mbox: owl__Thing @relationship(type: "foaf__mbox", direction: OUT)
+                foaf__mbox: String
                 foaf__mbox_sha1sum: String
                 foaf__gender: String
                 foaf__skypeID: String
@@ -659,20 +791,20 @@
             
             type oeso__ImageAcquisition @node(additionalLabels: ["Resource","w3_ns_prov__Activity"]){
                 uri: ID! 
-                w3_ns_prov__endedAtTime: String
-                w3_ns_prov__startedAtTime: String
+                w3_ns_prov__endedAtTime: DateTime
+                w3_ns_prov__startedAtTime: DateTime
             }            
             
             type oeso__ImageAnalysis @node(additionalLabels: ["Resource","w3_ns_prov__Activity"]){
                 uri: ID! 
-                w3_ns_prov__endedAtTime: String
-                w3_ns_prov__startedAtTime: String
+                w3_ns_prov__endedAtTime: DateTime
+                w3_ns_prov__startedAtTime: DateTime
             }            
             
             type oeso__Installation @node(additionalLabels: ["Resource","foaf__Organization","foaf__Agent","oeso__ExperimentalCondition"]){
                 uri: ID! 
                 oeso__isHosted: oeso__Facility @relationship(type: "oeso__isHosted", direction: OUT)
-                foaf__mbox: owl__Thing @relationship(type: "foaf__mbox", direction: OUT)
+                foaf__mbox: String
                 foaf__mbox_sha1sum: String
                 foaf__gender: String
                 foaf__skypeID: String
@@ -697,8 +829,8 @@
             
             type oeso__MeasuresAcquisition @node(additionalLabels: ["Resource","w3_ns_prov__Activity"]){
                 uri: ID! 
-                w3_ns_prov__endedAtTime: String
-                w3_ns_prov__startedAtTime: String
+                w3_ns_prov__endedAtTime: DateTime
+                w3_ns_prov__startedAtTime: DateTime
             }            
             
             type oeso__Method @node(additionalLabels: ["Resource","oeso__VariableBase"]){
@@ -711,7 +843,7 @@
             
             type oeso__Operator @node(additionalLabels: ["Resource","foaf__Agent"]){
                 uri: ID! 
-                foaf__mbox: owl__Thing @relationship(type: "foaf__mbox", direction: OUT)
+                foaf__mbox: String
                 foaf__mbox_sha1sum: String
                 foaf__gender: String
                 foaf__skypeID: String
@@ -728,8 +860,8 @@
             
             type oeso__Population @node(additionalLabels: ["Resource","oeso__ScientificObject"]){
                 uri: ID! 
-                oeso__hasCreationDate: String
-                oeso__hasDestructionDate: String
+                oeso__hasCreationDate: Date
+                oeso__hasDestructionDate: Date
                 sinfonia__SampleEntity: oeso__Entity @relationship(type: "sinfonia__SampleEntity", direction: OUT)
                 sinfonia__derivesFrom: oeso__ScientificObject @relationship(type: "sinfonia__derivesFrom", direction: OUT)
                 sinfonia__hasRootstockGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasRootstockGermplasm", direction: OUT)
@@ -760,7 +892,7 @@
             type oeso__ResearchUnit @node(additionalLabels: ["Resource","foaf__Organization","foaf__Agent","oeso__ExperimentalCondition"]){
                 uri: ID! 
                 oeso__isHosted: oeso__Facility @relationship(type: "oeso__isHosted", direction: OUT)
-                foaf__mbox: owl__Thing @relationship(type: "foaf__mbox", direction: OUT)
+                foaf__mbox: String
                 foaf__mbox_sha1sum: String
                 foaf__gender: String
                 foaf__skypeID: String
@@ -777,8 +909,8 @@
             
             type oeso__Sample @node(additionalLabels: ["Resource","oeso__ScientificObject"]){
                 uri: ID! 
-                oeso__hasCreationDate: String
-                oeso__hasDestructionDate: String
+                oeso__hasCreationDate: Date
+                oeso__hasDestructionDate: Date
                 sinfonia__SampleEntity: oeso__Entity @relationship(type: "sinfonia__SampleEntity", direction: OUT)
                 sinfonia__derivesFrom: oeso__ScientificObject @relationship(type: "sinfonia__derivesFrom", direction: OUT)
                 sinfonia__hasRootstockGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasRootstockGermplasm", direction: OUT)
@@ -851,150 +983,11 @@
                 uri: ID! 
             }            
             
-            type oeso__WebSite @node(additionalLabels: ["Resource","oeso__InteractiveResource","oeso__Document"]){
-                uri: ID! 
-            }            
-            
-            type oeso__WindyArea @node(additionalLabels: ["Resource","oeso__StructuralArea","oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
-                uri: ID! 
-            }            
-            
-            type ns__Bag @node(additionalLabels: ["Resource"]){
-                uri: ID! 
-            }            
-            
-            type rdfs__Class @node(additionalLabels: ["Resource"]){
-                uri: ID! 
-            }            
-            
-            type foaf__LabelProperty @node(additionalLabels: ["Resource"]){
-                uri: ID! 
-            }            
-            
-            type foaf__Agent @node(additionalLabels: ["Resource"]){
-                uri: ID! 
-                foaf__mbox: owl__Thing @relationship(type: "foaf__mbox", direction: OUT)
-                foaf__mbox_sha1sum: String
-                foaf__gender: String
-                foaf__skypeID: String
-                foaf__tipjar: foaf__Document @relationship(type: "foaf__tipjar", direction: OUT)
-                foaf__made: owl__Thing @relationship(type: "foaf__made", direction: OUT)
-                foaf__interest: foaf__Document @relationship(type: "foaf__interest", direction: OUT)
-                foaf__topic_interest: owl__Thing @relationship(type: "foaf__topic_interest", direction: OUT)
-                foaf__account: foaf__OnlineAccount @relationship(type: "foaf__account", direction: OUT)
-                foaf__holdsAccount: foaf__OnlineAccount @relationship(type: "foaf__holdsAccount", direction: OUT)
-                foaf__birthday: String
-                foaf__age: String
-                foaf__status: String
-            }            
-            
-            type w3_2003_01_geo_wgs84_pos__SpatialThing @node(additionalLabels: ["Resource"]){
-                uri: ID! 
-                foaf__based_near: w3_2003_01_geo_wgs84_pos__SpatialThing @relationship(type: "foaf__based_near", direction: OUT)
-            }            
-            
-            type foaf__Document @node(additionalLabels: ["Resource"]){
-                uri: ID! 
-                foaf__sha1: String
-                foaf__topic: owl__Thing @relationship(type: "foaf__topic", direction: OUT)
-                foaf__primaryTopic: owl__Thing @relationship(type: "foaf__primaryTopic", direction: OUT)
-            }            
-            
-            type foaf__Group @node(additionalLabels: ["Resource","foaf__Agent"]){
-                uri: ID! 
-                foaf__member: foaf__Agent @relationship(type: "foaf__member", direction: OUT)
-                foaf__mbox: owl__Thing @relationship(type: "foaf__mbox", direction: OUT)
-                foaf__mbox_sha1sum: String
-                foaf__gender: String
-                foaf__skypeID: String
-                foaf__tipjar: foaf__Document @relationship(type: "foaf__tipjar", direction: OUT)
-                foaf__made: owl__Thing @relationship(type: "foaf__made", direction: OUT)
-                foaf__interest: foaf__Document @relationship(type: "foaf__interest", direction: OUT)
-                foaf__topic_interest: owl__Thing @relationship(type: "foaf__topic_interest", direction: OUT)
-                foaf__account: foaf__OnlineAccount @relationship(type: "foaf__account", direction: OUT)
-                foaf__holdsAccount: foaf__OnlineAccount @relationship(type: "foaf__holdsAccount", direction: OUT)
-                foaf__birthday: String
-                foaf__age: String
-                foaf__status: String
-            }            
-            
-            type foaf__Project @node(additionalLabels: ["Resource"]){
-                uri: ID! 
-            }            
-            
-            type foaf__Image @node(additionalLabels: ["Resource","foaf__Document"]){
-                uri: ID! 
-                foaf__depicts: owl__Thing @relationship(type: "foaf__depicts", direction: OUT)
-                foaf__thumbnail: foaf__Image @relationship(type: "foaf__thumbnail", direction: OUT)
-                foaf__sha1: String
-                foaf__topic: owl__Thing @relationship(type: "foaf__topic", direction: OUT)
-                foaf__primaryTopic: owl__Thing @relationship(type: "foaf__primaryTopic", direction: OUT)
-            }            
-            
-            type foaf__PersonalProfileDocument @node(additionalLabels: ["Resource","foaf__Document"]){
-                uri: ID! 
-                foaf__sha1: String
-                foaf__topic: owl__Thing @relationship(type: "foaf__topic", direction: OUT)
-                foaf__primaryTopic: owl__Thing @relationship(type: "foaf__primaryTopic", direction: OUT)
-            }            
-            
-            type foaf__OnlineAccount @node(additionalLabels: ["Resource","owl__Thing"]){
-                uri: ID! 
-                foaf__accountServiceHomepage: foaf__Document @relationship(type: "foaf__accountServiceHomepage", direction: OUT)
-                foaf__accountName: String
-                oeso__hasDocument: oeso__Document @relationship(type: "oeso__hasDocument", direction: OUT)
-                foaf__name: String
-                foaf__maker: foaf__Agent @relationship(type: "foaf__maker", direction: OUT)
-                foaf__depiction: foaf__Image @relationship(type: "foaf__depiction", direction: OUT)
-                foaf__fundedBy: owl__Thing @relationship(type: "foaf__fundedBy", direction: OUT)
-                foaf__page: foaf__Document @relationship(type: "foaf__page", direction: OUT)
-                foaf__theme: owl__Thing @relationship(type: "foaf__theme", direction: OUT)
-            }            
-            
-            type foaf__OnlineGamingAccount @node(additionalLabels: ["Resource","foaf__OnlineAccount","owl__Thing"]){
-                uri: ID! 
-                foaf__accountServiceHomepage: foaf__Document @relationship(type: "foaf__accountServiceHomepage", direction: OUT)
-                foaf__accountName: String
-                oeso__hasDocument: oeso__Document @relationship(type: "oeso__hasDocument", direction: OUT)
-                foaf__name: String
-                foaf__maker: foaf__Agent @relationship(type: "foaf__maker", direction: OUT)
-                foaf__depiction: foaf__Image @relationship(type: "foaf__depiction", direction: OUT)
-                foaf__fundedBy: owl__Thing @relationship(type: "foaf__fundedBy", direction: OUT)
-                foaf__page: foaf__Document @relationship(type: "foaf__page", direction: OUT)
-                foaf__theme: owl__Thing @relationship(type: "foaf__theme", direction: OUT)
-            }            
-            
-            type foaf__OnlineEcommerceAccount @node(additionalLabels: ["Resource","foaf__OnlineAccount","owl__Thing"]){
-                uri: ID! 
-                foaf__accountServiceHomepage: foaf__Document @relationship(type: "foaf__accountServiceHomepage", direction: OUT)
-                foaf__accountName: String
-                oeso__hasDocument: oeso__Document @relationship(type: "oeso__hasDocument", direction: OUT)
-                foaf__name: String
-                foaf__maker: foaf__Agent @relationship(type: "foaf__maker", direction: OUT)
-                foaf__depiction: foaf__Image @relationship(type: "foaf__depiction", direction: OUT)
-                foaf__fundedBy: owl__Thing @relationship(type: "foaf__fundedBy", direction: OUT)
-                foaf__page: foaf__Document @relationship(type: "foaf__page", direction: OUT)
-                foaf__theme: owl__Thing @relationship(type: "foaf__theme", direction: OUT)
-            }            
-            
-            type foaf__OnlineChatAccount @node(additionalLabels: ["Resource","foaf__OnlineAccount","owl__Thing"]){
-                uri: ID! 
-                foaf__accountServiceHomepage: foaf__Document @relationship(type: "foaf__accountServiceHomepage", direction: OUT)
-                foaf__accountName: String
-                oeso__hasDocument: oeso__Document @relationship(type: "oeso__hasDocument", direction: OUT)
-                foaf__name: String
-                foaf__maker: foaf__Agent @relationship(type: "foaf__maker", direction: OUT)
-                foaf__depiction: foaf__Image @relationship(type: "foaf__depiction", direction: OUT)
-                foaf__fundedBy: owl__Thing @relationship(type: "foaf__fundedBy", direction: OUT)
-                foaf__page: foaf__Document @relationship(type: "foaf__page", direction: OUT)
-                foaf__theme: owl__Thing @relationship(type: "foaf__theme", direction: OUT)
-            }            
-            
             type sinfonia__Wine @node(additionalLabels: ["Resource","oeso__ScientificObject"]){
                 uri: ID! 
                 sinfonia__NumberOfBottles: Int
-                oeso__hasCreationDate: String
-                oeso__hasDestructionDate: String
+                oeso__hasCreationDate: Date
+                oeso__hasDestructionDate: Date
                 sinfonia__SampleEntity: oeso__Entity @relationship(type: "sinfonia__SampleEntity", direction: OUT)
                 sinfonia__derivesFrom: oeso__ScientificObject @relationship(type: "sinfonia__derivesFrom", direction: OUT)
                 sinfonia__hasRootstockGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasRootstockGermplasm", direction: OUT)
@@ -1014,8 +1007,8 @@
             type sinfonia__Subplot @node(additionalLabels: ["Resource","oeso__ScientificObject"]){
                 uri: ID! 
                 sinfonia__PlantingDensity: Float
-                oeso__hasCreationDate: String
-                oeso__hasDestructionDate: String
+                oeso__hasCreationDate: Date
+                oeso__hasDestructionDate: Date
                 sinfonia__SampleEntity: oeso__Entity @relationship(type: "sinfonia__SampleEntity", direction: OUT)
                 sinfonia__derivesFrom: oeso__ScientificObject @relationship(type: "sinfonia__derivesFrom", direction: OUT)
                 sinfonia__hasRootstockGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasRootstockGermplasm", direction: OUT)
@@ -1053,8 +1046,8 @@
             
             type sinfonia__Plot @node(additionalLabels: ["Resource","oeso__ScientificObject"]){
                 uri: ID! 
-                oeso__hasCreationDate: String
-                oeso__hasDestructionDate: String
+                oeso__hasCreationDate: Date
+                oeso__hasDestructionDate: Date
                 sinfonia__SampleEntity: oeso__Entity @relationship(type: "sinfonia__SampleEntity", direction: OUT)
                 sinfonia__derivesFrom: oeso__ScientificObject @relationship(type: "sinfonia__derivesFrom", direction: OUT)
                 sinfonia__hasRootstockGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasRootstockGermplasm", direction: OUT)
@@ -1068,8 +1061,8 @@
             
             type sinfonia__Sample @node(additionalLabels: ["Resource","oeso__ScientificObject"]){
                 uri: ID! 
-                oeso__hasCreationDate: String
-                oeso__hasDestructionDate: String
+                oeso__hasCreationDate: Date
+                oeso__hasDestructionDate: Date
                 sinfonia__SampleEntity: oeso__Entity @relationship(type: "sinfonia__SampleEntity", direction: OUT)
                 sinfonia__derivesFrom: oeso__ScientificObject @relationship(type: "sinfonia__derivesFrom", direction: OUT)
                 sinfonia__hasRootstockGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasRootstockGermplasm", direction: OUT)
@@ -1083,8 +1076,8 @@
             
             type sinfonia__Soil @node(additionalLabels: ["Resource","oeso__ScientificObject"]){
                 uri: ID! 
-                oeso__hasCreationDate: String
-                oeso__hasDestructionDate: String
+                oeso__hasCreationDate: Date
+                oeso__hasDestructionDate: Date
                 sinfonia__SampleEntity: oeso__Entity @relationship(type: "sinfonia__SampleEntity", direction: OUT)
                 sinfonia__derivesFrom: oeso__ScientificObject @relationship(type: "sinfonia__derivesFrom", direction: OUT)
                 sinfonia__hasRootstockGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasRootstockGermplasm", direction: OUT)
@@ -1102,8 +1095,8 @@
             
             type sinfonia__Vinestock @node(additionalLabels: ["Resource","oeso__ScientificObject"]){
                 uri: ID! 
-                oeso__hasCreationDate: String
-                oeso__hasDestructionDate: String
+                oeso__hasCreationDate: Date
+                oeso__hasDestructionDate: Date
                 sinfonia__SampleEntity: oeso__Entity @relationship(type: "sinfonia__SampleEntity", direction: OUT)
                 sinfonia__derivesFrom: oeso__ScientificObject @relationship(type: "sinfonia__derivesFrom", direction: OUT)
                 sinfonia__hasRootstockGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasRootstockGermplasm", direction: OUT)
@@ -1117,8 +1110,8 @@
             
             type sinfonia__Vinification @node(additionalLabels: ["Resource","oeso__ScientificObject"]){
                 uri: ID! 
-                oeso__hasCreationDate: String
-                oeso__hasDestructionDate: String
+                oeso__hasCreationDate: Date
+                oeso__hasDestructionDate: Date
                 sinfonia__SampleEntity: oeso__Entity @relationship(type: "sinfonia__SampleEntity", direction: OUT)
                 sinfonia__derivesFrom: oeso__ScientificObject @relationship(type: "sinfonia__derivesFrom", direction: OUT)
                 sinfonia__hasRootstockGermplasm: oeso__Germplasm @relationship(type: "sinfonia__hasRootstockGermplasm", direction: OUT)
@@ -1131,6 +1124,18 @@
             }            
             
             type sinfonia__Winery @node(additionalLabels: ["Resource","oeso__InfrastructureFacility"]){
+                uri: ID! 
+            }            
+            
+            type oeso__WebSite @node(additionalLabels: ["Resource","oeso__InteractiveResource","oeso__Document"]){
+                uri: ID! 
+            }            
+            
+            type oeso__WindyArea @node(additionalLabels: ["Resource","oeso__StructuralArea","oeso__Area","oeso__Equipement","oeso__ExperimentalCondition"]){
+                uri: ID! 
+            }            
+            
+            type ns__Bag @node(additionalLabels: ["Resource"]){
                 uri: ID! 
             }            
             

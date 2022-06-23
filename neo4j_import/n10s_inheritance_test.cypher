@@ -32,6 +32,7 @@ CREATE (:Book:IsomorphismCrystallography { title: "Isomorphism in minerals", ide
 CREATE (:Book:Crystals { title: "Crystals and life", identifier: "12873809"})
 CREATE (:Book:Crystals { title: "Highlights in applied mineralogy", identifier: "20234576"})
 
+
 CALL n10s.inference.nodesLabelled('Crystallography',  {
   catNameProp: "dbLabel",
   catLabel: "LCSHTopic",
@@ -39,3 +40,6 @@ CALL n10s.inference.nodesLabelled('Crystallography',  {
 })
 YIELD node
 RETURN node.identifier as id, node.title as title, labels(node) as categories;
+
+MATCH (n:Book) DETACH DELETE n
+MATCH (n:LCSHTopic) DETACH DELETE n

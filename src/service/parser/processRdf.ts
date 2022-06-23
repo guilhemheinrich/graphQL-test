@@ -39,7 +39,7 @@ export interface ObjectProperty_Template extends _Porperty_Template {
 export interface DatatypeProperty_Template extends _Porperty_Template {
     type: "Litteral"
     name: string
-    valuetype: "String" | "Int" | "Float" | "Boolean" | "Null" | "ID"
+    valuetype: "String" | "Int" | "Float" | "Boolean" | "Null" | "ID" | "Date" | "DateTime"
 }
 
 export type PorpertyTemplate = ObjectProperty_Template | DatatypeProperty_Template
@@ -317,7 +317,7 @@ export class Gql_Generator {
                     let property = this.gql_resources_preprocesing[property_uri]
                     switch (this.prefixer(property.class)) {
                         case "owl:DatatypeProperty":
-                            let gql_valuetype: 'String' | 'Int' | 'Float' | 'Boolean' | "Null" | "ID"
+                            let gql_valuetype: 'String' | 'Int' | 'Float' | 'Boolean' | "Null" | "ID" | "Date" | "DateTime"
                             switch (this.prefixer(property.type)) {
                                 // Acoording to https://www.w3.org/2011/rdf-wg/wiki/XSD_Datatypes
                                 // Only sparql Compliant xsd value for now
@@ -328,10 +328,10 @@ export class Gql_Generator {
                                     gql_valuetype = 'Int'
                                     break;
                                 case "xsd:date":
-                                    gql_valuetype = 'String'
+                                    gql_valuetype = 'Date'
                                     break;
                                 case "xsd:dateTime":
-                                    gql_valuetype = 'String'
+                                    gql_valuetype = 'DateTime'
                                     break;
                                 case "xsd:decimal":
                                     gql_valuetype = 'Float'
